@@ -1,0 +1,41 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:sf="http://www.springframework.org/tags/faces"
+    xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+    xmlns:debug="http://java.sun.com/jsf/composite/debug">
+
+
+    <p>Titles</p>
+
+    <p>Es können Nachrichten konfiguriert werden, die anhand von Namenskonventionen automatisch als Title,
+        Headline oder Breadcrumb verwendet werden.</p>
+    <p>Folgende Angaben sind zulässig:</p>
+    <p>
+        <code>
+            MAS_{FlowName}_Title<br /> MAS_{FlowName}_{ViewState}_Title<br /> MAS_{FlowName}_Headline<br />
+            MAS_{FlowName}_{ViewState}_Headline<br /> MAS_{FlowName}_Breadcrumb<br />
+            MAS_{FlowName}_{ViewState}_Breadcrumb
+        </code>
+    </p>
+    <p>Wenn vorhanden, werden stets die Angaben mit ViewState verwendet, ansonsten die Angaben ohne
+        ViewState.</p>
+
+    <p>
+        In der Flowdefinition können die zu verwendenden Texte überschrieben werden, indem die Attribute
+        <code>titleKey</code>
+        ,
+        <code>breadcrumbKey</code>
+        und
+        <code>headlineKey</code>
+        gesetzt werden.
+    </p>
+    <p>
+        Wenn für den Title keine Angabe gefunden werden kann, dann wird der Wert von
+        <code>MAS_Global_Title</code>
+        verwendet. Weiterhin kann mit
+        <code>MAS_Global_Title_Prefix</code>
+        ein globaler Präfix für den Title gesetzt werden.
+    </p>
+
+</ui:composition>

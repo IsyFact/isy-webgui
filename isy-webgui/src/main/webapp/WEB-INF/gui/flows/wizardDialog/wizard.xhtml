@@ -1,0 +1,44 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:f="http://java.sun.com/jsf/core"
+				xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+>
+
+	<isy:wizard wizardDialogModel="#{wdm}">
+		<f:facet name="wizardHeader">
+             Test <span>Eintrag 220</span>
+		</f:facet>
+		<f:facet name="wizardBody">
+
+			<ui:param name="aktuelleWizardSeite"
+				value="#{wdm.getActiveWizardDialogPage()}" />
+
+			<!-- In Abhängigkeit der ID werden die entsprechenden Seiten angezeigt. -->
+
+			<ui:fragment
+				rendered="#{wdm.getActiveWizardDialogPageId().equals('1')}">
+				<ui:include src="page1.xhtml" />
+			</ui:fragment>
+
+			<ui:fragment
+				rendered="#{wdm.getActiveWizardDialogPageId().equals('2')}">
+				<ui:include src="page2.xhtml" />
+			</ui:fragment>
+
+			<ui:fragment
+				rendered="#{wdm.getActiveWizardDialogPageId().equals('3')}">
+				<ui:include src="page3.xhtml" />
+			</ui:fragment>
+
+			<ui:fragment
+				rendered="#{wdm.getActiveWizardDialogPageId().equals('4')}">
+				<ui:include src="page4.xhtml" />
+			</ui:fragment>
+
+
+		</f:facet>
+
+	</isy:wizard>
+
+</ui:composition>

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+    parent="applikationseiteParentFlow">
+
+    <var name="wizardModel" class="de.bund.bva.pliscommon.pliswebgui.gui.flows.wizarddialog.WizardModel"/>
+
+    <on-start>
+        <evaluate expression="wizardDialogController.initialisiereModel(wizardModel)"/>
+    </on-start>
+
+    <!-- Initialzustand. Hier kann der Wizard durch Klick geöffnet werden. -->
+    <view-state id="wizardDialogViewState" model="wizardModel">
+
+        <on-entry>
+            <evaluate expression="basisController.hideModalDialog()"/>
+        </on-entry>
+
+        <transition on="actionShow" to="wizardDialogAnzeigenViewState">
+            <evaluate expression="basisController.showModalDialog()"/>
+        </transition>
+
+    </view-state>
+
+    <view-state id="wizardDialogAnzeigenViewState" model="wizardModel">
+
+        <on-entry>
+            <evaluate expression="beispielWizardDialogController.initializeWizard(wizardModel)"/>
+        </on-entry>
+
+        <transition on="next" to="wizardDialogAnzeigenViewState">
+            <evaluate expression="beispielWizardDialogController.next(wizardModel.wizardDialogModel)"/>
+            <evaluate expression="beispielWizardDialogController.initializeWizard(wizardModel)"/>
+        </transition>
+
+        <transition on="previous" to="wizardDialogAnzeigenViewState">
+            <evaluate expression="beispielWizardDialogController.previous(wizardModel.wizardDialogModel)"/>
+            <evaluate expression="beispielWizardDialogController.initializeWizard(wizardModel)"/>
+        </transition>
+
+        <transition on="finish" to="wizardDialogViewState">
+            <evaluate expression="beispielWizardDialogController.finish(wizardModel.wizardDialogModel)"/>
+        </transition>
+
+        <transition on="cancel" to="wizardDialogViewState">
+            <evaluate expression="beispielWizardDialogController.cancel(wizardModel.wizardDialogModel)"/>
+        </transition>
+
+    </view-state>
+
+</flow>

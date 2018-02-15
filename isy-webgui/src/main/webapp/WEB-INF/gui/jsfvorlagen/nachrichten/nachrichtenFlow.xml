@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+    parent="applikationseiteParentFlow">
+
+    <var name="nachrichtenModel" class="de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.nachrichten.NachrichtenModel" />
+
+    <on-start>
+        <evaluate expression="nachrichtenController.initialisiereModel(nachrichtenModel)" />
+    </on-start>
+
+    <view-state id="nachrichtenViewState" model="nachrichtenModel">
+
+        <transition on="zeigeEinzeilig" to="nachrichtenViewState">
+            <evaluate expression="nachrichtenController.zeigeEinzeiligeNachrichten(nachrichtenModel)" />
+        </transition>
+
+        <transition on="zeigeZweizeilig" to="nachrichtenViewState">
+            <evaluate expression="nachrichtenController.zeigeZweizeiligeNachrichten(nachrichtenModel)" />
+        </transition>
+
+    </view-state>
+
+
+</flow>

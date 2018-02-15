@@ -1,0 +1,29 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+>
+
+    <p>
+        <h:outputText value="#{msg_currentflow.MAS_Ueberschrift}" />
+    </p>
+
+    <p>
+        Maskentexte, die nur innerhalb eines bestimmten Flows verwendet werden, können in der
+        Konfigurationsdatei &lt;Flow-Name&gt;.properties im Ordner "resources/nachrichten/maskentexte" definiert werden.
+        Wenn die jeweilige Konfigurationsdatei vorhanden ist, werden die Maskentexte automatisch geladen und in
+        die Variable
+        <code>msg_currentflow</code>
+        abgespeichert. Die Maskentexte des jeweiligen Flows können dann beispielsweise wie folgt ausgelesen
+        werden:
+    </p>
+    <code> &lt;h:outputText value="# { msg_currentflow.MAS_Ueberschrift}" /&gt; </code>
+
+    <p>
+        Auf übergreifende Maskentexte aus der Konfigurationsdatei
+        <code>resources/nachrichten/maskentexte.properties</code>
+        kann über die Variable
+        <code>msg</code>
+        zugegriffen werden.
+
+    </p>
+</ui:composition>

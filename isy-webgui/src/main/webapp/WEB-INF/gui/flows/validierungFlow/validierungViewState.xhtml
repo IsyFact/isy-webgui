@@ -1,0 +1,250 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:sf="http://www.springframework.org/tags/faces"
+	xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+	xmlns:debug="http://java.sun.com/jsf/composite/debug"
+	template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+	<ui:define name="inhaltsbereich">
+		<isy:panelGroup>
+
+			<isy:panel>
+				<f:facet name="panelHeader">
+                Beispielvalidierung
+            </f:facet>
+
+				<f:facet name="panelBody">
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<div class="col-lg-4">
+
+								<isy:formInput reference="person.nachname"
+									value="#{validierungModel.person.nachname}" label="Nachname"
+									required="true" />
+
+								<div class="form-group">
+									<label for="exampleInput2" class="col-lg-6 control-label">Vorname</label>
+
+									<div class="col-lg-6">
+										<input type="text" value="John" placeholder="Muster"
+											id="exampleInput2" class="form-control" />
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4">
+
+								<div class="form-group">
+
+									<label for="exampleInput9" class="col-lg-6 control-label">Geburtsname</label>
+
+									<div class="col-lg-6">
+										<input type="text" placeholder="Muster" id="exampleInput9"
+											class="form-control" />
+									</div>
+								</div>
+								<div class="form-group">
+
+									<isy:formCheckbox reference="person.gefaehrlich"
+										value="#{validierungModel.person.gefaehrlich}"
+										label="Gefährliche Person" required="true" />
+
+									<isy:formCheckbox reference="person.freundlich"
+										optional="true" value="#{validierungModel.person.freundlich}"
+										label="Freundliche Person (optional)" />
+
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group image-upload">
+									<label class="col-lg-6 control-label">Lichtbild</label>
+
+									<div class="col-lg-2">
+										<isy:image
+											imgSrc="#{request.contextPath}/img/dummyProfileImage.png"
+											imgPopupSrc="#{request.contextPath}/img/dummyProfileImage.png"
+											alt="Benutzerbild" />
+										<span class="btn btn-icon-round btn-icon-round-small btn-file">
+											<span class="icon icon-browse-folder"></span> Durchsuchen … <input
+											type="file" />
+										</span>
+									</div>
+
+								</div>
+							</div>
+						</div>
+						<div class="row row-df">
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="exampleInput3" class="col-lg-6 control-label">Geschlecht</label>
+
+									<div class="col-lg-6">
+										<input type="text" value="Männlich" placeholder="Männlich"
+											id="exampleInput3" class="form-control" />
+									</div>
+								</div>
+
+								<isy:formDate reference="person.geburtsdatum"
+									value="#{validierungModel.person.geburtsdatum}"
+									label="Geburtsdatum" placeholder="01.12.1999" type="date" />
+
+								<div class="form-group ">
+									<label for="exampleInput5" class="col-lg-6 control-label">Geburtsort</label>
+
+									<div class="col-lg-6">
+										<input type="text" value="Frankfurt" placeholder="Berlin"
+											id="exampleInput5" class="form-control" />
+									</div>
+								</div>
+
+								<isy:formListpicker reference="person.geburtsstaat"
+									listpickerModel="#{validierungModel.staatListpickerModel}"
+									listpickerController="#{staatHelper.staatListpickerController}"
+									label="Geburtsstaat"
+									value="#{validierungModel.person.geburtsstaat}"
+									header="Schlüssel,Wert" />
+
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="exampleInput11" class="col-lg-6 control-label">Früherer
+										Vorname</label>
+
+									<div class="col-lg-6">
+										<input type="text" placeholder="Maximilian"
+											id="exampleInput11" class="form-control" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="exampleInput12" class="col-lg-6 control-label">Weiterer
+										Name</label>
+
+									<div class="col-lg-6">
+										<input type="text" placeholder="-" id="exampleInput12"
+											class="form-control" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="exampleInput13" class="col-lg-6 control-label">Ordensname</label>
+
+									<div class="col-lg-6">
+										<input type="text" placeholder="-" id="exampleInput13"
+											class="form-control" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="exampleInput14" class="col-lg-6 control-label">Künstlername</label>
+
+									<div class="col-lg-6">
+										<input type="text" placeholder="-" id="exampleInput14"
+											class="form-control" />
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group">
+
+									<isy:formInput reference="person.antragsnummer" value=""
+										label="Antragsnummer" inputmask="DEU/99999999/999" />
+
+								</div>
+								<div class="form-group">
+									<label for="exampleInput18" class="col-lg-6 control-label">Label</label>
+
+									<div class="col-lg-6">
+										<input type="email" placeholder="Placeholder"
+											id="exampleInput18" class="form-control" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="exampleInput19" class="col-lg-6 control-label">Label</label>
+
+									<div class="col-lg-6">
+										<input type="email" placeholder="Placeholder"
+											id="exampleInput19" class="form-control" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="exampleInput19" class="col-lg-6 control-label">Label</label>
+
+									<div class="col-lg-6">
+										<input type="email" placeholder="Placeholder"
+											id="exampleInput19" class="form-control" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="row row-df">
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="exampleInput7" class="col-lg-6 control-label">Eingestellt
+										am</label>
+
+									<div class="col-lg-6">
+										<input type="date" value="13.10.2013" placeholder="01.01.2008"
+											id="exampleInput7" class="form-control" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="exampleInput8" class="col-lg-6 control-label">Eingestellt
+										durch</label>
+
+									<div class="col-lg-6">
+										<input type="text" value="Tina Ansbach" placeholder="Jane"
+											id="exampleInput8" class="form-control" />
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="exampleInput15" class="col-lg-6 control-label">Aktualisierung
+										am</label>
+
+									<div class="col-lg-6">
+										<input type="date" placeholder="01.01.2010"
+											id="exampleInput15" class="form-control" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="exampleInput16" class="col-lg-6 control-label">Aktualisierung
+										durch</label>
+
+									<div class="col-lg-6">
+										<input type="text" placeholder="Jane" id="exampleInput16"
+											class="form-control" />
+									</div>
+								</div>
+							</div>
+							<div class="col-lg-4">
+								<div class="form-group">
+									<label for="exampleInput20" class="col-lg-6 control-label">Label</label>
+
+									<div class="col-lg-6">
+										<input type="email" placeholder="Placeholder"
+											id="exampleInput20" class="form-control" />
+									</div>
+								</div>
+								<div class="form-group">
+									<label for="exampleInput21" class="col-lg-6 control-label">Label</label>
+
+									<div class="col-lg-6">
+										<input type="email" placeholder="Placeholder"
+											id="exampleInput21" class="form-control" />
+									</div>
+								</div>
+							</div>
+						</div>
+						<hr />
+						<isy:button action="fuehreValidierungDurch" value="Validier mich!" />
+					</div>
+				</f:facet>
+
+			</isy:panel>
+
+		</isy:panelGroup>
+
+	</ui:define>
+
+</ui:composition>

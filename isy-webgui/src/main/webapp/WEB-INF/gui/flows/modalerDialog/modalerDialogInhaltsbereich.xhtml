@@ -1,0 +1,37 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+				xmlns:ui="http://java.sun.com/jsf/facelets"
+				xmlns:h="http://java.sun.com/jsf/html"
+				xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+>
+
+
+	<p>Dies ist eine Beispielseite für modale Dialoge. Durch
+		Klicken auf den folgenden Button wird ein Dialog geöffnet. Sollte kein
+		Java-Script aktiviert sein, so wird der Dialog direkt im Fenster
+		angezeigt.</p>
+
+	<isy:button action="actionShow" value="Klick mich" />
+
+  <br/>
+  <br/>
+  <br/>
+	<p>Durch Klicken auf den nächsten Button wird ein beispielhafter
+		Bestätigungsdialog geöffnet. Bestätigungsdialoge sind spezielle
+		modale Dialoge, die als Subflows eingebunden werden. Die anzuzeigenden Texte
+		und Knopfbeschriftungen werden dem Flow als Parameter übergeben. Bestätigungsdialoge
+		sind daher einfach und vielfältig einsetzbar und eignen sich immer, wenn der Benutzer
+		vor eine "Ja/Nein Entscheidung" gestellt werden soll. Sollte kein Java-Script
+		aktiviert sein, so wird der Dialog direkt im Fenster angezeigt.</p>
+
+	<isy:button action="actionBestaetigungsdialog"
+		value="Bestätigungsdialog" />
+	<p>
+		Entscheidung aus Bestätigungsdialog:
+		<h:outputText
+			value="#{bestaetigungsdialogModel.getroffeneEntscheidung}" />
+	</p>
+
+
+
+</ui:composition>

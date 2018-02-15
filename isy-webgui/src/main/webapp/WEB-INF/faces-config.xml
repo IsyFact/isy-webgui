@@ -1,0 +1,48 @@
+<?xml version="1.0"?>
+<faces-config xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd"
+    version="2.0">
+
+    <application>
+        <locale-config>
+            <default-locale>de</default-locale>
+            <supported-locale>de</supported-locale>
+            <supported-locale>en</supported-locale>
+        </locale-config>
+        <message-bundle>resources.nachrichten.maskentexte</message-bundle>
+    </application>
+
+    <!-- Spezifische Renderer müssen hier erneut angegeben werden, um die existierenden Renderer aus der Tomahawk Bibliothek zu überschreiben -->
+    <render-kit>
+        <!-- Spezieller Renderer für t:radio Elemente, welcher kein Label rendert. -->
+        <renderer>
+            <component-family>org.apache.myfaces.Radio</component-family>
+            <renderer-type>org.apache.myfaces.Radio</renderer-type>
+            <renderer-class>de.bund.bva.isyfact.common.web.jsf.renderer.NoLabelHtmlRadioRenderer</renderer-class>
+        </renderer>
+        <!-- Spezieller Renderer für Checkboxen, welcher kein Label rendert. -->
+        <renderer>
+            <component-family>org.apache.myfaces.Checkbox</component-family>
+            <renderer-type>org.apache.myfaces.Checkbox</renderer-type>
+            <renderer-class>de.bund.bva.isyfact.common.web.jsf.renderer.NoLabelHtmlCheckboxRenderer</renderer-class>
+        </renderer>
+    </render-kit>
+
+</faces-config>
+
+
+<!-- /** -->
+<!-- * @JSFRenderer -->
+<!-- * renderKitId = "HTML_BASIC" -->
+<!-- * family = "org.apache.myfaces.Checkbox" -->
+<!-- * type = "org.apache.myfaces.Checkbox" -->
+<!-- * -->
+<!-- * @JSFRenderer -->
+<!-- * renderKitId = "HTML_BASIC" -->
+<!-- * family = "javax.faces.SelectBoolean" -->
+<!-- * type = "org.apache.myfaces.Checkbox" -->
+<!-- * -->
+<!-- * @JSFRenderer -->
+<!-- * renderKitId = "HTML_BASIC" -->
+<!-- * family = "javax.faces.SelectMany" -->
+<!-- * type = "org.apache.myfaces.Checkbox" -->

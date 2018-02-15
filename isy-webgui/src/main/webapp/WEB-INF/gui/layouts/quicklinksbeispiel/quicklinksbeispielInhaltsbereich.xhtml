@@ -1,0 +1,51 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:sf="http://www.springframework.org/tags/faces"
+    xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+    xmlns:debug="http://java.sun.com/jsf/composite/debug">
+
+
+    <p>Quicklinks</p>
+    <p>
+        Quicklinks können durch Aufruf der Methode
+        <code>fuegeQuicklinkHinzu</code>
+        im
+        <code>QuicklinksController</code>
+        hinzugefügt werden. Wenn die maximale Anzahl an Quicklinks erreicht wird (konfigurierbar über
+        <code>gui.quicklinks.max.anzahl</code>
+        ), dann wird der älteste Quicklink entfernt. Wenn ein Quicklink hinzugefügt wird, der bereits
+        vorhanden ist (Identifikation über seine ID), dann werden der Link und der anzuzeigende Text des
+        Quicklinks aktualisiert und der Quicklink wird nach oben gesetzt. Weiterhin können Quicklinks mit der Methode
+        <code>entferneQuicklink</code>
+        gelöscht werden.
+    </p>
+    <isy:buttonRow>
+        <isy:button id="buttonTest1" action="addquicklink1" value="Quicklink1 hinzufügen" size="small" />
+        <isy:button id="buttonTest2" action="removequicklink1" value="Quicklink1 entfernen" size="small" />
+    </isy:buttonRow>
+
+    <isy:buttonRow>
+        <isy:button id="buttonTest3" action="addquicklink2" value="Quicklink2 hinzufügen" size="small" />
+        <isy:button id="buttonTest4" action="removequicklink2" value="Quicklink2 entfernen" size="small" />
+    </isy:buttonRow>
+    <isy:buttonRow>
+        <isy:button id="buttonTest5" action="addquicklink3" value="Quicklink3 hinzufügen" size="small" />
+        <isy:button id="buttonTest6" action="removequicklink3" value="Quicklink3 entfernen" size="small" />
+    </isy:buttonRow>
+
+    <isy:buttonRow>
+        <isy:button id="buttonTest7" action="addquicklink4" value="Quicklink4 hinzufügen" size="small" />
+        <isy:button id="buttonTest8" action="removequicklink4" value="Quicklink4 entfernen" size="small" />
+    </isy:buttonRow>
+
+    <isy:buttonRow>
+        <isy:button id="buttonTest9" action="addquicklink5" value="Quicklink5 hinzufügen" size="small" />
+        <isy:button id="buttonTest10" action="removequicklink5" value="Quicklink5 entfernen" size="small" />
+    </isy:buttonRow>
+
+    <isy:buttonRow>
+        <isy:button id="buttonTest11" action="addquicklink6" value="Quicklink6 hinzufügen" size="small" />
+        <isy:button id="buttonTest12" action="removequicklink6" value="Quicklink6 entfernen" size="small" />
+    </isy:buttonRow>
+</ui:composition>

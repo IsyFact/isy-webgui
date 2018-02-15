@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+    parent="detailseiteParentFlow">
+
+    <var name="applikationDetailseiteModel"
+        class="de.bund.bva.pliscommon.pliswebgui.gui.layouts.applikationdetailseite.ApplikationDetailseiteModel" />
+
+    <on-start>
+        <evaluate expression="applikationDetailseiteController.initialisiereModel(applikationDetailseiteModel)" />
+    </on-start>
+
+    <view-state id="applikationDetailseiteViewState" model="applikationDetailseiteModel">
+
+    </view-state>
+
+</flow>

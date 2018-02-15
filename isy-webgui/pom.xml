@@ -1,0 +1,79 @@
+<?xml version="1.0"?>
+<project xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+    xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>isy-webgui</artifactId>
+    <packaging>war</packaging>
+    <name>IsyFact Web-GUI Demo</name>
+
+    <parent>
+        <groupId>de.bund.bva.isyfact</groupId>
+        <artifactId>isy-webgui-parent</artifactId>
+        <version>4.6.0-SNAPSHOT</version>
+    </parent>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>de.bund.bva.isyfact</groupId>
+                <artifactId>isyfact-products-bom</artifactId>
+                <version>1.5.0-SNAPSHOT</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-war-plugin</artifactId>
+                <version>3.0.0</version>
+                <configuration>
+                    <webResources>
+                        <resource>
+                            <directory>${project.basedir}/src/main/webapp/img/</directory>
+                            <includes>
+                                <include>*.jpeg</include>
+                            </includes>
+                        </resource>
+                    </webResources>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>de.bund.bva.isyfact</groupId>
+            <artifactId>isy-web</artifactId>
+            <version>4.6.0-SNAPSHOT</version>
+        </dependency>
+
+        <!--dependency>
+            <groupId>de.bund.bva.isyfact</groupId>
+            <artifactId>isy-style</artifactId>
+            <version>4.0.0</version>
+        </dependency-->
+
+        <!-- Eingebunden für formUpload. Diese Dependency ist bereits in der isy-web als provided eingebunden,
+            was sich aber nicht transitiv auf die rf-webgui auswirkt-->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        
+        <!--  Eingebunden für formUpload.
+              Diese Dependency ist über die isy-web- und Tomahawk-Bibliothek nur mit Scope "runtime" eingebunden, 
+              sie wird hier aber direkt verwendet und daher bereits zur Compile-Zeit benötigt. -->
+        <dependency>
+          <groupId>commons-io</groupId>
+          <artifactId>commons-io</artifactId>
+          <version>1.3.2</version>
+          <scope>compile</scope>
+        </dependency>
+    </dependencies>
+</project>

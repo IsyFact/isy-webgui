@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+    parent="applikationseiteParentFlow">
+
+    <var name="modalerDialogModel" class="de.bund.bva.pliscommon.pliswebgui.gui.flows.modalerdialog.ModalerDialogModel" />
+    <var name="bestaetigungsdialogModel" class="de.bund.bva.pliscommon.pliswebgui.gui.flows.modalerdialog.BestaetigungsdialogModel" />
+
+    <on-start>
+        <evaluate expression="modalerDialogController.initialisiereModel(modalerDialogModel)" />
+        <evaluate expression="bestaetigungsdialogController.initialisiereModel(bestaetigungsdialogModel)" />
+    </on-start>
+
+    <view-state id="modalerDialogViewState" model="modalerDialogModel">
+
+        <transition on="actionShow" to="modalerDialogAnzeigenViewState" />
+
+        <!-- Transition zum Demo Bestätigungsdialog. -->
+        <transition on="actionBestaetigungsdialog" to="demoBestaetigenSubflowState" />
+
+    </view-state>
+
+    <view-state id="modalerDialogAnzeigenViewState" model="modalerDialogModel">
+
+        <on-entry>
+            <evaluate expression="basisController.showModalDialog()" />
+        </on-entry>
+
+        <transition on="speichern" to="modalerDialogViewState">
+            <evaluate expression="modalerDialogController.speichern(modalerDialogModel)" />
+        </transition>
+
+        <transition on="abbrechen" to="modalerDialogViewState">
+            <evaluate expression="modalerDialogController.abbrechen(modalerDialogModel)" />
+        </transition>
+
+        <on-exit>
+            <evaluate expression="basisController.hideModalDialog()" />
+        </on-exit>
+
+    </view-state>
+    
+    <subflow-state id="demoBestaetigenSubflowState" subflow="bestaetigenFlow">
+        <input name="dialogTitel" value="'Ein Beispieltitel: Achtung, sind Sie sich sicher...'" />
+        <input name="dialogNachricht" value="'Eine Beispielnachricht: Sind Sie sicher, dass sie fortfahren wollen?'" />
+        <input name="dialogKonsequenz" value="'Eine beispielhafte Konsequenz (Angabe optional): Nicht gespeicherte Änderungen gehen verloren.'" />
+        <input name="submitActionName" value="'Fortfahren'" />
+        <input name="abbrechenActionName" value="'Abbrechen'" />
+        <transition on="abbrechenEndState" to="modalerDialogViewState" >
+          <evaluate expression="bestaetigungsdialogController.abbrechen(bestaetigungsdialogModel)" />
+        </transition>
+        <transition on="submitEndState" to="modalerDialogViewState">
+          <evaluate expression="bestaetigungsdialogController.bestaetige(bestaetigungsdialogModel)" />
+        </transition>
+    </subflow-state>
+    
+
+</flow>

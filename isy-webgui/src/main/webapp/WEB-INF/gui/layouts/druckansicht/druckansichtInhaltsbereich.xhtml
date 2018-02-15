@@ -1,0 +1,48 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:sf="http://www.springframework.org/tags/faces"
+    xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+    xmlns:debug="http://java.sun.com/jsf/composite/debug">
+
+
+    <p>Mit der Druckansicht kann ein bestimmter ViewState (mit bestimmten anzuzeigenden
+        Elementen) angegeben werden, der für die Druckansicht genutzt wird. Die Druckansicht wird
+        wie folgt eingebaut:</p>
+
+        <code>
+    &lt;view-state id="druckansichtViewState" model="druckansichtModel"&gt;<br/>
+        &lt;transition on="drucken" to="printViewState"&gt;<br/>
+        &lt;/transition&gt;<br/>
+    &lt;/view-state&gt;<br/>
+<br/>
+    &lt;view-state id="printViewState" model="druckansichtModel"&gt;<br/>
+        &lt;on-entry&gt;<br/>
+            &lt;evaluate expression="basisController.showPrintView()" /&gt;<br/>
+        &lt;/on-entry&gt;<br/>
+    &lt;/view-state&gt;
+</code>
+
+    <p>Im aktuellen ViewState wird durch eine Transition der ViewState definiert, der für die Druckansicht
+        verwendet werden soll. In diesem ViewState muss bei Aufruf die Druckansicht aktiviert werden.</p>
+
+    <p>Bei Klick auf das Drucken-Symbol wird die Druckansicht aufgerufen.</p>
+
+    <p>Weiterhin können im ViewState die in der Druckansicht darzustellenden Metainformationen definiert
+        werden. Es kann optional eine Warnmeldung definiert werden, die in den Metainformationen angezeigt
+        wird, wenn die browserseitige Druckansicht einer Seite geöffnet wird. Im Folgenden ein Beispiel:</p>
+
+    <code>&lt;ui:define name="printMetaInformation"&gt;<br/>
+            &lt;isy:printMetaInformation&gt;<br/>
+                &lt;f:attribute name="warning"<br/>
+                    value="Warnung: Sie wollen die Seite drucken, obwohl sie nicht die Druckansicht<br/>
+                    aufgerufen haben. Es könnten Elemente auf der Seite fehlen."&gt;<br/>
+                &lt;/f:attribute&gt;<br/>
+                &lt;h:outputText value="&#35; &#123;session.lastAccessedTime&#125;"&gt;<br/>
+                    &lt;f:convertDateTime pattern="dd.MM.yyyy HH:mm" type="date" /&gt;<br/>
+                &lt;/h:outputText&gt;<br/>
+            &lt;/isy:printMetaInformation&gt;<br/>
+        &lt;/ui:define&gt;<br/>
+
+    </code>
+</ui:composition>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+    parent="applikationseiteParentFlow">
+
+    <var name="vieraugenModel" class="de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.vieraugen.VieraugenModel" />
+    <on-start>
+        <evaluate expression="vieraugenController.initialisiereModel(vieraugenModel)" />
+    </on-start>
+
+    <view-state id="vieraugenViewState">
+        <on-entry>
+            <evaluate expression="vieraugenController.initialisiereModel(vieraugenModel)" />
+        </on-entry>
+        <transition on="speichern">
+            <evaluate expression="vieraugenController.initialisiereModel(vieraugenModel)" />
+        </transition>
+    </view-state>
+</flow>

@@ -1,0 +1,42 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:sf="http://www.springframework.org/tags/faces"
+    xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+    xmlns:debug="http://java.sun.com/jsf/composite/debug">
+
+
+    <p>Dies ist eine Beispielseite für unterschiedliche Anwendungsfehler.</p>
+
+    <isy:panelGroup>
+        <isy:panel>
+            <f:facet name="panelHeader">Flow-Fehler</f:facet>
+            <f:facet name="panelBody">
+                <p>Produziert einen Flow-Fehler (Transition nicht vorhanden)</p>
+                <isy:button action="nichtvorhanden" value="Fehler" />
+                <p>Invalidiert die History. Nach Klick auf den Button und auf Browser-Back sollte ein
+                    Fehler auftreten.</p>
+                <isy:button action="nachTransitionUngueltig" value="Fehler" />
+            </f:facet>
+        </isy:panel>
+
+        <isy:panel>
+            <f:facet name="panelHeader">JSF-Fehler, welche nicht durch Webflow abgefangen werden</f:facet>
+            <f:facet name="panelBody">
+                <p>Ruft ungültiges XHTML (Syntax) auf</p>
+                <isy:button action="nachJsfUngueltig" value="Fehler" />
+                <p>Ruft ungültiges XHTML (während der Renderphase) auf</p>
+                <isy:button action="nachJsfUngueltigRender" value="Fehler" />
+            </f:facet>
+        </isy:panel>
+
+        <isy:panel>
+            <f:facet name="panelHeader">AWK-Fehler</f:facet>
+            <p>Nullpointer</p>
+            <isy:button action="awkAufrufNullpointer" value="Fehler" />
+            <p>Fachlicher Fehler bei Aufruf</p>
+            <isy:button action="awkAufrufFachlich" value="Fehler" />
+        </isy:panel>
+    </isy:panelGroup>
+
+</ui:composition>

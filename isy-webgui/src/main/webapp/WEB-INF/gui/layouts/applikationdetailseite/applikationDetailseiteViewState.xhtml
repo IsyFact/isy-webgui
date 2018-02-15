@@ -1,0 +1,23 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:sf="http://www.springframework.org/tags/faces"
+    xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+    xmlns:debug="http://java.sun.com/jsf/composite/debug"
+    template="/WEB-INF/gui/common/layout/applikationDetailseite.xhtml">
+
+    <ui:define name="seitentoolbarRechtsButtons">
+        <isy:buttonIcon action="test" size="large" icon="plus" />
+    </ui:define>
+
+    <ui:define name="inhaltsbereich">
+
+        <isy:panelGroup headerPanel="true">
+            <isy:panel panelModel="#{jsfSteuerelementeModel.panelModelButton}" collapse="true">
+                <f:facet name="panelHeader">Button</f:facet>
+                <f:facet name="panelBody">Test</f:facet>
+            </isy:panel>
+        </isy:panelGroup>
+    </ui:define>
+
+</ui:composition>

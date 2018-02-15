@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+    parent="applikationseiteParentFlow">
+
+    <var name="quicklinksbeispielModel" class="de.bund.bva.pliscommon.pliswebgui.gui.layouts.quicklinksbeispiel.QuicklinksbeispielModel" />
+
+    <on-start>
+        <evaluate expression="quicklinksbeispielController.initialisiereModel(quicklinksbeispielModel)" />
+    </on-start>
+
+    <view-state id="quicklinksbeispielViewState" model="quicklinksbeispielModel">
+
+        <transition on="addquicklink1" to="quicklinksbeispielViewState">
+            <evaluate expression="quicklinksbeispielController.fuegeTestquicklinkHinzu('Quicklink1')" />
+        </transition>
+        <transition on="addquicklink2" to="quicklinksbeispielViewState">
+            <evaluate expression="quicklinksbeispielController.fuegeTestquicklinkHinzu('Quicklink2')" />
+        </transition>
+        <transition on="addquicklink3" to="quicklinksbeispielViewState">
+            <evaluate expression="quicklinksbeispielController.fuegeTestquicklinkHinzu('Quicklink3')" />
+        </transition>
+        <transition on="addquicklink4" to="quicklinksbeispielViewState">
+            <evaluate expression="quicklinksbeispielController.fuegeTestquicklinkHinzu('Quicklink4')" />
+        </transition>
+        <transition on="addquicklink5" to="quicklinksbeispielViewState">
+            <evaluate expression="quicklinksbeispielController.fuegeTestquicklinkHinzu('Quicklink5')" />
+        </transition>
+        <transition on="addquicklink6" to="quicklinksbeispielViewState">
+            <evaluate expression="quicklinksbeispielController.fuegeTestquicklinkHinzu('Quicklink6')" />
+        </transition>
+        <transition on="removequicklink1" to="quicklinksbeispielViewState">
+            <evaluate expression="quicklinksbeispielController.entferneQuicklink('Quicklink1')" />
+        </transition>
+        <transition on="removequicklink2" to="quicklinksbeispielViewState">
+            <evaluate expression="quicklinksbeispielController.entferneQuicklink('Quicklink2')" />
+        </transition>
+        <transition on="removequicklink3" to="quicklinksbeispielViewState">
+            <evaluate expression="quicklinksbeispielController.entferneQuicklink('Quicklink3')" />
+        </transition>
+        <transition on="removequicklink4" to="quicklinksbeispielViewState">
+            <evaluate expression="quicklinksbeispielController.entferneQuicklink('Quicklink4')" />
+        </transition>
+        <transition on="removequicklink5" to="quicklinksbeispielViewState">
+            <evaluate expression="quicklinksbeispielController.entferneQuicklink('Quicklink5')" />
+        </transition>
+        <transition on="removequicklink6" to="quicklinksbeispielViewState">
+            <evaluate expression="quicklinksbeispielController.entferneQuicklink('Quicklink6')" />
+        </transition>
+    </view-state>
+
+</flow>
