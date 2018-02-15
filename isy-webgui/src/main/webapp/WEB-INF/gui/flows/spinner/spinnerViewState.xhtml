@@ -1,0 +1,29 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:sf="http://www.springframework.org/tags/faces" xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+    xmlns:debug="http://java.sun.com/jsf/composite/debug"
+    template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+
+        <isy:panelGroup>
+            <isy:panel>
+                <f:facet name="panelHeader">Blockierende GUI-Actions</f:facet>
+                <p>
+                    Buttons können mit dem Attribut
+                    <code>block="true"</code>
+                    versehen werden. Dadurch wird beim Klick auf den Button (bei einem AJAX-Request, also
+                    falls JS aktivert ist) die GUI blockiert.
+                </p>
+                <isy:buttonRow>
+                    <isy:button action="noaction" block="true" value="Blockierend"/>
+                    <isy:button action="noaction" value="Nicht Blockierend" />
+                </isy:buttonRow>
+            </isy:panel>
+        </isy:panelGroup>
+
+
+    </ui:define>
+
+</ui:composition>

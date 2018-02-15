@@ -1,0 +1,144 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:sf="http://www.springframework.org/tags/faces" xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+    xmlns:debug="http://java.sun.com/jsf/composite/debug"
+    template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <isy:panelGroup>
+            <isy:panel>
+                <f:facet name="panelHeader">
+                Formulare
+                </f:facet>
+
+                <f:facet name="panelBody">
+
+                    <p>
+                        Formularinhalte werden mit dem Tag
+                        <code>&lt;div clas="form-horizontal"&gt;</code>
+                        eingeleitet. Zeilen über
+                        <code>&lt;div class="row row-df"&gt;</code>
+                        . Einzelne Spalten über das Bootstrap Grid Layout (z.B. für drei Spalten, drei
+                        Elemente
+                        <code>&lt;div class="col-lg-4"&gt;</code>
+                        )
+                    </p>
+
+                    <p>
+                        Für einzelne Formularelemente stehen die
+                        <code>&lt;isy:form...</code>
+                        Komponenten zur Verfügung. Diese enthalten neben dem eigentlichen Feld ein Label und
+                        integrieren sich in das Form-Layout.
+                    </p>
+
+                    <p>Beispiel-Formular:</p>
+
+                    <div class="form-horizontal">
+                        <div class="row row-df">
+                            <div class="col-lg-4">
+
+                                <isy:formInput reference="formular1"
+                                    value="#{formulareModel.formular.formularFeld1}" label="Feld 1"
+                                    required="true" />
+
+                                <isy:formInput reference="formular2"
+                                    value="#{formulareModel.formular.formularFeld2}" label="Feld 2" />
+
+                            </div>
+                            <div class="col-lg-4">
+
+                                <isy:formInput reference="formular3"
+                                    value="#{formulareModel.formular.formularFeld3}" label="Feld 3" />
+
+                                <isy:formInput reference="formular4"
+                                    value="#{formulareModel.formular.formularFeld4}" label="Feld 4" />
+                            </div>
+                            <div class="col-lg-4">
+                                <isy:formInput reference="formular5"
+                                    value="#{formulareModel.formular.formularFeld5}" label="Feld 5" />
+                                <isy:formInput reference="formular6"
+                                    value="#{formulareModel.formular.formularFeld6}" label="Feld 6" />
+                            </div>
+                        </div>
+                        <div class="row row-df">
+                            <div class="col-lg-4">
+                                <isy:formInput reference="formular7"
+                                    value="#{formulareModel.formular.formularFeld7}" label="Feld 7" />
+
+                            </div>
+                            <div class="col-lg-4">
+                                <isy:formInput reference="formular8"
+                                    value="#{formulareModel.formular.formularFeld8}" label="Feld 8" />
+
+                            </div>
+                            <div class="col-lg-4"></div>
+                        </div>
+                    </div>
+                </f:facet>
+
+            </isy:panel>
+
+            <isy:panel>
+                <f:facet name="panelHeader">
+                Readonly-Formulare
+                </f:facet>
+                <p>
+                    Formular können ohne größeren Aufwand in einen readonly-Modus versetzt werden. Dafür muss
+                    der Readonly-Modus der entsprechenden
+                    <code>&lt;isy:form...</code>
+                    Elemente aktiviert werden. Weiterhin muss dem übergeordneten
+                    <code>form-horizontal</code>
+                    Element noch die CSS-Klasse
+                    <code>readonly</code>
+                    zugewiesen werden.
+                </p>
+                <p>Beispiel Formular:</p>
+                <div class="form-horizontal readonly">
+                    <div class="row row-df">
+                        <div class="col-lg-4">
+
+                            <isy:formInput reference="formular1"
+                                value="#{formulareModel.formular.formularFeld1}" label="Feld 1" required="true"
+                                readonly="true" />
+
+                            <isy:formInput reference="formular2"
+                                value="#{formulareModel.formular.formularFeld2}" label="Feld 2" readonly="true" />
+
+                        </div>
+                        <div class="col-lg-4">
+
+                            <isy:formInput reference="formular3"
+                                value="#{formulareModel.formular.formularFeld3}" label="Feld 3" readonly="true" />
+
+                            <isy:formInput reference="formular4"
+                                value="#{formulareModel.formular.formularFeld4}" label="Feld 4" readonly="true" />
+                        </div>
+                        <div class="col-lg-4">
+                            <isy:formInput reference="formular5"
+                                value="#{formulareModel.formular.formularFeld5}" label="Feld 5" readonly="true" />
+                            <isy:formInput reference="formular6"
+                                value="#{formulareModel.formular.formularFeld6}" label="Feld 6" readonly="true" />
+                        </div>
+                    </div>
+                    <div class="row row-df">
+                        <div class="col-lg-4">
+                            <isy:formInput reference="formular7"
+                                value="#{formulareModel.formular.formularFeld7}" label="Feld 7" readonly="true" />
+
+                        </div>
+                        <div class="col-lg-4">
+                            <isy:formInput reference="formular8"
+                                value="#{formulareModel.formular.formularFeld8}" label="Feld 8" readonly="true" />
+
+                        </div>
+                        <div class="col-lg-4"></div>
+                    </div>
+                </div>
+
+            </isy:panel>
+        </isy:panelGroup>
+
+    </ui:define>
+
+</ui:composition>

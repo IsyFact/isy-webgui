@@ -1,0 +1,27 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:sf="http://www.springframework.org/tags/faces"
+    xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+    xmlns:debug="http://java.sun.com/jsf/composite/debug">
+
+    <p>Informationen zur Anmeldung:</p>
+
+    <div class="row row-df">
+        <div class="col-lg-1" style="text-align: right">Benutzername</div>
+        <div class="col-lg-11">#{sicherheitModel.benutzername}</div>
+    </div>
+    <div class="row row-df">
+        <div class="col-lg-1" style="text-align: right">Kennung</div>
+        <div class="col-lg-11">#{sicherheitModel.login}</div>
+    </div>
+    <div class="row row-df">
+        <div class="col-lg-1" style="text-align: right">Login</div>
+        <div class="col-lg-11">#{sicherheitModel.kennung}</div>
+    </div>
+    <div class="row row-df">
+        <div class="col-lg-1" style="text-align: right">Rollen</div>
+        <div class="col-lg-11">#{sicherheitModel.rollen}</div>
+    </div>
+
+</ui:composition>

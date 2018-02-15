@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+    parent="applikationseiteParentFlow">
+
+    <var name="validierungModel" class="de.bund.bva.pliscommon.pliswebgui.gui.flows.validierung.ValidierungModel" />
+
+    <on-start>
+        <evaluate expression="validierungController.initialisiereModel(validierungModel)" />
+    </on-start>
+
+    <view-state id="validierungViewState" model="validierungModel">
+        <transition on="fuehreValidierungDurch">
+            <evaluate expression="validierungController.fuehreValidierungDurch(validierungModel)" />
+        </transition>
+    </view-state>
+
+</flow>

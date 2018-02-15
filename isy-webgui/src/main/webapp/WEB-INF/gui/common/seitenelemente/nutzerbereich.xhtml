@@ -1,0 +1,21 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:t="http://myfaces.apache.org/tomahawk">
+
+	<form class="form-horizontal" role="form" action="/cams/logout"
+		method="post">
+		<ui:fragment
+			rendered="#{not empty globalConfigurationModel and not globalConfigurationModel.jsEnabled}">
+			<img class="icon icon-nojs"
+				src="${request.contextPath}/app/resources/img/no-js.png"
+				alt="Javascript ist deaktiviert." />
+		</ui:fragment>
+		<ui:fragment
+			rendered="#{not empty globalFlowModel.sachbearbeiterName}">
+			<span class="icon icon-user"></span><span id="benutzername"> #{globalFlowModel.sachbearbeiterName}</span></ui:fragment>
+		<button class="btn btn-default" type="submit">Abmelden</button>
+	</form>
+
+</ui:composition>

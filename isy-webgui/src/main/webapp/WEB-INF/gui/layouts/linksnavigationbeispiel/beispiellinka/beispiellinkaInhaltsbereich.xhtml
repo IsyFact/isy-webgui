@@ -1,0 +1,38 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:sf="http://www.springframework.org/tags/faces"
+    xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+    xmlns:debug="http://java.sun.com/jsf/composite/debug">
+
+
+    <p>Beispielseite A</p>
+
+    <p>
+        Linksnavigationen werden in der Konfigurationsdatei
+        <code>gui-linksnavigation.properties</code>
+        konfiguriert. Über die Variable
+        <code>gui.linksnavigation.ids</code>
+        wird zunächst eine Liste an IDs für die jeweiligen Linksnavigationen konfiguriert, z. B.:
+    </p>
+    <p>
+        <code>gui.linksnavigation.ids=linksnavigationbeispiel, jsfSteuerelemente</code>
+    </p>
+    <p>Für jede vergebene ID wird eine Linksnavigation wie folgt konfiguriert:</p>
+    <p>
+        <code>
+            gui.linksnavigation.linksnavigationbeispiel.headline=Beispiellinkliste<br />
+            gui.linksnavigation.linksnavigationbeispiel.1.text=Beispielseite A<br />
+            gui.linksnavigation.linksnavigationbeispiel.1.link=beispiellinkaFlow<br />
+            gui.linksnavigation.linksnavigationbeispiel.2.text=Beispielseite B<br />
+            gui.linksnavigation.linksnavigationbeispiel.2.link=beispiellinkbFlow<br /> <br />
+            gui.linksnavigation.jsfSteuerelemente.headline=Überschrift<br />
+            gui.linksnavigation.jsfSteuerelemente.1.text=JSF-Steuerlemente<br />
+            gui.linksnavigation.jsfSteuerelemente.1.link=jsfSteuerelementeFlow
+        </code>
+    </p>
+    <p>Wenn in einem Flow ein Subflow aufgerufen wird, dann zeigt die Linksnavigation immer noch den
+        ursprünglichen Flow als den aktiven Flow an, siehe z. B.:</p>
+    <isy:button id="buttonTest" action="testsubflow-aufrufen" value="Beispielseite B als Subflow aufrufen" />
+
+</ui:composition>

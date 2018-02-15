@@ -1,0 +1,1335 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:sf="http://www.springframework.org/tags/faces"
+	xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+	xmlns:debug="http://java.sun.com/jsf/composite/debug"
+	template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+	<!-- Form für AJAX-Seiteninhalt definieren -->
+	<ui:define name="form">
+		<h:form id="listpickerAjaxForm">
+			<isy:formListpickerAjaxContent
+				listpickerModel="#{jsfSteuerelementeModel.ajaxListpickerModel}" />
+		</h:form>
+
+		<!-- Form für AJAX-Inhalt des Behörde-Listpickers definieren. -->
+		<h:form id="behoerdeListpickerAjaxForm">
+			<isy:formListpickerAjaxContent
+				listpickerModel="#{jsfSteuerelementeModel.behoerdeListpickerModel}" />
+		</h:form>
+	</ui:define>
+
+	<ui:define name="inhaltsbereich">
+		<debug:jsEnabledHint />
+
+		<div class="panel-group">
+
+			<isy:panel id="buttonPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelButton}"
+				collapse="true">
+				<f:facet name="panelHeader">Button</f:facet>
+				<f:facet name="panelBody">
+					<p>
+						Ein Button. Einbindung über
+						<code>&lt;isy:button&gt;</code>
+					</p>
+					<p>
+						<isy:button id="buttonTest" action="buttonAction" value="Button" />
+						<br /> ButtonActionResult:
+						<h:outputText value="#{jsfSteuerelementeModel.buttonActionResult}" />
+					</p>
+					<p>
+						Ein Default-Button ist der Button der beim drücken von <i>Enter</i>
+						im Formular betätigt wird. Einbindung über
+						<code>&lt;isy:button defaultAction="true"&gt;</code>
+					</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<isy:formInput reference="formular1" labelStyleClass="col-lg-1"
+								inputStyleClass="col-lg-2" value="" label="Feld 1"
+								required="true" />
+						</div>
+						<isy:buttonRow>
+							<isy:button id="buttonTest2" action="noAction" value="Button"
+								defaultAction="false" />
+							<isy:button id="buttonTest3" action="noAction"
+								value="Button (default)" defaultAction="true" />
+						</isy:buttonRow>
+					</div>
+				</f:facet>
+			</isy:panel>
+
+			<isy:panel id="formInputPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelFormInput}"
+				collapse="true">
+				<f:facet name="panelHeader">Eingabefeld</f:facet>
+				<f:facet name="panelBody">
+					<p>
+						Ein Eingabefeld. Einbindung über
+						<code>&lt;isy:formInput&gt;</code>
+					</p>
+					<p>
+						<isy:formInput id="formInput" type="text" label="Text: "
+							reference="formInputReferenz"
+							value="#{jsfSteuerelementeModel.formInputTextButtonActionResult}" />
+					</p>
+					<br />
+					<p>
+						<isy:formInput id="formInputPassword" type="password"
+							label="Passwort: " reference="formInputPasswortReferenz"
+							value="#{jsfSteuerelementeModel.formInputPasswortButtonActionResult}" />
+					</p>
+
+					<!-- Disabled -->
+					<br />
+					<p>
+						<isy:formInput id="formInputDisabled" type="text"
+							label="Text (disabled): " reference="formInputDisabledReferenz"
+							value="Ein deaktiviertes Textfeld" disabled="true" />
+					</p>
+
+					<!-- Read-Only -->
+					<br />
+					<p>
+						<isy:formInput id="formInputReadonly" type="text"
+							label="Text (readonly): " reference="formInputReadonlyReferenz"
+							value="Ein readonly Textfeld" readonly="true" />
+					</p>
+					<br />
+					<p>
+						<isy:formInput id="formInputSpecialChar" type="text"
+									   label="Text Special Char: " reference="formInputSpecialChar"
+									   value="Ein Special Char Textfeld" charpicker="true" />
+					</p>
+					<p>
+						<isy:button id="formInputButton" action="formInputButtonAction"
+							value="Button" />
+					</p>
+					<p>
+						Eingegebener Text:
+						<h:outputText title="Eingegener Text"
+							value="#{jsfSteuerelementeModel.formInputTextButtonActionResult}" />
+						<br /> Eingegebenes Passwort:
+						<h:outputText title="Eingegebenes Passwort"
+							value="#{jsfSteuerelementeModel.formInputPasswortButtonActionResult}" />
+					</p>
+					<br />
+					<p>
+						Ein normales HTML-Eingabefeld. Einbindung über
+						<code>&lt;input&gt;</code>
+					</p>
+					<p>
+						<input id="input1" type="text" />
+					</p>
+					<br />
+					<p>Ein normales HTML-Eingabefeld (disabled).</p>
+					<p>
+						<input id="input2" type="text" disabled="disabled" />
+					</p>
+				</f:facet>
+			</isy:panel>
+
+
+			<isy:panel id="formTextareaPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelFormTextarea}"
+				collapse="true">
+				<f:facet name="panelHeader">Textbox</f:facet>
+				<f:facet name="panelBody">
+					<p>
+						Eine TextBox. Einbindung über
+						<code>&lt;isy:formTextarea&gt;</code>
+					</p>
+					<p>
+						<isy:formTextarea label="Text"
+							value="#{jsfSteuerelementeModel.textBoxButtonActionResult}"
+							reference="text" placeholder="Bitte geben Sie einen Text ein!"
+							maxlength="100" required="true" />
+					</p>
+					<p>Eine 'disabled' TextBox.</p>
+					<p>
+						<isy:formTextarea label="Text" value="Eine deaktivierte Textbox"
+							reference="text" maxlength="100" required="true" disabled="true" />
+					</p>
+					<p>
+						<isy:button id="textBoxButton" action="textBoxButtonAction"
+							value="Button" />
+					</p>
+					<p>
+						Eingegebener Text:
+						<h:outputText title="EingegebenerText"
+							value="#{jsfSteuerelementeModel.textBoxButtonActionResult}" />
+					</p>
+				</f:facet>
+			</isy:panel>
+
+			<isy:panel id="dropdownPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelDropdown}"
+				collapse="true">
+				<f:facet name="panelHeader">Dropdown</f:facet>
+				<f:facet name="panelBody">
+
+					<div class="row row-df">
+						<div class="col-lg-12">
+							Ein Select-One Dropdown. Einbindung über
+							<code>&lt;isy:selectOneDropdown&gt;&lt;f:selectItems&gt;..</code>
+							<br /> <br />
+						</div>
+						<div class="col-lg-6">
+							<isy:formSelectOneDropdown reference="formSelectOneDropdown"
+								value="#{jsfSteuerelementeModel.dropdownAuswahl}"
+								label="Auswahl"
+								valueChangeListener="#{jsfSteuerelementeController.dropdownWertAusgewaehlt}"
+								converter="#{typeConverter}" converterAttribute="int">
+								<f:selectItems
+									value="#{jsfSteuerelementeModel.dropdownAuswahlListe}" />
+								<f:ajax event="change"
+									render="inhaltsbereichForm:dropdownPanel:dropdownAuswahlAjax" />
+							</isy:formSelectOneDropdown>
+						</div>
+						<div class="col-lg-2">
+							<isy:button action="dropdownButtonAction" value="Uebernehmen" />
+						</div>
+						<div class="col-lg-4">
+							Aktuelle Auswahl:
+							<h:outputText id="dropdownAuswahlAjax"
+								value="#{jsfSteuerelementeModel.dropdownAuswahlAjax}" />
+							<br /> Uebernommener Wert:
+							<h:outputText id="dropdownAuswahl"
+								value="#{jsfSteuerelementeModel.dropdownAuswahl}" />
+						</div>
+					</div>
+
+					<!-- Disabled Dropdown -->
+					<div class="row row-df">
+						<div class="col-lg-12">
+							Ein Select-One Dropdown (disabled). <br /> <br />
+						</div>
+						<div class="col-lg-6">
+							<isy:formSelectOneDropdown reference="formSelectOneDropdown2"
+								value="#{jsfSteuerelementeModel.disabledDropdownAuswahl}"
+								label="Auswahl" disabled="true"
+								converter="#{typeConverter}" converterAttribute="int">
+								<f:selectItems
+									value="#{jsfSteuerelementeModel.dropdownAuswahlListe}" />
+								<f:ajax event="change"
+									render="inhaltsbereichForm:dropdownPanel:dropdownAuswahlAjax2" />
+							</isy:formSelectOneDropdown>
+						</div>
+					</div>
+				</f:facet>
+			</isy:panel>
+
+
+			<isy:panel id="radioButtonPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelRadioButton}"
+				collapse="true">
+				<f:facet name="panelHeader">Radio Button</f:facet>
+				<f:facet name="panelBody">
+					<p>
+						<code>&lt;isy:selectOneRadio&gt;</code>
+					</p>
+					<p>
+						<isy:selectOneRadio id="stest"
+							value="#{jsfSteuerelementeModel.radioButtonAuswahl}"
+							selectItems="#{jsfSteuerelementeModel.radioButtonListe}" />
+					</p>
+					<p>
+						<isy:button action="radioButtonAction" value="Select" />
+					</p>
+					<p>
+						Ausgabe:
+						<h:outputText value="#{jsfSteuerelementeModel.radioButtonAuswahl}" />
+					</p>
+					<p>
+						<code>&lt;isy:formSelectOneRadio&gt;</code>
+					</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<div class="col-lg-6">
+								<isy:formSelectOneRadio label="Label"
+									reference="testFormSelectOneRadio"
+									value="#{jsfSteuerelementeModel.radioButtonAuswahl2}"
+									selectItems="#{jsfSteuerelementeModel.radioButtonListe}" />
+							</div>
+						</div>
+					</div>
+          <p>
+            <isy:button action="radioButtonAction" value="Select" />
+          </p>
+          <p>
+            Ausgabe:
+            <h:outputText value="#{jsfSteuerelementeModel.radioButtonAuswahl2}" />
+          </p>
+				</f:facet>
+			</isy:panel>
+
+			<isy:panel id="checkboxPanel" collapse="true"
+				panelModel="#{jsfSteuerelementeModel.panelModelCheckbox}">
+				<f:facet name="panelHeader">Checkbox</f:facet>
+				<p>
+					Mehrere Checkboxen. Einbindung über
+					<code>&lt;isy:selectManyCheckbox ...</code>
+				</p>
+				<p>
+					<isy:selectManyCheckbox id="cbtest"
+						value="#{jsfSteuerelementeModel.checkboxAuswahl}"
+						selectItems="#{jsfSteuerelementeModel.checkboxListe}" />
+				</p>
+				<p>
+					<isy:button action="checkboxAction" value="Select" />
+				</p>
+				<p>
+					Ausgabe:
+					<h:outputText value="#{jsfSteuerelementeModel.checkboxAuswahl}" />
+				</p>
+				<p>
+					Eine Checkbox. Einbindung über
+					<code>&lt;isy:formCheckbox bzw.
+						&lt;isy:selectBooleanCheckbox ... </code>
+				</p>
+				<p>
+					<isy:formCheckbox id="cbtest2" reference="cbtest2"
+						value="#{jsfSteuerelementeModel.checkboxBoolean1}"
+						label="Eine Auswahl" labelRight="Auswahl 1"
+						valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
+						<f:ajax event="change"
+							render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert" />
+						<f:ajax event="click"
+							render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
+							listener="#{jsfSteuerelementeController.checkboxBooleanGeklickt}" />
+					</isy:formCheckbox>
+				</p>
+				<p>
+					<isy:formCheckbox id="cbtest3" reference="cbtest3"
+						value="#{jsfSteuerelementeModel.checkboxBoolean2}"
+						label="Eine deaktivierte Auswahl" disabled="true"
+						labelRight="Auswahl 2"
+						valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
+						<f:ajax event="change"
+							render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert" />
+						<f:ajax event="click"
+							render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
+							listener="#{jsfSteuerelementeController.checkboxBooleanGeklickt}" />
+					</isy:formCheckbox>
+				</p>
+				<p>
+					<isy:formCheckbox id="cbtest4" reference="cbtest4"
+						value="#{jsfSteuerelementeModel.checkboxBoolean3}"
+						label="Eine Pflichtauswahl" required="true" labelRight="Auswahl 3"
+						valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
+						<f:ajax event="change"
+							render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert" />
+						<f:ajax event="click"
+							render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
+							listener="#{jsfSteuerelementeController.checkboxBooleanGeklickt}" />
+					</isy:formCheckbox>
+				</p>
+				<p>
+					<isy:formCheckbox id="cbtest5" reference="cbtest5"
+						value="#{jsfSteuerelementeModel.checkboxBoolean4}"
+						label="Eine optionale Auswahl" optional="true"
+						labelRight="Auswahl 4"
+						valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
+						<f:ajax event="change"
+							render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert" />
+						<f:ajax event="click"
+							render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
+							listener="#{jsfSteuerelementeController.checkboxBooleanGeklickt}" />
+					</isy:formCheckbox>
+				</p>
+				<p>
+					<isy:button action="checkboxAction" value="Select" />
+				</p>
+				<p>
+					Change Event:
+					<h:outputText id="checkboxBooleanNeuerWert"
+						value="#{jsfSteuerelementeModel.checkboxBooleanNeuerWert}" />
+					<br />Klicks:
+					<h:outputText id="checkboxBooleanGeklicktAnzahl"
+						value="#{jsfSteuerelementeModel.checkboxBooleanGeklicktAnzahl}" />
+				</p>
+			</isy:panel>
+
+			<isy:panel id="datepickerPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelDatepicker}"
+				collapse="true">
+				<f:facet name="panelHeader">Datepicker</f:facet>
+				<div class="form-horizontal">
+					<div class="row row-df">
+						<isy:formDate label="Datum" labelStyleClass="col-lg-1"
+							inputStyleClass="col-lg-2" type="date"
+							value="#{jsfSteuerelementeModel.datum}"
+							placeholder="z.B 12.02.2001" reference="datum" />
+					</div>
+				</div>
+
+				<!-- Readonly-Variante. Das Datum ist einfach hardcoded, damit man das Markieren überprüfen kann. -->
+				<div class="form-horizontal">
+					<div class="row row-df">
+						<isy:formDate label="Datum readonly" labelStyleClass="col-lg-1"
+							readonly="true" inputStyleClass="col-lg-2" type="date"
+							value="12.12.2012" placeholder="z.B 12.02.2001" reference="datum" />
+					</div>
+				</div>
+
+				<p />
+				<p>
+					<isy:button action="datumButtonAction" value="Select" />
+				</p>
+				<p>
+					Auswahl:
+					<h:outputText value="#{jsfSteuerelementeModel.datum}" />
+				</p>
+			</isy:panel>
+
+			<isy:panel id="tabPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelTab}" collapse="true">
+				<f:facet name="panelHeader">Tabs</f:facet>
+				<p>
+
+					<isy:tabGroup tabGroupId="testTab" globalTabContentRefs="V P S"
+						globalTab="V" defaultTab="V"
+						tabGroupModel="#{jsfSteuerelementeModel.tabGroupModel}">
+						<f:facet name="tabHeader">
+							<isy:tabHeader value="Vollauskunft" name="V" skipAction="true" />
+							<isy:tabHeader value="Personalien" name="P" skipAction="true" />
+							<isy:tabHeader value="Sachverhalte" name="S" skipAction="true" />
+						</f:facet>
+						<isy:tabContent name="V" preload="true">
+                            Dies ist die Vollauskunft
+                        </isy:tabContent>
+						<isy:tabContent name="P" preload="true">
+                            Dies sind Personalien
+                        </isy:tabContent>
+						<isy:tabContent name="S" preload="true">
+                            Dies sind die Sachverhalte
+                        </isy:tabContent>
+					</isy:tabGroup>
+				</p>
+			</isy:panel>
+
+			<isy:panel id="listpickerPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelListpicker}"
+				collapse="true">
+				<f:facet name="panelHeader">Listpicker</f:facet>
+				<p>Ohne AJAX und ohne Auflösung des Schlüssels:</p>
+				<div class="form-horizontal">
+					<div class="row row-df">
+						<isy:formListpicker reference="model.listpicker"
+							listpickerModel="#{jsfSteuerelementeModel.listpickerModel}"
+							label="Schlüssel" labelStyleClass="col-lg-1"
+							inputStyleClass="col-lg-2"
+							listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeListpickerController}"
+							value="#{jsfSteuerelementeModel.listpickerAuswahl}"
+							header="Schlüssel,Wert" />
+					</div>
+				</div>
+				<p></p>
+				<p>
+					Auswahl:
+					<h:outputText value="#{jsfSteuerelementeModel.listpickerAuswahl}" />
+				</p>
+				<p>
+					<isy:button action="noAction" value="Wähle aus" />
+				</p>
+				
+				<!-- Der folgende Listpicker löst den Schlüssel auf, denn das inputComplement ist 2
+				und es ist eine Inputmask definiert. -->
+				<p>Mit AJAX und mit Auflösung des Schlüssels:</p>
+				<div class="form-horizontal">
+					<div class="row row-df">
+						<isy:formListpicker reference="model.ajaxListpicker"
+							ajaxLoading="true" ajaxForm="listpickerAjaxForm"
+							listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeListpickerController}"
+							labelStyleClass="col-lg-1" inputStyleClass="col-lg-2"
+							listpickerModel="#{jsfSteuerelementeModel.ajaxListpickerModel}"
+							label="Schlüssel"
+							value="#{jsfSteuerelementeModel.ajaxListpickerAuswahl}"
+							header="Schlüssel,Name"
+							inputComplement="2"
+							inputmask="9[99]" />
+					</div>
+				</div>
+				<p></p>
+				<p>
+					Auswahl:
+					<h:outputText
+						value="#{jsfSteuerelementeModel.ajaxListpickerAuswahl}" />
+				</p>
+				<p>
+					<isy:button action="noAction" value="Wähle aus" />
+				</p>
+
+        <!-- Der Behörden-Listpicker löst den Schlüssel immer auf, denn das inputComplement ist standardmäßig 2
+        und es ist standardmäßig eine Inputmask definiert. -->
+				<p>Behörden Listpicker (Schlüssel wird standardmäßig aufgelöst):</p>
+				<div class="form-horizontal">
+					<div class="row row-df">
+						<isy:formBehoerdeListpicker reference="model.behoerdeListpicker"
+							ajaxLoading="true" ajaxForm="behoerdeListpickerAjaxForm"
+							listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeBehoerdeListpickerController}"
+							labelStyleClass="col-lg-1" inputStyleClass="col-lg-2"
+							listpickerModel="#{jsfSteuerelementeModel.behoerdeListpickerModel}"
+							label="Schlüssel"
+							value="#{jsfSteuerelementeModel.behoerdeListpickerAngabe}" />
+					</div>
+				</div>
+				<p></p>
+				<p>
+					Auswahl:
+					<h:outputText
+						value="#{jsfSteuerelementeModel.behoerdeListpickerAngabe}" />
+				</p>
+				<p>
+					<isy:button action="noAction" value="Wähle aus" />
+				</p>
+			</isy:panel>
+
+			<isy:panel id="buttonToolbarPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelButtonToolbar}"
+				collapse="true">
+				<f:facet name="panelHeader">Toolbar Buttons</f:facet>
+				<p>
+					<isy:buttonToolbar icon="placeholder" value="Button mit Icon"
+						action="noAction" />
+				</p>
+				<p>
+					<isy:buttonToolbar showIcon="false" value="Button ohne Icon"
+						action="noAction" />
+				</p>
+				<p>Eine Button Row</p>
+				<p>
+					<isy:buttonRow>
+						<isy:buttonToolbar icon="placeholder" value="Button 1"
+							action="noAction" />
+						<isy:buttonToolbar icon="placeholder" value="Button 2"
+							action="noAction" />
+					</isy:buttonRow>
+				</p>
+
+			</isy:panel>
+
+			<isy:panel id="dataTablePanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelDataTable}"
+				collapse="true">
+				<f:facet name="panelHeader">Data Table</f:facet>
+				<f:facet name="panelBody">
+					<p>Client-Modus</p>
+					<isy:dataTable id="dataTableClientMode"
+						dataTableModel="#{jsfSteuerelementeModel.trefferlistenClientModel}"
+						dataTableController="#{jsfSteuerelementeController.jsfSteuerelementeTrefferlistenClientController}"
+						selectable="true" highlightDoubleclick="false"
+						action="trefferlisteDoppelklick">
+						<f:facet name="tableHeader">
+							<isy:dataTableHeader width="5%">
+								<isy:dataTableRowAllSelection />
+							</isy:dataTableHeader>
+							<isy:dataTableHeader name="#" width="10%"
+								sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}" />
+							<isy:dataTableHeader name="First Name" width="25%"
+								sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}" />
+							<isy:dataTableHeader name="Last Name" width="25%"
+								sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}" />
+							<isy:dataTableHeader name="Username" width="20%"
+								sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}" />
+							<isy:dataTableHeader name="" width="15%" />
+						</f:facet>
+						<f:facet name="tableToolbar">
+							<isy:buttonRow id="dataTableToolbar">
+								<isy:buttonToolbar id="suche" icon="search" value="Suche"
+									action="sucheClient" />
+								<isy:buttonToolbar id="waehle" icon="checkmark"
+									value="Wähle aus" action="noAction" />
+							</isy:buttonRow>
+						</f:facet>
+						<f:facet name="tablePagination">
+							<isy:dataTablePaginator />
+						</f:facet>
+						<f:facet name="tableFilter">
+							<isy:dataTableFilter />
+							<!-- Platzhalter für checkbox Spalte -->
+							<isy:dataTableFilter
+								property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}" />
+							<isy:dataTableFilter
+								property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}" />
+							<isy:dataTableFilter
+								property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}" />
+							<isy:dataTableFilter
+								property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}" />
+							<isy:dataTableFilterClearer />
+						</f:facet>
+						<isy:dataTableRows rowVar="treffer"
+							rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/rowDefinition.xhtml"
+							detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/detailDefinition.xhtml" />
+					</isy:dataTable>
+
+					<p>
+						Aktuell ausgewählt:
+						<h:outputText
+							value="#{jsfSteuerelementeModel.trefferlistenClientModel.getSelectedItems()}" />
+					</p>
+
+					<p>Server-Modus</p>
+					<isy:dataTable id="dataTableServerMode"
+						dataTableModel="#{jsfSteuerelementeModel.trefferlistenServerModel}"
+						dataTableController="#{jsfSteuerelementeController.jsfSteuerelementeTrefferlistenServerController}"
+						selectable="true" highlightDoubleclick="false"
+						action="trefferlisteDoppelklick">
+						<f:facet name="tableHeader">
+							<isy:dataTableHeader width="5%">
+								<isy:dataTableRowAllSelection />
+							</isy:dataTableHeader>
+							<isy:dataTableHeader name="#" width="10%"
+								sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}" />
+							<isy:dataTableHeader name="First Name" width="25%"
+								sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}" />
+							<isy:dataTableHeader name="Last Name" width="25%"
+								sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}" />
+							<isy:dataTableHeader name="Username" width="20%"
+								sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}" />
+							<isy:dataTableHeader name="" width="15%" />
+						</f:facet>
+						<f:facet name="tableToolbar">
+							<isy:buttonRow>
+								<isy:buttonToolbar id="suche" icon="search" value="Suche"
+									action="sucheServer" />
+								<isy:buttonToolbar id="waehleaus" icon="checkmark"
+									value="Wähle aus" action="noAction" />
+							</isy:buttonRow>
+						</f:facet>
+						<f:facet name="tablePagination">
+							<isy:dataTablePaginator />
+						</f:facet>
+						<f:facet name="tableFilter">
+							<isy:dataTableFilter />
+							<!-- Platzhalter für checkbox Spalte -->
+							<isy:dataTableFilter
+								property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}" />
+							<isy:dataTableFilter
+								property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}" />
+							<isy:dataTableFilter
+								property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}" />
+							<isy:dataTableFilter
+								property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}" />
+							<isy:dataTableFilterClearer />
+						</f:facet>
+						<isy:dataTableRows rowVar="treffer"
+							rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/rowDefinition.xhtml"
+							detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/detailDefinition.xhtml" />
+					</isy:dataTable>
+
+					<p>
+						Aktuell ausgewählt:
+						<h:outputText
+							value="#{jsfSteuerelementeModel.trefferlistenServerModel.getSelectedItems()}" />
+					</p>
+				</f:facet>
+			</isy:panel>
+
+			<isy:panel id="actionInputPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelActionInput}"
+				collapse="true">
+				<f:facet name="panelHeader">Aktionseingabefeld</f:facet>
+				<f:facet name="panelBody">
+					<p>
+						Aktionseingabefeld. Einbindung über
+						<code>&lt;isy:actionInput&gt;</code>
+						bzw.
+						<code>&lt;isy:formActionInput&gt;</code>
+					</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<div class="col-lg-2">
+								<isy:actionInput reference="testActionInput"
+									value="#{jsfSteuerelementeModel.actionInputResult}"
+									action="actionInputAction" icon="search" tooltip="tooltip"
+									placeholder="palceholder" maxlength="20" />
+							</div>
+						</div>
+					</div>
+
+					<!-- Disabled -->
+					<p>Aktionseingabefeld (disabled).</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<div class="col-lg-2">
+								<isy:actionInput reference="testActionInput2"
+									value="#{jsfSteuerelementeModel.actionInputResult}"
+									action="actionInputAction" icon="search" tooltip="tooltip"
+									placeholder="palceholder" maxlength="20" disabled="true" />
+							</div>
+						</div>
+					</div>
+
+					<!-- Die form* Varianten -->
+					<p>Form-Aktionseingabefeld.</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<div class="col-lg-2">
+								<isy:formActionInput reference="testFormActionInput"
+									label="Ein Label" labelStyleClass="col-lg-4"
+									inputStyleClass="col-lg-8"
+									value="#{jsfSteuerelementeModel.actionInputResult}"
+									action="actionInputAction" icon="search" tooltip="tooltip"
+									placeholder="palceholder" maxlength="20" />
+							</div>
+						</div>
+					</div>
+
+					<!-- Disabled -->
+					<p>Form-Aktionseingabefeld (disabled).</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<div class="col-lg-2">
+								<isy:formActionInput reference="testFormActionInput2"
+									label="Ein Label" labelStyleClass="col-lg-4"
+									inputStyleClass="col-lg-8"
+									value="#{jsfSteuerelementeModel.actionInputResult}"
+									action="actionInputAction" icon="search" tooltip="tooltip"
+									placeholder="palceholder" maxlength="20" disabled="true" />
+							</div>
+						</div>
+					</div>
+				</f:facet>
+			</isy:panel>
+
+			<isy:panel id="listPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelList}"
+				collapse="true">
+				<f:facet name="panelHeader">Listen</f:facet>
+				<f:facet name="panelBody">
+					<p>
+						Liste für Einfachauswahl. Einbindung über
+						<code>&lt;isy:formSelectOneList&gt;</code>
+					</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<isy:formSelectOneList
+								inputStyleClass="bootstrap-selectlist col-lg-1"
+								labelStyleClass="col-lg-2" reference="formSelectOneList"
+								value="2" size="3" label="Liste (Einfachauswahl)">
+								<f:selectItems
+									value="#{jsfSteuerelementeModel.formSelectListInhalt}" />
+							</isy:formSelectOneList>
+						</div>
+					</div>
+					<p>
+						Liste für Mehrfachauswahl. Einbindung über
+						<code>&lt;isy:formSelectManyList&gt;</code>
+					</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<isy:formSelectManyList
+								inputStyleClass="bootstrap-selectlist col-lg-1"
+								labelStyleClass="col-lg-2" reference="formSelectManyList"
+								value="1" size="4" label="Liste (Mehrfachauswahl)">
+								<f:selectItems
+									value="#{jsfSteuerelementeModel.formSelectListInhalt}" />
+							</isy:formSelectManyList>
+						</div>
+					</div>
+
+					<!-- Jeweils Disabled -->
+					<p>Liste für Einfachauswahl (disabled)</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<isy:formSelectOneList
+								inputStyleClass="bootstrap-selectlist col-lg-1"
+								labelStyleClass="col-lg-2" reference="formSelectOneList2"
+								value="2" size="3" label="Liste (Einfachauswahl)"
+								disabled="true">
+								<f:selectItems
+									value="#{jsfSteuerelementeModel.formSelectListInhalt}" />
+							</isy:formSelectOneList>
+						</div>
+					</div>
+					<p>Liste für Mehrfachauswahl (disabled)</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<isy:formSelectManyList
+								inputStyleClass="bootstrap-selectlist col-lg-1"
+								labelStyleClass="col-lg-2" reference="formSelectManyList2"
+								value="1" size="4" label="Liste (Mehrfachauswahl)"
+								disabled="true">
+								<f:selectItems
+									value="#{jsfSteuerelementeModel.formSelectListInhalt}" />
+							</isy:formSelectManyList>
+						</div>
+					</div>
+
+					<!-- Die Listen ohne form* -->
+					<p>
+						Liste für Einfachauswahl. Einbindung über
+						<code>&lt;isy:selectOneList&gt;</code>
+					</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<isy:selectOneList
+								selectlistStyleClass="bootstrap-selectlist col-lg-1"
+								reference="selectOneList" value="2" size="3"
+								label="Liste (Einfachauswahl)">
+								<f:selectItems
+									value="#{jsfSteuerelementeModel.formSelectListInhalt}" />
+							</isy:selectOneList>
+						</div>
+					</div>
+					<p>
+						Liste für Mehrfachauswahl. Einbindung über
+						<code>&lt;isy:selectManyList&gt;</code>
+					</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<isy:selectManyList
+								selectlistStyleClass="bootstrap-selectlist col-lg-1"
+								reference="selectManyList" value="1" size="4"
+								label="Liste (Mehrfachauswahl)">
+								<f:selectItems
+									value="#{jsfSteuerelementeModel.formSelectListInhalt}" />
+							</isy:selectManyList>
+						</div>
+					</div>
+
+					<!-- Jeweils Disabled -->
+					<p>Liste für Einfachauswahl (disabled)</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<isy:selectOneList
+								selectlistStyleClass="bootstrap-selectlist col-lg-1"
+								reference="selectOneList2" value="2" size="3"
+								label="Liste (Einfachauswahl)" disabled="true">
+								<f:selectItems
+									value="#{jsfSteuerelementeModel.formSelectListInhalt}" />
+							</isy:selectOneList>
+						</div>
+					</div>
+					<p>Liste für Mehrfachauswahl (disabled)</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<isy:selectManyList
+								selectlistStyleClass="bootstrap-selectlist col-lg-1"
+								reference="selectManyList2" value="1" size="4"
+								label="Liste (Mehrfachauswahl)" disabled="true">
+								<f:selectItems
+									value="#{jsfSteuerelementeModel.formSelectListInhalt}" />
+							</isy:selectManyList>
+						</div>
+					</div>
+				</f:facet>
+			</isy:panel>
+
+			<isy:panel id="tooltipPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelTooltip}"
+				collapse="true">
+				<f:facet name="panelHeader">Tooltip</f:facet>
+				<f:facet name="panelBody">
+					<p>
+						Einbindung über
+						<code>&lt;isy:tooltip&gt;</code>
+					</p>
+					<div class="row form-horizontal">
+						<div class="col-lg-8 col-lg-offset-2">
+							<p>
+								<isy:tooltip text="Tooltip auf Icon" title="Überschrift">
+									<span class="icon icon-info"></span>
+								</isy:tooltip>
+							</p>
+							<p>
+								<isy:tooltip text="Tooltip auf Icon">
+									<span class="icon icon-info"></span>
+								</isy:tooltip>
+							</p>
+							<p>
+								<isy:tooltip text="Tooltip auf Text" title="Überschrift">Lorem ipsum...</isy:tooltip>
+							</p>
+							<p>
+								<isy:tooltip text="Tooltip auf formInput">
+									<isy:formInput reference="model.property"
+										label="Das ist eine formInput Box" value="Lorem ipsum..." />
+								</isy:tooltip>
+							</p>
+						</div>
+					</div>
+				</f:facet>
+			</isy:panel>
+
+			<isy:panel id="currencyPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelCurrency}"
+				collapse="true">
+				<f:facet name="panelHeader">Eingabefeld für Geldbeträge</f:facet>
+				<f:facet name="panelBody">
+					<p>
+						Einbindung über
+						<code>&lt;isy:formCurrencyInput&gt;</code>
+					</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+
+							<isy:formCurrencyInput label="isy:formCurrencyInput"
+								labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+								required="true" placeholder="24,00" value=""
+								reference="formCurrencyInput">
+							</isy:formCurrencyInput>
+
+						</div>
+					</div>
+
+					<!-- Disabled -->
+					<div class="form-horizontal">
+						<div class="row row-df">
+
+							<isy:formCurrencyInput label="isy:formCurrencyInput (disabled)"
+								labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+								required="true" placeholder="24,00" value=""
+								reference="formCurrencyInput2" disabled="true">
+							</isy:formCurrencyInput>
+
+						</div>
+					</div>
+
+					<!-- Read-Only -->
+					<div class="form-horizontal">
+						<div class="row row-df">
+
+							<isy:formCurrencyInput label="isy:formCurrencyInput (readonly)"
+								labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+								required="true" placeholder="24,00" value="24,00"
+								reference="formCurrencyInput3" readonly="true">
+							</isy:formCurrencyInput>
+
+						</div>
+					</div>
+
+					<!-- Text rechts ausgerichtet. -->
+					<div class="form-horizontal">
+						<div class="row row-df">
+
+							<isy:formCurrencyInput
+								label="isy:formCurrencyInput (Textausrichtung rechts)"
+								labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+								required="true" placeholder="24,00" value=""
+								reference="formCurrencyInput4" alignright="true">
+							</isy:formCurrencyInput>
+
+						</div>
+					</div>
+
+					<!-- Vier Nachkommastellen. -->
+					<div class="form-horizontal">
+						<div class="row row-df">
+
+							<isy:formCurrencyInput
+								label="isy:formCurrencyInput (Vier Nachkommastellen)"
+								labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+								placeholder="24,00" value="" reference="formCurrencyInput5"
+								decimalplaces="4">
+							</isy:formCurrencyInput>
+
+						</div>
+					</div>
+
+				</f:facet>
+			</isy:panel>
+
+			<isy:panel id="browseAndCollectPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelBrowseAndCollect}"
+				collapse="true">
+				<f:facet name="panelHeader">Browse &amp; Collect</f:facet>
+				<f:facet name="panelBody">
+					<p>
+						Browse &amp; Collect. Einbindung über
+						<code>&lt;isy:browseAndCollect&gt;</code>
+					</p>
+					<div class="form-horizontal">
+						<div class="row">
+							<div class="col-lg-4">
+								<div class="row row-df">
+									<isy:formBrowseAndCollect
+										value="${jsfSteuerelementeModel.browseAndCollectAuswahl}"
+										size="auto" labelStyleClass="col-lg-3"
+										label="Browse and Collect" inputStyleClass="col-lg-9"
+										reference="demoEins">
+										<f:selectItems
+											value="#{jsfSteuerelementeModel.formSelectListInhalt}" />
+									</isy:formBrowseAndCollect>
+								</div>
+								<div class="row row-df">
+									<div class="col-lg-4">
+										<isy:button action="formInputButtonAction"
+											render="inhaltsbereichForm:browseAndCollectPanel:browseAndCollectAusgabe"
+											value="&Uuml;bernehmen" />
+									</div>
+								</div>
+								<div class="row row-df">
+									<div class="col-lg-6">
+										Auswahl:
+										<h:outputText id="browseAndCollectAusgabe"
+											value="#{jsfSteuerelementeModel.browseAndCollectAuswahl}" />
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- Disabled -->
+					<p>Browse &amp; Collect (disabled).</p>
+					<div class="form-horizontal">
+						<div class="row">
+							<div class="col-lg-4">
+								<div class="row row-df">
+									<isy:formBrowseAndCollect
+										value="${jsfSteuerelementeModel.browseAndCollectAuswahl}"
+										size="auto" labelStyleClass="col-lg-3"
+										label="Browse and Collect" inputStyleClass="col-lg-9"
+										reference="demoZwei" disabled="true">
+										<f:selectItems
+											value="#{jsfSteuerelementeModel.formSelectListInhalt}" />
+									</isy:formBrowseAndCollect>
+								</div>
+								<div class="row row-df">
+									<div class="col-lg-4">
+										<isy:button action="formInputButtonAction"
+											render="inhaltsbereichForm:browseAndCollectPanel:browseAndCollectAusgabe2"
+											value="&Uuml;bernehmen" />
+									</div>
+								</div>
+								<div class="row row-df">
+									<div class="col-lg-6">
+										Auswahl:
+										<h:outputText id="browseAndCollectAusgabe2"
+											value="#{jsfSteuerelementeModel.browseAndCollectAuswahl}" />
+									</div>
+								</div>
+							</div>
+
+						</div>
+					</div>
+				</f:facet>
+			</isy:panel>
+
+			<isy:panel id="toggleFilterPanel"
+				panelModel="#{jsfSteuerelementeModel.panelModelToggleFilter}"
+				collapse="true">
+				<f:facet name="panelHeader">Toggle Filter</f:facet>
+				<f:facet name="panelBody">
+					<p>
+						Einbindung über
+						<code>&lt;isy:toggleFilter&gt;</code>
+					</p>
+					<div class="form-horizontal">
+						<div class="row row-df">
+							<div class="form-group">
+								<isy:toggleFilter
+									value="${jsfSteuerelementeModel.toggleFilterAuswahl}"
+									label="Label" action="noAction">
+									<f:selectItems
+										value="#{jsfSteuerelementeModel.toggleFilterListe}" var="item"
+										itemLabel="#{item.label}" itemValue="#{item.value}" />
+								</isy:toggleFilter>
+							</div>
+						</div>
+						<div class="row row-df">
+							<div class="form-group">Auswahl:
+								#{jsfSteuerelementeModel.toggleFilterAuswahl} -
+								#{jsfSteuerelementeModel.toggleFilterListe.get(jsfSteuerelementeModel.toggleFilterAuswahl).label}
+							</div>
+						</div>
+					</div>
+				</f:facet>
+			</isy:panel>
+
+			<!-- Panel zum Vorführen der Komponenten, die das Four-Eyes-Icon verwenden. -->
+			<isy:panel id="fourEyesIconPanel"
+        panelModel="#{jsfSteuerelementeModel.panelModelFourEyesIconPanel}"
+        collapse="true">
+        <f:facet name="panelHeader">Four Eyes Icon</f:facet>
+        <f:facet name="panelBody">
+        
+          <!-- formInput -->
+          <p>
+            FormInput
+          </p>
+          <div class="form-horizontal">
+            <div class="row row-df">
+              <isy:formInput id="formInputFourEyes" type="text" label="Text: "
+                labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+                reference="formInputReferenz"
+                value="#{jsfSteuerelementeModel.formInputTextButtonActionResult}"
+                fourEyesMode="unlock"
+                fourEyesLastValue="Vorher" />
+            </div>
+          </div>
+          
+          <!-- formActionInput -->
+          <p>
+            FormActionInput
+          </p>
+          <div class="form-horizontal">
+            <div class="row row-df">
+                <isy:formActionInput reference="testFormActionInputFourEyes"
+                  label="Ein Label"
+                  labelStyleClass="col-lg-2"
+                  inputStyleClass="col-lg-2"
+                  value="#{jsfSteuerelementeModel.actionInputResult}"
+                  action="actionInputAction" icon="search" tooltip="tooltip"
+                  placeholder="placeholder" maxlength="20"
+                  fourEyesMode="unlock"
+                  fourEyesLastValue="Vorher" />
+            </div>
+          </div>
+          
+          <!-- formCurrencyInput -->
+          <p>
+            FormCurrencyInput
+          </p>
+          <div class="form-horizontal">
+            <div class="row row-df">
+              <isy:formCurrencyInput label="isy:formCurrencyInput"
+                labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+                required="true" placeholder="24,00" value=""
+                reference="formCurrencyInputFourEyes"
+                fourEyesMode="unlock"
+                fourEyesLastValue="Vorher">
+              </isy:formCurrencyInput>
+            </div>
+          </div>
+          
+          <!-- formDate -->
+          <p>
+            FormDate
+          </p>
+          <div class="form-horizontal">
+            <div class="row row-df">
+              <isy:formDate label="Datum" labelStyleClass="col-lg-2"
+                inputStyleClass="col-lg-2" type="date"
+                value="#{jsfSteuerelementeModel.datum}"
+                placeholder="z.B 12.02.2001" reference="datumFourEyes"
+                fourEyesMode="unlock"
+                fourEyesLastValue="Vorher" />
+            </div>
+          </div>
+          
+          <!-- formTextarea -->
+          <p>
+            FormTextarea
+          </p>
+          <div class="form-horizontal">
+            <div class="row row-df">
+              <isy:formTextarea label="Text"
+                value="#{jsfSteuerelementeModel.textBoxButtonActionResult}"
+                labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+                reference="textFourEyes" placeholder="Bitte geben Sie einen Text ein!"
+                maxlength="100" required="true"
+                fourEyesMode="unlock"
+                fourEyesLastValue="Vorher" />
+            </div>
+          </div>
+          
+          <!-- formCheckbox -->
+          <p>
+          <br /> <br />
+          FormCheckbox
+          </p>
+          <p>
+            <isy:formCheckbox id="cbtest2FourEyes" reference="cbtest2FourEyes"
+              value="#{jsfSteuerelementeModel.checkboxBoolean1}"
+              label="Eine Auswahl" labelRight="Auswahl 1"
+              valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}"
+              fourEyesMode="unlock"
+              fourEyesLastValue="Vorher">
+            </isy:formCheckbox>
+          </p>
+          <p>
+            <isy:formCheckbox id="cbtest3FourEyes" reference="cbtest3FourEyes"
+              value="#{jsfSteuerelementeModel.checkboxBoolean2}"
+              label="Eine deaktivierte Auswahl" disabled="true"
+              labelRight="Auswahl 2"
+              valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}"
+              fourEyesMode="unlock"
+              fourEyesLastValue="Vorher">
+            </isy:formCheckbox>
+          </p>
+          
+          <!-- formSelectOneDropdown -->
+          <div class="col-lg-12">
+            FormSelectOneDropdown
+            <br /> <br />
+          </div>
+          <div class="col-lg-6">
+            <isy:formSelectOneDropdown reference="formSelectOneDropdown"
+              value="#{jsfSteuerelementeModel.dropdownAuswahl}"
+              label="Auswahl"
+              valueChangeListener="#{jsfSteuerelementeController.dropdownWertAusgewaehlt}"
+              converter="#{typeConverter}" converterAttribute="int"
+              fourEyesMode="unlock"
+              fourEyesLastValue="Vorher">
+                <f:selectItems
+                  value="#{jsfSteuerelementeModel.dropdownAuswahlListe}" />
+                <f:ajax event="change"
+                  render="inhaltsbereichForm:dropdownPanel:dropdownAuswahlAjax" />
+            </isy:formSelectOneDropdown>
+          </div>
+          
+        </f:facet>
+      </isy:panel>
+			
+      <!-- Panel zum Vorführen der Upload-Komponente. -->
+      <!-- Übernommen aus den Daisy-Demos. -->
+      <isy:panel id="uploadPanel"
+        panelModel="#{jsfSteuerelementeModel.panelModelUpload}"
+        collapse="true">
+        <f:facet name="panelHeader">GUI Komponente: Upload</f:facet>
+        <f:facet name="panelBody">
+        <h3>Demo: Disabled</h3>
+        <div class="row form-horizontal">
+            <div class="col-lg-8">
+                <div class="row row-df">
+                    <isy:formUpload label="Disabled" value="${jsfSteuerelementeModel.disabledUpload}"
+                        reference="disabled" disabled="true" tooltip="Feld ist deaktiviert"
+                        placeholder="Feld deaktiviert" />
+                </div>
+            </div>
+        </div>
+        <h3>Demo: Text-Datei</h3>
+        <div class="row form-horizontal">
+            <div class="col-lg-8">
+                <div class="row row-df">
+                    <isy:formUpload label="Text" value="${jsfSteuerelementeModel.textUpload}" reference="text"
+                        required="true" accept=".csv,.txt,.text"
+                        tooltip="Bitte wählen Sie eine Text-Datei aus. Diese darf nicht größer als 10Kb sein, siehe Kontroller" />
+                </div>
+                <div class="row row-df">
+                      <h:outputText value="#{jsfSteuerelementeModel.hochgeladenerText}" escape="true" />
+                </div>
+            </div>
+        </div>
+        <h3>Demo: Bild-Datei</h3>
+        <div class="row form-horizontal">
+            <div class="col-lg-8">
+                <div class="row row-df">
+                    <isy:formUpload label="Bild" value="${jsfSteuerelementeModel.bildUpload}" reference="bild"
+                        required="false" placeholder="Wählen Sie eine Bild-Datei zum Hochladen aus"
+                        accept="image/*"
+                        tooltip="Bitte wählen Sie eine Bild-Datei aus. Diese darf nicht größer als 100Kb sein, siehe Kontroller" />
+                </div>
+                <div class="row row-df">
+                    <h:graphicImage url="data:image/jpg;base64,#{jsfSteuerelementeController.getEncodedImage(jsfSteuerelementeModel.hochgeladenesBild)}"
+                        rendered="#{not empty jsfSteuerelementeController.getEncodedImage(jsfSteuerelementeModel.hochgeladenesBild)}" />
+                </div>
+                <isy:buttonRow alignRight="true">
+                    <isy:button value="Speichern" action="uploadSpeichern" />
+                </isy:buttonRow>
+            </div>
+        </div>
+        <h3>Dokumentation</h3>
+        <h4>Voraussetzungen an der Web-App</h4>
+        <ul>
+            <li>servlet-api 3.0.1: es gibt keine 3.0! und dabei muss man beachten dass überall <code>servlet-api
+                    2.5</code> exkludiert wird, weil sich der Name des Artefakts von <code>servlet-api</code> zu <code>javax.servlet-api</code>
+                geändert hat
+            </li>
+            <li>JSF 2.2: außer den richtigen <code>jsf-api</code> und <code>jsf-impl</code>-Versionen in
+                der <code>pom.xml</code>-Datei zu importieren, muss die <code>faces-config.xml</code> richtig
+                für JSF2.2 deklariert werden
+            </li>
+            <li>multipart/form-data:
+                <ul>
+                    <li>Es muss in der Tomcat Context-Konfiguration die Eigenschaft <code>allowCasualMultipartParsing=true</code>
+                        gesetzt werden, siehe <a
+                        href="http://stackoverflow.com/questions/8047173/how-to-enable-multipart-form-data-in-tomcat-7-0-8-server/8050589#8050589">hier</a></li>
+                    <li>In der <code>web.xml</code> muss der <code>FacesServlet</code> um einige
+                        Parameter erweitert werden: <pre>
+    &lt;servlet&gt;
+        &lt;servlet-name&gt;Faces Servlet&lt;/servlet-name&gt;
+        &lt;servlet-class&gt;javax.faces.webapp.FacesServlet&lt;/servlet-class&gt;
+        &lt;multipart-config&gt;
+            &lt;max-file-size&gt;52428800&lt;/max-file-size&gt;
+            &lt;file-size-threshold&gt;1048576&lt;/file-size-threshold&gt;
+        &lt;/multipart-config&gt;
+        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
+    &lt;/servlet&gt;
+                    </pre>
+                    </li>
+                </ul>
+            </li>
+            <li>
+              Nur für diese Demo-Anwendung: Zur Anzeige der hochgeladenen Elemente musste die X-Frame-Options von DENY auf SAMEORIGIN gesetzt werden.
+              Im <code>sec:http</code>-Tag der Spring-Security-Konfiguration Folgendes einfügen:
+              <pre>
+                      &lt;sec:headers defaults-disabled=&quot;true&quot;&gt;
+          &lt;sec:frame-options policy=&quot;SAMEORIGIN&quot;/&gt;
+        &lt;/sec:headers&gt;
+              </pre>
+            </li>
+        </ul>
+        <h4>Voraussetzungen am Flow:</h4>
+        <pre>
+&lt;on-start&gt;
+  &lt;evaluate expression=&quot;xxxController.initialisiereModel(xxxModel)&quot;&gt;&lt;/evaluate&gt;
+  &lt;!-- Besonderheit bei Masken mit FileUpload --&gt;
+  &lt;evaluate expression=&quot;globalFlowModel.setMultipartForm(true)&quot;&gt;&lt;/evaluate&gt;
+&lt;/on-start&gt;
+        </pre>
+        <h4>Zustände</h4>
+        <ul>
+            <li>Normal</li>
+            <li>Hover</li>
+            <li>Deaktiviert</li>
+            <li>Focus</li>
+            <li>Validierung</li>
+        </ul>
+        <h4>Ist dies das korrekte Bedienelement?</h4>
+        <ul>
+            <li>Dateiuploads werden benutzt, um lokale Dateien auf den Server hochzuladen. i.d.R. damit
+                die Anwendung die Datei weiter verarbeiten oder wiederverwenden kann.</li>
+        </ul>
+        <h3>Richtlinien zur Anwendung</h3>
+        <ul>
+            <li>Um die Bedieneffizienz zu erhöhen, sollten Dateiuploads, deren Eingaben validieren, nach
+                Möglichkeit verschiedene Eingabeformate unterstützen z.B. für Bilder nicht nur <code>.png</code>
+                sondern auch <code>.jpg</code> oder <code>.gif</code>
+            </li>
+        </ul>
+        <h4>Hinweise zur Implementierung</h4>
+        Die Implementierung erfolgt über das Tag <code>&lt;isy:formUpload&gt;</code>. Siehe auch die <code>UploadHelper</code>-Klasse.
+        
+        <h4>Folgende Parameter sind zulässig:</h4>
+        <dl>
+            <dt>value *</dt>
+            <dd>
+                Eine Bean-Eigenschaft um die Daten hochzuladen. Muss vom Typ
+                <code>javax.servlet.http.Part</code>
+                sein. .
+            </dd>
+            <dt>accept</dt>
+            <dd>
+                Ob die auszuwählenden Dateien gefiltert werden sollen, z.B.
+                <code>"image/*"</code>
+                , siehe auch <a
+                    href="http://stackoverflow.com/questions/11832930/html-input-file-accept-attribute-file-type-csv#11834872">hier</a>.
+            </dd>
+            <dt>label *</dt>
+            <dd>Angezeigter Label-Text</dd>
+            <dt>required</dt>
+            <dd>Ob eine Angabe erforderlich ist.</dd>
+            <dt>placeholder</dt>
+            <dd>Einen optionalen Hilfetext im Eingabefeld.</dd>
+            <dt>tooltip</dt>
+            <dd>Einen optionalen Tooltip für das Icon.</dd>
+            <dt>disabled</dt>
+            <dd>Ob der Dateiupload deaktiviert ist oder nicht.</dd>
+            <dt>inputStyleClass</dt>
+            <dd>Die zu ergänzenden Style-Klassen.</dd>
+            <dt>labelStyleClass</dt>
+            <dd>Die zu ergänzenden Style-Klassen für das Label.</dd>
+        </dl>
+      </f:facet>
+      </isy:panel>
+
+		</div>
+	</ui:define>
+
+</ui:composition>

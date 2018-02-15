@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+    parent="applikationseiteParentFlow">
+
+    <var name="errorHandlingModel" class="de.bund.bva.pliscommon.pliswebgui.gui.flows.errorhandling.ErrorHandlingModel" />
+
+    <on-start>
+        <evaluate expression="errorHandlingController.initialisiereModel(errorHandlingModel)" />
+    </on-start>
+
+    <view-state id="errorHandlingViewState" model="errorHandlingModel">
+
+        <transition on="nachTransitionUngueltig" to="errorHandlingViewState" history="discard" />
+
+        <transition on="nachJsfUngueltig" to="jsfUngueltigViewState" />
+
+        <transition on="nachJsfUngueltigRender" to="jsfUngueltigRenderViewState" />
+
+        <transition on="awkAufrufNullpointer">
+            <evaluate expression="errorHandlingController.awkAufrufNullpointer()"></evaluate>
+        </transition>
+
+        <transition on="awkAufrufFachlich">
+            <evaluate expression="errorHandlingController.awkAufrufFachlich()"></evaluate>
+        </transition>
+
+    </view-state>
+
+    <view-state id="jsfUngueltigViewState" model="errorHandlingModel" />
+
+    <view-state id="jsfUngueltigRenderViewState" model="errorHandlingModel" />
+
+</flow>

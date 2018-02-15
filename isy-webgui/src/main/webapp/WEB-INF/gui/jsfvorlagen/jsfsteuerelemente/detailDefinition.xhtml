@@ -1,0 +1,26 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:sf="http://www.springframework.org/tags/faces"
+    xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+    xmlns:debug="http://java.sun.com/jsf/composite/debug">
+
+    <!-- Definiert die Detailansicht -->
+    <!-- Per Konvention entspricht die Variable "dataTableItem" dem Treffer -->
+    <td colspan="6">
+
+        <div class="row">
+            <div class="col col-lg-4">
+                <span class="col-lg-3 control-label">Vorname</span> <span class="col-lg-9">#{dataTableItem.vorname}</span>
+            </div>
+            <div class="col col-lg-4 col-center">
+                <span class="col-lg-3 control-label">Nachname</span> <span class="col-lg-9">#{dataTableItem.nachname}</span>
+            </div>
+            <div class="col col-lg-4 col-last">
+                <span class="col-lg-3 control-label">Username</span> <span class="col-lg-9">#{dataTableItem.login}</span>
+            </div>
+        </div>
+
+    </td>
+
+</ui:composition>
