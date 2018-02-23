@@ -72,7 +72,7 @@
 						<code>&lt;isy:formInput&gt;</code>
 					</p>
 					<p>
-						<isy:formInput id="formInput" type="text" label="Text: "
+						<isy:formInput type="text" label="Text: "
 							reference="formInputReferenz"
 							value="#{jsfSteuerelementeModel.formInputTextButtonActionResult}" />
 					</p>
@@ -293,7 +293,7 @@
 				<p>
 					<isy:formCheckbox id="cbtest2" reference="cbtest2"
 						value="#{jsfSteuerelementeModel.checkboxBoolean1}"
-						label="Eine Auswahl" labelRight="Auswahl 1"
+						label="Eine Auswahl" labelRight="Auswahl 1" disabled="false"
 						valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
 						<f:ajax event="change"
 							render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert" />
@@ -318,7 +318,7 @@
 				<p>
 					<isy:formCheckbox id="cbtest4" reference="cbtest4"
 						value="#{jsfSteuerelementeModel.checkboxBoolean3}"
-						label="Eine Pflichtauswahl" required="true" labelRight="Auswahl 3"
+						label="Eine Pflichtauswahl" required="true" labelRight="Auswahl 3" disabled="false"
 						valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
 						<f:ajax event="change"
 							render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert" />
@@ -331,7 +331,7 @@
 					<isy:formCheckbox id="cbtest5" reference="cbtest5"
 						value="#{jsfSteuerelementeModel.checkboxBoolean4}"
 						label="Eine optionale Auswahl" optional="true"
-						labelRight="Auswahl 4"
+						labelRight="Auswahl 4" disabled="false"
 						valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
 						<f:ajax event="change"
 							render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert" />
@@ -360,7 +360,7 @@
 				<div class="form-horizontal">
 					<div class="row row-df">
 						<isy:formDate label="Datum" labelStyleClass="col-lg-1"
-							inputStyleClass="col-lg-2" type="date"
+							inputStyleClass="col-lg-2"
 							value="#{jsfSteuerelementeModel.datum}"
 							placeholder="z.B 12.02.2001" reference="datum" />
 					</div>
@@ -370,7 +370,7 @@
 				<div class="form-horizontal">
 					<div class="row row-df">
 						<isy:formDate label="Datum readonly" labelStyleClass="col-lg-1"
-							readonly="true" inputStyleClass="col-lg-2" type="date"
+							readonly="true" inputStyleClass="col-lg-2"
 							value="12.12.2012" placeholder="z.B 12.02.2001" reference="datum" />
 					</div>
 				</div>
@@ -1054,9 +1054,9 @@
           </p>
           <div class="form-horizontal">
             <div class="row row-df">
-              <isy:formInput id="formInputFourEyes" type="text" label="Text: "
+              <isy:formInputWithFourEyes id="formInputFourEyes" type="text" label="Text: "
                 labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
-                reference="formInputReferenz"
+                reference="formInputFourEyesReferenz"
                 value="#{jsfSteuerelementeModel.formInputTextButtonActionResult}"
                 fourEyesMode="unlock"
                 fourEyesLastValue="Vorher" />
@@ -1069,7 +1069,7 @@
           </p>
           <div class="form-horizontal">
             <div class="row row-df">
-                <isy:formActionInput reference="testFormActionInputFourEyes"
+                <isy:formActionInputWithFourEyes reference="testFormActionInputFourEyes"
                   label="Ein Label"
                   labelStyleClass="col-lg-2"
                   inputStyleClass="col-lg-2"
@@ -1087,13 +1087,12 @@
           </p>
           <div class="form-horizontal">
             <div class="row row-df">
-              <isy:formCurrencyInput label="isy:formCurrencyInput"
+              <isy:formCurrencyInputWithFourEyes label="isy:formCurrencyInput"
                 labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
                 required="true" placeholder="24,00" value=""
                 reference="formCurrencyInputFourEyes"
                 fourEyesMode="unlock"
-                fourEyesLastValue="Vorher">
-              </isy:formCurrencyInput>
+                fourEyesLastValue="Vorher"/>
             </div>
           </div>
           
@@ -1103,8 +1102,8 @@
           </p>
           <div class="form-horizontal">
             <div class="row row-df">
-              <isy:formDate label="Datum" labelStyleClass="col-lg-2"
-                inputStyleClass="col-lg-2" type="date"
+              <isy:formDateWithFourEyes label="Datum" labelStyleClass="col-lg-2"
+                inputStyleClass="col-lg-2"
                 value="#{jsfSteuerelementeModel.datum}"
                 placeholder="z.B 12.02.2001" reference="datumFourEyes"
                 fourEyesMode="unlock"
@@ -1118,7 +1117,7 @@
           </p>
           <div class="form-horizontal">
             <div class="row row-df">
-              <isy:formTextarea label="Text"
+              <isy:formTextareaWithFourEyes label="Text"
                 value="#{jsfSteuerelementeModel.textBoxButtonActionResult}"
                 labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
                 reference="textFourEyes" placeholder="Bitte geben Sie einen Text ein!"
@@ -1134,23 +1133,22 @@
           FormCheckbox
           </p>
           <p>
-            <isy:formCheckbox id="cbtest2FourEyes" reference="cbtest2FourEyes"
+            <isy:formCheckboxWithFourEyes id="cbtest2FourEyes" reference="cbtest2FourEyes"
               value="#{jsfSteuerelementeModel.checkboxBoolean1}"
               label="Eine Auswahl" labelRight="Auswahl 1"
               valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}"
               fourEyesMode="unlock"
-              fourEyesLastValue="Vorher">
-            </isy:formCheckbox>
+              fourEyesLastValue="Vorher"
+			  disabled="false"/>
           </p>
           <p>
-            <isy:formCheckbox id="cbtest3FourEyes" reference="cbtest3FourEyes"
+            <isy:formCheckboxWithFourEyes id="cbtest3FourEyes" reference="cbtest3FourEyes"
               value="#{jsfSteuerelementeModel.checkboxBoolean2}"
               label="Eine deaktivierte Auswahl" disabled="true"
               labelRight="Auswahl 2"
               valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}"
               fourEyesMode="unlock"
-              fourEyesLastValue="Vorher">
-            </isy:formCheckbox>
+              fourEyesLastValue="Vorher"/>
           </p>
           
           <!-- formSelectOneDropdown -->
@@ -1159,7 +1157,7 @@
             <br /> <br />
           </div>
           <div class="col-lg-6">
-            <isy:formSelectOneDropdown reference="formSelectOneDropdown"
+            <isy:formSelectOneDropdownWithFourEyes reference="formSelectOneDropdown"
               value="#{jsfSteuerelementeModel.dropdownAuswahl}"
               label="Auswahl"
               valueChangeListener="#{jsfSteuerelementeController.dropdownWertAusgewaehlt}"
@@ -1170,7 +1168,7 @@
                   value="#{jsfSteuerelementeModel.dropdownAuswahlListe}" />
                 <f:ajax event="change"
                   render="inhaltsbereichForm:dropdownPanel:dropdownAuswahlAjax" />
-            </isy:formSelectOneDropdown>
+			</isy:formSelectOneDropdownWithFourEyes>
           </div>
           
         </f:facet>
