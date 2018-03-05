@@ -3,7 +3,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans
                         http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
 
-    <!-- Diese Bean enthält die Anwendungskonfiguration, die in der Laufzeit von Betrieb verändert werden können. -->
+    <!-- Diese Bean enthält die Anwendungskonfiguration, die in der Laufzeit von Betrieb verändert werden können.  -->
     <bean id="konfiguration" class="de.bund.bva.pliscommon.konfiguration.common.impl.ReloadablePropertyKonfiguration">
         <constructor-arg>
             <list>
