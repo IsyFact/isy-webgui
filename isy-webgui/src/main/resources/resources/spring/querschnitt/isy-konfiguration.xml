@@ -8,6 +8,7 @@
         <constructor-arg>
             <list>
                 <value>/resources/default.properties</value>
+                <value>/resources/gui-anwendungsgruppen.properties</value>
                 <value>/resources/nachrichten/gui-linksnavigation.properties</value>
                 <value>/config/isy-webgui.properties</value>
             </list>
