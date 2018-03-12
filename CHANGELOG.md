@@ -1,2 +1,2 @@
 # v4.6.0
-- Übernahme in IsyFact
+- `IFS-94`: Neue Widgets: formsNumericInput und formNumericInputWithFourEyes.

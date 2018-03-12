@@ -148,36 +148,72 @@
 					</div>
 
 					<div class="row row-df">
-						<h2>isy:formCurrencyInput</h2>
-					</div>
+					<h2>isy:formCurrencyInput</h2>
+				</div>
 					<div class="col-lg-12">
 						<div class="row row-df">
 							<isy:formCurrencyInput label="formCurrencyInput normal"
-								required="false" placeholder="24,00" value="" readonly="false"
-								reference="formCurrencyInput" onblur="formatAmountOfMoney(this)" />
+												   required="false" placeholder="24,00" value="" readonly="false"
+												   reference="formCurrencyInput" onblur="formatAmountOfMoney(this)" />
 							<isy:formCurrencyInput
-								label="formCurrencyInput mit fourEyesMode=unlocked"
-								placeholder="24,00" fourEyesMode="unlocked"
-								fourEyesLastValue="letzter Wert" value="" readonly="false"
-								reference="formCurrencyInput" onblur="formatAmountOfMoney(this)" />
+									label="formCurrencyInput mit fourEyesMode=unlocked"
+									placeholder="24,00" fourEyesMode="unlocked"
+									fourEyesLastValue="letzter Wert" value="" readonly="false"
+									reference="formCurrencyInput" onblur="formatAmountOfMoney(this)" />
 							<isy:formCurrencyInput
-								label="formCurrencyInput mit fourEyesMode=unlocked readonly"
-								placeholder="24,00" fourEyesMode="unlocked"
-								fourEyesLastValue="letzter Wert" value="36,00" readonly="true"
-								reference="formCurrencyInput" onblur="formatAmountOfMoney(this)" />
+									label="formCurrencyInput mit fourEyesMode=unlocked readonly"
+									placeholder="24,00" fourEyesMode="unlocked"
+									fourEyesLastValue="letzter Wert" value="36,00" readonly="true"
+									reference="formCurrencyInput" onblur="formatAmountOfMoney(this)" />
 							<isy:formCurrencyInput
-								label="formCurrencyInput mit fourEyesMode=locked readonly"
-								placeholder="24,00" fourEyesMode="locked"
-								fourEyesLastValue="letzter Wert" value="36,00" readonly="true"
-								reference="formCurrencyInput" onblur="formatAmountOfMoney(this)" />
+									label="formCurrencyInput mit fourEyesMode=locked readonly"
+									placeholder="24,00" fourEyesMode="locked"
+									fourEyesLastValue="letzter Wert" value="36,00" readonly="true"
+									reference="formCurrencyInput" onblur="formatAmountOfMoney(this)" />
 							<isy:formCurrencyInput label="formCurrencyInput normal Fehler"
-								required="false" placeholder="24,00" value="" readonly="false"
-								reference="fehler" onblur="formatAmountOfMoney(this)" />
+												   required="false" placeholder="24,00" value="" readonly="false"
+												   reference="fehler" onblur="formatAmountOfMoney(this)" />
 							<isy:formCurrencyInput
-								label="formCurrencyInput mit fourEyesMode=locked Fehler"
-								placeholder="24,00" fourEyesMode="locked"
-								fourEyesLastValue="letzter Wert" value="36,00" readonly="false"
-								reference="fehler" onblur="formatAmountOfMoney(this)" />
+									label="formCurrencyInput mit fourEyesMode=locked Fehler"
+									placeholder="24,00" fourEyesMode="locked"
+									fourEyesLastValue="letzter Wert" value="36,00" readonly="false"
+									reference="fehler" onblur="formatAmountOfMoney(this)" />
+						</div>
+					</div>
+
+					<div class="row row-df">
+						<h2>isy:formNumericInputWithFourEyes</h2>
+					</div>
+					<div class="col-lg-12">
+						<div class="row row-df">
+							<isy:formNumericInput label="formNumericInputWithFourEyes normal"
+												   required="false" placeholder="24" value="" readonly="false"
+												   reference="formNumericInput" onchange="formatNumericValue(this)" />
+							<isy:formNumericInputWithFourEyes
+									label="formNumericInputWithFourEyes mit fourEyesMode=unlocked"
+									placeholder="48.765" fourEyesMode="unlocked"
+									decimalplaces="0" tausenderPunkt="true"
+									fourEyesLastValue="letzter Wert" value="" readonly="false"
+									reference="formNumericInputWithFourEyes" onchange="formatNumericValue(this)" />
+							<isy:formNumericInputWithFourEyes
+									label="formNumericInputWithFourEyes mit fourEyesMode=unlocked readonly"
+									placeholder="24,00" fourEyesMode="unlocked"
+									fourEyesLastValue="letzter Wert" value="36,00" readonly="true"
+									reference="formNumericInputWithFourEyes" onchange="formatNumericValue(this)" />
+							<isy:formNumericInputWithFourEyes
+									label="formNumericInputWithFourEyes mit fourEyesMode=locked readonly"
+									placeholder="24,00" fourEyesMode="locked"
+									fourEyesLastValue="letzter Wert" value="36,00" readonly="true"
+									reference="formNumericInputWithFourEyes" onchange="formatNumericValue(this)" />
+							<isy:formNumericInputWithFourEyes label="formNumericInput normal Fehler"
+												   required="false" placeholder="124,5" fourEyesMode="unlocked" value="" readonly="false"
+															  decimalplaces="1" tausenderPunkt="false"
+												   reference="fehler" onchange="formatNumericValue(this)" />
+							<isy:formNumericInputWithFourEyes
+									label="formNumericInputWithFourEyes mit fourEyesMode=locked Fehler"
+									placeholder="67.824,987" fourEyesMode="locked" decimalplaces="3" tausenderPunkt="true"
+									fourEyesLastValue="letzter Wert" value="2.336,069" readonly="false"
+									reference="fehler" onchange="formatNumericValue(this)" />
 						</div>
 					</div>
 

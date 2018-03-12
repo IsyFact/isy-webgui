@@ -941,16 +941,16 @@
             <isy:panel id="numericPanel"
                        panelModel="#{jsfSteuerelementeModel.panelModelNumeric}"
                        collapse="true">
-                <f:facet name="panelHeader">Eingabefeld für Numerische-/Fliesskomma-Zahlen</f:facet>
+                <f:facet name="panelHeader">Eingabefeld für numerische Zahlen</f:facet>
                 <f:facet name="panelBody">
                     <p>
                         Einbindung über
-                        <code>&lt;isy:formNumericInput&gt;</code>
+                        <code>&lt;isy:formNumericInput&gt;</code> (Ganz- und Fließkommazahlen)
                     </p>
                     <div class="form-horizontal">
                         <div class="row row-df">
 
-                            <isy:formNumericInput label="isy:formNumericInput"
+                            <isy:formNumericInput label="Style (editable)"
                                                   labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
                                                   required="true" placeholder="24,01" value=""
                                                   reference="formNumericInput">
@@ -963,7 +963,7 @@
                     <div class="form-horizontal">
                         <div class="row row-df">
 
-                            <isy:formNumericInput label="isy:formNumericInput (disabled)"
+                            <isy:formNumericInput label="Style (disabled)"
                                                   labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
                                                   required="true" placeholder="24,20" value=""
                                                   reference="formNumericInput2" disabled="true">
@@ -976,7 +976,7 @@
                     <div class="form-horizontal">
                         <div class="row row-df">
 
-                            <isy:formNumericInput label="isy:formNumericInput (readonly)"
+                            <isy:formNumericInput label="Style (readonly)"
                                                   labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
                                                   required="true" placeholder="24,39" value="24,00"
                                                   reference="formNumericInput3" readonly="true">
@@ -985,15 +985,30 @@
                         </div>
                     </div>
 
-                    <!-- Text rechts ausgerichtet. -->
+                    <p><br/>Zahlenwerte rechts ausgerichtet</p>
+                    <!-- Zahlenwerte rechts ausgerichtet. -->
                     <div class="form-horizontal">
                         <div class="row row-df">
 
                             <isy:formNumericInput
-                                    label="isy:formNumericInput (Textausrichtung rechts)"
+                                    label="keine Nachkommastelle, ohne Tausenderpunkt"
                                     labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
-                                    required="true" placeholder="1234,00" value=""
+                                    required="true" placeholder="1234" value=""
                                     reference="formNumericInput4" alignright="true">
+                            </isy:formNumericInput>
+
+                        </div>
+                    </div>
+
+                    <!-- Ohne Nachkommastellen mit Tausenderpunkt. -->
+                    <div class="form-horizontal">
+                        <div class="row row-df">
+
+                            <isy:formNumericInput
+                                    label="ohne Nachkommastelle, mit Tausenderpunkt"
+                                    labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
+                                    placeholder="1.664.678" value="" reference="formNumericInput6"
+                                    decimalplaces="0" tausenderpunkt="true" alignright="true">
                             </isy:formNumericInput>
 
                         </div>
@@ -1004,38 +1019,24 @@
                         <div class="row row-df">
 
                             <isy:formNumericInput
-                                    label="isy:formNumericInput (Eine Nachkommastellen, Tausenderpunkt)"
+                                    label="eine Nachkommastellen, mit Tausenderpunkt"
                                     labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
-                                    placeholder="8768,5" value="" reference="formNumericInput5"
-                                    decimalplaces="1" alignright="true">
+                                    placeholder="8.768,5" value="" reference="formNumericInput5"
+                                    decimalplaces="1" tausenderpunkt="true" alignright="true">
                             </isy:formNumericInput>
 
                         </div>
                     </div>
 
-                    <!-- Ohne Nachkommastellen. -->
+                    <!-- Drei Nachkommastellen. -->
                     <div class="form-horizontal">
                         <div class="row row-df">
 
                             <isy:formNumericInput
-                                    label="isy:formNumericInput (Ohne Nachkommastelle)"
+                                    label="drei Nachkommastellen, ohne Tausenderpunkt"
                                     labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
-                                    placeholder="245678" value="" reference="formNumericInput6"
-                                    decimalplaces="0" alignright="true">
-                            </isy:formNumericInput>
-
-                        </div>
-                    </div>
-
-                    <!-- Ohne Nachkommastellen. -->
-                    <div class="form-horizontal">
-                        <div class="row row-df">
-
-                            <isy:formNumericInput
-                                    label="isy:formNumericInput (Ohne Nachkommastelle, Tausenderpunkt)"
-                                    labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
-                                    placeholder="245678" value="" reference="formNumericInput6"
-                                    decimalplaces="0" alignright="true">
+                                    placeholder="18768,537" value="" reference="formNumericInput5"
+                                    decimalplaces="3" tausenderpunkt="false" alignright="true">
                             </isy:formNumericInput>
 
                         </div>
