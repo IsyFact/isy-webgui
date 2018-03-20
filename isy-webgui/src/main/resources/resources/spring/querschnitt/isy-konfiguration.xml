@@ -9,6 +9,7 @@
             <list>
                 <value>/resources/default.properties</value>
                 <value>/resources/nachrichten/gui-linksnavigation.properties</value>
+                <value>/resources/nachrichten/navigationmenu.properties</value>
                 <value>/config/isy-webgui.properties</value>
             </list>
         </constructor-arg>
