@@ -106,6 +106,11 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
     private PanelModel panelModelCurrency = new PanelModel(false);
 
     /**
+     * PanelModel für die Numeric-Input-Komponente.
+     */
+    private PanelModel panelModelNumeric = new PanelModel(false);
+
+    /**
      * PanelModel für die Browse & Collect-Komponente.
      */
     private PanelModel panelModelBrowseAndCollect = new PanelModel(false);
@@ -685,6 +690,14 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
         return this.panelModelBrowseAndCollect;
     }
 
+    public PanelModel getPanelModelNumeric() {
+        return panelModelNumeric;
+    }
+
+    public void setPanelModelNumeric(PanelModel panelModelNumeric) {
+        this.panelModelNumeric = panelModelNumeric;
+    }
+
     public void setPanelModelBrowseAndCollect(PanelModel panelModelBrowseAndCollect) {
         this.panelModelBrowseAndCollect = panelModelBrowseAndCollect;
     }
@@ -800,6 +813,7 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
     public void setFoureyesDatum(String foureyesDatum) {
         this.foureyesDatum = foureyesDatum;
     }
+
     public Part getBildUpload() {
         return this.bildUpload;
     }
