@@ -52,11 +52,11 @@
             <version>4.6.0-SNAPSHOT</version>
         </dependency>
 
-        <!--dependency>
+        <dependency>
             <groupId>de.bund.bva.isyfact</groupId>
             <artifactId>isy-style</artifactId>
-            <version>4.0.0</version>
-        </dependency-->
+            <version>3.1.0-SNAPSHOT</version>
+        </dependency>
 
         <!-- Eingebunden für formUpload. Diese Dependency ist bereits in der isy-web als provided eingebunden,
             was sich aber nicht transitiv auf die rf-webgui auswirkt-->
