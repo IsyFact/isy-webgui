@@ -6,6 +6,9 @@
     template="/WEB-INF/gui/common/layout/applikation.xhtml">
 
     <ui:define name="inhaltsbereich">
+        <!-- Klappbare Seitennavigation aktivieren -->
+       <ui:include src="/WEB-INF/gui/common/seitenelemente/collapse.xhtml"/>
+
         <isy:panelGroup>
             <isy:panel>
                 <f:facet name="panelHeader">Filterkriterien</f:facet>
