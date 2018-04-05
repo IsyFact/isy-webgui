@@ -20,9 +20,3 @@ select.form-control {
 .picker {
     border:1px solid lightgray !important;
 }
-
-.form-horizontal .control-label {
-    margin-bottom: 0;
-    padding-top: 4px;
-    text-align: right;
-}

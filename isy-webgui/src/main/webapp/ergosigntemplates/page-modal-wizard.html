@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/color.css" media="all"/>
     <script type="text/javascript" src="lib/jquery-1.11.0.js"></script>
     <script type="text/javascript" src="lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="lib/modernizr.js"></script>
@@ -40,14 +41,14 @@
 
     <div class="outer-container">
 
-        <div class="main-header">
+        <header class="mainHeader">
 
-            <div class="sr-only">
+            <nav class="sr-only">
                 <ol>
                     <li><a href="#main-nav" title="zur Hauptnavigation springen">zur Hauptnavigation</a></li>
                     <li><a href="#content" title="zum Inhalt der Seite springen">zum Inhalt</a></li>
                 </ol>
-            </div>
+            </nav>
 
             <div class="header-colorbar"></div>
 
@@ -58,7 +59,7 @@
 
                     <div class="brand">
                         <img alt="IsyFact Logo" src="img/isyfactlogo.jpeg">
-                        <span>IsyFact Bundesverwaltungsamt</span>
+                        <span>IsyFact</span>
                     </div>
 
                     <form class="form-horizontal" role="form">
@@ -78,9 +79,8 @@
                 </div>
             </div>
 
-            <div id="main-nav" class="navbar navbar-default" role="navigation">
-
-                <ul class="nav nav-tabs pull-right">
+            <nav id="main-nav" class="navbar navbar-default" role="navigation">
+                <ul class="nav nav-tabs navbar-right" >
 
                     <li class="active">
                         <a href="index.html" aria-haspopup="true" aria-owns="submenu-1" aria-controls="submenu-1" aria-expanded="false">Vorlagen</a>
@@ -96,42 +96,42 @@
                         </ul>
 
                         <div class="navbar-submenu">
-                            <div class="row row-df">
-                                <div class="col-lg-3">
+                            <div class="row">
+                                <div class="hidden-xs col-sm-4 col-lg-3">
                                     <div class="submenu-text">
                                         <span class="icon icon-placeholder "></span>
                                         <p>Lorem ipsum dolor sit amet candellarin blarum Lorem ipsum dolor sit amet candellarin
                                             blarum Lorem ipsum dolor sit amet candellarin blarum</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                <div class="col-sm-8 col-lg-7">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="index.html">Steuerelementübersicht</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="page-details.html" >Detailseite</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="page-modal-edit-data.html">Modaler Bearbeitungsdialog</a>
                                         </div>
                                     </div>
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="page-nojs-edit-data.html">Bearbeitungsseite ohne Javascript</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="page-search-result.html">Suchergebnisse</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="page-dashboard.html">Dashboard</a>
                                         </div>
                                     </div>
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="page-modal-wizard.html">Modaler Wizard-Dialog</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="page-search-result-print.html">Suchergebnisse Print</a>
                                         </div>
                                     </div>
@@ -152,34 +152,34 @@
                             <li><a href="/subpage">Unterpunkt F</a></li>
                         </ul>
                         <div class="navbar-submenu orange">
-                            <div class="row row-df">
-                                <div class="col-lg-3">
+                            <div class="row">
+                                <div class="hidden-xs col-sm-4 col-lg-3">
                                     <div class="submenu-text">
                                         <span class="icon icon-placeholder "></span>
                                         <p>Lorem ipsum dolor sit amet candellarin blarum Lorem ipsum dolor sit amet candellarin
                                             blarum Lorem ipsum dolor sit amet candellarin blarum</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                <div class="col-sm-8 col-lg-7">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu A</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu B</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu C</a>
                                         </div>
                                     </div>
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu D</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu E</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu F</a>
                                         </div>
                                     </div>
@@ -200,31 +200,31 @@
                         </ul>
 
                         <div class="navbar-submenu green">
-                            <div class="row row-df">
-                                <div class="col-lg-3">
+                            <div class="row">
+                                <div class="hidden-xs col-sm-4 col-lg-3">
                                     <div class="submenu-text">
                                         <span class="icon icon-placeholder "></span>
                                         <p>Lorem ipsum dolor sit amet candellarin blarum Lorem ipsum dolor sit amet candellarin
                                             blarum Lorem ipsum dolor sit amet candellarin blarum</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                <div class="col-sm-8 col-lg-7">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu A</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu B</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu C</a>
                                         </div>
                                     </div>
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu D</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu E</a>
                                         </div>
                                     </div>
@@ -243,28 +243,28 @@
                         </ul>
 
                         <div class="navbar-submenu lightBlue">
-                            <div class="row row-df">
-                                <div class="col-lg-3">
+                            <div class="row">
+                                <div class="hidden-xs col-sm-4 col-lg-3">
                                     <div class="submenu-text">
                                         <span class="icon icon-placeholder "></span>
                                         <p>Lorem ipsum dolor sit amet candellarin blarum Lorem ipsum dolor sit amet candellarin
                                             blarum Lorem ipsum dolor sit amet candellarin blarum</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                <div class="col-sm-8 col-lg-7">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu A</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu B</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu C</a>
                                         </div>
                                     </div>
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu D</a>
                                         </div>
                                     </div>
@@ -281,17 +281,17 @@
                         </ul>
 
                         <div class="navbar-submenu yellow">
-                            <div class="row row-df">
-                                <div class="col-lg-3">
+                            <div class="row">
+                                <div class="hidden-xs col-sm-4 col-lg-3">
                                     <div class="submenu-text">
                                         <span class="icon icon-placeholder "></span>
                                         <p>Lorem ipsum dolor sit amet candellarin blarum Lorem ipsum dolor sit amet candellarin
                                             blarum Lorem ipsum dolor sit amet candellarin blarum</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                <div class="col-sm-8 col-lg-7">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu A</a>
                                         </div>
                                     </div>
@@ -308,17 +308,17 @@
                         </ul>
 
                         <div class="navbar-submenu red">
-                            <div class="row row-df">
-                                <div class="col-lg-3">
+                            <div class="row">
+                                <div class="hidden-xs col-sm-4 col-lg-3">
                                     <div class="submenu-text">
                                         <span class="icon icon-placeholder "></span>
                                         <p>Lorem ipsum dolor sit amet candellarin blarum Lorem ipsum dolor sit amet candellarin
                                             blarum Lorem ipsum dolor sit amet candellarin blarum</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                <div class="col-sm-8 col-lg-7">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu A</a>
                                         </div>
                                     </div>
@@ -330,15 +330,15 @@
                 </ul>
 
                 <div class="navbar-color"></div>
-            </div>
-        </div>
+            </nav>
+        </header>
 <script>
     // if the modal window is set to visible at launch the body tag needs the modal-open class
     //$('body').addClass("modal-open");
     $('.outer-container').addClass("show-info-panel");
 </script>
 
-    <div id="content" role="main">
+    <main id="content" role="main">
 
         <div class="toolbar page">
             <a class="btn btn-icon-round btn-icon-round-large">
@@ -355,9 +355,9 @@
             </div>
         </div>
 
-        <div class="container-fluid maincontent ">
-            <div class="row row-df">
-                <div class="col-lg-9">
+        <article class="container-fluid maincontent ">
+            <div class="row">
+                <div class="col-xs-9">
                     <div class="panel-group panel-grey-back reset-maincontent-padding">
                         <div class="panel panel-default">
                         <div class="panel-heading">
@@ -372,51 +372,51 @@
                         <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                                 <form class="form-horizontal readonly" role="form">
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="name" class="col-lg-5 control-label">Name</label>
+                                                <label for="name" class="col-md-5 control-label">Name</label>
 
-                                                <div class="col-lg-7">
+                                                <div class="col-md-7">
                                                     <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="firstname" class="col-lg-5 control-label">Vorname</label>
+                                                <label for="firstname" class="col-md-5 control-label">Vorname</label>
 
-                                                <div class="col-lg-7">
+                                                <div class="col-md-7">
                                                     <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="birth" class="col-lg-5 control-label">Geburtsdatum</label>
+                                                <label for="birth" class="col-md-5 control-label">Geburtsdatum</label>
 
-                                                <div class="col-lg-7">
+                                                <div class="col-md-7">
                                                     <input id="birth" type="text" class="form-control readonly" readonly="readonly" value="22.02.1922">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="code" class="col-lg-5 control-label">Identifikation</label>
+                                                <label for="code" class="col-md-5 control-label">Identifikation</label>
 
-                                                <div class="col-lg-7">
+                                                <div class="col-md-7">
                                                     <input id="code" type="text" class="form-control readonly" readonly="readonly" value="46548464648">
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-md-4">
                                             <div class="form-group">
-                                                <label for="address" class="col-lg-5 control-label">Adresse</label>
+                                                <label for="address" class="col-md-5 control-label">Adresse</label>
 
-                                                <div class="col-lg-7">
+                                                <div class="col-md-7">
                                                     <input id="address" type="text" class="form-control readonly" readonly="readonly" value="Lorem Ipsum">
                                                 </div>
                                             </div>
                                             <div class="form-group">
-                                                <label for="lorem" class="col-lg-5 control-label">und noch ein label</label>
+                                                <label for="lorem" class="col-md-5 control-label">und noch ein label</label>
 
-                                                <div class="col-lg-7">
+                                                <div class="col-md-7">
                                                     <input id="lorem" type="text" class="form-control readonly" readonly="readonly" value="Lorem Ipsum">
                                                 </div>
                                             </div>
@@ -490,187 +490,187 @@
                                             </div>
                                             <div class="panel-body">
                                                 <form class="form-horizontal readonly" role="form">
-                                                    <div class="row row-df">
-                                                        <div class="col-lg-4">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="name" class="col-lg-5 control-label">Name</label>
+                                                                <label for="name" class="col-md-5 control-label">Name</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="firstname" class="col-lg-5 control-label">Vorname</label>
+                                                                <label for="firstname" class="col-md-5 control-label">Vorname</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
                                                                 </div>
                                                             </div>
 
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="birth" class="col-lg-5 control-label">Geburtsdatum</label>
+                                                                <label for="birth" class="col-md-5 control-label">Geburtsdatum</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="birth" type="text" class="form-control readonly" readonly="readonly" value="22.02.1922">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="code" class="col-lg-5 control-label">Identifikation</label>
+                                                                <label for="code" class="col-md-5 control-label">Identifikation</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="code" type="text" class="form-control readonly" readonly="readonly" value="46548464648">
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="picture" class="col-lg-5 control-label">Lichtbild</label>
+                                                                <label for="picture" class="col-md-5 control-label">Lichtbild</label>
 
-                                                                <div class="col-lg-2">
+                                                                <div class="col-md-2">
                                                                     <img class="img-responsive" src="img/dummyProfileImage.png"/>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row row-df">
-                                                        <div class="col-lg-4">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="name" class="col-lg-5 control-label">Name</label>
+                                                                <label for="name" class="col-md-5 control-label">Name</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="firstname" class="col-lg-5 control-label">Vorname</label>
+                                                                <label for="firstname" class="col-md-5 control-label">Vorname</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="name" class="col-lg-5 control-label">Name</label>
+                                                                <label for="name" class="col-md-5 control-label">Name</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="firstname" class="col-lg-5 control-label">Vorname</label>
+                                                                <label for="firstname" class="col-md-5 control-label">Vorname</label>
 
-                                                                <div class="col-lg-7">
-                                                                    <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="form-group">
-                                                                <label for="birth" class="col-lg-5 control-label">Geburtsdatum</label>
-
-                                                                <div class="col-lg-7">
-                                                                    <input id="birth" type="text" class="form-control readonly" readonly="readonly" value="22.02.1922">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="code" class="col-lg-5 control-label">Identifikation</label>
-
-                                                                <div class="col-lg-7">
-                                                                    <input id="code" type="text" class="form-control readonly" readonly="readonly" value="46548464648">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="name" class="col-lg-5 control-label">Name</label>
-
-                                                                <div class="col-lg-7">
-                                                                    <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="firstname" class="col-lg-5 control-label">Vorname</label>
-
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="birth" class="col-lg-5 control-label">Geburtsdatum</label>
+                                                                <label for="birth" class="col-md-5 control-label">Geburtsdatum</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="birth" type="text" class="form-control readonly" readonly="readonly" value="22.02.1922">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="code" class="col-lg-5 control-label">Identifikation</label>
+                                                                <label for="code" class="col-md-5 control-label">Identifikation</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="code" type="text" class="form-control readonly" readonly="readonly" value="46548464648">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="name" class="col-lg-5 control-label">Name</label>
+                                                                <label for="name" class="col-md-5 control-label">Name</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="firstname" class="col-lg-5 control-label">Vorname</label>
+                                                                <label for="firstname" class="col-md-5 control-label">Vorname</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
+                                                                    <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="birth" class="col-md-5 control-label">Geburtsdatum</label>
+
+                                                                <div class="col-md-7">
+                                                                    <input id="birth" type="text" class="form-control readonly" readonly="readonly" value="22.02.1922">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="code" class="col-md-5 control-label">Identifikation</label>
+
+                                                                <div class="col-md-7">
+                                                                    <input id="code" type="text" class="form-control readonly" readonly="readonly" value="46548464648">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="name" class="col-md-5 control-label">Name</label>
+
+                                                                <div class="col-md-7">
+                                                                    <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="firstname" class="col-md-5 control-label">Vorname</label>
+
+                                                                <div class="col-md-7">
                                                                     <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row row-df">
-                                                        <div class="col-lg-4">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="name" class="col-lg-5 control-label">Name</label>
+                                                                <label for="name" class="col-md-5 control-label">Name</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="firstname" class="col-lg-5 control-label">Vorname</label>
+                                                                <label for="firstname" class="col-md-5 control-label">Vorname</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="birth" class="col-lg-5 control-label">Geburtsdatum</label>
+                                                                <label for="birth" class="col-md-5 control-label">Geburtsdatum</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="birth" type="text" class="form-control readonly" readonly="readonly" value="22.02.1922">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="code" class="col-lg-5 control-label">Identifikation</label>
+                                                                <label for="code" class="col-md-5 control-label">Identifikation</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="code" type="text" class="form-control readonly" readonly="readonly" value="46548464648">
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="birth" class="col-lg-5 control-label">Geburtsdatum</label>
+                                                                <label for="birth" class="col-md-5 control-label">Geburtsdatum</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="birth" type="text" class="form-control readonly" readonly="readonly" value="22.02.1922">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="code" class="col-lg-5 control-label">Identifikation</label>
+                                                                <label for="code" class="col-md-5 control-label">Identifikation</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="code" type="text" class="form-control readonly" readonly="readonly" value="46548464648">
                                                                 </div>
                                                             </div>
@@ -701,187 +701,187 @@
                                             </div>
                                             <div class="panel-body">
                                                 <form class="form-horizontal readonly" role="form">
-                                                    <div class="row row-df">
-                                                        <div class="col-lg-4">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="name" class="col-lg-5 control-label">Name</label>
+                                                                <label for="name" class="col-md-5 control-label">Name</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="firstname" class="col-lg-5 control-label">Vorname</label>
+                                                                <label for="firstname" class="col-md-5 control-label">Vorname</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
                                                                 </div>
                                                             </div>
 
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="birth" class="col-lg-5 control-label">Geburtsdatum</label>
+                                                                <label for="birth" class="col-md-5 control-label">Geburtsdatum</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="birth" type="text" class="form-control readonly" readonly="readonly" value="22.02.1922">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="code" class="col-lg-5 control-label">Identifikation</label>
+                                                                <label for="code" class="col-md-5 control-label">Identifikation</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="code" type="text" class="form-control readonly" readonly="readonly" value="46548464648">
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="picture" class="col-lg-5 control-label">Lichtbild</label>
+                                                                <label for="picture" class="col-md-5 control-label">Lichtbild</label>
 
-                                                                <div class="col-lg-2">
+                                                                <div class="col-md-2">
                                                                     <img class="img-responsive" src="img/dummyProfileImage.png"/>
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row row-df">
-                                                        <div class="col-lg-4">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="name" class="col-lg-5 control-label">Name</label>
+                                                                <label for="name" class="col-md-5 control-label">Name</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="firstname" class="col-lg-5 control-label">Vorname</label>
+                                                                <label for="firstname" class="col-md-5 control-label">Vorname</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="name" class="col-lg-5 control-label">Name</label>
+                                                                <label for="name" class="col-md-5 control-label">Name</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="firstname" class="col-lg-5 control-label">Vorname</label>
+                                                                <label for="firstname" class="col-md-5 control-label">Vorname</label>
 
-                                                                <div class="col-lg-7">
-                                                                    <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-                                                        <div class="col-lg-4">
-                                                            <div class="form-group">
-                                                                <label for="birth" class="col-lg-5 control-label">Geburtsdatum</label>
-
-                                                                <div class="col-lg-7">
-                                                                    <input id="birth" type="text" class="form-control readonly" readonly="readonly" value="22.02.1922">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="code" class="col-lg-5 control-label">Identifikation</label>
-
-                                                                <div class="col-lg-7">
-                                                                    <input id="code" type="text" class="form-control readonly" readonly="readonly" value="46548464648">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="name" class="col-lg-5 control-label">Name</label>
-
-                                                                <div class="col-lg-7">
-                                                                    <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
-                                                                </div>
-                                                            </div>
-                                                            <div class="form-group">
-                                                                <label for="firstname" class="col-lg-5 control-label">Vorname</label>
-
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="birth" class="col-lg-5 control-label">Geburtsdatum</label>
+                                                                <label for="birth" class="col-md-5 control-label">Geburtsdatum</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="birth" type="text" class="form-control readonly" readonly="readonly" value="22.02.1922">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="code" class="col-lg-5 control-label">Identifikation</label>
+                                                                <label for="code" class="col-md-5 control-label">Identifikation</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="code" type="text" class="form-control readonly" readonly="readonly" value="46548464648">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="name" class="col-lg-5 control-label">Name</label>
+                                                                <label for="name" class="col-md-5 control-label">Name</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="firstname" class="col-lg-5 control-label">Vorname</label>
+                                                                <label for="firstname" class="col-md-5 control-label">Vorname</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
+                                                                    <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-4">
+                                                            <div class="form-group">
+                                                                <label for="birth" class="col-md-5 control-label">Geburtsdatum</label>
+
+                                                                <div class="col-md-7">
+                                                                    <input id="birth" type="text" class="form-control readonly" readonly="readonly" value="22.02.1922">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="code" class="col-md-5 control-label">Identifikation</label>
+
+                                                                <div class="col-md-7">
+                                                                    <input id="code" type="text" class="form-control readonly" readonly="readonly" value="46548464648">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="name" class="col-md-5 control-label">Name</label>
+
+                                                                <div class="col-md-7">
+                                                                    <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
+                                                                </div>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label for="firstname" class="col-md-5 control-label">Vorname</label>
+
+                                                                <div class="col-md-7">
                                                                     <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
                                                                 </div>
                                                             </div>
                                                         </div>
                                                     </div>
-                                                    <div class="row row-df">
-                                                        <div class="col-lg-4">
+                                                    <div class="row">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="name" class="col-lg-5 control-label">Name</label>
+                                                                <label for="name" class="col-md-5 control-label">Name</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="name" type="text" class="form-control readonly" readonly="readonly" value="Miller">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="firstname" class="col-lg-5 control-label">Vorname</label>
+                                                                <label for="firstname" class="col-md-5 control-label">Vorname</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="firstname" type="text" class="form-control readonly" readonly="readonly" value="John">
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="birth" class="col-lg-5 control-label">Geburtsdatum</label>
+                                                                <label for="birth" class="col-md-5 control-label">Geburtsdatum</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="birth" type="text" class="form-control readonly" readonly="readonly" value="22.02.1922">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="code" class="col-lg-5 control-label">Identifikation</label>
+                                                                <label for="code" class="col-md-5 control-label">Identifikation</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="code" type="text" class="form-control readonly" readonly="readonly" value="46548464648">
                                                                 </div>
                                                             </div>
                                                         </div>
-                                                        <div class="col-lg-4">
+                                                        <div class="col-md-4">
                                                             <div class="form-group">
-                                                                <label for="birth" class="col-lg-5 control-label">Geburtsdatum</label>
+                                                                <label for="birth" class="col-md-5 control-label">Geburtsdatum</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="birth" type="text" class="form-control readonly" readonly="readonly" value="22.02.1922">
                                                                 </div>
                                                             </div>
                                                             <div class="form-group">
-                                                                <label for="code" class="col-lg-5 control-label">Identifikation</label>
+                                                                <label for="code" class="col-md-5 control-label">Identifikation</label>
 
-                                                                <div class="col-lg-7">
+                                                                <div class="col-md-7">
                                                                     <input id="code" type="text" class="form-control readonly" readonly="readonly" value="46548464648">
                                                                 </div>
                                                             </div>
@@ -978,7 +978,7 @@
                     </div>
                     </div>
                 </div>
-                <div class="col-lg-3">
+                <div class="col-xs-3">
                     <div class="info-panel reset-maincontent-padding" data-toggle="infoPanel">
                         <div class="well-headline">
                             <span class="icon icon-info"></span>
@@ -1005,9 +1005,9 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </article>
 
-    </div>
+    </main>
 
 </div>
 <!-- close outer-container -->
@@ -1018,7 +1018,7 @@
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <h4 class="modal-title" id="modalEditData">Objekt bearbeiten <span>Eintrag 220</span></h4>
+                <h4 class="modal-title" id="modalEditData">Objekt bearbeiten <span>Registereintrag 220</span></h4>
             </div>
             <div class="modal-body">
                 <ul class="nav nav-tabs nav-wizard">
@@ -1054,44 +1054,44 @@
                 <div class="wizard-content">
                     <div id="step3">
                         <form class="form-horizontal" role="form">
-                            <div class="row row-df">
-                                <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput1">Nachname</label>
+                                        <label class="col-md-6 control-label" for="exampleInput1">Nachname</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="exampleInput1" placeholder="Max" value="Miller">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput2">Vorname</label>
+                                        <label class="col-md-6 control-label" for="exampleInput2">Vorname</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="exampleInput2" placeholder="Muster" value="John">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput9">Geburtsname</label>
+                                        <label class="col-md-6 control-label" for="exampleInput9">Geburtsname</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="exampleInput9" placeholder="Muster">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput10">Früherer Nachname</label>
+                                        <label class="col-md-6 control-label" for="exampleInput10">Früherer Nachname</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="exampleInput10" placeholder="Mustermann">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-md-4">
                                     <div class="form-group  image-upload">
-                                        <label class="col-lg-6 control-label">Lichtbild</label>
+                                        <label class="col-md-6 control-label">Lichtbild</label>
 
-                                        <div class="col-lg-2">
+                                        <div class="col-md-2">
                                             <img class="img-responsive" alt="Benutzerbild" src="img/dummyProfileImage.png">
                                             <a class="btn btn-link btn-icon-round btn-icon-round-small">
                                                 <span class="icon icon-image-file"></span>Label normal
@@ -1100,140 +1100,140 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row row-df">
-                                <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput3">Geschlecht</label>
+                                        <label class="col-md-6 control-label" for="exampleInput3">Geschlecht</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="exampleInput3" placeholder="Männlich" value="Männlich">
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <label class="col-lg-6 control-label" for="exampleInput4">Geburtsdatum</label>
+                                        <label class="col-md-6 control-label" for="exampleInput4">Geburtsdatum</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="date" class="form-control" id="exampleInput4" placeholder="01.12.1999" value="02.01.1949">
                                         </div>
                                     </div>
                                     <div class="form-group ">
-                                        <label class="col-lg-6 control-label" for="exampleInput5">Geburtsort</label>
+                                        <label class="col-md-6 control-label" for="exampleInput5">Geburtsort</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="exampleInput5" placeholder="Berlin" value="Frankfurt">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput6">Geburtsstaat</label>
+                                        <label class="col-md-6 control-label" for="exampleInput6">Geburtsstaat</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="exampleInput6" placeholder="Detuschland" value="Deutschland">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput11">Früherer Vorname</label>
+                                        <label class="col-md-6 control-label" for="exampleInput11">Früherer Vorname</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="exampleInput11" placeholder="Maximilian">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput12">Weiterer Name</label>
+                                        <label class="col-md-6 control-label" for="exampleInput12">Weiterer Name</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="exampleInput12" placeholder="-"></div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput13">Ordensname</label>
+                                        <label class="col-md-6 control-label" for="exampleInput13">Ordensname</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="exampleInput13" placeholder="-"></div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput14">Künstlername</label>
+                                        <label class="col-md-6 control-label" for="exampleInput14">Künstlername</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="exampleInput14" placeholder="-"></div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput17">Label</label>
+                                        <label class="col-md-6 control-label" for="exampleInput17">Label</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="email" class="form-control" id="exampleInput17" placeholder="Placeholder">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput18">Label</label>
+                                        <label class="col-md-6 control-label" for="exampleInput18">Label</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="email" class="form-control" id="exampleInput18" placeholder="Placeholder">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput19">Label</label>
+                                        <label class="col-md-6 control-label" for="exampleInput19">Label</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="email" class="form-control" id="exampleInput19" placeholder="Placeholder">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput19">Label</label>
+                                        <label class="col-md-6 control-label" for="exampleInput19">Label</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="email" class="form-control" id="exampleInput19" placeholder="Placeholder">
                                         </div>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row row-df">
-                                <div class="col-lg-4">
+                            <div class="row">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput7">Eingestellt am</label>
+                                        <label class="col-md-6 control-label" for="exampleInput7">Eingestellt am</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="date" class="form-control" id="exampleInput7" placeholder="01.01.2008" value="13.10.2013">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput8">Eingestellt durch</label>
+                                        <label class="col-md-6 control-label" for="exampleInput8">Eingestellt durch</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="exampleInput8" placeholder="Jane" value="Tina Ansbach">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput15">Aktualisierung am</label>
+                                        <label class="col-md-6 control-label" for="exampleInput15">Aktualisierung am</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="date" class="form-control" id="exampleInput15" placeholder="01.01.2010">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput16">Aktualisierung durch</label>
+                                        <label class="col-md-6 control-label" for="exampleInput16">Aktualisierung durch</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="text" class="form-control" id="exampleInput16" placeholder="Jane">
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-lg-4">
+                                <div class="col-md-4">
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput20">Label</label>
+                                        <label class="col-md-6 control-label" for="exampleInput20">Label</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="email" class="form-control" id="exampleInput20" placeholder="Placeholder">
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <label class="col-lg-6 control-label" for="exampleInput21">Label</label>
+                                        <label class="col-md-6 control-label" for="exampleInput21">Label</label>
 
-                                        <div class="col-lg-6">
+                                        <div class="col-md-6">
                                             <input type="email" class="form-control" id="exampleInput21" placeholder="Placeholder">
                                         </div>
                                     </div>
