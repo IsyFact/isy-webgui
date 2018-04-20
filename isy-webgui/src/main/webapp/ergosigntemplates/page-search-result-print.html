@@ -36,18 +36,18 @@
 
 </head>
 
-<body role="document" class="print">
+<body role="document">
 
 <div class="outer-container">
 
-<div class="main-header">
+<header class="mainHeader">
 
-    <div class="sr-only">
+    <nav class="sr-only">
         <ol>
             <li><a href="#main-nav" title="zur Hauptnavigation springen">zur Hauptnavigation</a></li>
             <li><a href="#content" title="zum Inhalt der Seite springen">zum Inhalt</a></li>
         </ol>
-    </div>
+    </nav>
 
     <div class="header-colorbar"></div>
 
@@ -58,7 +58,7 @@
 
             <div class="brand">
                 <img alt="IsyFact Logo" src="img/isyfactlogo.jpeg">
-                <span>IsyFact Bundesverwaltungsamt</span>
+                <span>IsyFact</span>
             </div>
 
             <form class="form-horizontal" role="form">
@@ -74,14 +74,26 @@
 
         </div>
     </div>
-</div>
+</header>
 
 
-<div id="content" role="main">
 
-    <div class="container-fluid maincontent">
-        <div class="row row-df">
-            <div class="col-lg-12">
+
+
+<script>
+    // if the modal window is set to visible at launch the body tag needs the modal-open class
+    //$('body').addClass("modal-open");
+    $('body').addClass("print");
+</script>
+
+
+
+
+<main id="content" role="main">
+
+    <article class="container-fluid maincontent">
+        <div class="row">
+            <div class="col-md-12">
 
                 <h2 class="print-breadcrumb">Label Submenu:<span>Objektname/ID</span></h2>
 
@@ -183,8 +195,8 @@
                 </div>
             </div>
         </div>
-    </div>
-</div>
+    </article>
+</main>
 
 </div> <!-- close outer-container -->
     <script src="js/es.js"></script>

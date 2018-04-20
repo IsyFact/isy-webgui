@@ -16,6 +16,7 @@
     <meta name="viewport" content="width=device-width">
 
     <link rel="stylesheet" type="text/css" href="css/styles.css" media="all"/>
+    <link rel="stylesheet" type="text/css" href="css/color.css" media="all"/>
     <script type="text/javascript" src="lib/jquery-1.11.0.js"></script>
     <script type="text/javascript" src="lib/bootstrap.min.js"></script>
     <script type="text/javascript" src="lib/modernizr.js"></script>
@@ -40,14 +41,14 @@
 
     <div class="outer-container">
 
-        <div class="main-header">
+        <header class="mainHeader">
 
-            <div class="sr-only">
+            <nav class="sr-only">
                 <ol>
                     <li><a href="#main-nav" title="zur Hauptnavigation springen">zur Hauptnavigation</a></li>
                     <li><a href="#content" title="zum Inhalt der Seite springen">zum Inhalt</a></li>
                 </ol>
-            </div>
+            </nav>
 
             <div class="header-colorbar"></div>
 
@@ -58,7 +59,7 @@
 
                     <div class="brand">
                         <img alt="IsyFact Logo" src="img/isyfactlogo.jpeg">
-                        <span>IsyFact Bundesverwaltungsamt</span>
+                        <span>IsyFact</span>
                     </div>
 
                     <form class="form-horizontal" role="form">
@@ -78,9 +79,8 @@
                 </div>
             </div>
 
-            <div id="main-nav" class="navbar navbar-default" role="navigation">
-
-                <ul class="nav nav-tabs pull-right">
+            <nav id="main-nav" class="navbar navbar-default" role="navigation">
+                <ul class="nav nav-tabs navbar-right" >
 
                     <li class="active">
                         <a href="index.html" aria-haspopup="true" aria-owns="submenu-1" aria-controls="submenu-1" aria-expanded="false">Vorlagen</a>
@@ -96,42 +96,42 @@
                         </ul>
 
                         <div class="navbar-submenu">
-                            <div class="row row-df">
-                                <div class="col-lg-3">
+                            <div class="row">
+                                <div class="hidden-xs col-sm-4 col-lg-3">
                                     <div class="submenu-text">
                                         <span class="icon icon-placeholder "></span>
                                         <p>Lorem ipsum dolor sit amet candellarin blarum Lorem ipsum dolor sit amet candellarin
                                             blarum Lorem ipsum dolor sit amet candellarin blarum</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                <div class="col-sm-8 col-lg-7">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="index.html">Steuerelementübersicht</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="page-details.html" >Detailseite</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="page-modal-edit-data.html">Modaler Bearbeitungsdialog</a>
                                         </div>
                                     </div>
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="page-nojs-edit-data.html">Bearbeitungsseite ohne Javascript</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="page-search-result.html">Suchergebnisse</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="page-dashboard.html">Dashboard</a>
                                         </div>
                                     </div>
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="page-modal-wizard.html">Modaler Wizard-Dialog</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="page-search-result-print.html">Suchergebnisse Print</a>
                                         </div>
                                     </div>
@@ -152,34 +152,34 @@
                             <li><a href="/subpage">Unterpunkt F</a></li>
                         </ul>
                         <div class="navbar-submenu orange">
-                            <div class="row row-df">
-                                <div class="col-lg-3">
+                            <div class="row">
+                                <div class="hidden-xs col-sm-4 col-lg-3">
                                     <div class="submenu-text">
                                         <span class="icon icon-placeholder "></span>
                                         <p>Lorem ipsum dolor sit amet candellarin blarum Lorem ipsum dolor sit amet candellarin
                                             blarum Lorem ipsum dolor sit amet candellarin blarum</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                <div class="col-sm-8 col-lg-7">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu A</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu B</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu C</a>
                                         </div>
                                     </div>
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu D</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu E</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu F</a>
                                         </div>
                                     </div>
@@ -200,31 +200,31 @@
                         </ul>
 
                         <div class="navbar-submenu green">
-                            <div class="row row-df">
-                                <div class="col-lg-3">
+                            <div class="row">
+                                <div class="hidden-xs col-sm-4 col-lg-3">
                                     <div class="submenu-text">
                                         <span class="icon icon-placeholder "></span>
                                         <p>Lorem ipsum dolor sit amet candellarin blarum Lorem ipsum dolor sit amet candellarin
                                             blarum Lorem ipsum dolor sit amet candellarin blarum</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                <div class="col-sm-8 col-lg-7">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu A</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu B</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu C</a>
                                         </div>
                                     </div>
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu D</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu E</a>
                                         </div>
                                     </div>
@@ -243,28 +243,28 @@
                         </ul>
 
                         <div class="navbar-submenu lightBlue">
-                            <div class="row row-df">
-                                <div class="col-lg-3">
+                            <div class="row">
+                                <div class="hidden-xs col-sm-4 col-lg-3">
                                     <div class="submenu-text">
                                         <span class="icon icon-placeholder "></span>
                                         <p>Lorem ipsum dolor sit amet candellarin blarum Lorem ipsum dolor sit amet candellarin
                                             blarum Lorem ipsum dolor sit amet candellarin blarum</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                <div class="col-sm-8 col-lg-7">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu A</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu B</a>
                                         </div>
-                                        <div class="col-lg-4">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu C</a>
                                         </div>
                                     </div>
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu D</a>
                                         </div>
                                     </div>
@@ -281,17 +281,17 @@
                         </ul>
 
                         <div class="navbar-submenu yellow">
-                            <div class="row row-df">
-                                <div class="col-lg-3">
+                            <div class="row">
+                                <div class="hidden-xs col-sm-4 col-lg-3">
                                     <div class="submenu-text">
                                         <span class="icon icon-placeholder "></span>
                                         <p>Lorem ipsum dolor sit amet candellarin blarum Lorem ipsum dolor sit amet candellarin
                                             blarum Lorem ipsum dolor sit amet candellarin blarum</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                <div class="col-sm-8 col-lg-7">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu A</a>
                                         </div>
                                     </div>
@@ -308,17 +308,17 @@
                         </ul>
 
                         <div class="navbar-submenu red">
-                            <div class="row row-df">
-                                <div class="col-lg-3">
+                            <div class="row">
+                                <div class="hidden-xs col-sm-4 col-lg-3">
                                     <div class="submenu-text">
                                         <span class="icon icon-placeholder "></span>
                                         <p>Lorem ipsum dolor sit amet candellarin blarum Lorem ipsum dolor sit amet candellarin
                                             blarum Lorem ipsum dolor sit amet candellarin blarum</p>
                                     </div>
                                 </div>
-                                <div class="col-lg-7">
-                                    <div class="row row-df">
-                                        <div class="col-lg-4">
+                                <div class="col-sm-8 col-lg-7">
+                                    <div class="row">
+                                        <div class="col-sm-4">
                                             <a href="/subpage">Submenu A</a>
                                         </div>
                                     </div>
@@ -330,15 +330,15 @@
                 </ul>
 
                 <div class="navbar-color"></div>
-            </div>
-        </div>
-<div id="content" role="main">
+            </nav>
+        </header>
+<main id="content" role="main">
 
-    <div class="container-fluid maincontent">
+    <article class="container-fluid maincontent">
 
-        <div class="row row-df">
+            <div class="row">
 
-                <div class="col-lg-3">
+                <div class="col-sm-6 col-md-3">
 
                     <div class="panel panel-transparent">
                         <div class="panel-heading">Wiedervorlagen  Lorem ipsum dolor sit amet candellarin blarum
@@ -388,7 +388,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-sm-6 col-md-3">
 
                     <div class="panel panel-dark-blue">
                         <div class="panel-heading"><span class="icon icon-placeholder"></span>Label A</div>
@@ -436,7 +436,7 @@
                     </div>
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-sm-6 col-md-3">
 
                     <div class="panel panel-orange">
                         <div class="panel-heading"><span class="icon icon-placeholder"></span>Label D</div>
@@ -485,7 +485,7 @@
 
                 </div>
 
-                <div class="col-lg-3">
+                <div class="col-sm-6 col-md-3">
 
                     <div class="panel panel-transparent">
                         <div class="panel-heading"><span class="icon icon-message-outline"></span>Wiedervorlagen
@@ -540,8 +540,8 @@
                     </div>
                 </div>
             </div>
-    </div>
-</div>
+    </article>
+</main>
 
 </div> <!-- close outer-container -->
     <script src="js/es.js"></script>
