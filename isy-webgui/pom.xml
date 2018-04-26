@@ -10,7 +10,7 @@
     <parent>
         <groupId>de.bund.bva.isyfact</groupId>
         <artifactId>isy-webgui-parent</artifactId>
-        <version>4.6.0.RC2</version>
+        <version>4.6.0</version>
     </parent>
 
     <dependencyManagement>
@@ -18,7 +18,7 @@
             <dependency>
                 <groupId>de.bund.bva.isyfact</groupId>
                 <artifactId>isyfact-products-bom</artifactId>
-                <version>1.5.0.RC2</version>
+                <version>1.5.0</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -49,13 +49,13 @@
         <dependency>
             <groupId>de.bund.bva.isyfact</groupId>
             <artifactId>isy-web</artifactId>
-            <version>4.6.0.RC2</version>
+            <version>4.6.0</version>
         </dependency>
 
         <dependency>
             <groupId>de.bund.bva.isyfact</groupId>
             <artifactId>isy-style</artifactId>
-            <version>4.0.0.RC2</version>
+            <version>4.0.0</version>
         </dependency>
 
         <!-- Eingebunden für formUpload. Diese Dependency ist bereits in der isy-web als provided eingebunden,
