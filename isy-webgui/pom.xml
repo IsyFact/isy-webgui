@@ -10,7 +10,7 @@
     <parent>
         <groupId>de.bund.bva.isyfact</groupId>
         <artifactId>isy-webgui-parent</artifactId>
-        <version>4.6.0</version>
+        <version>4.6.1</version>
     </parent>
 
     <dependencyManagement>
@@ -55,7 +55,7 @@
         <dependency>
             <groupId>de.bund.bva.isyfact</groupId>
             <artifactId>isy-style</artifactId>
-            <version>4.0.0</version>
+            <version>4.0.1</version>
         </dependency>
 
         <!-- Eingebunden für formUpload. Diese Dependency ist bereits in der isy-web als provided eingebunden,
