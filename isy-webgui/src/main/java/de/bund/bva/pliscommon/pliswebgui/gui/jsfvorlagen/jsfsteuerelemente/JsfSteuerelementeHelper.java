@@ -46,13 +46,13 @@ public class JsfSteuerelementeHelper {
         this.jsfSteuerelementeBehoerdeListpickerController = jsfSteuerelementeBehoerdeListpickerController;
     }
 
-    public JsfSteuerelementeStaatsangListpickerController getJsfSteuerelementeStaatsangListpickerControllerController() {
+    public JsfSteuerelementeStaatsangListpickerController getJsfSteuerelementeStaatsangListpickerController() {
         return jsfSteuerelementeStaatsangListpickerController;
     }
 
-    public void setJsfSteuerelementeStaatsangListpickerControllerController(
-        JsfSteuerelementeStaatsangListpickerController jsfSteuerelementeStaatsangListpickerControllerController) {
+    public void setJsfSteuerelementeStaatsangListpickerController(
+        JsfSteuerelementeStaatsangListpickerController jsfSteuerelementeStaatsangListpickerController) {
         this.jsfSteuerelementeStaatsangListpickerController =
-            jsfSteuerelementeStaatsangListpickerControllerController;
+            jsfSteuerelementeStaatsangListpickerController;
     }
 }

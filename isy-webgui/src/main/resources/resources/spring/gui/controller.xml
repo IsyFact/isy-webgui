@@ -136,6 +136,7 @@
         <property name="jsfSteuerelementeBehoerdeListpickerController" ref="jsfSteuerelementeBehoerdeListpickerController"/>
 
         <property name="jsfSteuerelementeStaatsangListpickerController">
+
             <bean
                     class="de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeStaatsangListpickerController">
             </bean>

@@ -124,7 +124,7 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
 
         // Staatsangehoerigkeit-Listpicker ohne AJAX
         JsfSteuerelementeStaatsangListpickerModel staatsangListpickerModel = new JsfSteuerelementeStaatsangListpickerModel();
-        staatsangListpickerModel.setItems(this.jsfSteuerelementeHelper.getJsfSteuerelementeStaatsangListpickerControllerController()
+        staatsangListpickerModel.setItems(this.jsfSteuerelementeHelper.getJsfSteuerelementeStaatsangListpickerController()
             .erzeugeListpickerItemListe());
         model.setStaatsangListpickerModel(staatsangListpickerModel);
 
