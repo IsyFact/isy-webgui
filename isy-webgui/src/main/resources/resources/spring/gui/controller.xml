@@ -134,6 +134,13 @@
             </bean>
         </property>
         <property name="jsfSteuerelementeBehoerdeListpickerController" ref="jsfSteuerelementeBehoerdeListpickerController"/>
+
+        <property name="jsfSteuerelementeStaatsangListpickerController">
+            <bean
+                    class="de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeStaatsangListpickerController">
+            </bean>
+        </property>
+
     </bean>
 
     <bean id="dropdownHelper" class="de.bund.bva.pliscommon.pliswebgui.gui.common.DropdownHelper"/>

@@ -246,9 +246,24 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
     private JsfSteuerelementeListpickerModel listpickerModel;
 
     /**
-     * Model für Listpicker (mit AJAX).
+     * Listpickermodel für den Staatsangehörigkeits-Listpicker.
      */
+    private JsfSteuerelementeStaatsangListpickerModel staatsangListpickerModel;
+
+    /**
+     * Model für Listpicker (mit AJAX).
+     */    /**
+     * Listpickermodel für den Behörde-Listpicker.
+     */
+    private BehoerdeListpickerModel behoerdeListpickerModel;
+
+    /**
+     * Auswahl des Behörde-Listpickers.
+     */
+    private Listpickerangabe behoerdeListpickerAngabe;
     private JsfSteuerelementeListpickerModel ajaxListpickerModel;
+
+
 
     /**
      * Auswahl des Listpickers (ohne AJAX).
@@ -273,15 +288,9 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
 
     private String toggleFilterAuswahl;
 
-    /**
-     * Listpickermodel für den Behörde-Listpicker.
-     */
-    private BehoerdeListpickerModel behoerdeListpickerModel;
 
-    /**
-     * Auswahl des Behörde-Listpickers.
-     */
-    private Listpickerangabe behoerdeListpickerAngabe;
+
+
 
     /**
      * Der Wert für das formInput, dass das Four-Eyes-Icon verwendet.
@@ -748,6 +757,15 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
 
     public void setBehoerdeListpickerModel(BehoerdeListpickerModel behoerdeListpickerModel) {
         this.behoerdeListpickerModel = behoerdeListpickerModel;
+    }
+
+    public JsfSteuerelementeStaatsangListpickerModel getStaatsangListpickerModel() {
+        return staatsangListpickerModel;
+    }
+
+    public void setStaatsangListpickerModel(
+        JsfSteuerelementeStaatsangListpickerModel staatsangListpickerModel) {
+        this.staatsangListpickerModel = staatsangListpickerModel;
     }
 
     public Listpickerangabe getBehoerdeListpickerAngabe() {

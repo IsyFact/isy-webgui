@@ -433,13 +433,13 @@
                                                 header="Schlüssel,Wert"/>
                         </div>
                         <div class="col-lg-6">
-                            <!--  -->
-                            <p>Ohne AJAX Staatsangehörigkeit und mit Auflösung des Schlüssels:</p>
+                            <!-- ******************************** -->
+                            <p>Ohne AJAX - Staatsangehörigkeit mit Auflösung des Schlüssels:</p>
                             <isy:formListpicker reference="suchattribut_staatsangehoerigkeit"
-                                                listpickerModel="#{jsfSteuerelementeModel.listpickerModel}"
+                                                listpickerModel="#{jsfSteuerelementeModel.staatsangListpickerModel}"
                                                 label="Staatsangeh." labelStyleClass="col-lg-3"
                                                 inputStyleClass="col-lg-7"
-                                                listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeListpickerController}"
+                                                listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeStaatsangListpickerController}"
                                                 value="#{jsfSteuerelementeModel.listpickerAuswahl}"
                                                 header="Schlüssel,Wert"
                                                 inputComplement="2"

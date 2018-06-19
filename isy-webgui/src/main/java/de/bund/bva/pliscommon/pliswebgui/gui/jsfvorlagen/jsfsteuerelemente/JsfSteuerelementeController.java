@@ -122,6 +122,12 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
             .erzeugeListpickerItemListe());
         model.setListpickerModel(listpickerModel);
 
+        // Staatsangehoerigkeit-Listpicker ohne AJAX
+        JsfSteuerelementeStaatsangListpickerModel staatsangListpickerModel = new JsfSteuerelementeStaatsangListpickerModel();
+        staatsangListpickerModel.setItems(this.jsfSteuerelementeHelper.getJsfSteuerelementeStaatsangListpickerControllerController()
+            .erzeugeListpickerItemListe());
+        model.setStaatsangListpickerModel(staatsangListpickerModel);
+
         // Listpicker mit AJAX
         JsfSteuerelementeListpickerModel ajaxListpickerModel = new JsfSteuerelementeListpickerModel();
         List<JsfSteuerelementeListpickerItem> items = this.jsfSteuerelementeHelper
