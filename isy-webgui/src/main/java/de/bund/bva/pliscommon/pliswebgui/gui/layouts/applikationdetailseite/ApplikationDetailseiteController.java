@@ -1,12 +1,12 @@
 package de.bund.bva.pliscommon.pliswebgui.gui.layouts.applikationdetailseite;
 
-import org.springframework.beans.factory.annotation.Required;
-
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.layout.BasisController;
 import de.bund.bva.isyfact.common.web.layout.BasisModel;
 import de.bund.bva.isyfact.common.web.layout.IconTyp;
 import de.bund.bva.isyfact.common.web.layout.InformationsbereichModel;
+import de.bund.bva.isyfact.common.web.layout.LocationBreadcrumbModel;
+import org.springframework.beans.factory.annotation.Required;
 
 /**
  * Der Controller für die ApplikationDetailseite.
@@ -27,6 +27,12 @@ public class ApplikationDetailseiteController extends AbstractGuiController<Appl
         initialisiereInformationsbereich();
     }
 
+    public void initialisiereBreadcrumbModel(LocationBreadcrumbModel model) {
+        model.setObjektname("Testobjekt / ID-1234");
+        model.pushHierarchiebene("Ebene 1");
+        model.pushHierarchiebene("Ebene 2");
+    }
+
     /**
      * Initialisiert den Informationsbreich seitenspezifisch.
      */
@@ -37,13 +43,11 @@ public class ApplikationDetailseiteController extends AbstractGuiController<Appl
         informationsbereichModel.setAnzeigen(true);
         informationsbereichModel.setIconTyp(IconTyp.INFO);
         informationsbereichModel
-            .setInhalt("Lorem Ipsum Dorlro askjdbn anslnknsad alsjdnljnljnsd asd sjkad as das das da d as."
-                + "Lorem Ipsum Dorlro askjdbn anslnknsad alsjdnljnljnsd asd sjkad as das das da d as. Lorem"
-                + "Ipsum Dorlro askjdbn anslnknsad alsjdnljnljnsd asd sjkad as das das da d as. Lorem Ipsum"
-                + "Dorlro askjdbn anslnknsad alsjdnljnljnsd asd sjkad as das das da d as. Lorem Ipsum Dorlro"
-                + "askjdbn anslnknsad alsjdnljnljnsd asd sjkad as das das da d as. Lorem Ipsum Dorlro"
-                + "askjdbn anslnknsad alsjdnljnljnsd asd sjkad as das das da d as. Lorem Ipsum Dorlro"
-                + "askjdbn anslnknsad alsjdnljnljnsd asd sjkad as das das da d as.");
+            .setInhalt("Lorem ipsum dolor sit amet, consectetur adipisici elit, sed eiusmod tempor incidunt"
+                + " ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation"
+                + " ullamco laboris nisi ut aliquid ex ea commodi consequat. Quis aute iure reprehenderit in"
+                + " voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint obcaecat"
+                + " cupiditat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");
         informationsbereichModel.setUeberschrift("Normal");
         informationsbereichModel.setUeberschrift_2("Message");
     }
