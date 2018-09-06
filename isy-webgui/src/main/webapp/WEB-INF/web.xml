@@ -41,10 +41,15 @@
         <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>
         <param-value>true</param-value>
     </context-param>
+    <!-- logback configuraton -->
+    <context-param>
+        <param-name>logbackConfigLocation</param-name>
+        <param-value>classpath:/config/logback.xml</param-value>
+    </context-param>
 
     <!-- LISTENER -->
     <listener>
-        <listener-class>org.springframework.web.util.Log4jConfigListener</listener-class>
+        <listener-class>ch.qos.logback.ext.spring.web.LogbackConfigListener</listener-class>
     </listener>
     <listener>
         <listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
