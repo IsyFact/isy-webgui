@@ -17,6 +17,10 @@
             <evaluate expression="jsfSteuerelementeController.buttonAction(jsfSteuerelementeModel)" />
         </transition>
 
+        <transition on="blockButtonAction">
+            <evaluate expression="jsfSteuerelementeController.blockButtonAction(jsfSteuerelementeModel)" />
+        </transition>
+
         <transition on="formInputButtonAction">
             <evaluate expression="jsfSteuerelementeController.formInputButtonAction(jsfSteuerelementeModel)" />
         </transition>

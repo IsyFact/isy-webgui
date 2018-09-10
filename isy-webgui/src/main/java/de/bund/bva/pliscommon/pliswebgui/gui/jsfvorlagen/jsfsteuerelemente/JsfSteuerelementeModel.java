@@ -156,6 +156,11 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
     private String buttonActionResult;
 
     /**
+     * Resultat für Button-Action mit block="true"
+     */
+    private String blockButtonActionResult;
+
+    /**
      * Auswahl des Dropdowns.
      */
     private String dropdownAuswahl;
@@ -342,8 +347,16 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
         return this.buttonActionResult;
     }
 
+    public String getBlockButtonActionResult() {
+        return blockButtonActionResult;
+    }
+
     public void setButtonActionResult(String buttonActionResult) {
         this.buttonActionResult = buttonActionResult;
+    }
+
+    public void setBlockButtonActionResult(String blockButtonActionResult) {
+        this.blockButtonActionResult = blockButtonActionResult;
     }
 
     public void dropDownAusgewaehlt(String auswahl) {
