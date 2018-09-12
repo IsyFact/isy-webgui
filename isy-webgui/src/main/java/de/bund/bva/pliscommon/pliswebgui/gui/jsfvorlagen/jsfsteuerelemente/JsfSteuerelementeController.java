@@ -199,6 +199,15 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
     }
 
     /**
+     * Führt eine Action auf dem block-Button aus.
+     * @param model
+     *            das Model
+     */
+    public void blockButtonAction(JsfSteuerelementeModel model) {
+        model.setBlockButtonActionResult(UUID.randomUUID().toString());
+    }
+
+    /**
      * Führt eine Action auf dem Button zum FormInput aus.
      * @param model
      *            das Model
