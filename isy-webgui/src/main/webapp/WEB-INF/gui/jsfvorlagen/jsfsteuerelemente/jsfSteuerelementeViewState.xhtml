@@ -179,8 +179,8 @@
 
                     <div class="row row-df">
                         <div class="col-lg-12">
-                            Ein Select-One Dropdown. Einbindung über
-                            <code>&lt;isy:selectOneDropdown&gt;&lt;f:selectItems&gt;..</code>
+                            formSelectOneDropdown. Einbindung über
+                            <code>&lt;isy:formSelectOneDropdown&gt;&lt;f:selectItems&gt;..</code>
                             <br/> <br/>
                         </div>
                         <div class="col-lg-6">
@@ -202,7 +202,7 @@
                             Aktuelle Auswahl:
                             <h:outputText id="dropdownAuswahlAjax"
                                           value="#{jsfSteuerelementeModel.dropdownAuswahlAjax}"/>
-                            <br/> Uebernommener Wert:
+                            <br/> Übernommener Wert:
                             <h:outputText id="dropdownAuswahl"
                                           value="#{jsfSteuerelementeModel.dropdownAuswahl}"/>
                         </div>
@@ -211,17 +211,35 @@
                     <!-- Disabled Dropdown -->
                     <div class="row row-df">
                         <div class="col-lg-12">
-                            Ein Select-One Dropdown (disabled). <br/> <br/>
+                            formSelectOneDropdown (disabled). <br/> <br/>
                         </div>
                         <div class="col-lg-6">
                             <isy:formSelectOneDropdown reference="formSelectOneDropdown2"
                                                        value="#{jsfSteuerelementeModel.disabledDropdownAuswahl}"
-                                                       label="Auswahl" readonly="true"
+                                                       label="Auswahl" disabled="true"
                                                        converter="#{typeConverter}" converterAttribute="int">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.dropdownAuswahlListe}"/>
                                 <f:ajax event="change"
                                         render="inhaltsbereichForm:dropdownPanel:dropdownAuswahlAjax2"/>
+                            </isy:formSelectOneDropdown>
+                        </div>
+                    </div>
+
+                    <!-- readonly Dropdown -->
+                    <div class="row row-df">
+                        <div class="col-lg-12">
+                            formSelectOneDropdown (readonly). <br/> <br/>
+                        </div>
+                        <div class="col-lg-6">
+                            <isy:formSelectOneDropdown reference="formSelectOneDropdownReadOnly"
+                                                          value="#{jsfSteuerelementeModel.dropdownAuswahl}"
+                                                          label="Auswahl" readonly="true"
+                                                          converter="#{typeConverter}" converterAttribute="int">
+                                <f:selectItems
+                                        value="#{jsfSteuerelementeModel.dropdownAuswahlListe}"/>
+                                <f:ajax event="change"
+                                        render="inhaltsbereichForm:dropdownPanel:dropdownAuswahlAjax3"/>
                             </isy:formSelectOneDropdown>
                         </div>
                     </div>
