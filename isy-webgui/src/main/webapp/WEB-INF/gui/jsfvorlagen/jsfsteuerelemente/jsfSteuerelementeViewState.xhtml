@@ -537,6 +537,41 @@
                         </div>
                     </div>
                 </div>
+                <div class="form-horizontal">
+                    <div class="row row-df">
+                        <hr/>
+                        <div class="col-lg-5">
+
+                            <div class="row row-df">
+                                <p>Über ein Servlet:</p>
+
+                          <isy:formListpicker reference="model.servletlistpicker"
+                                  listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeListpickerController}"
+                                  labelStyleClass="col-lg-3" inputStyleClass="col-lg-5"
+                                  listpickerModel="#{jsfSteuerelementeModel.servletListpickerModel}"
+                                  label="Schlüssel"
+                                  value="#{jsfSteuerelementeModel.servletListpickerAuswahl}"
+                                  header="Schlüssel,Name"
+                                  inputComplement="2"
+                                  inputmask="9[99]" 
+                                  servletUrl="/app/listpicker"/>
+                                  <!-- Wichtig: servletUrl muss dem Pattern des zuständigen HttpRequestHandlerServlets
+                                   in der web.xml entsprechen! -->
+
+
+                                <p></p>
+                                <p>
+                                    Auswahl:
+                                    <h:outputText
+                                            value="#{jsfSteuerelementeModel.servletListpickerAuswahl}"/>
+                                </p>
+                                <p>
+                                    <isy:button action="noAction" value="Wähle aus"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </isy:panel>
 
             <isy:panel id="buttonToolbarPanel"

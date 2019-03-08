@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:aop="http://www.springframework.org/schema/aop"
+    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+                         http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
+
+    <!-- Importiere provider-servlets.xml aus isy-web, um den Parent für ListpickerProvider Implementierungen
+        zu haben. -->
+    <import resource="classpath:resources/plis-web/spring/provider-servlets.xml"/>
+
+    <bean id="listpickerprovider"
+        class="de.bund.bva.pliscommon.pliswebgui.common.servlet.requesthandler.ListpickerProviderRequestHandler"
+        parent="abstractListpickerProvider">
+        <aop:scoped-proxy proxy-target-class="true"/>
+        <property name="jsfSteuerelementeListpickerController">
+            <bean
+                class="de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeListpickerController">
+            </bean>
+        </property>
+    </bean>
+
+</beans>

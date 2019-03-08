@@ -134,6 +134,12 @@
         </init-param>
         <load-on-startup>1</load-on-startup>
     </servlet>
+    <servlet>
+      <servlet-name>listpickerprovider</servlet-name>
+      <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+      <load-on-startup>3</load-on-startup>
+    </servlet>
+    
 
     <!-- Request-Scoping -->
     <filter-mapping>
@@ -170,6 +176,11 @@
         <servlet-name>Spring MVC Servlet</servlet-name>
         <url-pattern>/app/*</url-pattern>
     </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>listpickerprovider</servlet-name>
+        <url-pattern>/app/listpicker/*</url-pattern>
+    </servlet-mapping>
+    
 
     <!-- DEFAULT-PAGE -->
     <welcome-file-list>
