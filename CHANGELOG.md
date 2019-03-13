@@ -1,3 +1,6 @@
+# v4.X.X
+- `IFE-35`: Es wurde ein Listpicker, der mithilfe eines Servlets filtert, zur Veranschaulichung/Verprobung eingebaut.
+
 # v4.7.0
 - `IFS-96`: Autoscroll Funtion für Tab-Controls
 - `IFS-142`: Beispiel für Neuimplementierung Breadcrumb
