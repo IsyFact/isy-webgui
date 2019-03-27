@@ -83,8 +83,8 @@
                         Ein Eingabefeld. Einbindung über <code>&lt;isy:formInput&gt;</code>
                     </p>
                     <div class="form-horizontal">
-                    <div class="row row-df">
-                        <div class="col-lg-6">
+                        <div class="row row-df">
+                            <div class="col-lg-6">
 
                                 <isy:formInput id="formInput" type="text" label="Text: "
                                                reference="formInputReferenz"
@@ -111,7 +111,7 @@
 
                                 <isy:button id="formInputButton" action="formInputButtonAction"
                                             value="Button"/>
-                        </div>
+                            </div>
                         </div>
                     </div>
                     <p>
@@ -233,9 +233,9 @@
                         </div>
                         <div class="col-lg-6">
                             <isy:formSelectOneDropdown reference="formSelectOneDropdownReadOnly"
-                                                          value="#{jsfSteuerelementeModel.dropdownAuswahl}"
-                                                          label="Auswahl" readonly="true"
-                                                          converter="#{typeConverter}" converterAttribute="int">
+                                                       value="#{jsfSteuerelementeModel.dropdownAuswahl}"
+                                                       label="Auswahl" readonly="true"
+                                                       converter="#{typeConverter}" converterAttribute="int">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.dropdownAuswahlListe}"/>
                                 <f:ajax event="change"
@@ -592,11 +592,11 @@
                             </isy:dataTableHeader>
                             <isy:dataTableHeader name="#" width="10%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
-                            <isy:dataTableHeader name="First Name" width="25%"
+                            <isy:dataTableHeader name="Vorname" width="25%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>
-                            <isy:dataTableHeader name="Last Name" width="25%"
+                            <isy:dataTableHeader name="Nachname" width="25%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>
-                            <isy:dataTableHeader name="Username" width="20%"
+                            <isy:dataTableHeader name="Loginname" width="20%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
                             <isy:dataTableHeader name="" width="15%"/>
                         </f:facet>
@@ -624,9 +624,9 @@
                                     property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
                             <isy:dataTableFilterClearer/>
                         </f:facet>
-                        <isy:dataTableRows rowVar="treffer"
-                                           rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/rowDefinition.xhtml"
-                                           detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/detailDefinition.xhtml"/>
+                        <isy:dataTableRows
+                                rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/rowDefinition.xhtml"
+                                detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/detailDefinition.xhtml"/>
                     </isy:dataTable>
 
                     <p>
@@ -647,11 +647,11 @@
                             </isy:dataTableHeader>
                             <isy:dataTableHeader name="#" width="10%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
-                            <isy:dataTableHeader name="First Name" width="25%"
+                            <isy:dataTableHeader name="Vorname" width="25%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>
-                            <isy:dataTableHeader name="Last Name" width="25%"
+                            <isy:dataTableHeader name="Nachname" width="25%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>
-                            <isy:dataTableHeader name="Username" width="20%"
+                            <isy:dataTableHeader name="Loginname" width="20%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
                             <isy:dataTableHeader name="" width="15%"/>
                         </f:facet>
@@ -679,9 +679,9 @@
                                     property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
                             <isy:dataTableFilterClearer/>
                         </f:facet>
-                        <isy:dataTableRows rowVar="treffer"
-                                           rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/rowDefinition.xhtml"
-                                           detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/detailDefinition.xhtml"/>
+                        <isy:dataTableRows
+                                rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/rowDefinition.xhtml"
+                                detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/detailDefinition.xhtml"/>
                     </isy:dataTable>
 
                     <p>
@@ -921,8 +921,6 @@
             </isy:panel>
 
 
-
-
             <isy:panel id="currencyPanel"
                        panelModel="#{jsfSteuerelementeModel.panelModelCurrency}"
                        collapse="true">
@@ -939,21 +937,21 @@
                                                    reference="formCurrencyInput">
                             </isy:formCurrencyInput>
 
-                    <!-- Disabled -->
+                            <!-- Disabled -->
                             <isy:formCurrencyInput label="isy:formCurrencyInput (disabled)"
                                                    labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
                                                    required="true" placeholder="24,00" value=""
                                                    reference="formCurrencyInput2" disabled="true">
                             </isy:formCurrencyInput>
 
-                    <!-- Read-Only -->
+                            <!-- Read-Only -->
                             <isy:formCurrencyInput label="isy:formCurrencyInput (readonly)"
                                                    labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
                                                    required="true" placeholder="24,00" value="24,00"
                                                    reference="formCurrencyInput3" readonly="true">
                             </isy:formCurrencyInput>
 
-                    <!-- Text rechts ausgerichtet. -->
+                            <!-- Text rechts ausgerichtet. -->
                             <isy:formCurrencyInput
                                     label="isy:formCurrencyInput (Textausrichtung rechts)"
                                     labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
@@ -961,7 +959,7 @@
                                     reference="formCurrencyInput4" alignright="true">
                             </isy:formCurrencyInput>
 
-                    <!-- Vier Nachkommastellen. -->
+                            <!-- Vier Nachkommastellen. -->
                             <isy:formCurrencyInput
                                     label="isy:formCurrencyInput (Vier Nachkommastellen)"
                                     labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"

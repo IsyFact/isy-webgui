@@ -13,6 +13,7 @@ import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
 
+import de.bund.bva.pliscommon.pliswebgui.common.stub.StubdatenGenerator;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Required;
 
@@ -77,8 +78,6 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
         }
         model.setDropdownAuswahlListe(selectItems);
 
-        model.setDropdownAuswahl("Item 3");
-
         // Radio Button
         selectItems = new ArrayList<>();
         for (int i = 0; i <= 4; i++) {
@@ -112,6 +111,7 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
         // Trefferliste
         JsfSteuerelementeTrefferlistenModel trefferlistenClientModel =
             new JsfSteuerelementeTrefferlistenModel();
+        trefferlistenClientModel.getDataModel().setDisplayItems(StubdatenGenerator.erzeugePersonalienTrefferliste());
         model.setTrefferlistenClientModel(trefferlistenClientModel);
 
         DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenServerModel =
@@ -403,3 +403,4 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
         this.globalFlowController = globalFlowController;
     }
 }
+

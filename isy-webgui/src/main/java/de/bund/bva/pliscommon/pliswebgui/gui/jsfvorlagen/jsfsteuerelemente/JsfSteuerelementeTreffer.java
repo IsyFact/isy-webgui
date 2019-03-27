@@ -34,6 +34,17 @@ public class JsfSteuerelementeTreffer implements DataTableItem {
      */
     private String login;
 
+    /**
+     * Das Geschlecht.
+     */
+    private String geschlecht;
+
+    /**
+     * Die Staatsangehoerigkeit.
+     */
+    private String staatsangehoerigkeit;
+
+
     public String getNummer() {
         return this.nummer;
     }
@@ -64,6 +75,22 @@ public class JsfSteuerelementeTreffer implements DataTableItem {
 
     public void setLogin(String login) {
         this.login = login;
+    }
+
+    public void setGeschlecht(String geschlecht) {
+        this.geschlecht = geschlecht;
+    }
+
+    public String getStaatsangehoerigkeit() {
+        return staatsangehoerigkeit;
+    }
+
+    public void setStaatsangehoerigkeit(String staatsangehoerigkeit) {
+        this.staatsangehoerigkeit = staatsangehoerigkeit;
+    }
+
+    public String getGeschlecht() {
+        return geschlecht;
     }
 
     @Override
