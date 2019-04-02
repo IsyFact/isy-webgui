@@ -26,6 +26,13 @@ public class JsfSteuerelementeHelper {
      */
     private JsfSteuerelementeStaatsangListpickerController jsfSteuerelementeStaatsangListpickerController;
 
+
+    /**
+     * Staatsangehörigkeit Listpicker-Controller.
+     */
+    private JsfSteuerelementeTrefferlistenClientController jsfSteuerelementeTrefferlistenClientController;
+
+
     public JsfSteuerelementeListpickerController getJsfSteuerelementeListpickerController() {
         return this.jsfSteuerelementeListpickerController;
     }
@@ -54,5 +61,14 @@ public class JsfSteuerelementeHelper {
         JsfSteuerelementeStaatsangListpickerController jsfSteuerelementeStaatsangListpickerController) {
         this.jsfSteuerelementeStaatsangListpickerController =
             jsfSteuerelementeStaatsangListpickerController;
+    }
+
+    public JsfSteuerelementeTrefferlistenClientController getJsfSteuerelementeTrefferlistenClientController() {
+        return jsfSteuerelementeTrefferlistenClientController;
+    }
+
+    public void setJsfSteuerelementeTrefferlistenClientController(
+        JsfSteuerelementeTrefferlistenClientController jsfSteuerelementeTrefferlistenClientController) {
+        this.jsfSteuerelementeTrefferlistenClientController = jsfSteuerelementeTrefferlistenClientController;
     }
 }
