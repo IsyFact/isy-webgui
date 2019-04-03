@@ -1,3 +1,6 @@
+# v4.8.0
+- `IFS-222`: Reihenfolge der Filter-Mappings angepasst, SetCharacterEncodingFilter nach vorne gesetzt.
+
 # v4.7.0
 - `IFS-96`: Autoscroll Funtion für Tab-Controls
 - `IFS-142`: Beispiel für Neuimplementierung Breadcrumb
