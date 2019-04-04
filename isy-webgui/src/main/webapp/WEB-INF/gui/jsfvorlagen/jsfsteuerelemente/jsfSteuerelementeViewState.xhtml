@@ -59,7 +59,7 @@
                         <code>&lt;isy:button defaultAction="true"&gt;</code>
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:formInput reference="formular1" labelStyleClass="col-lg-1"
                                            inputStyleClass="col-lg-2" value="" label="Feld 1"
                                            required="true"/>
@@ -83,7 +83,7 @@
                         Ein Eingabefeld. Einbindung über <code>&lt;isy:formInput&gt;</code>
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <div class="col-lg-6">
 
                                 <isy:formInput id="formInput" type="text" label="Text: "
@@ -177,7 +177,7 @@
                 <f:facet name="panelHeader">Dropdown</f:facet>
                 <f:facet name="panelBody">
 
-                    <div class="row row-df">
+                    <div class="row">
                         <div class="col-lg-12">
                             formSelectOneDropdown. Einbindung über
                             <code>&lt;isy:formSelectOneDropdown&gt;&lt;f:selectItems&gt;..</code>
@@ -209,7 +209,7 @@
                     </div>
 
                     <!-- Disabled Dropdown -->
-                    <div class="row row-df">
+                    <div class="row">
                         <div class="col-lg-12">
                             formSelectOneDropdown (disabled). <br/> <br/>
                         </div>
@@ -227,7 +227,7 @@
                     </div>
 
                     <!-- readonly Dropdown -->
-                    <div class="row row-df">
+                    <div class="row">
                         <div class="col-lg-12">
                             formSelectOneDropdown (readonly). <br/> <br/>
                         </div>
@@ -271,7 +271,7 @@
                         <code>&lt;isy:formSelectOneRadio&gt;</code>
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <div class="col-lg-6">
                                 <isy:formSelectOneRadio label="Label"
                                                         reference="testFormSelectOneRadio"
@@ -383,7 +383,7 @@
                        collapse="true">
                 <f:facet name="panelHeader">Datepicker</f:facet>
                 <div class="form-horizontal">
-                    <div class="row row-df">
+                    <div class="row">
                         <isy:formDate label="Datum" labelStyleClass="col-lg-1"
                                       inputStyleClass="col-lg-2"
                                       value="#{jsfSteuerelementeModel.datum}"
@@ -393,7 +393,7 @@
 
                 <!-- Readonly-Variante. Das Datum ist einfach hardcoded, damit man das Markieren überprüfen kann. -->
                 <div class="form-horizontal">
-                    <div class="row row-df">
+                    <div class="row">
                         <isy:formDate label="Datum readonly" labelStyleClass="col-lg-1"
                                       readonly="true" inputStyleClass="col-lg-2"
                                       value="12.12.2012" placeholder="z.B 12.02.2001" reference="datum"/>
@@ -442,7 +442,7 @@
                        collapse="true">
                 <f:facet name="panelHeader">Listpicker</f:facet>
                 <div class="form-horizontal">
-                    <div class="row row-df">
+                    <div class="row">
 
                         <div class="col-lg-5">
 
@@ -485,11 +485,11 @@
                 </p>
 
                 <div class="form-horizontal">
-                    <div class="row row-df">
+                    <div class="row">
                         <hr/>
                         <div class="col-lg-5">
 
-                            <div class="row row-df">
+                            <div class="row">
                                 <!-- Der folgende Listpicker löst den Schlüssel auf, denn das inputComplement ist 2
                                 und es ist eine Inputmask definiert. -->
                                 <p>Mit AJAX und mit Auflösung des Schlüssels:</p>
@@ -519,7 +519,7 @@
                         </div>
 
                         <div class="col-lg-6">
-                            <div class="row row-df">
+                            <div class="row">
                                 <!-- Der Behörden-Listpicker löst den Schlüssel immer auf, denn das inputComplement ist standardmäßig 2
                                 und es ist standardmäßig eine Inputmask definiert. -->
                                 <p>Mit Ajax Behörden Listpicker (Schlüssel wird standardmäßig aufgelöst):</p>
@@ -704,7 +704,7 @@
                         <code>&lt;isy:formActionInput&gt;</code>
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <div class="col-lg-2">
                                 <isy:actionInput reference="testActionInput"
                                                  value="#{jsfSteuerelementeModel.actionInputResult}"
@@ -717,7 +717,7 @@
                     <!-- Disabled -->
                     <p>Aktionseingabefeld (disabled).</p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <div class="col-lg-2">
                                 <isy:actionInput reference="testActionInput2"
                                                  value="#{jsfSteuerelementeModel.actionInputResult}"
@@ -730,7 +730,7 @@
                     <!-- Die form* Varianten -->
                     <p>Form-Aktionseingabefeld.</p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <div class="col-lg-2">
                                 <isy:formActionInput reference="testFormActionInput"
                                                      label="Ein Label" labelStyleClass="col-lg-4"
@@ -746,7 +746,7 @@
                     <!-- Disabled -->
                     <p>Form-Aktionseingabefeld (disabled).</p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <div class="col-lg-2">
                                 <isy:formActionInput reference="testFormActionInput2"
                                                      label="Ein Label" labelStyleClass="col-lg-4"
@@ -772,7 +772,7 @@
                         <code>&lt;isy:formSelectOneList&gt;</code>
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:formSelectOneList
                                     inputStyleClass="bootstrap-selectlist col-lg-1"
                                     labelStyleClass="col-lg-2" reference="formSelectOneList"
@@ -787,7 +787,7 @@
                         <code>&lt;isy:formSelectManyList&gt;</code>
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:formSelectManyList
                                     inputStyleClass="bootstrap-selectlist col-lg-1"
                                     labelStyleClass="col-lg-2" reference="formSelectManyList"
@@ -801,7 +801,7 @@
                     <!-- Jeweils Disabled -->
                     <p>Liste für Einfachauswahl (disabled)</p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:formSelectOneList
                                     inputStyleClass="bootstrap-selectlist col-lg-1"
                                     labelStyleClass="col-lg-2" reference="formSelectOneList2"
@@ -814,7 +814,7 @@
                     </div>
                     <p>Liste für Mehrfachauswahl (disabled)</p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:formSelectManyList
                                     inputStyleClass="bootstrap-selectlist col-lg-1"
                                     labelStyleClass="col-lg-2" reference="formSelectManyList2"
@@ -832,7 +832,7 @@
                         <code>&lt;isy:selectOneList&gt;</code>
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:selectOneList
                                     selectlistStyleClass="bootstrap-selectlist col-lg-1"
                                     reference="selectOneList" value="2" size="3">
@@ -846,7 +846,7 @@
                         <code>&lt;isy:selectManyList&gt;</code>
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:selectManyList
                                     selectlistStyleClass="bootstrap-selectlist col-lg-1"
                                     reference="selectManyList" value="1" size="4">
@@ -859,7 +859,7 @@
                     <!-- Jeweils Disabled -->
                     <p>Liste für Einfachauswahl (disabled)</p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:selectOneList
                                     selectlistStyleClass="bootstrap-selectlist col-lg-1"
                                     reference="selectOneList2" value="2" size="3"
@@ -871,7 +871,7 @@
                     </div>
                     <p>Liste für Mehrfachauswahl (disabled)</p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:selectManyList
                                     selectlistStyleClass="bootstrap-selectlist col-lg-1"
                                     reference="selectManyList2" value="1" size="4"
@@ -930,7 +930,7 @@
                         Einbindung über <code>&lt;isy:formCurrencyInput&gt;</code>
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:formCurrencyInput label="isy:formCurrencyInput"
                                                    labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
                                                    required="true" placeholder="24,00" value=""
@@ -982,7 +982,7 @@
                         <code>&lt;isy:formNumericInput&gt;</code> (Ganz- und Fließkommazahlen)
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
 
                             <isy:formNumericInput label="Style (editable)"
                                                   labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
@@ -995,7 +995,7 @@
 
                     <!-- Disabled -->
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
 
                             <isy:formNumericInput label="Style (disabled)"
                                                   labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
@@ -1008,7 +1008,7 @@
 
                     <!-- Read-Only -->
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
 
                             <isy:formNumericInput label="Style (readonly)"
                                                   labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
@@ -1022,7 +1022,7 @@
                     <p><br/>Zahlenwerte rechts ausgerichtet</p>
                     <!-- Zahlenwerte rechts ausgerichtet. -->
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
 
                             <isy:formNumericInput
                                     label="keine Nachkommastelle, ohne Tausenderpunkt"
@@ -1036,7 +1036,7 @@
 
                     <!-- Ohne Nachkommastellen mit Tausenderpunkt. -->
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
 
                             <isy:formNumericInput
                                     label="ohne Nachkommastelle, mit Tausenderpunkt"
@@ -1050,7 +1050,7 @@
 
                     <!-- Eine Nachkommastellen. -->
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
 
                             <isy:formNumericInput
                                     label="eine Nachkommastellen, mit Tausenderpunkt"
@@ -1064,7 +1064,7 @@
 
                     <!-- Drei Nachkommastellen. -->
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
 
                             <isy:formNumericInput
                                     label="drei Nachkommastellen, ohne Tausenderpunkt"
@@ -1091,7 +1091,7 @@
                     <div class="form-horizontal">
                         <div class="row">
                             <div class="col-lg-4">
-                                <div class="row row-df">
+                                <div class="row">
                                     <isy:formBrowseAndCollect
                                             value="${jsfSteuerelementeModel.browseAndCollectAuswahl}"
                                             size="auto" labelStyleClass="col-lg-3"
@@ -1101,14 +1101,14 @@
                                                 value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                                     </isy:formBrowseAndCollect>
                                 </div>
-                                <div class="row row-df">
+                                <div class="row">
                                     <div class="col-lg-4">
                                         <isy:button action="formInputButtonAction"
                                                     render="inhaltsbereichForm:browseAndCollectPanel:browseAndCollectAusgabe"
                                                     value="&Uuml;bernehmen"/>
                                     </div>
                                 </div>
-                                <div class="row row-df">
+                                <div class="row">
                                     <div class="col-lg-6">
                                         Auswahl:
                                         <h:outputText id="browseAndCollectAusgabe"
@@ -1125,7 +1125,7 @@
                     <div class="form-horizontal">
                         <div class="row">
                             <div class="col-lg-4">
-                                <div class="row row-df">
+                                <div class="row">
                                     <isy:formBrowseAndCollect
                                             value="${jsfSteuerelementeModel.browseAndCollectAuswahl}"
                                             size="auto" labelStyleClass="col-lg-3"
@@ -1135,14 +1135,14 @@
                                                 value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                                     </isy:formBrowseAndCollect>
                                 </div>
-                                <div class="row row-df">
+                                <div class="row">
                                     <div class="col-lg-4">
                                         <isy:button action="formInputButtonAction"
                                                     render="inhaltsbereichForm:browseAndCollectPanel:browseAndCollectAusgabe2"
                                                     value="&Uuml;bernehmen"/>
                                     </div>
                                 </div>
-                                <div class="row row-df">
+                                <div class="row">
                                     <div class="col-lg-6">
                                         Auswahl:
                                         <h:outputText id="browseAndCollectAusgabe2"
@@ -1166,7 +1166,7 @@
                         <code>&lt;isy:toggleFilter&gt;</code>
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <div class="form-group">
                                 <isy:toggleFilter
                                         value="${jsfSteuerelementeModel.toggleFilterAuswahl}"
@@ -1177,7 +1177,7 @@
                                 </isy:toggleFilter>
                             </div>
                         </div>
-                        <div class="row row-df">
+                        <div class="row">
                             <div class="form-group">Auswahl:
                                 #{jsfSteuerelementeModel.toggleFilterAuswahl} -
                                 #{jsfSteuerelementeModel.toggleFilterListe.get(jsfSteuerelementeModel.toggleFilterAuswahl).label}
@@ -1199,7 +1199,7 @@
                         FormInput
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:formInputWithFourEyes
                                     id="formInputFourEyes" type="text" label="Text: "
                                     labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
@@ -1214,7 +1214,7 @@
                         FormActionInput
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:formActionInputWithFourEyes
                                     reference="testFormActionInputFourEyes"
                                     label="Ein Label"
@@ -1232,7 +1232,7 @@
                         FormCurrencyInput
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:formCurrencyInputWithFourEyes
                                     label="isy:formCurrencyInput"
                                     labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
@@ -1248,7 +1248,7 @@
                         FormDate
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:formDate label="Datum" labelStyleClass="col-lg-2"
                                           inputStyleClass="col-lg-2"
                                           value="#{jsfSteuerelementeModel.datum}"
@@ -1261,7 +1261,7 @@
                         FormTextarea
                     </p>
                     <div class="form-horizontal">
-                        <div class="row row-df">
+                        <div class="row">
                             <isy:formTextarea label="Text"
                                               value="#{jsfSteuerelementeModel.textBoxButtonActionResult}"
                                               labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
@@ -1323,7 +1323,7 @@
                     <h3>Demo: Disabled</h3>
                     <div class="row form-horizontal">
                         <div class="col-lg-8">
-                            <div class="row row-df">
+                            <div class="row">
                                 <isy:formUpload label="Disabled"
                                                 value="${jsfSteuerelementeModel.disabledUpload}"
                                                 reference="disabled" disabled="true"
@@ -1335,13 +1335,13 @@
                     <h3>Demo: Text-Datei</h3>
                     <div class="row form-horizontal">
                         <div class="col-lg-8">
-                            <div class="row row-df">
+                            <div class="row">
                                 <isy:formUpload label="Text" value="${jsfSteuerelementeModel.textUpload}"
                                                 reference="text"
                                                 required="true" accept=".csv,.txt,.text"
                                                 tooltip="Bitte wählen Sie eine Text-Datei aus. Diese darf nicht größer als 10Kb sein, siehe Kontroller"/>
                             </div>
-                            <div class="row row-df">
+                            <div class="row">
                                 <h:outputText value="#{jsfSteuerelementeModel.hochgeladenerText}"
                                               escape="true"/>
                             </div>
@@ -1350,7 +1350,7 @@
                     <h3>Demo: Bild-Datei</h3>
                     <div class="row form-horizontal">
                         <div class="col-lg-8">
-                            <div class="row row-df">
+                            <div class="row">
                                 <isy:formUpload label="Bild" value="${jsfSteuerelementeModel.bildUpload}"
                                                 reference="bild"
                                                 required="false"
@@ -1358,7 +1358,7 @@
                                                 accept="image/*"
                                                 tooltip="Bitte wählen Sie eine Bild-Datei aus. Diese darf nicht größer als 100Kb sein, siehe Kontroller"/>
                             </div>
-                            <div class="row row-df">
+                            <div class="row">
                                 <h:graphicImage
                                         url="data:image/jpg;base64,#{jsfSteuerelementeController.getEncodedImage(jsfSteuerelementeModel.hochgeladenesBild)}"
                                         rendered="#{not empty jsfSteuerelementeController.getEncodedImage(jsfSteuerelementeModel.hochgeladenesBild)}"/>
