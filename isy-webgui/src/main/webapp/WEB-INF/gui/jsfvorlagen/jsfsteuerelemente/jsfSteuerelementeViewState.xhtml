@@ -563,12 +563,12 @@
                     <isy:buttonToolbar showIcon="false" value="Button ohne Icon"
                                        action="noAction"/>
                 </p>
-                <p>Eine Button Row</p>
+                <p>Eine Button Row mit Icons vor den Buttons</p>
                 <p>
                     <isy:buttonRow>
-                        <isy:buttonToolbar icon="placeholder" value="Button 1"
+                        <isy:buttonToolbar icon="fa-ambulance" value="Button 1"
                                            action="noAction"/>
-                        <isy:buttonToolbar icon="placeholder" value="Button 2"
+                        <isy:buttonToolbar icon="fa-hand-o-right" value="Button 2"
                                            action="noAction"/>
                     </isy:buttonRow>
                 </p>
@@ -709,7 +709,7 @@
                                 <isy:actionInput reference="testActionInput"
                                                  value="#{jsfSteuerelementeModel.actionInputResult}"
                                                  action="actionInputAction" icon="search" tooltip="tooltip"
-                                                 placeholder="palceholder" maxlength="20"/>
+                                                 placeholder="placeholder" maxlength="20"/>
                             </div>
                         </div>
                     </div>
@@ -722,7 +722,7 @@
                                 <isy:actionInput reference="testActionInput2"
                                                  value="#{jsfSteuerelementeModel.actionInputResult}"
                                                  action="actionInputAction" icon="search" tooltip="tooltip"
-                                                 placeholder="palceholder" maxlength="20" disabled="true"/>
+                                                 placeholder="placeholder" maxlength="20" disabled="true"/>
                             </div>
                         </div>
                     </div>
@@ -731,14 +731,14 @@
                     <p>Form-Aktionseingabefeld.</p>
                     <div class="form-horizontal">
                         <div class="row row-df">
-                            <div class="col-lg-2">
+                            <div class="col-lg-3">
                                 <isy:formActionInput reference="testFormActionInput"
                                                      label="Ein Label" labelStyleClass="col-lg-4"
                                                      inputStyleClass="col-lg-8"
                                                      value="#{jsfSteuerelementeModel.actionInputResult}"
                                                      action="actionInputAction" icon="search"
                                                      tooltip="tooltip"
-                                                     placeholder="palceholder" maxlength="20"/>
+                                                     placeholder="placeholder" maxlength="20"/>
                             </div>
                         </div>
                     </div>
@@ -747,14 +747,14 @@
                     <p>Form-Aktionseingabefeld (disabled).</p>
                     <div class="form-horizontal">
                         <div class="row row-df">
-                            <div class="col-lg-2">
+                            <div class="col-lg-3">
                                 <isy:formActionInput reference="testFormActionInput2"
                                                      label="Ein Label" labelStyleClass="col-lg-4"
                                                      inputStyleClass="col-lg-8"
                                                      value="#{jsfSteuerelementeModel.actionInputResult}"
                                                      action="actionInputAction" icon="search"
                                                      tooltip="tooltip"
-                                                     placeholder="palceholder" maxlength="20"
+                                                     placeholder="placeholder" maxlength="20"
                                                      disabled="true"/>
                             </div>
                         </div>
