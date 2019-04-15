@@ -256,8 +256,6 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
     private JsfSteuerelementeStaatsangListpickerModel staatsangListpickerModel;
 
     /**
-     * Model für Listpicker (mit AJAX).
-     */    /**
      * Listpickermodel für den Behörde-Listpicker.
      */
     private BehoerdeListpickerModel behoerdeListpickerModel;
@@ -266,9 +264,16 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
      * Auswahl des Behörde-Listpickers.
      */
     private Listpickerangabe behoerdeListpickerAngabe;
+
+    /**
+     * Model für Listpicker (mit AJAX).
+     */
     private JsfSteuerelementeListpickerModel ajaxListpickerModel;
 
-
+    /**
+     * Model für Servlet-Listpicker.
+     */
+    private JsfSteuerelementeListpickerModel servletListpickerModel;
 
     /**
      * Auswahl des Listpickers (ohne AJAX).
@@ -279,6 +284,11 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
      * Auswahl des Listpickers (mit AJAX).
      */
     private String ajaxListpickerAuswahl;
+
+    /**
+     * Auswahl des Servlet-Listpickers.
+     */
+    private String servletListpickerAuswahl;
 
     private List<String> formSelectListInhalt;
 
@@ -292,10 +302,6 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
     private List<SelectItem> toggleFilterListe;
 
     private String toggleFilterAuswahl;
-
-
-
-
 
     /**
      * Der Wert für das formInput, dass das Four-Eyes-Icon verwendet.
@@ -348,7 +354,7 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
     }
 
     public String getBlockButtonActionResult() {
-        return blockButtonActionResult;
+        return this.blockButtonActionResult;
     }
 
     public void setButtonActionResult(String buttonActionResult) {
@@ -500,12 +506,28 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
         this.ajaxListpickerModel = ajaxListpickerModel;
     }
 
-    public String getAjaxListpickerAuswahl() {
-        return this.ajaxListpickerAuswahl;
+    public JsfSteuerelementeListpickerModel getServletListpickerModel() {
+        return this.servletListpickerModel;
     }
 
     public void setAjaxListpickerAuswahl(String ajaxListpickerAuswahl) {
         this.ajaxListpickerAuswahl = ajaxListpickerAuswahl;
+    }
+
+    public void setServletListpickerModel(JsfSteuerelementeListpickerModel servletListpickerModel) {
+        this.servletListpickerModel = servletListpickerModel;
+    }
+
+    public String getAjaxListpickerAuswahl() {
+        return this.ajaxListpickerAuswahl;
+    }
+
+    public String getServletListpickerAuswahl() {
+        return this.servletListpickerAuswahl;
+    }
+
+    public void setServletListpickerAuswahl(String servletListpickerAuswahl) {
+        this.servletListpickerAuswahl = servletListpickerAuswahl;
     }
 
     public List<String> getFormSelectListInhalt() {
@@ -713,7 +735,7 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
     }
 
     public PanelModel getPanelModelNumeric() {
-        return panelModelNumeric;
+        return this.panelModelNumeric;
     }
 
     public void setPanelModelNumeric(PanelModel panelModelNumeric) {
@@ -773,7 +795,7 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
     }
 
     public JsfSteuerelementeStaatsangListpickerModel getStaatsangListpickerModel() {
-        return staatsangListpickerModel;
+        return this.staatsangListpickerModel;
     }
 
     public void setStaatsangListpickerModel(
