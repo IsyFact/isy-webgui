@@ -10,7 +10,7 @@
     <parent>
         <groupId>de.bund.bva.isyfact</groupId>
         <artifactId>isy-webgui-parent</artifactId>
-        <version>4.7.1</version>
+        <version>4.7.2</version>
     </parent>
 
     <dependencyManagement>
@@ -49,7 +49,7 @@
         <dependency>
             <groupId>de.bund.bva.isyfact</groupId>
             <artifactId>isy-web</artifactId>
-            <version>4.7.1</version>
+            <version>4.7.2</version>
         </dependency>
 
         <dependency>
@@ -65,9 +65,9 @@
             <artifactId>javax.servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
-        
+
         <!--  Eingebunden für formUpload.
-              Diese Dependency ist über die isy-web- und Tomahawk-Bibliothek nur mit Scope "runtime" eingebunden, 
+              Diese Dependency ist über die isy-web- und Tomahawk-Bibliothek nur mit Scope "runtime" eingebunden,
               sie wird hier aber direkt verwendet und daher bereits zur Compile-Zeit benötigt. -->
         <dependency>
           <groupId>commons-io</groupId>
