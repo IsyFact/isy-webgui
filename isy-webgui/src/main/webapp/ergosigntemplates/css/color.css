@@ -136,6 +136,11 @@ code {
 .nav.nav-pills.nav-stacked li.active:after {
   border-left: 12px solid #99b3c9;
 }
+
+.nav.nav-pills.nav-stacked li:hover:after {
+  border-left: 12px solid #e1e3e6;
+}
+
 .nav.nav-tabs li a:hover,
 .nav.nav-tabs li a:focus,
 .nav.nav-tabs li a:active,

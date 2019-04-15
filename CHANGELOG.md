@@ -1,4 +1,5 @@
-# v4.X.X
+# v4.8.0
+- `IFS-222`: Reihenfolge der Filter-Mappings angepasst, SetCharacterEncodingFilter nach vorne gesetzt.
 - `IFE-35`: Es wurde ein Listpicker, der mithilfe eines Servlets filtert, zur Veranschaulichung/Verprobung eingebaut.
 
 # v4.7.0

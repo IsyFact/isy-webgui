@@ -34,8 +34,7 @@
                 <f:facet name="panelHeader">Button</f:facet>
                 <f:facet name="panelBody">
                     <p>
-                        Ein Button. Einbindung über
-                        <code>&lt;isy:button&gt;</code>
+                        Ein Button. Einbindung über <code>&lt;isy:button&gt;</code>
                     </p>
                     <p>
                         <isy:button id="buttonTest" action="buttonAction" value="Button"/>
@@ -48,7 +47,8 @@
                         <code>&lt;isy:button&gt;</code> mit dem Attribute <code>block="true"</code>
                     </p>
                     <p>
-                        <isy:button id="buttonBlockTest" action="blockButtonAction" value="Button (Block)" block="true"/>
+                        <isy:button id="buttonBlockTest" action="blockButtonAction" value="Button (Block)"
+                                    block="true"/>
                         <br/> ButtonActionResult:
                         <h:outputText value="#{jsfSteuerelementeModel.blockButtonActionResult}"/>
                     </p>
@@ -80,46 +80,40 @@
                 <f:facet name="panelHeader">Eingabefeld</f:facet>
                 <f:facet name="panelBody">
                     <p>
-                        Ein Eingabefeld. Einbindung über
-                        <code>&lt;isy:formInput&gt;</code>
+                        Ein Eingabefeld. Einbindung über <code>&lt;isy:formInput&gt;</code>
                     </p>
-                    <p>
-                        <isy:formInput id="formInput" type="text" label="Text: "
-                                       reference="formInputReferenz"
-                                       value="#{jsfSteuerelementeModel.formInputTextButtonActionResult}"/>
-                    </p>
-                    <br/>
-                    <p>
-                        <isy:formInput id="formInputPassword" type="password"
-                                       label="Passwort: " reference="formInputPasswortReferenz"
-                                       value="#{jsfSteuerelementeModel.formInputPasswortButtonActionResult}"/>
-                    </p>
+                    <div class="form-horizontal">
+                        <div class="row row-df">
+                            <div class="col-lg-6">
 
-                    <!-- Disabled -->
-                    <br/>
-                    <p>
-                        <isy:formInput id="formInputDisabled" type="text"
-                                       label="Text (disabled): " reference="formInputDisabledReferenz"
-                                       value="Ein deaktiviertes Textfeld" disabled="true"/>
-                    </p>
+                                <isy:formInput id="formInput" type="text" label="Text: "
+                                               reference="formInputReferenz"
+                                               value="#{jsfSteuerelementeModel.formInputTextButtonActionResult}"/>
 
-                    <!-- Read-Only -->
-                    <br/>
-                    <p>
-                        <isy:formInput id="formInputReadonly" type="text"
-                                       label="Text (readonly): " reference="formInputReadonlyReferenz"
-                                       value="Ein readonly Textfeld" readonly="true"/>
-                    </p>
-                    <br/>
-                    <p>
-                        <isy:formInput id="formInputSpecialChar" type="text"
-                                       label="Text Special Char: " reference="formInputSpecialChar"
-                                       value="Ein Special Char Textfeld" charpicker="true"/>
-                    </p>
-                    <p>
-                        <isy:button id="formInputButton" action="formInputButtonAction"
-                                    value="Button"/>
-                    </p>
+                                <isy:formInput id="formInputPassword" type="password"
+                                               label="Passwort: " reference="formInputPasswortReferenz"
+                                               value="#{jsfSteuerelementeModel.formInputPasswortButtonActionResult}"/>
+
+
+                                <!-- Disabled -->
+                                <isy:formInput id="formInputDisabled" type="text"
+                                               label="Text (disabled): " reference="formInputDisabledReferenz"
+                                               value="Ein deaktiviertes Textfeld" disabled="true"/>
+
+                                <!-- Read-Only -->
+                                <isy:formInput id="formInputReadonly" type="text"
+                                               label="Text (readonly): " reference="formInputReadonlyReferenz"
+                                               value="Ein readonly Textfeld" readonly="true"/>
+
+                                <isy:formInput id="formInputSpecialChar" type="text"
+                                               label="Text Special Char: " reference="formInputSpecialChar"
+                                               value="Ein Special Char Textfeld" charpicker="true"/>
+
+                                <isy:button id="formInputButton" action="formInputButtonAction"
+                                            value="Button"/>
+                            </div>
+                        </div>
+                    </div>
                     <p>
                         Eingegebener Text:
                         <h:outputText title="Eingegener Text"
@@ -185,8 +179,8 @@
 
                     <div class="row row-df">
                         <div class="col-lg-12">
-                            Ein Select-One Dropdown. Einbindung über
-                            <code>&lt;isy:selectOneDropdown&gt;&lt;f:selectItems&gt;..</code>
+                            formSelectOneDropdown. Einbindung über
+                            <code>&lt;isy:formSelectOneDropdown&gt;&lt;f:selectItems&gt;..</code>
                             <br/> <br/>
                         </div>
                         <div class="col-lg-6">
@@ -208,7 +202,7 @@
                             Aktuelle Auswahl:
                             <h:outputText id="dropdownAuswahlAjax"
                                           value="#{jsfSteuerelementeModel.dropdownAuswahlAjax}"/>
-                            <br/> Uebernommener Wert:
+                            <br/> Übernommener Wert:
                             <h:outputText id="dropdownAuswahl"
                                           value="#{jsfSteuerelementeModel.dropdownAuswahl}"/>
                         </div>
@@ -217,7 +211,7 @@
                     <!-- Disabled Dropdown -->
                     <div class="row row-df">
                         <div class="col-lg-12">
-                            Ein Select-One Dropdown (disabled). <br/> <br/>
+                            formSelectOneDropdown (disabled). <br/> <br/>
                         </div>
                         <div class="col-lg-6">
                             <isy:formSelectOneDropdown reference="formSelectOneDropdown2"
@@ -228,6 +222,24 @@
                                         value="#{jsfSteuerelementeModel.dropdownAuswahlListe}"/>
                                 <f:ajax event="change"
                                         render="inhaltsbereichForm:dropdownPanel:dropdownAuswahlAjax2"/>
+                            </isy:formSelectOneDropdown>
+                        </div>
+                    </div>
+
+                    <!-- readonly Dropdown -->
+                    <div class="row row-df">
+                        <div class="col-lg-12">
+                            formSelectOneDropdown (readonly). <br/> <br/>
+                        </div>
+                        <div class="col-lg-6">
+                            <isy:formSelectOneDropdown reference="formSelectOneDropdownReadOnly"
+                                                       value="#{jsfSteuerelementeModel.dropdownAuswahl}"
+                                                       label="Auswahl" readonly="true"
+                                                       converter="#{typeConverter}" converterAttribute="int">
+                                <f:selectItems
+                                        value="#{jsfSteuerelementeModel.dropdownAuswahlListe}"/>
+                                <f:ajax event="change"
+                                        render="inhaltsbereichForm:dropdownPanel:dropdownAuswahlAjax3"/>
                             </isy:formSelectOneDropdown>
                         </div>
                     </div>
@@ -373,7 +385,7 @@
                 <div class="form-horizontal">
                     <div class="row row-df">
                         <isy:formDate label="Datum" labelStyleClass="col-lg-1"
-                                      inputStyleClass="col-lg-2" type="date"
+                                      inputStyleClass="col-lg-2"
                                       value="#{jsfSteuerelementeModel.datum}"
                                       placeholder="z.B 12.02.2001" reference="datum"/>
                     </div>
@@ -383,7 +395,7 @@
                 <div class="form-horizontal">
                     <div class="row row-df">
                         <isy:formDate label="Datum readonly" labelStyleClass="col-lg-1"
-                                      readonly="true" inputStyleClass="col-lg-2" type="date"
+                                      readonly="true" inputStyleClass="col-lg-2"
                                       value="12.12.2012" placeholder="z.B 12.02.2001" reference="datum"/>
                     </div>
                 </div>
@@ -406,7 +418,7 @@
                     <isy:tabGroup tabGroupId="testTab" globalTabContentRefs="V P S"
                                   globalTab="V" defaultTab="V"
                                   tabGroupModel="#{jsfSteuerelementeModel.tabGroupModel}"
-                                  scrollTabUpwards="true" >
+                                  scrollTabUpwards="true">
                         <f:facet name="tabHeader">
                             <isy:tabHeader value="Vollauskunft" name="V" skipAction="true"/>
                             <isy:tabHeader value="Personalien" name="P" skipAction="true"/>
@@ -456,7 +468,7 @@
                                                 header="Schlüssel,Wert"
                                                 inputComplement="2"
                                                 minWidth="0"
-                                                displaySize="3" required="false"
+                                                required="false"
                                                 placeholder="000" inputmask="999"
                             />
 
@@ -615,11 +627,11 @@
                             </isy:dataTableHeader>
                             <isy:dataTableHeader name="#" width="10%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
-                            <isy:dataTableHeader name="First Name" width="25%"
+                            <isy:dataTableHeader name="Vorname" width="25%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>
-                            <isy:dataTableHeader name="Last Name" width="25%"
+                            <isy:dataTableHeader name="Nachname" width="25%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>
-                            <isy:dataTableHeader name="Username" width="20%"
+                            <isy:dataTableHeader name="Loginname" width="20%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
                             <isy:dataTableHeader name="" width="15%"/>
                         </f:facet>
@@ -647,9 +659,9 @@
                                     property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
                             <isy:dataTableFilterClearer/>
                         </f:facet>
-                        <isy:dataTableRows rowVar="treffer"
-                                           rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/rowDefinition.xhtml"
-                                           detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/detailDefinition.xhtml"/>
+                        <isy:dataTableRows
+                                rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/rowDefinition.xhtml"
+                                detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/detailDefinition.xhtml"/>
                     </isy:dataTable>
 
                     <p>
@@ -670,11 +682,11 @@
                             </isy:dataTableHeader>
                             <isy:dataTableHeader name="#" width="10%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
-                            <isy:dataTableHeader name="First Name" width="25%"
+                            <isy:dataTableHeader name="Vorname" width="25%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>
-                            <isy:dataTableHeader name="Last Name" width="25%"
+                            <isy:dataTableHeader name="Nachname" width="25%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>
-                            <isy:dataTableHeader name="Username" width="20%"
+                            <isy:dataTableHeader name="Loginname" width="20%"
                                                  sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
                             <isy:dataTableHeader name="" width="15%"/>
                         </f:facet>
@@ -702,9 +714,9 @@
                                     property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
                             <isy:dataTableFilterClearer/>
                         </f:facet>
-                        <isy:dataTableRows rowVar="treffer"
-                                           rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/rowDefinition.xhtml"
-                                           detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/detailDefinition.xhtml"/>
+                        <isy:dataTableRows
+                                rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/rowDefinition.xhtml"
+                                detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/detailDefinition.xhtml"/>
                     </isy:dataTable>
 
                     <p>
@@ -858,8 +870,7 @@
                         <div class="row row-df">
                             <isy:selectOneList
                                     selectlistStyleClass="bootstrap-selectlist col-lg-1"
-                                    reference="selectOneList" value="2" size="3"
-                                    label="Liste (Einfachauswahl)">
+                                    reference="selectOneList" value="2" size="3">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                             </isy:selectOneList>
@@ -873,8 +884,7 @@
                         <div class="row row-df">
                             <isy:selectManyList
                                     selectlistStyleClass="bootstrap-selectlist col-lg-1"
-                                    reference="selectManyList" value="1" size="4"
-                                    label="Liste (Mehrfachauswahl)">
+                                    reference="selectManyList" value="1" size="4">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                             </isy:selectManyList>
@@ -888,7 +898,7 @@
                             <isy:selectOneList
                                     selectlistStyleClass="bootstrap-selectlist col-lg-1"
                                     reference="selectOneList2" value="2" size="3"
-                                    label="Liste (Einfachauswahl)" disabled="true">
+                                    disabled="true">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                             </isy:selectOneList>
@@ -900,7 +910,7 @@
                             <isy:selectManyList
                                     selectlistStyleClass="bootstrap-selectlist col-lg-1"
                                     reference="selectManyList2" value="1" size="4"
-                                    label="Liste (Mehrfachauswahl)" disabled="true">
+                                    disabled="true">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                             </isy:selectManyList>
@@ -945,57 +955,38 @@
                 </f:facet>
             </isy:panel>
 
+
             <isy:panel id="currencyPanel"
                        panelModel="#{jsfSteuerelementeModel.panelModelCurrency}"
                        collapse="true">
                 <f:facet name="panelHeader">Eingabefeld für Geldbeträge</f:facet>
                 <f:facet name="panelBody">
                     <p>
-                        Einbindung über
-                        <code>&lt;isy:formCurrencyInput&gt;</code>
+                        Einbindung über <code>&lt;isy:formCurrencyInput&gt;</code>
                     </p>
                     <div class="form-horizontal">
                         <div class="row row-df">
-
                             <isy:formCurrencyInput label="isy:formCurrencyInput"
                                                    labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
                                                    required="true" placeholder="24,00" value=""
                                                    reference="formCurrencyInput">
                             </isy:formCurrencyInput>
 
-                        </div>
-                    </div>
-
-                    <!-- Disabled -->
-                    <div class="form-horizontal">
-                        <div class="row row-df">
-
+                            <!-- Disabled -->
                             <isy:formCurrencyInput label="isy:formCurrencyInput (disabled)"
                                                    labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
                                                    required="true" placeholder="24,00" value=""
                                                    reference="formCurrencyInput2" disabled="true">
                             </isy:formCurrencyInput>
 
-                        </div>
-                    </div>
-
-                    <!-- Read-Only -->
-                    <div class="form-horizontal">
-                        <div class="row row-df">
-
+                            <!-- Read-Only -->
                             <isy:formCurrencyInput label="isy:formCurrencyInput (readonly)"
                                                    labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
                                                    required="true" placeholder="24,00" value="24,00"
                                                    reference="formCurrencyInput3" readonly="true">
                             </isy:formCurrencyInput>
 
-                        </div>
-                    </div>
-
-                    <!-- Text rechts ausgerichtet. -->
-                    <div class="form-horizontal">
-                        <div class="row row-df">
-
+                            <!-- Text rechts ausgerichtet. -->
                             <isy:formCurrencyInput
                                     label="isy:formCurrencyInput (Textausrichtung rechts)"
                                     labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
@@ -1003,20 +994,13 @@
                                     reference="formCurrencyInput4" alignright="true">
                             </isy:formCurrencyInput>
 
-                        </div>
-                    </div>
-
-                    <!-- Vier Nachkommastellen. -->
-                    <div class="form-horizontal">
-                        <div class="row row-df">
-
+                            <!-- Vier Nachkommastellen. -->
                             <isy:formCurrencyInput
                                     label="isy:formCurrencyInput (Vier Nachkommastellen)"
                                     labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
                                     placeholder="24,00" value="" reference="formCurrencyInput5"
                                     decimalplaces="4">
                             </isy:formCurrencyInput>
-
                         </div>
                     </div>
 
@@ -1251,12 +1235,12 @@
                     </p>
                     <div class="form-horizontal">
                         <div class="row row-df">
-                            <isy:formInput id="formInputFourEyes" type="text" label="Text: "
-                                           labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
-                                           reference="formInputReferenz"
-                                           value="#{jsfSteuerelementeModel.formInputTextButtonActionResult}"
-                                           fourEyesMode="unlock"
-                                           fourEyesLastValue="Vorher"/>
+                            <isy:formInputWithFourEyes
+                                    id="formInputFourEyes" type="text" label="Text: "
+                                    labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+                                    reference="formInputReferenz"
+                                    value="#{jsfSteuerelementeModel.formInputTextButtonActionResult}"
+                                    fourEyesMode="locked" fourEyesLastValue="Letzer Wert"/>
                         </div>
                     </div>
 
@@ -1266,15 +1250,15 @@
                     </p>
                     <div class="form-horizontal">
                         <div class="row row-df">
-                            <isy:formActionInput reference="testFormActionInputFourEyes"
-                                                 label="Ein Label"
-                                                 labelStyleClass="col-lg-2"
-                                                 inputStyleClass="col-lg-2"
-                                                 value="#{jsfSteuerelementeModel.actionInputResult}"
-                                                 action="actionInputAction" icon="search" tooltip="tooltip"
-                                                 placeholder="placeholder" maxlength="20"
-                                                 fourEyesMode="unlock"
-                                                 fourEyesLastValue="Vorher"/>
+                            <isy:formActionInputWithFourEyes
+                                    reference="testFormActionInputFourEyes"
+                                    label="Ein Label"
+                                    labelStyleClass="col-lg-2"
+                                    inputStyleClass="col-lg-2"
+                                    value="#{jsfSteuerelementeModel.actionInputResult}"
+                                    action="actionInputAction" icon="search" tooltip="tooltip"
+                                    placeholder="placeholder" maxlength="20"
+                                    fourEyesMode="locked" fourEyesLastValue="Letzer Wert"/>
                         </div>
                     </div>
 
@@ -1284,13 +1268,13 @@
                     </p>
                     <div class="form-horizontal">
                         <div class="row row-df">
-                            <isy:formCurrencyInput label="isy:formCurrencyInput"
-                                                   labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
-                                                   required="true" placeholder="24,00" value=""
-                                                   reference="formCurrencyInputFourEyes"
-                                                   fourEyesMode="unlock"
-                                                   fourEyesLastValue="Vorher">
-                            </isy:formCurrencyInput>
+                            <isy:formCurrencyInputWithFourEyes
+                                    label="isy:formCurrencyInput"
+                                    labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+                                    required="true" placeholder="24,00" value=""
+                                    reference="formCurrencyInputFourEyes" fourEyesMode="locked"
+                                    fourEyesLastValue="Letzer Wert">
+                            </isy:formCurrencyInputWithFourEyes>
                         </div>
                     </div>
 
@@ -1301,11 +1285,9 @@
                     <div class="form-horizontal">
                         <div class="row row-df">
                             <isy:formDate label="Datum" labelStyleClass="col-lg-2"
-                                          inputStyleClass="col-lg-2" type="date"
+                                          inputStyleClass="col-lg-2"
                                           value="#{jsfSteuerelementeModel.datum}"
-                                          placeholder="z.B 12.02.2001" reference="datumFourEyes"
-                                          fourEyesMode="unlock"
-                                          fourEyesLastValue="Vorher"/>
+                                          placeholder="z.B 12.02.2001" reference="datumFourEyes"/>
                         </div>
                     </div>
 
@@ -1320,9 +1302,7 @@
                                               labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
                                               reference="textFourEyes"
                                               placeholder="Bitte geben Sie einen Text ein!"
-                                              maxlength="100" required="true"
-                                              fourEyesMode="unlock"
-                                              fourEyesLastValue="Vorher"/>
+                                              maxlength="100" required="true"/>
                         </div>
                     </div>
 
@@ -1334,10 +1314,8 @@
                     <p>
                         <isy:formCheckbox id="cbtest2FourEyes" reference="cbtest2FourEyes"
                                           value="#{jsfSteuerelementeModel.checkboxBoolean1}"
-                                          label="Eine Auswahl" labelRight="Auswahl 1"
-                                          valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}"
-                                          fourEyesMode="unlock"
-                                          fourEyesLastValue="Vorher">
+                                          label="Eine Auswahl" disabled="false" labelRight="Auswahl 1"
+                                          valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
                         </isy:formCheckbox>
                     </p>
                     <p>
@@ -1345,9 +1323,7 @@
                                           value="#{jsfSteuerelementeModel.checkboxBoolean2}"
                                           label="Eine deaktivierte Auswahl" disabled="true"
                                           labelRight="Auswahl 2"
-                                          valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}"
-                                          fourEyesMode="unlock"
-                                          fourEyesLastValue="Vorher">
+                                          valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
                         </isy:formCheckbox>
                     </p>
 
@@ -1361,9 +1337,7 @@
                                                    value="#{jsfSteuerelementeModel.dropdownAuswahl}"
                                                    label="Auswahl"
                                                    valueChangeListener="#{jsfSteuerelementeController.dropdownWertAusgewaehlt}"
-                                                   converter="#{typeConverter}" converterAttribute="int"
-                                                   fourEyesMode="unlock"
-                                                   fourEyesLastValue="Vorher">
+                                                   converter="#{typeConverter}" converterAttribute="int">
                             <f:selectItems
                                     value="#{jsfSteuerelementeModel.dropdownAuswahlListe}"/>
                             <f:ajax event="change"

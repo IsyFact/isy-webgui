@@ -141,6 +141,11 @@
     </servlet>
     
 
+    <!-- Encoding -->
+    <filter-mapping>
+        <filter-name>SetCharacterEncodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+    </filter-mapping>
     <!-- Request-Scoping -->
     <filter-mapping>
         <filter-name>RequestContextFilter</filter-name>
@@ -156,11 +161,6 @@
         <filter-name>SpringSecurityFilter</filter-name>
         <url-pattern>/app/*</url-pattern>
     </filter-mapping-->
-    <!-- Encoding -->
-    <filter-mapping>
-        <filter-name>SetCharacterEncodingFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
     <!-- Filter zur Initialisierung der Applikation (JavaScript De-/Aktiviert, ...). -->
     <filter-mapping>
         <filter-name>applicationInitialisierungFilter</filter-name>
