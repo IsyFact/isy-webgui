@@ -124,10 +124,15 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
             .erzeugeListpickerItemListe());
         model.setListpickerModel(listpickerModel);
 
+        // Servlet Listpicker: Dieser verwendet einfach dieselben Items wie der Non-Ajax Picker. Für
+        // Demo-Zwecke letztlich egal.
+        model.setServletListpickerModel(listpickerModel);
+
         // Staatsangehoerigkeit-Listpicker ohne AJAX
-        JsfSteuerelementeStaatsangListpickerModel staatsangListpickerModel = new JsfSteuerelementeStaatsangListpickerModel();
-        staatsangListpickerModel.setItems(this.jsfSteuerelementeHelper.getJsfSteuerelementeStaatsangListpickerController()
-            .erzeugeListpickerItemListe());
+        JsfSteuerelementeStaatsangListpickerModel staatsangListpickerModel =
+            new JsfSteuerelementeStaatsangListpickerModel();
+        staatsangListpickerModel.setItems(this.jsfSteuerelementeHelper
+            .getJsfSteuerelementeStaatsangListpickerController().erzeugeListpickerItemListe());
         model.setStaatsangListpickerModel(staatsangListpickerModel);
 
         // Listpicker mit AJAX
