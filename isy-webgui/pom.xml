@@ -55,7 +55,7 @@
         <dependency>
             <groupId>de.bund.bva.isyfact</groupId>
             <artifactId>isy-style</artifactId>
-            <version>4.1.1</version>
+            <version>4.1.2</version>
         </dependency>
 
         <!-- Eingebunden für formUpload. Diese Dependency ist bereits in der isy-web als provided eingebunden,
