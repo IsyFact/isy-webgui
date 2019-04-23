@@ -1,4 +1,5 @@
 # v4.7.2
+- `IFE-44`: Security Patch commons-fileupload
 - `IFE-51`: Unterstützung Fontawesome 4 und 5 Icons 
 
 # v4.7.0
