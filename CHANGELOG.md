@@ -1,3 +1,6 @@
+# v4.7.2
+- `IFE-44`: Security Patch commons-fileupload
+
 # v4.7.0
 - `IFS-96`: Autoscroll Funtion für Tab-Controls
 - `IFS-142`: Beispiel für Neuimplementierung Breadcrumb
