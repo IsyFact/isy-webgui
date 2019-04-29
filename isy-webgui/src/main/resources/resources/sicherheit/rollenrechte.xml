@@ -5,7 +5,11 @@
     <tns:rechte>
         <tns:rechtId Id="GUI.Nutzen" />
     </tns:rechte>
-    
+
+    <tns:rechte>
+        <tns:rechtId Id="GUI.Geschuetzt" />
+    </tns:rechte>
+
     <tns:rollen RolleId="Testrolle">
         <tns:rechtId Id="GUI.Nutzen" />
     </tns:rollen>
