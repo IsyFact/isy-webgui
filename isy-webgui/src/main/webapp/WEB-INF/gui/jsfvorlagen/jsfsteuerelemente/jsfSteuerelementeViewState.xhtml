@@ -155,14 +155,14 @@
                                           maxlength="100" required="true"/>
                     </p>
                     <p>Eine 'disabled' TextBox.</p>
-                    <p>
-                        <isy:formTextarea label="Text" value="Eine deaktivierte Textbox"
-                                          reference="text" maxlength="100" required="true" disabled="true"/>
-                    </p>
-                    <p>
-                        <isy:button id="textBoxButton" action="textBoxButtonAction"
-                                    value="Button"/>
-                    </p>
+
+                    <isy:formTextarea label="Text" value="Eine deaktivierte Textbox"
+                                      reference="text" maxlength="100" required="true" disabled="true"/>
+
+
+                    <isy:button id="textBoxButton" action="textBoxButtonAction"
+                                value="Button"/>
+
                     <p>
                         Eingegebener Text:
                         <h:outputText title="EingegebenerText"
@@ -255,11 +255,11 @@
                     <p>
                         <code>&lt;isy:selectOneRadio&gt;</code>
                     </p>
-                    <p>
-                        <isy:selectOneRadio id="stest"
-                                            value="#{jsfSteuerelementeModel.radioButtonAuswahl}"
-                                            selectItems="#{jsfSteuerelementeModel.radioButtonListe}"/>
-                    </p>
+
+                    <isy:selectOneRadio id="stest"
+                                        value="#{jsfSteuerelementeModel.radioButtonAuswahl}"
+                                        selectItems="#{jsfSteuerelementeModel.radioButtonListe}"/>
+
                     <p>
                         <isy:button action="radioButtonAction" value="Select"/>
                     </p>
@@ -297,11 +297,11 @@
                     Mehrere Checkboxen. Einbindung über
                     <code>&lt;isy:selectManyCheckbox ...</code>
                 </p>
-                <p>
-                    <isy:selectManyCheckbox id="cbtest"
-                                            value="#{jsfSteuerelementeModel.checkboxAuswahl}"
-                                            selectItems="#{jsfSteuerelementeModel.checkboxListe}"/>
-                </p>
+
+                <isy:selectManyCheckbox id="cbtest"
+                                        value="#{jsfSteuerelementeModel.checkboxAuswahl}"
+                                        selectItems="#{jsfSteuerelementeModel.checkboxListe}"/>
+
                 <p>
                     <isy:button action="checkboxAction" value="Select"/>
                 </p>
@@ -314,57 +314,56 @@
                     <code>&lt;isy:formCheckbox bzw.
                         &lt;isy:selectBooleanCheckbox ... </code>
                 </p>
-                <p>
-                    <isy:formCheckbox id="cbtest2" reference="cbtest2"
-                                      value="#{jsfSteuerelementeModel.checkboxBoolean1}"
-                                      label="Eine Auswahl" labelRight="Auswahl 1" disabled="false"
-                                      valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
-                        <f:ajax event="change"
-                                render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert"/>
-                        <f:ajax event="click"
-                                render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
-                                listener="#{jsfSteuerelementeController.checkboxBooleanGeklickt}"/>
-                    </isy:formCheckbox>
-                </p>
-                <p>
-                    <isy:formCheckbox id="cbtest3" reference="cbtest3"
-                                      value="#{jsfSteuerelementeModel.checkboxBoolean2}"
-                                      label="Eine deaktivierte Auswahl" disabled="true"
-                                      labelRight="Auswahl 2"
-                                      valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
-                        <f:ajax event="change"
-                                render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert"/>
-                        <f:ajax event="click"
-                                render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
-                                listener="#{jsfSteuerelementeController.checkboxBooleanGeklickt}"/>
-                    </isy:formCheckbox>
-                </p>
-                <p>
-                    <isy:formCheckbox id="cbtest4" reference="cbtest4"
-                                      value="#{jsfSteuerelementeModel.checkboxBoolean3}"
-                                      label="Eine Pflichtauswahl" required="true" labelRight="Auswahl 3"
-                                      disabled="false"
-                                      valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
-                        <f:ajax event="change"
-                                render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert"/>
-                        <f:ajax event="click"
-                                render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
-                                listener="#{jsfSteuerelementeController.checkboxBooleanGeklickt}"/>
-                    </isy:formCheckbox>
-                </p>
-                <p>
-                    <isy:formCheckbox id="cbtest5" reference="cbtest5"
-                                      value="#{jsfSteuerelementeModel.checkboxBoolean4}"
-                                      label="Eine optionale Auswahl" optional="true"
-                                      labelRight="Auswahl 4" disabled="false"
-                                      valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
-                        <f:ajax event="change"
-                                render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert"/>
-                        <f:ajax event="click"
-                                render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
-                                listener="#{jsfSteuerelementeController.checkboxBooleanGeklickt}"/>
-                    </isy:formCheckbox>
-                </p>
+
+                <isy:formCheckbox id="cbtest2" reference="cbtest2"
+                                  value="#{jsfSteuerelementeModel.checkboxBoolean1}"
+                                  label="Eine Auswahl" labelRight="Auswahl 1" disabled="false"
+                                  valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
+                    <f:ajax event="change"
+                            render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert"/>
+                    <f:ajax event="click"
+                            render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
+                            listener="#{jsfSteuerelementeController.checkboxBooleanGeklickt}"/>
+                </isy:formCheckbox>
+
+                <isy:formCheckbox id="cbtest3" reference="cbtest3"
+                                  value="#{jsfSteuerelementeModel.checkboxBoolean2}"
+                                  label="Eine deaktivierte Auswahl" disabled="true"
+                                  labelRight="Auswahl 2"
+                                  valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
+                    <f:ajax event="change"
+                            render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert"/>
+                    <f:ajax event="click"
+                            render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
+                            listener="#{jsfSteuerelementeController.checkboxBooleanGeklickt}"/>
+                </isy:formCheckbox>
+
+
+                <isy:formCheckbox id="cbtest4" reference="cbtest4"
+                                  value="#{jsfSteuerelementeModel.checkboxBoolean3}"
+                                  label="Eine Pflichtauswahl" required="true" labelRight="Auswahl 3"
+                                  disabled="false"
+                                  valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
+                    <f:ajax event="change"
+                            render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert"/>
+                    <f:ajax event="click"
+                            render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
+                            listener="#{jsfSteuerelementeController.checkboxBooleanGeklickt}"/>
+                </isy:formCheckbox>
+
+
+                <isy:formCheckbox id="cbtest5" reference="cbtest5"
+                                  value="#{jsfSteuerelementeModel.checkboxBoolean4}"
+                                  label="Eine optionale Auswahl" optional="true"
+                                  labelRight="Auswahl 4" disabled="false"
+                                  valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
+                    <f:ajax event="change"
+                            render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert"/>
+                    <f:ajax event="click"
+                            render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
+                            listener="#{jsfSteuerelementeController.checkboxBooleanGeklickt}"/>
+                </isy:formCheckbox>
+
                 <p>
                     <isy:button action="checkboxAction" value="Select"/>
                 </p>
@@ -400,7 +399,7 @@
                     </div>
                 </div>
 
-                <p/>
+                <!--   <p/> -->
                 <p>
                     <isy:button action="datumButtonAction" value="Select"/>
                 </p>
@@ -413,28 +412,27 @@
             <isy:panel id="tabPanel"
                        panelModel="#{jsfSteuerelementeModel.panelModelTab}" collapse="true">
                 <f:facet name="panelHeader">Tabs</f:facet>
-                <p>
 
-                    <isy:tabGroup tabGroupId="testTab" globalTabContentRefs="V P S"
-                                  globalTab="V" defaultTab="V"
-                                  tabGroupModel="#{jsfSteuerelementeModel.tabGroupModel}"
-                                  scrollTabUpwards="true">
-                        <f:facet name="tabHeader">
-                            <isy:tabHeader value="Vollauskunft" name="V" skipAction="true"/>
-                            <isy:tabHeader value="Personalien" name="P" skipAction="true"/>
-                            <isy:tabHeader value="Sachverhalte" name="S" skipAction="true"/>
-                        </f:facet>
-                        <isy:tabContent name="V" preload="true">
-                            Dies ist die Vollauskunft
-                        </isy:tabContent>
-                        <isy:tabContent name="P" preload="true">
-                            Dies sind Personalien
-                        </isy:tabContent>
-                        <isy:tabContent name="S" preload="true">
-                            Dies sind die Sachverhalte
-                        </isy:tabContent>
-                    </isy:tabGroup>
-                </p>
+                <isy:tabGroup tabGroupId="testTab" globalTabContentRefs="V P S"
+                              defaultTab="V"
+                              tabGroupModel="#{jsfSteuerelementeModel.auskunftTabModel}"
+                              scrollTabUpwards="true">
+                    <f:facet name="tabHeader">
+                        <isy:tabHeader value="Vollauskunft" name="V" skipAction="true"/>
+                        <isy:tabHeader value="Personalien" name="P" skipAction="true"/>
+                        <isy:tabHeader value="Sachverhalte" name="S" skipAction="true"/>
+                    </f:facet>
+                    <isy:tabContent name="V" preload="true">
+                        Dies ist die Vollauskunft
+                    </isy:tabContent>
+                    <isy:tabContent name="P" preload="true">
+                        Dies sind Personalien
+                    </isy:tabContent>
+                    <isy:tabContent name="S" preload="true">
+                        Dies sind die Sachverhalte
+                    </isy:tabContent>
+                </isy:tabGroup>
+
             </isy:panel>
 
             <isy:panel id="listpickerPanel"
@@ -557,18 +555,18 @@
                             <div class="row">
                                 <p>Über ein Servlet:</p>
 
-                          <isy:formListpicker reference="model.servletlistpicker"
-                                  listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeListpickerController}"
-                                  labelStyleClass="col-lg-3" inputStyleClass="col-lg-5"
-                                  listpickerModel="#{jsfSteuerelementeModel.servletListpickerModel}"
-                                  label="Schlüssel"
-                                  value="#{jsfSteuerelementeModel.servletListpickerAuswahl}"
-                                  header="Schlüssel,Name"
-                                  inputComplement="2"
-                                  inputmask="9[99]" 
-                                  servletUrl="/app/listpicker"/>
-                                  <!-- Wichtig: servletUrl muss dem Pattern des zuständigen HttpRequestHandlerServlets
-                                   in der web.xml entsprechen! -->
+                                <isy:formListpicker reference="model.servletlistpicker"
+                                                    listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeListpickerController}"
+                                                    labelStyleClass="col-lg-3" inputStyleClass="col-lg-5"
+                                                    listpickerModel="#{jsfSteuerelementeModel.servletListpickerModel}"
+                                                    label="Schlüssel"
+                                                    value="#{jsfSteuerelementeModel.servletListpickerAuswahl}"
+                                                    header="Schlüssel,Name"
+                                                    inputComplement="2"
+                                                    inputmask="9[99]"
+                                                    servletUrl="/app/listpicker"/>
+                                <!-- Wichtig: servletUrl muss dem Pattern des zuständigen HttpRequestHandlerServlets
+                                 in der web.xml entsprechen! -->
 
 
                                 <p></p>
@@ -599,14 +597,12 @@
                                        action="noAction"/>
                 </p>
                 <p>Eine Button Row mit Icons vor den Buttons</p>
-                <p>
-                    <isy:buttonRow>
-                        <isy:buttonToolbar icon="fa-ambulance" value="Button 1"
-                                           action="noAction"/>
-                        <isy:buttonToolbar icon="fa-hand-o-right" value="Button 2"
-                                           action="noAction"/>
-                    </isy:buttonRow>
-                </p>
+                <isy:buttonRow>
+                    <isy:buttonToolbar icon="fa-ambulance" value="Button 1"
+                                       action="noAction"/>
+                    <isy:buttonToolbar icon="fa-hand-o-right" value="Button 2"
+                                       action="noAction"/>
+                </isy:buttonRow>
 
             </isy:panel>
 
@@ -944,12 +940,12 @@
                                 <isy:tooltip text="Tooltip auf Text"
                                              title="Überschrift">Lorem ipsum...</isy:tooltip>
                             </p>
-                            <p>
-                                <isy:tooltip text="Tooltip auf formInput">
-                                    <isy:formInput reference="model.property"
-                                                   label="Das ist eine formInput Box" value="Lorem ipsum..."/>
-                                </isy:tooltip>
-                            </p>
+
+                            <isy:tooltip text="Tooltip auf formInput">
+                                <isy:formInput reference="model.property"
+                                               label="Das ist eine formInput Box" value="Lorem ipsum..."/>
+                            </isy:tooltip>
+
                         </div>
                     </div>
                 </f:facet>
