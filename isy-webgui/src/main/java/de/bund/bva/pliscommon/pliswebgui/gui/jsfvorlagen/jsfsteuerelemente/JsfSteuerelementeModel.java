@@ -246,6 +246,12 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
     private TabGroupModel tabGroupModel;
 
     /**
+     * Model für AuskunftTab.
+     */
+    private JsfSteuerelementeAuskunftTabModel auskunftTabModel;
+
+
+    /**
      * Model für Listpicker (ohne AJAX).
      */
     private JsfSteuerelementeListpickerModel listpickerModel;
@@ -857,6 +863,14 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
 
     public void setRadioButtonAuswahl2(String radioButtonAuswahl2) {
         this.radioButtonAuswahl2 = radioButtonAuswahl2;
+    }
+
+    public JsfSteuerelementeAuskunftTabModel getAuskunftTabModel() {
+        return auskunftTabModel;
+    }
+
+    public void setAuskunftTabModel(JsfSteuerelementeAuskunftTabModel auskunftTabModel) {
+        this.auskunftTabModel = auskunftTabModel;
     }
 
     public String getFoureyesDatum() {

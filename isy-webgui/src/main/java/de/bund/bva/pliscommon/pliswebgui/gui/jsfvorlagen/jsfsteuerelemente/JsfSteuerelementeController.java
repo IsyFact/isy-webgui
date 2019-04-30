@@ -160,6 +160,12 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
 
         model.setBrowseAndCollectAuswahl(Arrays.asList("Item 2"));
 
+
+        // Tabs (Maske JsfSteuerelemente: Tab [Vollauskunft|Personalien|Sachverhalte])
+        JsfSteuerelementeAuskunftTabModel auskunftTabModel = new JsfSteuerelementeAuskunftTabModel();
+        auskunftTabModel.setCurrentTab("V");
+        model.setAuskunftTabModel(auskunftTabModel);
+
         // Toggle-Filter
         selectItems = new ArrayList<>();
         for (int i = 0; i <= 4; i++) {

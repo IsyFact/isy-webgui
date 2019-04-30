@@ -4,6 +4,8 @@
 - `IFE-35`: Es wurde ein Listpicker, der mithilfe eines Servlets filtert, zur Veranschaulichung/Verprobung eingebaut.
 - `IFE-51` : Beispiel für Icon-Namensauflösung für Fontawesome (Version 4 und 5)
 - `IFE-66`: Vier-Augen-Prinzip Maske angepasst
+- `IFS-206`: Fehlerkorrektur bei tabContent Beispiel
+
 
 # v4.7.0
 - `IFS-96`: Autoscroll Funtion für Tab-Controls
