@@ -44,9 +44,10 @@
     <subflow-state id="demoBestaetigenSubflowState" subflow="bestaetigenFlow">
         <input name="dialogTitel" value="'Ein Beispieltitel: Achtung, sind Sie sich sicher...'" />
         <input name="dialogNachricht" value="'Eine Beispielnachricht: Sind Sie sicher, dass sie fortfahren wollen?'" />
+        <input name="dialogNachrichtPfad" value="'/WEB-INF/gui/common/eingebundeneNachricht.xhtml'" />
         <input name="dialogKonsequenz" value="'Eine beispielhafte Konsequenz (Angabe optional): Nicht gespeicherte Änderungen gehen verloren.'" />
         <input name="submitActionName" value="'Fortfahren'" />
-        <input name="abbrechenActionName" value="'Abbrechen'" />
+        <!-- <input name="abbrechenActionName" value="'Abbrechen'" /> -->
         <transition on="abbrechenEndState" to="modalerDialogViewState" >
           <evaluate expression="bestaetigungsdialogController.abbrechen(bestaetigungsdialogModel)" />
         </transition>
