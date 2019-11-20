@@ -4,7 +4,6 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:sf="http://www.springframework.org/tags/faces"
                 xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
                 xmlns:debug="http://java.sun.com/jsf/composite/debug"
                 template="/WEB-INF/gui/common/layout/applikation.xhtml">
@@ -233,7 +232,7 @@
                         </div>
                         <div class="col-lg-6">
                             <isy:formSelectOneDropdown reference="formSelectOneDropdownReadOnly"
-                                                       value="#{jsfSteuerelementeModel.dropdownAuswahl}"
+                                                       value="#{jsfSteuerelementeModel.dropdownReadonlyAuswahl}"
                                                        label="Auswahl" readonly="true"
                                                        converter="#{typeConverter}" converterAttribute="int">
                                 <f:selectItems
@@ -462,7 +461,7 @@
                                                 label="Staatsangeh." labelStyleClass="col-lg-3"
                                                 inputStyleClass="col-lg-7"
                                                 listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeStaatsangListpickerController}"
-                                                value="#{jsfSteuerelementeModel.listpickerAuswahl}"
+                                                value="#{jsfSteuerelementeModel.staatsangListpickerAngabe}"
                                                 header="Schlüssel,Wert"
                                                 inputComplement="2"
                                                 minWidth="0"
@@ -547,41 +546,43 @@
                         </div>
                     </div>
                 </div>
-                <div class="form-horizontal">
-                    <div class="row">
-                        <hr/>
-                        <div class="col-lg-5">
 
-                            <div class="row">
-                                <p>Über ein Servlet:</p>
+<!--                <div class="form-horizontal">-->
+<!--                    <div class="row">-->
+<!--                        <hr/>-->
+<!--                        <div class="col-lg-5">-->
 
-                                <isy:formListpicker reference="model.servletlistpicker"
-                                                    listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeListpickerController}"
-                                                    labelStyleClass="col-lg-3" inputStyleClass="col-lg-5"
-                                                    listpickerModel="#{jsfSteuerelementeModel.servletListpickerModel}"
-                                                    label="Schlüssel"
-                                                    value="#{jsfSteuerelementeModel.servletListpickerAuswahl}"
-                                                    header="Schlüssel,Name"
-                                                    inputComplement="2"
-                                                    inputmask="9[99]"
-                                                    servletUrl="/app/listpicker"/>
+<!--                            <div class="row">-->
+<!--                                <p>Über ein Servlet:</p>-->
+                                <!--
+                                                                <isy:formListpicker reference="model.servletlistpicker"
+                                                                                    listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeListpickerController}"
+                                                                                    labelStyleClass="col-lg-3" inputStyleClass="col-lg-5"
+                                                                                    listpickerModel="#{jsfSteuerelementeModel.servletListpickerModel}"
+                                                                                    label="Schlüssel"
+                                                                                    value="#{jsfSteuerelementeModel.servletListpickerAuswahl}"
+                                                                                    header="Schlüssel,Name"
+                                                                                    inputComplement="2"
+                                                                                    inputmask="9[99]"
+                                                                                    servletUrl="/app/listpicker"/> -->
                                 <!-- Wichtig: servletUrl muss dem Pattern des zuständigen HttpRequestHandlerServlets
                                  in der web.xml entsprechen! -->
+                                <!-- TODO -->
 
 
-                                <p></p>
-                                <p>
-                                    Auswahl:
-                                    <h:outputText
-                                            value="#{jsfSteuerelementeModel.servletListpickerAuswahl}"/>
-                                </p>
-                                <p>
-                                    <isy:button action="noAction" value="Wähle aus"/>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+<!--                                <p></p>-->
+<!--                                <p>-->
+<!--                                    Auswahl:-->
+<!--                                    <h:outputText-->
+<!--                                            value="#{jsfSteuerelementeModel.servletListpickerAuswahl}"/>-->
+<!--                                </p>-->
+<!--                                <p>-->
+<!--                                    <isy:button action="noAction" value="Wähle aus"/>-->
+<!--                                </p>-->
+<!--                            </div>-->
+<!--                        </div>-->
+<!--                    </div>-->
+<!--                </div>-->
             </isy:panel>
 
             <isy:panel id="buttonToolbarPanel"
@@ -807,7 +808,7 @@
                             <isy:formSelectOneList
                                     inputStyleClass="bootstrap-selectlist col-lg-1"
                                     labelStyleClass="col-lg-2" reference="formSelectOneList"
-                                    value="2" size="3" label="Liste (Einfachauswahl)">
+                                    value="#{jsfSteuerelementeModel.formSelectOneListAuswahl}" size="3" label="Liste (Einfachauswahl)">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                             </isy:formSelectOneList>
@@ -822,7 +823,7 @@
                             <isy:formSelectManyList
                                     inputStyleClass="bootstrap-selectlist col-lg-1"
                                     labelStyleClass="col-lg-2" reference="formSelectManyList"
-                                    value="1" size="4" label="Liste (Mehrfachauswahl)">
+                                    value="#{jsfSteuerelementeModel.formSelectManyListAuswahl}" size="4" label="Liste (Mehrfachauswahl)">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                             </isy:formSelectManyList>
@@ -849,7 +850,7 @@
                             <isy:formSelectManyList
                                     inputStyleClass="bootstrap-selectlist col-lg-1"
                                     labelStyleClass="col-lg-2" reference="formSelectManyList2"
-                                    value="1" size="4" label="Liste (Mehrfachauswahl)"
+                                    value="#{jsfSteuerelementeModel.formSelectManyListDisabled}" size="4" label="Liste (Mehrfachauswahl)"
                                     disabled="true">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
@@ -866,7 +867,7 @@
                         <div class="row">
                             <isy:selectOneList
                                     selectlistStyleClass="bootstrap-selectlist col-lg-1"
-                                    reference="selectOneList" value="2" size="3">
+                                    reference="selectOneList" value="#{jsfSteuerelementeModel.selectOneListAuswahl}" size="3">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                             </isy:selectOneList>
@@ -880,7 +881,7 @@
                         <div class="row">
                             <isy:selectManyList
                                     selectlistStyleClass="bootstrap-selectlist col-lg-1"
-                                    reference="selectManyList" value="1" size="4">
+                                    reference="selectManyList" value="#{jsfSteuerelementeModel.selectManyListAuswahl}" size="4">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                             </isy:selectManyList>
@@ -905,7 +906,7 @@
                         <div class="row">
                             <isy:selectManyList
                                     selectlistStyleClass="bootstrap-selectlist col-lg-1"
-                                    reference="selectManyList2" value="1" size="4"
+                                    reference="selectManyList2" value="#{jsfSteuerelementeModel.selectManyListAuswahlDisabled}" size="4"
                                     disabled="true">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
@@ -1166,22 +1167,7 @@
                                                 value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                                     </isy:formBrowseAndCollect>
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <isy:button action="formInputButtonAction"
-                                                    render="inhaltsbereichForm:browseAndCollectPanel:browseAndCollectAusgabe2"
-                                                    value="&Uuml;bernehmen"/>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        Auswahl:
-                                        <h:outputText id="browseAndCollectAusgabe2"
-                                                      value="#{jsfSteuerelementeModel.browseAndCollectAuswahl}"/>
-                                    </div>
-                                </div>
                             </div>
-
                         </div>
                     </div>
                 </f:facet>
