@@ -155,8 +155,15 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
         // Tabs
         model.setTabGroupModel(new TabGroupModel());
 
+        // Listen
         List<String> formSelectListInhalt = Arrays.asList("Item 1", "Item 2", "Item 3");
         model.setFormSelectListInhalt(formSelectListInhalt);
+
+        List<String> selectManyAuswahl = Arrays.asList("Item 1", "Item 2");
+        model.setFormSelectManyListAuswahl(new ArrayList<>(selectManyAuswahl));
+        model.setFormSelectManyListAuswahl(new ArrayList<>(selectManyAuswahl));
+        model.setSelectManyListAuswahl(new ArrayList<>(selectManyAuswahl));
+        model.setSelectManyListAuswahlDisabled(new ArrayList<>(selectManyAuswahl));
 
         model.setBrowseAndCollectAuswahl(Arrays.asList("Item 2"));
 
