@@ -166,6 +166,7 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
         model.setSelectManyListAuswahlDisabled(new ArrayList<>(selectManyAuswahl));
 
         model.setBrowseAndCollectAuswahl(Arrays.asList("Item 2"));
+        model.setBrowseAndCollectAuswahlDisabled(Arrays.asList("Item 2"));
 
 
         // Tabs (Maske JsfSteuerelemente: Tab [Vollauskunft|Personalien|Sachverhalte])

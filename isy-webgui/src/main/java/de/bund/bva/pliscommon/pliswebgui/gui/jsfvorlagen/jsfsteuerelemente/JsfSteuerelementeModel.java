@@ -323,6 +323,8 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
 
     private List<String> browseAndCollectAuswahl;
 
+    private List<String> browseAndCollectAuswahlDisabled;
+
     /**
      * Elemente für Toggle-Filter.
      */
@@ -673,20 +675,28 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
         this.actionInputResult = actionInputResult;
     }
 
-    public List<String> getBrowseAndCollectAuswahl() {
-        return this.browseAndCollectAuswahl;
-    }
-
     public PanelModel getPanelModelDatepicker() {
         return this.panelModelDatepicker;
     }
 
-    public void setBrowseAndCollectAuswahl(List<String> browseAndCollectAuswahl) {
+    public void setPanelModelDatepicker(PanelModel panelModelDatepicker) {
+        this.panelModelDatepicker = panelModelDatepicker;
+    }
+
+    public List<String> getBrowseAndCollectAuswahl() {
+        return this.browseAndCollectAuswahl;
+    }
+
+    public void setBrowseAndCollectAuswahl(List<String> browseAndCollectAuswahlDisabled) {
         this.browseAndCollectAuswahl = browseAndCollectAuswahl;
     }
 
-    public void setPanelModelDatepicker(PanelModel panelModelDatepicker) {
-        this.panelModelDatepicker = panelModelDatepicker;
+    public List<String> getBrowseAndCollectAuswahlDisabled() {
+        return this.browseAndCollectAuswahlDisabled;
+    }
+
+    public void setBrowseAndCollectAuswahlDisabled(List<String> browseAndCollectAuswahlDisabled) {
+        this.browseAndCollectAuswahlDisabled = browseAndCollectAuswahlDisabled;
     }
 
     public PanelModel getPanelModelCheckbox() {
