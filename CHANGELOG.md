@@ -1,3 +1,6 @@
+# v4.9.0
+- `IFS-458`: Alle pom.xml Dateien mit tidy:pom fortmatiert und getestet.
+
 # v4.8.0
 - `IFE-16`: Unterstützung von IE8 eingestellt, row-df aus Templates entfernt
 - `IFE-35`: Es wurde ein Listpicker, der mithilfe eines Servlets filtert, zur Veranschaulichung/Verprobung eingebaut.
