@@ -1,7 +1,7 @@
 package de.bund.bva.pliscommon.pliswebgui.gui.flows.awkwrapper.impl;
 
-import de.bund.bva.pliscommon.exception.FehlertextProvider;
-import de.bund.bva.pliscommon.exception.PlisBusinessException;
+import de.bund.bva.isyfact.exception.BusinessException;
+import de.bund.bva.isyfact.exception.FehlertextProvider;
 
 /**
  * Fachliche AWK-Exception.
@@ -9,7 +9,7 @@ import de.bund.bva.pliscommon.exception.PlisBusinessException;
  * @author Capgemini, Tobias Groeger
  * @version $Id: FachlicheAwkException.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
-public class FachlicheAwkException extends PlisBusinessException {
+public class FachlicheAwkException extends BusinessException {
 
     /**
      * Die Serial-Version UID.

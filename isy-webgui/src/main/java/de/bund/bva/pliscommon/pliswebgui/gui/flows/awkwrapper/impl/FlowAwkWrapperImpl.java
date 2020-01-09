@@ -1,8 +1,8 @@
 package de.bund.bva.pliscommon.pliswebgui.gui.flows.awkwrapper.impl;
 
+import de.bund.bva.isyfact.util.exception.MessageSourceFehlertextProvider;
 import de.bund.bva.pliscommon.pliswebgui.common.konstanten.FehlerSchluessel;
 import de.bund.bva.pliscommon.pliswebgui.gui.flows.awkwrapper.FlowAwkWrapper;
-import de.bund.bva.pliscommon.util.exception.MessageSourceFehlertextProvider;
 
 /**
  * AWK-Wrapper für den Flow.

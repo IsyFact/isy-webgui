@@ -3,17 +3,15 @@ package de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.vieraugen;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
-
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.global.GlobalFlowController;
 import de.bund.bva.isyfact.common.web.validation.ValidationMessage;
-import de.bund.bva.pliscommon.util.spring.MessageSourceHolder;
+import de.bund.bva.isyfact.util.spring.MessageSourceHolder;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 /**
  * @author Andreas Schubert, msg
- *
  */
 @Controller
 public class VieraugenController extends AbstractGuiController<VieraugenModel> {
@@ -26,8 +24,7 @@ public class VieraugenController extends AbstractGuiController<VieraugenModel> {
     /**
      * Speichert das Model.
      *
-     * @param model
-     *            das zu speichernende Model
+     * @param model das zu speichernende Model
      */
     public void speichern(VieraugenModel model) {
 
@@ -39,8 +36,8 @@ public class VieraugenController extends AbstractGuiController<VieraugenModel> {
         // set Fehler
         List<ValidationMessage> validationMessages = new ArrayList<>();
 
-        validationMessages.add(new ValidationMessage("WEBGI70000", "fehler", "fehler", MessageSourceHolder
-            .getMessage("WEBGI70000")));
+        validationMessages.add(new ValidationMessage("WEBGI70000", "fehler", "fehler",
+            MessageSourceHolder.getMessage("WEBGI70000")));
 
         this.globalFlowController.getValidationController().processValidationMessages(validationMessages);
     }

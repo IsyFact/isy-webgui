@@ -7,8 +7,8 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
+import com.google.common.base.Strings;
 import org.apache.commons.beanutils.PropertyUtils;
-import org.apache.commons.lang3.StringUtils;
 
 import com.google.common.collect.Lists;
 
@@ -66,7 +66,7 @@ public class JsfSteuerelementeTrefferlistenServerController2 extends
         for (Iterator<JsfSteuerelementeTreffer> it = result.iterator(); it.hasNext();) {
             JsfSteuerelementeTreffer item = it.next();
             for (Map.Entry<String, String> filter : filters.entrySet()) {
-                if (StringUtils.isBlank(filter.getKey()) || StringUtils.isBlank(filter.getValue())) {
+                if (Strings.isNullOrEmpty(filter.getKey()) || Strings.isNullOrEmpty(filter.getValue())) {
                     continue;
                 }
                 Object value = null;

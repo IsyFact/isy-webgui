@@ -21,7 +21,7 @@ package de.bund.bva.pliscommon.pliswebgui.common;
  */
 
 
-import de.bund.bva.pliscommon.sicherheit.accessmgr.AuthentifzierungErgebnis;
+import de.bund.bva.isyfact.sicherheit.accessmgr.AuthentifzierungErgebnis;
 
 public class AuthentifizierungsErgebnisDummy implements AuthentifzierungErgebnis {
 
