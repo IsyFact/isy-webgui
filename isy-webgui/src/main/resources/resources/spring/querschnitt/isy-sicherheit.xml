@@ -7,24 +7,24 @@
                            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd">
 
     <!-- Factory zum Erzeugen neuer Aufruf-Kontexte -->
-    <bean id="aufrufKontextFactory" class="de.bund.bva.pliscommon.aufrufkontext.impl.AufrufKontextFactoryImpl">
-        <property name="aufrufKontextKlasse" value="de.bund.bva.pliscommon.aufrufkontext.impl.AufrufKontextImpl"/>
+    <bean id="aufrufKontextFactory" class="de.bund.bva.isyfact.aufrufkontext.impl.AufrufKontextFactoryImpl">
+        <property name="aufrufKontextKlasse" value="de.bund.bva.isyfact.aufrufkontext.impl.AufrufKontextImpl"/>
     </bean>
 
     <!-- AufrufKontextVerwalter definieren (jeder Request hat einen eigenen Kontext (-Verwalter)) -->
     <bean id="aufrufKontextVerwalter" scope="request"
-        class="de.bund.bva.pliscommon.aufrufkontext.impl.AufrufKontextVerwalterImpl">
+        class="de.bund.bva.isyfact.aufrufkontext.impl.AufrufKontextVerwalterImpl">
         <aop:scoped-proxy/>
     </bean>
 
-    <!-- Über diese Bean wird die Komponente Sicherheit Einsatzbereit gemacht -->
-    <bean id="sicherheit" class="de.bund.bva.pliscommon.sicherheit.impl.SicherheitImpl">
-        <property name="rollenRechteDateiPfad" value="/resources/sicherheit/rollenrechte.xml"/>
-        <property name="aufrufKontextVerwalter" ref="aufrufKontextVerwalter"/>
-        <property name="accessManager" ref="dummyAccessManager"/>
-        <property name="konfiguration" ref="konfiguration"/>
-        <property name="aufrufKontextFactory" ref="aufrufKontextFactory"/>
-    </bean>
+<!--    &lt;!&ndash; Über diese Bean wird die Komponente Sicherheit Einsatzbereit gemacht &ndash;&gt;-->
+<!--    <bean id="sicherheit" class="de.bund.bva.isyfact.sicherheit.impl.SicherheitImpl">-->
+<!--        <property name="rollenRechteDateiPfad" value="/resources/sicherheit/rollenrechte.xml"/>-->
+<!--        <property name="aufrufKontextVerwalter" ref="aufrufKontextVerwalter"/>-->
+<!--        <property name="aufrufKontextFactory" ref="aufrufKontextFactory"/>-->
+<!--        <property name="accessManager" ref="dummyAccessManager"/>-->
+<!--        <property name="konfiguration" ref="konfiguration"/>-->
+<!--    </bean>-->
 
     <bean id="dummyAccessManager" class="de.bund.bva.pliscommon.pliswebgui.common.AccessManagerDummy"/>
 
@@ -48,7 +48,7 @@
 
     <!-- Stub für: AufrufKontextVerwalter für die Entwicklung -->
     <beans profile="entwicklung">
-        <bean id="aufrufKontextVerwalter" class="de.bund.bva.pliscommon.aufrufkontext.stub.AufrufKontextVerwalterStub">
+        <bean id="aufrufKontextVerwalter" class="de.bund.bva.isyfact.aufrufkontext.stub.AufrufKontextVerwalterStub">
             <property name="rollen">
                 <list>
                     <value>Testrolle</value>

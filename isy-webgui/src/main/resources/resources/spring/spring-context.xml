@@ -39,5 +39,5 @@
     </bean>
 
     <!--Speichert die Message-Source fuer statische Zugriffe auf Messages. -->
-    <bean id="messageSourceHolder" class="de.bund.bva.pliscommon.util.spring.MessageSourceHolder"/>
+    <bean id="messageSourceHolder" class="de.bund.bva.isyfact.util.spring.MessageSourceHolder"/>
 </beans>

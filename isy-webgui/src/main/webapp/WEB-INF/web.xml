@@ -5,6 +5,10 @@
     <display-name>Isy-Webgui-Beispielseite</display-name>
 
     <!-- KONTEXTPARAMETER -->
+    <context-param>
+        <param-name>webAppRootKey</param-name>
+        <param-value>isy-webgui</param-value>
+    </context-param>
     <!-- Use JSF view templates saved as *.xhtml, for use with Facelets -->
     <context-param>
         <param-name>javax.faces.DEFAULT_SUFFIX</param-name>
@@ -64,7 +68,7 @@
     <!-- Logging -->
     <filter>
         <filter-name>NDC Filter</filter-name>
-        <filter-class>de.bund.bva.pliscommon.aufrufkontext.http.HttpHeaderNestedDiagnosticContextFilter</filter-class>
+        <filter-class>de.bund.bva.isyfact.aufrufkontext.http.HttpHeaderNestedDiagnosticContextFilter</filter-class>
     </filter>
     <!-- Security -->
     <!--filter>
