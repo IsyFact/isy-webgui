@@ -14,4 +14,8 @@
         <tns:rechtId Id="GUI.Nutzen" />
     </tns:rollen>
 
+    <tns:rollen RolleId="Benutzer">
+        <tns:rechtId Id="GUI.Nutzen" />
+    </tns:rollen>
+
 </tns:Anwendung>

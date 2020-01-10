@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
     parent="applikationseiteParentFlow">
 
-    <var name="nachrichtenModel" class="de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.nachrichten.NachrichtenModel" />
+    <var name="nachrichtenModel" class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.nachrichten.NachrichtenModel" />
 
     <on-start>
         <evaluate expression="nachrichtenController.initialisiereModel(nachrichtenModel)" />

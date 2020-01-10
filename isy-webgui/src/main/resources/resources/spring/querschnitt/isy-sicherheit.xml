@@ -11,22 +11,35 @@
         <property name="aufrufKontextKlasse" value="de.bund.bva.isyfact.aufrufkontext.impl.AufrufKontextImpl"/>
     </bean>
 
-    <!-- AufrufKontextVerwalter definieren (jeder Request hat einen eigenen Kontext (-Verwalter)) -->
-    <bean id="aufrufKontextVerwalter" scope="request"
-        class="de.bund.bva.isyfact.aufrufkontext.impl.AufrufKontextVerwalterImpl">
-        <aop:scoped-proxy/>
+    <bean id="aufrufKontextVerwalter" class="de.bund.bva.isyfact.aufrufkontext.stub.AufrufKontextVerwalterStub">
+        <property name="rollen">
+            <list>
+                <value>Testrolle</value>
+            </list>
+        </property>
+        <property name="durchfuehrendeBehoerde" value="123456"/>
+        <property name="durchfuehrenderSachbearbeiterName" value="Maxl Mustermann"/>
+        <property name="durchfuehrenderBenutzerKennung" value="user"/>
+        <property name="durchfuehrenderBenutzerPasswort" value="user"/>
+        <property name="durchfuehrenderBenutzerInterneKennung" value="max-01"/>
+        <property name="aufrufKontextFactory" ref="aufrufKontextFactory"/>
+        <property name="festerAufrufKontext" value="true"/>
     </bean>
 
-<!--    &lt;!&ndash; Über diese Bean wird die Komponente Sicherheit Einsatzbereit gemacht &ndash;&gt;-->
-<!--    <bean id="sicherheit" class="de.bund.bva.isyfact.sicherheit.impl.SicherheitImpl">-->
-<!--        <property name="rollenRechteDateiPfad" value="/resources/sicherheit/rollenrechte.xml"/>-->
-<!--        <property name="aufrufKontextVerwalter" ref="aufrufKontextVerwalter"/>-->
-<!--        <property name="aufrufKontextFactory" ref="aufrufKontextFactory"/>-->
-<!--        <property name="accessManager" ref="dummyAccessManager"/>-->
-<!--        <property name="konfiguration" ref="konfiguration"/>-->
-<!--    </bean>-->
+    <!-- Über diese Bean wird die Komponente Sicherheit Einsatzbereit gemacht -->
+    <bean id="sicherheit" class="de.bund.bva.isyfact.sicherheit.impl.SicherheitImpl">
+        <constructor-arg name="rollenRechteDateiPfad" value="/resources/sicherheit/rollenrechte.xml"/>
+        <constructor-arg name="aufrufKontextVerwalter" ref="aufrufKontextVerwalter"/>
+        <constructor-arg name="aufrufKontextFactory" ref="aufrufKontextFactory"/>
+        <constructor-arg name="accessManager" ref="dummyAccessManager"/>
+        <constructor-arg name="properties" ref="sicherheitConfig"/>
+    </bean>
 
-    <bean id="dummyAccessManager" class="de.bund.bva.pliscommon.pliswebgui.common.AccessManagerDummy"/>
+    <!-- Über diese Bean wird die Komponente Sicherheit Einsatzbereit gemacht -->
+    <bean id="sicherheitConfig" class="de.bund.bva.isyfact.sicherheit.config.IsySicherheitConfigurationProperties">
+    </bean>
+
+    <bean id="dummyAccessManager" class="de.bund.bva.isyfact.isywebgui.common.AccessManagerDummy"/>
 
     <!-- <sec:user-service> -->
     <!-- <sec:user authorities="ROLE" name="name" password="password" disabled="true" /> -->
@@ -47,21 +60,30 @@
     </bean>
 
     <!-- Stub für: AufrufKontextVerwalter für die Entwicklung -->
-    <beans profile="entwicklung">
-        <bean id="aufrufKontextVerwalter" class="de.bund.bva.isyfact.aufrufkontext.stub.AufrufKontextVerwalterStub">
-            <property name="rollen">
-                <list>
-                    <value>Testrolle</value>
-                </list>
-            </property>
-            <property name="durchfuehrendeBehoerde" value="123456"/>
-            <property name="durchfuehrenderSachbearbeiterName" value="Maxl Mustermann"/>
-            <property name="durchfuehrenderBenutzerKennung" value="max"/>
-            <property name="durchfuehrenderBenutzerInterneKennung" value="max-01"/>
-            <property name="aufrufKontextFactory" ref="aufrufKontextFactory"/>
-            <property name="festerAufrufKontext" value="true"/>
-        </bean>
+<!--    <beans profile="entwicklung">-->
+<!--        <bean id="aufrufKontextVerwalter" class="de.bund.bva.isyfact.aufrufkontext.stub.AufrufKontextVerwalterStub">-->
+<!--            <property name="rollen">-->
+<!--                <list>-->
+<!--                    <value>Testrolle</value>-->
+<!--                </list>-->
+<!--            </property>-->
+<!--            <property name="durchfuehrendeBehoerde" value="123456"/>-->
+<!--            <property name="durchfuehrenderSachbearbeiterName" value="Maxl Mustermann"/>-->
+<!--            <property name="durchfuehrenderBenutzerKennung" value="user"/>-->
+<!--            <property name="durchfuehrenderBenutzerPasswort" value="user"/>-->
+<!--            <property name="durchfuehrenderBenutzerInterneKennung" value="max-01"/>-->
+<!--            <property name="aufrufKontextFactory" ref="aufrufKontextFactory"/>-->
+<!--            <property name="festerAufrufKontext" value="true"/>-->
+<!--        </bean>-->
 
-    </beans>
+<!--    </beans>-->
+<!--    <beans profile="!entwicklung">-->
+<!--        &lt;!&ndash; AufrufKontextVerwalter definieren (jeder Request hat einen eigenen Kontext (-Verwalter)) &ndash;&gt;-->
+<!--        <bean id="aufrufKontextVerwalter" scope="request"-->
+<!--              class="de.bund.bva.isyfact.aufrufkontext.impl.AufrufKontextVerwalterImpl">-->
+<!--            <aop:scoped-proxy/>-->
+<!--        </bean>-->
+<!--    </beans>-->
+
 
 </beans>

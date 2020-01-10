@@ -7,7 +7,7 @@
     <!-- =========== -->
     <!-- AWK-Wrapper -->
     <!-- =========== -->
-    <bean id="flowAwkWrapper" class="de.bund.bva.pliscommon.pliswebgui.gui.flows.awkwrapper.impl.FlowAwkWrapperImpl"/>
+    <bean id="flowAwkWrapper" class="de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.impl.FlowAwkWrapperImpl"/>
 
     <!-- Ausnahme ID - Mapper -->
     <!-- Dieser Mapper wird auch automatisch für das IsyWeb Exception Handling verwendet -->

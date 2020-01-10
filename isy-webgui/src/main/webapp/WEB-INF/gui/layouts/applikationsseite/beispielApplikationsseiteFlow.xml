@@ -5,7 +5,7 @@
     parent="applikationseiteParentFlow">
 
     <var name="beispielApplikationsseiteModel"
-        class="de.bund.bva.pliscommon.pliswebgui.gui.layouts.applikationsseite.BeispielApplikationsseiteModel" />
+        class="de.bund.bva.isyfact.isywebgui.gui.layouts.applikationsseite.BeispielApplikationsseiteModel" />
 
     <on-start>
         <evaluate expression="beispielApplikationsseiteController.initialisiereModel(beispielApplikationsseiteModel)" />

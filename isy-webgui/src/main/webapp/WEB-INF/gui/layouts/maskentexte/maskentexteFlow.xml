@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
     parent="applikationseiteParentFlow">
 
-    <var name="maskentexteModel" class="de.bund.bva.pliscommon.pliswebgui.gui.layouts.maskentexte.MaskentexteModel" />
+    <var name="maskentexteModel" class="de.bund.bva.isyfact.isywebgui.gui.layouts.maskentexte.MaskentexteModel" />
 
     <on-start>
         <evaluate expression="maskentexteController.initialisiereModel(maskentexteModel)" />

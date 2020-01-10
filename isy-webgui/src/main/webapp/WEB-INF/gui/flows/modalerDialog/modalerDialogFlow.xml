@@ -4,8 +4,8 @@
     xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
     parent="applikationseiteParentFlow">
 
-    <var name="modalerDialogModel" class="de.bund.bva.pliscommon.pliswebgui.gui.flows.modalerdialog.ModalerDialogModel" />
-    <var name="bestaetigungsdialogModel" class="de.bund.bva.pliscommon.pliswebgui.gui.flows.modalerdialog.BestaetigungsdialogModel" />
+    <var name="modalerDialogModel" class="de.bund.bva.isyfact.isywebgui.gui.flows.modalerdialog.ModalerDialogModel" />
+    <var name="bestaetigungsdialogModel" class="de.bund.bva.isyfact.isywebgui.gui.flows.modalerdialog.BestaetigungsdialogModel" />
 
     <on-start>
         <evaluate expression="modalerDialogController.initialisiereModel(modalerDialogModel)" />

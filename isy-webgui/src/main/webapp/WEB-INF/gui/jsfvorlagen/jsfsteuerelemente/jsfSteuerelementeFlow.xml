@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
     parent="applikationseiteParentFlow">
 
-    <var name="jsfSteuerelementeModel" class="de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeModel" />
+    <var name="jsfSteuerelementeModel" class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeModel" />
 
     <on-start>
         <evaluate expression="jsfSteuerelementeController.initialisiereModel(jsfSteuerelementeModel)" />

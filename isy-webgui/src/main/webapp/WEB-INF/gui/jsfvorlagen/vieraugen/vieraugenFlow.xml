@@ -3,7 +3,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
     parent="applikationseiteParentFlow">
 
-    <var name="vieraugenModel" class="de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.vieraugen.VieraugenModel" />
+    <var name="vieraugenModel" class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.vieraugen.VieraugenModel" />
     <on-start>
         <evaluate expression="vieraugenController.initialisiereModel(vieraugenModel)" />
     </on-start>

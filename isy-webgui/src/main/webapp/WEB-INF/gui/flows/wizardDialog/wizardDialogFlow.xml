@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
     parent="applikationseiteParentFlow">
 
-    <var name="wizardModel" class="de.bund.bva.pliscommon.pliswebgui.gui.flows.wizarddialog.WizardModel"/>
+    <var name="wizardModel" class="de.bund.bva.isyfact.isywebgui.gui.flows.wizarddialog.WizardModel"/>
 
     <on-start>
         <evaluate expression="wizardDialogController.initialisiereModel(wizardModel)"/>

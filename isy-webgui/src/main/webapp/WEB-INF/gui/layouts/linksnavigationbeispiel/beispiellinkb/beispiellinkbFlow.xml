@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
     parent="applikationseiteParentFlow">
 
-    <var name="beispiellinkbModel" class="de.bund.bva.pliscommon.pliswebgui.gui.layouts.linksnavigationbeispiel.beispiellinkb.BeispiellinkbModel" />
+    <var name="beispiellinkbModel" class="de.bund.bva.isyfact.isywebgui.gui.layouts.linksnavigationbeispiel.beispiellinkb.BeispiellinkbModel" />
 
     <on-start>
         <evaluate expression="beispiellinkbController.initialisiereModel(beispiellinkbModel)" />
