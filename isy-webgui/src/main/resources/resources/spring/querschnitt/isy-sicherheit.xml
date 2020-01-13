@@ -11,21 +11,6 @@
         <property name="aufrufKontextKlasse" value="de.bund.bva.isyfact.aufrufkontext.impl.AufrufKontextImpl"/>
     </bean>
 
-    <bean id="aufrufKontextVerwalter" class="de.bund.bva.isyfact.aufrufkontext.stub.AufrufKontextVerwalterStub">
-        <property name="rollen">
-            <list>
-                <value>Testrolle</value>
-            </list>
-        </property>
-        <property name="durchfuehrendeBehoerde" value="123456"/>
-        <property name="durchfuehrenderSachbearbeiterName" value="Maxl Mustermann"/>
-        <property name="durchfuehrenderBenutzerKennung" value="user"/>
-        <property name="durchfuehrenderBenutzerPasswort" value="user"/>
-        <property name="durchfuehrenderBenutzerInterneKennung" value="max-01"/>
-        <property name="aufrufKontextFactory" ref="aufrufKontextFactory"/>
-        <property name="festerAufrufKontext" value="true"/>
-    </bean>
-
     <!-- Über diese Bean wird die Komponente Sicherheit Einsatzbereit gemacht -->
     <bean id="sicherheit" class="de.bund.bva.isyfact.sicherheit.impl.SicherheitImpl">
         <constructor-arg name="rollenRechteDateiPfad" value="/resources/sicherheit/rollenrechte.xml"/>
@@ -59,7 +44,7 @@
         </property>
     </bean>
 
-    <!-- Stub für: AufrufKontextVerwalter für die Entwicklung -->
+<!--     Stub für: AufrufKontextVerwalter für die Entwicklung-->
 <!--    <beans profile="entwicklung">-->
 <!--        <bean id="aufrufKontextVerwalter" class="de.bund.bva.isyfact.aufrufkontext.stub.AufrufKontextVerwalterStub">-->
 <!--            <property name="rollen">-->
