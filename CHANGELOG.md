@@ -1,3 +1,6 @@
+# v5.1.0
+- `IFE-98`: Umstellung auf IF 2.x und Aufteilung der JSF-Steuerelemente-Seite
+
 # v4.8.0
 - `IFE-16`: Unterstützung von IE8 eingestellt, row-df aus Templates entfernt
 - `IFE-35`: Es wurde ein Listpicker, der mithilfe eines Servlets filtert, zur Veranschaulichung/Verprobung eingebaut.

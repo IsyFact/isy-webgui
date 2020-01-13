@@ -4,10 +4,12 @@ import de.bund.bva.isyfact.aufrufkontext.AufrufKontext;
 import de.bund.bva.isyfact.aufrufkontext.AufrufKontextFactory;
 import de.bund.bva.isyfact.aufrufkontext.AufrufKontextVerwalter;
 import de.bund.bva.isyfact.aufrufkontext.stub.AufrufKontextVerwalterStub;
+import de.bund.bva.isyfact.common.web.global.GlobalFlowController;
 import de.bund.bva.isyfact.isywebgui.config.XMLConfig;
 import de.bund.bva.isyfact.isywebgui.gui.config.GuiConfig;
 import de.bund.bva.isyfact.sicherheit.Sicherheit;
 import de.bund.bva.isyfact.sicherheit.web.DelegatingAccessDecisionManager;
+import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -41,4 +43,10 @@ public class IsyWebguiApplication extends SpringBootServletInitializer {
         return new DelegatingAccessDecisionManager(sicherheit);
     }
 
+    //TODO entfernen sobald die isy-web config funktioniert
+    @ConditionalOnMissingBean
+    @Bean
+    public GlobalFlowController globalFlowController() {
+        return new GlobalFlowController();
+    }
 }

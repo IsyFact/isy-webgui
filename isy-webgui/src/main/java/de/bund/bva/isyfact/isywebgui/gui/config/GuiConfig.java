@@ -5,12 +5,14 @@ import de.bund.bva.isyfact.common.web.exception.common.impl.AusnahmeIdMapperImpl
 import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.FlowAwkWrapper;
 import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.impl.FlowAwkWrapperImpl;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 
 /**
  * Konfiguration für die GUI.
  */
 @Configuration
+@ComponentScan(basePackages = {"de.bund.bva.isyfact.isywebgui.gui"})
 public class GuiConfig {
 
     /** Fallback-Ausnahme-ID, falls keine andere zugeordnet werden konnte. **/
