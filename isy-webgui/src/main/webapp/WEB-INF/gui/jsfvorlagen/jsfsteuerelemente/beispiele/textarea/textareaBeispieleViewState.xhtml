@@ -1,0 +1,57 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+            <isy:panel id="formTextareaPanel"
+                       panelModel="#{textareaBeispieleModel.panelModelFormTextarea}">
+                <f:facet name="panelHeader">Textarea</f:facet>
+                <f:facet name="panelBody">
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <p>
+                                Eine Textarea. Einbindung über
+                                <code>&lt;isy:formTextarea&gt;</code>
+                            </p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <isy:formTextarea label="Text"
+                                                  value="#{textareaBeispieleModel.textBoxButtonActionResult}"
+                                                  reference="text"
+                                                  placeholder="Bitte geben Sie einen Text ein!"
+                                                  maxlength="100" required="true"/>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <p>Eine 'disabled' Textarea.</p>
+                        </div>
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <isy:formTextarea label="Text" value="Eine deaktivierte Textarea"
+                                                  reference="text" maxlength="100" required="true"
+                                                  disabled="true"/>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <isy:button id="textBoxButton" action="textBoxButtonAction"
+                                value="Button"/>
+
+                    <p>
+                        Eingegebener Text:
+                        <h:outputText title="EingegebenerText"
+                                      value="#{textareaBeispieleModel.textBoxButtonActionResult}"/>
+                    </p>
+                </f:facet>
+            </isy:panel>
+        </div>
+    </ui:define>
+</ui:composition>

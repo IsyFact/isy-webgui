@@ -28,37 +28,79 @@
 
         <div class="panel-group">
 
-            <isy:panel id="formTextareaPanel"
-                       panelModel="#{jsfSteuerelementeModel.panelModelFormTextarea}"
+            <isy:panel id="actionInputPanel"
+                       panelModel="#{jsfSteuerelementeModel.panelModelActionInput}"
                        collapse="true">
-                <f:facet name="panelHeader">Textbox</f:facet>
+                <f:facet name="panelHeader">Aktionseingabefeld</f:facet>
                 <f:facet name="panelBody">
                     <p>
-                        Eine TextBox. Einbindung über
-                        <code>&lt;isy:formTextarea&gt;</code>
+                        Aktionseingabefeld. Einbindung über
+                        <code>&lt;isy:actionInput&gt;</code>
+                        bzw.
+                        <code>&lt;isy:formActionInput&gt;</code>
                     </p>
-                    <p>
-                        <isy:formTextarea label="Text"
-                                          value="#{jsfSteuerelementeModel.textBoxButtonActionResult}"
-                                          reference="text" placeholder="Bitte geben Sie einen Text ein!"
-                                          maxlength="100" required="true"/>
-                    </p>
-                    <p>Eine 'disabled' TextBox.</p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <isy:actionInput reference="testActionInput"
+                                                 value="#{jsfSteuerelementeModel.actionInputResult}"
+                                                 action="actionInputAction" icon="search" tooltip="tooltip"
+                                                 placeholder="placeholder" maxlength="20"/>
+                            </div>
+                        </div>
+                    </div>
 
-                    <isy:formTextarea label="Text" value="Eine deaktivierte Textbox"
-                                      reference="text" maxlength="100" required="true" disabled="true"/>
+                    <!-- Disabled -->
+                    <p>Aktionseingabefeld (disabled).</p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <isy:actionInput reference="testActionInput2"
+                                                 value="#{jsfSteuerelementeModel.actionInputResult}"
+                                                 action="actionInputAction" icon="search" tooltip="tooltip"
+                                                 placeholder="placeholder" maxlength="20" disabled="true"/>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Die form* Varianten -->
+                    <p>Form-Aktionseingabefeld.</p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <isy:formActionInput reference="testFormActionInput"
+                                                     label="Ein Label" labelStyleClass="col-lg-4"
+                                                     inputStyleClass="col-lg-8"
+                                                     value="#{jsfSteuerelementeModel.actionInputResult}"
+                                                     action="actionInputAction" icon="search"
+                                                     tooltip="tooltip"
+                                                     placeholder="placeholder" maxlength="20"/>
+                            </div>
+                        </div>
+                    </div>
 
-                    <isy:button id="textBoxButton" action="textBoxButtonAction"
-                                value="Button"/>
-
-                    <p>
-                        Eingegebener Text:
-                        <h:outputText title="EingegebenerText"
-                                      value="#{jsfSteuerelementeModel.textBoxButtonActionResult}"/>
-                    </p>
+                    <!-- Disabled -->
+                    <p>Form-Aktionseingabefeld (disabled).</p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-lg-2">
+                                <isy:formActionInput reference="testFormActionInput2"
+                                                     label="Ein Label" labelStyleClass="col-lg-4"
+                                                     inputStyleClass="col-lg-8"
+                                                     value="#{jsfSteuerelementeModel.actionInputResult}"
+                                                     action="actionInputAction" icon="search"
+                                                     tooltip="tooltip"
+                                                     placeholder="placeholder" maxlength="20"
+                                                     disabled="true"/>
+                            </div>
+                        </div>
+                    </div>
                 </f:facet>
             </isy:panel>
+
+
+
+
 
             <isy:panel id="dropdownPanel"
                        panelModel="#{jsfSteuerelementeModel.panelModelDropdown}"
@@ -612,75 +654,7 @@
                 </f:facet>
             </isy:panel>
 
-            <isy:panel id="actionInputPanel"
-                       panelModel="#{jsfSteuerelementeModel.panelModelActionInput}"
-                       collapse="true">
-                <f:facet name="panelHeader">Aktionseingabefeld</f:facet>
-                <f:facet name="panelBody">
-                    <p>
-                        Aktionseingabefeld. Einbindung über
-                        <code>&lt;isy:actionInput&gt;</code>
-                        bzw.
-                        <code>&lt;isy:formActionInput&gt;</code>
-                    </p>
-                    <div class="form-horizontal">
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <isy:actionInput reference="testActionInput"
-                                                 value="#{jsfSteuerelementeModel.actionInputResult}"
-                                                 action="actionInputAction" icon="search" tooltip="tooltip"
-                                                 placeholder="placeholder" maxlength="20"/>
-                            </div>
-                        </div>
-                    </div>
 
-                    <!-- Disabled -->
-                    <p>Aktionseingabefeld (disabled).</p>
-                    <div class="form-horizontal">
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <isy:actionInput reference="testActionInput2"
-                                                 value="#{jsfSteuerelementeModel.actionInputResult}"
-                                                 action="actionInputAction" icon="search" tooltip="tooltip"
-                                                 placeholder="placeholder" maxlength="20" disabled="true"/>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Die form* Varianten -->
-                    <p>Form-Aktionseingabefeld.</p>
-                    <div class="form-horizontal">
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <isy:formActionInput reference="testFormActionInput"
-                                                     label="Ein Label" labelStyleClass="col-lg-4"
-                                                     inputStyleClass="col-lg-8"
-                                                     value="#{jsfSteuerelementeModel.actionInputResult}"
-                                                     action="actionInputAction" icon="search"
-                                                     tooltip="tooltip"
-                                                     placeholder="placeholder" maxlength="20"/>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Disabled -->
-                    <p>Form-Aktionseingabefeld (disabled).</p>
-                    <div class="form-horizontal">
-                        <div class="row">
-                            <div class="col-lg-2">
-                                <isy:formActionInput reference="testFormActionInput2"
-                                                     label="Ein Label" labelStyleClass="col-lg-4"
-                                                     inputStyleClass="col-lg-8"
-                                                     value="#{jsfSteuerelementeModel.actionInputResult}"
-                                                     action="actionInputAction" icon="search"
-                                                     tooltip="tooltip"
-                                                     placeholder="placeholder" maxlength="20"
-                                                     disabled="true"/>
-                            </div>
-                        </div>
-                    </div>
-                </f:facet>
-            </isy:panel>
 
             <isy:panel id="listPanel"
                        panelModel="#{jsfSteuerelementeModel.panelModelList}"
