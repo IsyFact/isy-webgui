@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+    parent="applikationseiteParentFlow">
+
+    <var name="eingabeBeispieleModel" class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.eingabefeld.EingabeBeispieleModel" />
+    <on-start>
+        <evaluate expression="eingabeBeispieleController.initialisiereModel(eingabeBeispieleModel)" />
+    </on-start>
+
+    <view-state id="eingabeBeispieleViewState" model="eingabeBeispieleModel">
+
+        <transition on="formInputButtonAction"/>
+
+    </view-state>
+</flow>

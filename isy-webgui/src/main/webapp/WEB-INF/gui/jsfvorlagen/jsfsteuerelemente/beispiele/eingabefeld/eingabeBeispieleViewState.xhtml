@@ -1,0 +1,77 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+            <isy:panel id="formInputPanel"
+                       panelModel="#{eingabeBeispieleModel.panelModelFormInput}"
+                       collapse="true">
+                <f:facet name="panelHeader">Eingabefeld</f:facet>
+                <f:facet name="panelBody">
+                    <p>
+                        Ein Eingabefeld. Einbindung über <code>&lt;isy:formInput&gt;</code>
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-lg-6">
+
+                                <isy:formInput id="formInput" type="text" label="Text: "
+                                               reference="formInputReferenz"
+                                               value="#{eingabeBeispieleModel.formInputTextButtonActionResult}"/>
+
+                                <isy:formInput id="formInputPassword" type="password"
+                                               label="Passwort: " reference="formInputPasswortReferenz"
+                                               value="#{eingabeBeispieleModel.formInputPasswortButtonActionResult}"/>
+
+
+                                <!-- Disabled -->
+                                <isy:formInput id="formInputDisabled" type="text"
+                                               label="Text (disabled): " reference="formInputDisabledReferenz"
+                                               value="Ein deaktiviertes Textfeld" disabled="true"/>
+
+                                <!-- Read-Only -->
+                                <isy:formInput id="formInputReadonly" type="text"
+                                               label="Text (readonly): " reference="formInputReadonlyReferenz"
+                                               value="Ein readonly Textfeld" readonly="true"/>
+
+                                <isy:formInput id="formInputSpecialChar" type="text"
+                                               label="Text Special Char: " reference="formInputSpecialChar"
+                                               value="Ein Special Char Textfeld" charpicker="true"/>
+
+                                <isy:button id="formInputButton" action="formInputButtonAction"
+                                            value="Button"/>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Eingegebener Text:
+                        <h:outputText title="Eingegener Text"
+                                      value="#{eingabeBeispieleModel.formInputTextButtonActionResult}"/>
+                        <br/> Eingegebenes Passwort:
+                        <h:outputText title="Eingegebenes Passwort"
+                                      value="#{eingabeBeispieleModel.formInputPasswortButtonActionResult}"/>
+                    </p>
+                    <br/>
+                    <p>
+                        Ein normales HTML-Eingabefeld. Einbindung über
+                        <code>&lt;input&gt;</code>
+                    </p>
+                    <p>
+                        <input id="input1" type="text"/>
+                    </p>
+                    <br/>
+                    <p>Ein normales HTML-Eingabefeld (disabled).</p>
+                    <p>
+                        <input id="input2" type="text" disabled="disabled"/>
+                    </p>
+                </f:facet>
+            </isy:panel>
+        </div>
+    </ui:define>
+</ui:composition>
