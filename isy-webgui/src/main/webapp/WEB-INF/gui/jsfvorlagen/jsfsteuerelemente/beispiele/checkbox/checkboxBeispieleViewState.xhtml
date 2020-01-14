@@ -1,0 +1,94 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+            <isy:panel id="checkboxPanel" collapse="true"
+                       panelModel="#{checkboxBeispieleModel.panelModelCheckbox}">
+                <f:facet name="panelHeader">Checkbox</f:facet>
+                <p>
+                    Mehrere Checkboxen. Einbindung über
+                    <code>&lt;isy:selectManyCheckbox ...</code>
+                </p>
+
+                <isy:selectManyCheckbox id="cbtest"
+                                        value="#{checkboxBeispieleModel.checkboxAuswahl}"
+                                        selectItems="#{checkboxBeispieleModel.checkboxListe}"/>
+
+                <p>
+                    <isy:button action="checkboxAction" value="Select"/>
+                </p>
+                <p>
+                    Ausgabe:
+                    <h:outputText value="#{checkboxBeispieleModel.checkboxAuswahl}"/>
+                </p>
+                <p>
+                    Eine Checkbox. Einbindung über
+                    <code>&lt;isy:formCheckbox bzw.
+                        &lt;isy:selectBooleanCheckbox ... </code>
+                </p>
+
+                <isy:formCheckbox id="cbtest1" reference="cbtest1"
+                                  value="#{checkboxBeispieleModel.checkboxBoolean1}"
+                                  label="Eine Auswahl" labelRight="Auswahl 1" disabled="false"
+                                  valueChangeListener="#{checkboxBeispieleController.checkboxAusgewaehlt}">
+                    <f:ajax event="change"
+                            render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert"/>
+                    <f:ajax event="click"
+                            render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
+                            listener="#{checkboxBeispieleController.checkboxBooleanGeklickt}"/>
+                </isy:formCheckbox>
+
+                <isy:formCheckbox id="cbtest2" reference="cbtest2"
+                                  value="#{checkboxBeispieleModel.checkboxBoolean2}"
+                                  label="Eine deaktivierte Auswahl" disabled="true"
+                                  labelRight="Auswahl 2">
+                </isy:formCheckbox>
+
+
+                <isy:formCheckbox id="cbtest3" reference="cbtest3"
+                                  value="#{checkboxBeispieleModel.checkboxBoolean3}"
+                                  label="Eine Pflichtauswahl" required="true" labelRight="Auswahl 3"
+                                  disabled="false"
+                                  valueChangeListener="#{checkboxBeispieleController.checkboxAusgewaehlt}">
+                    <f:ajax event="change"
+                            render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert"/>
+                    <f:ajax event="click"
+                            render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
+                            listener="#{checkboxBeispieleController.checkboxBooleanGeklickt}"/>
+                </isy:formCheckbox>
+
+
+                <isy:formCheckbox id="cbtest4" reference="cbtest4"
+                                  value="#{checkboxBeispieleModel.checkboxBoolean4}"
+                                  label="Eine optionale Auswahl" optional="true"
+                                  labelRight="Auswahl 4" disabled="false"
+                                  valueChangeListener="#{checkboxBeispieleController.checkboxAusgewaehlt}">
+                    <f:ajax event="change"
+                            render="inhaltsbereichForm:checkboxPanel:checkboxBooleanNeuerWert"/>
+                    <f:ajax event="click"
+                            render="inhaltsbereichForm:checkboxPanel:checkboxBooleanGeklicktAnzahl"
+                            listener="#{checkboxBeispieleController.checkboxBooleanGeklickt}"/>
+                </isy:formCheckbox>
+
+                <p>
+                    <isy:button action="checkboxAction" value="Select"/>
+                </p>
+                <p>
+                    Change Event:
+                    <h:outputText id="checkboxBooleanNeuerWert"
+                                  value="#{checkboxBeispieleModel.checkboxBooleanNeuerWert}"/>
+                    <br/>Klicks:
+                    <h:outputText id="checkboxBooleanGeklicktAnzahl"
+                                  value="#{checkboxBeispieleModel.checkboxBooleanGeklicktAnzahl}"/>
+                </p>
+            </isy:panel>
+        </div>
+    </ui:define>
+</ui:composition>
