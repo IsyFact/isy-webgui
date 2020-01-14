@@ -16,12 +16,10 @@
                     <p>
                         Aktionseingabefeld. Einbindung über
                         <code>&lt;isy:actionInput&gt;</code>
-                        bzw.
-                        <code>&lt;isy:formActionInput&gt;</code>
                     </p>
                     <div class="form-horizontal">
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <isy:actionInput reference="testActionInput"
                                                  value="#{aktionseingabeBeispieleModel.actionInputResult}"
                                                  action="actionInputAction" icon="search" tooltip="tooltip"
@@ -31,25 +29,31 @@
                     </div>
 
                     <!-- Disabled -->
-                    <p>Aktionseingabefeld (disabled).</p>
+                    <p>Aktionseingabefeld (disabled):</p>
                     <div class="form-horizontal">
                         <div class="row">
-                            <div class="col-lg-2">
+                            <div class="col-lg-4">
                                 <isy:actionInput reference="testActionInput2"
                                                  value="#{aktionseingabeBeispieleModel.actionInputResultDisabled}"
                                                  action="actionInputAction" icon="search" tooltip="tooltip"
-                                                 placeholder="placeholder" maxlength="20" disabled="true"/>
+                                                 placeholder="placeholder" maxlength="20" disabled="true" />
                             </div>
                         </div>
                     </div>
 
+                    <hr/>
+
                     <!-- Die form* Varianten -->
-                    <p>Form-Aktionseingabefeld.</p>
+                    <p>Form-Aktionseingabefeld.
+                        Einbindung über
+                        <code>&lt;isy:actionInput&gt;</code>
+                    </p>
                     <div class="form-horizontal">
                         <div class="row">
                             <div class="col-lg-4">
                                 <isy:formActionInput reference="testFormActionInput"
-                                                     label="Ein Label" labelStyleClass="col-lg-4"
+                                                     label="Ein Label"
+                                                     labelStyleClass="col-lg-4"
                                                      inputStyleClass="col-lg-8"
                                                      value="#{aktionseingabeBeispieleModel.formActionInputResult}"
                                                      action="formActionInputAction" icon="search"
