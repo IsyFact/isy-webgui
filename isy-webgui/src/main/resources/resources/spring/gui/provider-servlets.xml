@@ -9,7 +9,7 @@
         <aop:scoped-proxy proxy-target-class="true"/>
         <property name="jsfSteuerelementeListpickerController">
             <bean
-                class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeListpickerController">
+                class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeListpickerController">
             </bean>
         </property>
     </bean>

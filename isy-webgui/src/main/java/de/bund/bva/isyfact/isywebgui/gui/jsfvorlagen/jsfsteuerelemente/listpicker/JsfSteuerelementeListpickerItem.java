@@ -1,4 +1,4 @@
-package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente;
+package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker;
 
 import de.bund.bva.isyfact.common.web.jsf.components.listpicker.ListpickerItem;
 

@@ -1,7 +1,6 @@
 package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.tab;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
-import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeAuskunftTabModel;
 import org.springframework.stereotype.Controller;
 
 @Controller

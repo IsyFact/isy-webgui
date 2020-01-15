@@ -15,7 +15,7 @@
     </bean>
 
     <bean id="jsfSteuerelementeBehoerdeListpickerController"
-        class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeBehoerdeListpickerController"
+        class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeBehoerdeListpickerController"
         parent="abstractBehoerdeListpickerController">
     </bean>
 
@@ -130,7 +130,7 @@
         class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeHelper">
         <property name="jsfSteuerelementeListpickerController">
             <bean
-                class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeListpickerController">
+                class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeListpickerController">
             </bean>
         </property>
         <property name="jsfSteuerelementeBehoerdeListpickerController" ref="jsfSteuerelementeBehoerdeListpickerController"/>
@@ -138,7 +138,7 @@
         <property name="jsfSteuerelementeStaatsangListpickerController">
 
             <bean
-                    class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeStaatsangListpickerController">
+                    class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeStaatsangListpickerController">
             </bean>
         </property>
 

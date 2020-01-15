@@ -1,4 +1,4 @@
-package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente;
+package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -9,12 +9,14 @@ import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 
 import de.bund.bva.isyfact.common.web.jsf.components.listpicker.ListpickerController;
+import org.springframework.stereotype.Controller;
 
 /**
  * Controller für den Listpicker.
  * @author Capgemini, Tobias Gröger
  * @version $Id: JsfSteuerelementeListpickerController.java 130068 2015-02-10 14:09:46Z sdm_tgroeger $
  */
+@Controller
 public class JsfSteuerelementeListpickerController extends
     ListpickerController<JsfSteuerelementeListpickerModel> implements InitializingBean {
 

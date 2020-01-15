@@ -2,7 +2,6 @@ package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.tab;
 
 import de.bund.bva.isyfact.common.web.global.AbstractMaskenModel;
 import de.bund.bva.isyfact.common.web.jsf.components.panel.PanelModel;
-import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeAuskunftTabModel;
 
 public class TabBeispieleModel extends AbstractMaskenModel {
 

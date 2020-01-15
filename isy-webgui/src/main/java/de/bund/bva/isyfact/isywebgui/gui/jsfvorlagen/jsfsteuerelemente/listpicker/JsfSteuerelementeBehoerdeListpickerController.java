@@ -1,10 +1,11 @@
-package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente;
+package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker;
 
 import java.util.ArrayList;
 import java.util.List;
 
 import de.bund.bva.isyfact.common.web.jsf.components.listpicker.behoerde.AbstractBehoerdeListpickerController;
 import de.bund.bva.isyfact.common.web.jsf.components.listpicker.behoerde.BehoerdeListpickerItem;
+import org.springframework.stereotype.Component;
 
 /**
  *
