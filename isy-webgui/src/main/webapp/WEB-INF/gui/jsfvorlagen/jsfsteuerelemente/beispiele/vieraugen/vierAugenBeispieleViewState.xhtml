@@ -1,0 +1,140 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+
+            <!-- Panel zum Vorführen der Komponenten, die das Four-Eyes-Icon verwenden. -->
+            <isy:panel id="fourEyesIconPanel"
+                       panelModel="#{vierAugenBeispieleModel.panelModelFourEyesIconPanel}"
+                       collapse="true">
+                <f:facet name="panelHeader">Four Eyes Icon</f:facet>
+                <f:facet name="panelBody">
+
+                    <!-- formInput -->
+                    <p>
+                        FormInput
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formInputWithFourEyes
+                                    id="formInputFourEyes" type="text" label="Text: "
+                                    labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+                                    reference="formInputReferenz"
+                                    value="#{vierAugenBeispieleModel.formInputTextButtonActionResult}"
+                                    fourEyesMode="locked" fourEyesLastValue="Letzer Wert"/>
+                        </div>
+                    </div>
+
+                    <!-- formActionInput -->
+                    <p>
+                        FormActionInput
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formActionInputWithFourEyes
+                                    reference="testFormActionInputFourEyes"
+                                    label="Ein Label"
+                                    labelStyleClass="col-lg-2"
+                                    inputStyleClass="col-lg-2"
+                                    value="#{vierAugenBeispieleModel.actionInputResult}"
+                                    action="actionInputAction" icon="search" tooltip="tooltip"
+                                    placeholder="placeholder" maxlength="20"
+                                    fourEyesMode="locked" fourEyesLastValue="Letzer Wert"/>
+                        </div>
+                    </div>
+
+                    <!-- formCurrencyInput -->
+                    <p>
+                        FormCurrencyInput
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formCurrencyInputWithFourEyes
+                                    label="isy:formCurrencyInput"
+                                    labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+                                    required="true" placeholder="24,00" value=""
+                                    reference="formCurrencyInputFourEyes" fourEyesMode="locked"
+                                    fourEyesLastValue="Letzer Wert">
+                            </isy:formCurrencyInputWithFourEyes>
+                        </div>
+                    </div>
+
+                    <!-- formDate -->
+                    <p>
+                        FormDate
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formDate label="Datum" labelStyleClass="col-lg-2"
+                                          inputStyleClass="col-lg-2"
+                                          value="#{vierAugenBeispieleModel.datum}"
+                                          placeholder="z.B 12.02.2001" reference="datumFourEyes"/>
+                        </div>
+                    </div>
+
+                    <!-- formTextarea -->
+                    <p>
+                        FormTextarea
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formTextarea label="Text"
+                                              value="#{vierAugenBeispieleModel.textBoxButtonActionResult}"
+                                              labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+                                              reference="textFourEyes"
+                                              placeholder="Bitte geben Sie einen Text ein!"
+                                              maxlength="100" required="true"/>
+                        </div>
+                    </div>
+
+                    <!-- formCheckbox -->
+                    <p>
+                        <br/> <br/>
+                        FormCheckbox
+                    </p>
+                    <p>
+                        <isy:formCheckbox id="cbtest2FourEyes" reference="cbtest2FourEyes"
+                                          value="#{vierAugenBeispieleModel.checkboxBoolean1}"
+                                          label="Eine Auswahl" disabled="false" labelRight="Auswahl 1"
+                                          valueChangeListener="#{vierAugenBeispieleController.checkboxAusgewaehlt}">
+                        </isy:formCheckbox>
+                    </p>
+                    <p>
+                        <isy:formCheckbox id="cbtest3FourEyes" reference="cbtest3FourEyes"
+                                          value="#{vierAugenBeispieleModel.checkboxBoolean2}"
+                                          label="Eine deaktivierte Auswahl" disabled="true"
+                                          labelRight="Auswahl 2"
+                                          valueChangeListener="#{vierAugenBeispieleController.checkboxAusgewaehlt}">
+                        </isy:formCheckbox>
+                    </p>
+
+                    <!-- formSelectOneDropdown -->
+                    <div class="col-lg-12">
+                        FormSelectOneDropdown
+                        <br/> <br/>
+                    </div>
+                    <div class="col-lg-6">
+                        <isy:formSelectOneDropdown reference="formSelectOneDropdown"
+                                                   value="#{vierAugenBeispieleModel.dropdownAuswahl}"
+                                                   label="Auswahl"
+                                                   valueChangeListener="#{vierAugenBeispieleController.dropdownWertAusgewaehlt}"
+                                                   converter="#{typeConverter}" converterAttribute="int">
+                            <f:selectItems
+                                    value="#{vierAugenBeispieleModel.dropdownAuswahlListe}"/>
+                            <f:ajax event="change"
+                                    render="inhaltsbereichForm:dropdownPanel:dropdownAuswahlAjax"/>
+                        </isy:formSelectOneDropdown>
+                    </div>
+
+                </f:facet>
+            </isy:panel>
+        </div>
+    </ui:define>
+</ui:composition>
