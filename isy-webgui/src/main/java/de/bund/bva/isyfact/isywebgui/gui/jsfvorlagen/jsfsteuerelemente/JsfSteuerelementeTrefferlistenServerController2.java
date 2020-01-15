@@ -8,6 +8,8 @@ import java.util.List;
 import java.util.Map;
 
 import com.google.common.base.Strings;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTreffer;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTrefferlistenModel;
 import org.apache.commons.beanutils.PropertyUtils;
 
 import com.google.common.collect.Lists;

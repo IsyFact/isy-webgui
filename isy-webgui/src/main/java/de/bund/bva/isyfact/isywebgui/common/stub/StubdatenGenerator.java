@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Random;
 import java.util.List;
 
-import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeTreffer;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTreffer;
 
 /**
  * Datengenerator zur Erstellung von Stub/Mock-Daten. Nur zu Test- und Entwicklungszwecken verwenden!

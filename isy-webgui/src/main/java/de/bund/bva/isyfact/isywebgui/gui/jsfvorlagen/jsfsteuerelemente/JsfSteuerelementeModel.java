@@ -11,6 +11,8 @@ import de.bund.bva.isyfact.common.web.jsf.components.listpicker.Listpickerangabe
 import de.bund.bva.isyfact.common.web.jsf.components.listpicker.behoerde.BehoerdeListpickerModel;
 import de.bund.bva.isyfact.common.web.jsf.components.panel.PanelModel;
 import de.bund.bva.isyfact.common.web.jsf.components.tab.TabGroupModel;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTreffer;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTrefferlistenModel;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeListpickerModel;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeStaatsangListpickerModel;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.tab.JsfSteuerelementeAuskunftTabModel;

@@ -1,6 +1,7 @@
-package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente;
+package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable;
 
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableModel;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTreffer;
 
 /**
  * Model für die Trefferliste.

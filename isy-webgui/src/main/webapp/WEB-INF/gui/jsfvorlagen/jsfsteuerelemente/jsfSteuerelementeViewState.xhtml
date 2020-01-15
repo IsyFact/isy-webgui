@@ -9,19 +9,7 @@
                 xmlns:debug="http://java.sun.com/jsf/composite/debug"
                 template="/WEB-INF/gui/common/layout/applikation.xhtml">
 
-    <!-- Form für AJAX-Seiteninhalt definieren -->
-    <ui:define name="form">
-        <h:form id="listpickerAjaxForm">
-            <isy:formListpickerAjaxContent
-                    listpickerModel="#{jsfSteuerelementeModel.ajaxListpickerModel}"/>
-        </h:form>
 
-        <!-- Form für AJAX-Inhalt des Behörde-Listpickers definieren. -->
-        <h:form id="behoerdeListpickerAjaxForm">
-            <isy:formListpickerAjaxContent
-                    listpickerModel="#{jsfSteuerelementeModel.behoerdeListpickerModel}"/>
-        </h:form>
-    </ui:define>
 
     <ui:define name="inhaltsbereich">
         <debug:jsEnabledHint/>
@@ -29,293 +17,130 @@
         <div class="panel-group">
 
 
-            <isy:panel id="listpickerPanel"
-                       panelModel="#{jsfSteuerelementeModel.panelModelListpicker}"
-                       collapse="true">
-                <f:facet name="panelHeader">Listpicker</f:facet>
-                <div class="form-horizontal">
-                    <div class="row">
 
-                        <div class="col-lg-5">
+<!--            <isy:panel id="dataTablePanel"-->
+<!--                       panelModel="#{jsfSteuerelementeModel.panelModelDataTable}"-->
+<!--                       collapse="true">-->
+<!--                <f:facet name="panelHeader">Data Table</f:facet>-->
+<!--                <f:facet name="panelBody">-->
+<!--                    <p>Client-Modus</p>-->
+<!--                    <isy:dataTable id="dataTableClientMode"-->
+<!--                                   dataTableModel="#{jsfSteuerelementeModel.trefferlistenClientModel}"-->
+<!--                                   dataTableController="#{jsfSteuerelementeController.jsfSteuerelementeTrefferlistenClientController}"-->
+<!--                                   selectable="true" highlightDoubleclick="false"-->
+<!--                                   action="trefferlisteDoppelklick">-->
+<!--                        <f:facet name="tableHeader">-->
+<!--                            <isy:dataTableHeader width="5%">-->
+<!--                                <isy:dataTableRowAllSelection/>-->
+<!--                            </isy:dataTableHeader>-->
+<!--                            <isy:dataTableHeader name="#" width="10%"-->
+<!--                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>-->
+<!--                            <isy:dataTableHeader name="Vorname" width="25%"-->
+<!--                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>-->
+<!--                            <isy:dataTableHeader name="Nachname" width="25%"-->
+<!--                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>-->
+<!--                            <isy:dataTableHeader name="Loginname" width="20%"-->
+<!--                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>-->
+<!--                            <isy:dataTableHeader name="" width="15%"/>-->
+<!--                        </f:facet>-->
+<!--                        <f:facet name="tableToolbar">-->
+<!--                            <isy:buttonRow id="dataTableToolbar">-->
+<!--                                <isy:buttonToolbar id="suche" icon="search" value="Suche"-->
+<!--                                                   action="sucheClient"/>-->
+<!--                                <isy:buttonToolbar id="waehle" icon="checkmark"-->
+<!--                                                   value="Wähle aus" action="noAction"/>-->
+<!--                            </isy:buttonRow>-->
+<!--                        </f:facet>-->
+<!--                        <f:facet name="tablePagination">-->
+<!--                            <isy:dataTablePaginator/>-->
+<!--                        </f:facet>-->
+<!--                        <f:facet name="tableFilter">-->
+<!--                            <isy:dataTableFilter/>-->
+<!--                            &lt;!&ndash; Platzhalter für checkbox Spalte &ndash;&gt;-->
+<!--                            <isy:dataTableFilter-->
+<!--                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>-->
+<!--                            <isy:dataTableFilter-->
+<!--                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>-->
+<!--                            <isy:dataTableFilter-->
+<!--                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>-->
+<!--                            <isy:dataTableFilter-->
+<!--                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>-->
+<!--                            <isy:dataTableFilterClearer/>-->
+<!--                        </f:facet>-->
+<!--                        <isy:dataTableRows-->
+<!--                                rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/datatable/rowDefinition.xhtml"-->
+<!--                                detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/datatable/detailDefinition.xhtml"/>-->
+<!--                    </isy:dataTable>-->
 
-                            <p>Ohne AJAX und ohne Auflösung des Schlüssels:</p>
-
-                            <isy:formListpicker reference="model.listpicker"
-                                                listpickerModel="#{jsfSteuerelementeModel.listpickerModel}"
-                                                label="Schlüssel" labelStyleClass="col-lg-3"
-                                                inputStyleClass="col-lg-5"
-                                                listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeListpickerController}"
-                                                value="#{jsfSteuerelementeModel.listpickerAuswahl}"
-                                                header="Schlüssel,Wert"/>
-                        </div>
-                        <div class="col-lg-6">
-                            <!-- ******************************** -->
-                            <p>Ohne AJAX - Staatsangehörigkeit mit Auflösung des Schlüssels:</p>
-                            <isy:formListpicker reference="suchattribut_staatsangehoerigkeit"
-                                                listpickerModel="#{jsfSteuerelementeModel.staatsangListpickerModel}"
-                                                label="Staatsangeh." labelStyleClass="col-lg-3"
-                                                inputStyleClass="col-lg-7"
-                                                listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeStaatsangListpickerController}"
-                                                value="#{jsfSteuerelementeModel.listpickerAuswahl}"
-                                                header="Schlüssel,Wert"
-                                                inputComplement="2"
-                                                minWidth="0"
-                                                required="false"
-                                                placeholder="000" inputmask="999"
-                            />
-
-                        </div>
-                    </div>
-                </div>
-                <p></p>
-                <p>
-                    Auswahl:
-                    <h:outputText value="#{jsfSteuerelementeModel.listpickerAuswahl}"/>
-                </p>
-                <p>
-                    <isy:button action="noAction" value="Wähle aus"/>
-                </p>
-
-                <div class="form-horizontal">
-                    <div class="row">
-                        <hr/>
-                        <div class="col-lg-5">
-
-                            <div class="row">
-                                <!-- Der folgende Listpicker löst den Schlüssel auf, denn das inputComplement ist 2
-                                und es ist eine Inputmask definiert. -->
-                                <p>Mit AJAX und mit Auflösung des Schlüssels:</p>
-
-                                <isy:formListpicker reference="model.ajaxListpicker"
-                                                    ajaxLoading="true" ajaxForm="listpickerAjaxForm"
-                                                    listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeListpickerController}"
-                                                    labelStyleClass="col-lg-3" inputStyleClass="col-lg-5"
-                                                    listpickerModel="#{jsfSteuerelementeModel.ajaxListpickerModel}"
-                                                    label="Schlüssel"
-                                                    value="#{jsfSteuerelementeModel.ajaxListpickerAuswahl}"
-                                                    header="Schlüssel,Name"
-                                                    inputComplement="2"
-                                                    inputmask="9[99]"/>
+<!--                    <p>-->
+<!--                        Aktuell ausgewählt:-->
+<!--                        <h:outputText-->
+<!--                                value="#{jsfSteuerelementeModel.trefferlistenClientModel.getSelectedItems()}"/>-->
+<!--                    </p>-->
 
 
-                                <p></p>
-                                <p>
-                                    Auswahl:
-                                    <h:outputText
-                                            value="#{jsfSteuerelementeModel.ajaxListpickerAuswahl}"/>
-                                </p>
-                                <p>
-                                    <isy:button action="noAction" value="Wähle aus"/>
-                                </p>
-                            </div>
-                        </div>
-
-                        <div class="col-lg-6">
-                            <div class="row">
-                                <!-- Der Behörden-Listpicker löst den Schlüssel immer auf, denn das inputComplement ist standardmäßig 2
-                                und es ist standardmäßig eine Inputmask definiert. -->
-                                <p>Mit Ajax Behörden Listpicker (Schlüssel wird standardmäßig aufgelöst):</p>
 
 
-                                <isy:formBehoerdeListpicker reference="model.behoerdeListpicker"
-                                                            ajaxLoading="true"
-                                                            ajaxForm="behoerdeListpickerAjaxForm"
-                                                            listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeBehoerdeListpickerController}"
-                                                            labelStyleClass="col-lg-3"
-                                                            inputStyleClass="col-lg-7"
-                                                            listpickerModel="#{jsfSteuerelementeModel.behoerdeListpickerModel}"
-                                                            label="Schlüssel"
-                                                            value="#{jsfSteuerelementeModel.behoerdeListpickerAngabe}"/>
 
 
-                                <p></p>
-                                <p>
-                                    Auswahl:
-                                    <h:outputText
-                                            value="#{jsfSteuerelementeModel.behoerdeListpickerAngabe}"/>
-                                </p>
-                                <p>
-                                    <isy:button action="noAction" value="Wähle aus"/>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-horizontal">
-                    <div class="row">
-                        <hr/>
-                        <div class="col-lg-5">
-
-                            <div class="row">
-                                <p>Über ein Servlet:</p>
-
-                                <isy:formListpicker reference="model.servletlistpicker"
-                                                    listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeListpickerController}"
-                                                    labelStyleClass="col-lg-3" inputStyleClass="col-lg-5"
-                                                    listpickerModel="#{jsfSteuerelementeModel.servletListpickerModel}"
-                                                    label="Schlüssel"
-                                                    value="#{jsfSteuerelementeModel.servletListpickerAuswahl}"
-                                                    header="Schlüssel,Name"
-                                                    inputComplement="2"
-                                                    inputmask="9[99]"
-                                                    servletUrl="/app/listpicker"/>
-                                <!-- Wichtig: servletUrl muss dem Pattern des zuständigen HttpRequestHandlerServlets
-                                 in der web.xml entsprechen! -->
 
 
-                                <p></p>
-                                <p>
-                                    Auswahl:
-                                    <h:outputText
-                                            value="#{jsfSteuerelementeModel.servletListpickerAuswahl}"/>
-                                </p>
-                                <p>
-                                    <isy:button action="noAction" value="Wähle aus"/>
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </isy:panel>
+<!--                    <p>Server-Modus</p>-->
+<!--                    <isy:dataTable id="dataTableServerMode"-->
+<!--                                   dataTableModel="#{jsfSteuerelementeModel.trefferlistenServerModel}"-->
+<!--                                   dataTableController="#{jsfSteuerelementeController.jsfSteuerelementeTrefferlistenServerController}"-->
+<!--                                   selectable="true" highlightDoubleclick="false"-->
+<!--                                   action="trefferlisteDoppelklick">-->
+<!--                        <f:facet name="tableHeader">-->
+<!--                            <isy:dataTableHeader width="5%">-->
+<!--                                <isy:dataTableRowAllSelection/>-->
+<!--                            </isy:dataTableHeader>-->
+<!--                            <isy:dataTableHeader name="#" width="10%"-->
+<!--                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>-->
+<!--                            <isy:dataTableHeader name="Vorname" width="25%"-->
+<!--                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>-->
+<!--                            <isy:dataTableHeader name="Nachname" width="25%"-->
+<!--                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>-->
+<!--                            <isy:dataTableHeader name="Loginname" width="20%"-->
+<!--                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>-->
+<!--                            <isy:dataTableHeader name="" width="15%"/>-->
+<!--                        </f:facet>-->
+<!--                        <f:facet name="tableToolbar">-->
+<!--                            <isy:buttonRow>-->
+<!--                                <isy:buttonToolbar id="suche" icon="search" value="Suche"-->
+<!--                                                   action="sucheServer"/>-->
+<!--                                <isy:buttonToolbar id="waehleaus" icon="checkmark"-->
+<!--                                                   value="Wähle aus" action="noAction"/>-->
+<!--                            </isy:buttonRow>-->
+<!--                        </f:facet>-->
+<!--                        <f:facet name="tablePagination">-->
+<!--                            <isy:dataTablePaginator/>-->
+<!--                        </f:facet>-->
+<!--                        <f:facet name="tableFilter">-->
+<!--                            <isy:dataTableFilter/>-->
+<!--                            &lt;!&ndash; Platzhalter für checkbox Spalte &ndash;&gt;-->
+<!--                            <isy:dataTableFilter-->
+<!--                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>-->
+<!--                            <isy:dataTableFilter-->
+<!--                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>-->
+<!--                            <isy:dataTableFilter-->
+<!--                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>-->
+<!--                            <isy:dataTableFilter-->
+<!--                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>-->
+<!--                            <isy:dataTableFilterClearer/>-->
+<!--                        </f:facet>-->
+<!--                        <isy:dataTableRows-->
+<!--                                rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/rowDefinition.xhtml"-->
+<!--                                detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/detailDefinition.xhtml"/>-->
+<!--                    </isy:dataTable>-->
 
-            <isy:panel id="buttonToolbarPanel"
-                       panelModel="#{jsfSteuerelementeModel.panelModelButtonToolbar}"
-                       collapse="true">
-                <f:facet name="panelHeader">Toolbar Buttons</f:facet>
-                <p>
-                    <isy:buttonToolbar icon="placeholder" value="Button mit Icon"
-                                       action="noAction"/>
-                </p>
-                <p>
-                    <isy:buttonToolbar showIcon="false" value="Button ohne Icon"
-                                       action="noAction"/>
-                </p>
-                <p>Eine Button Row mit Icons vor den Buttons</p>
-                <isy:buttonRow>
-                    <isy:buttonToolbar icon="fa-ambulance" value="Button 1"
-                                       action="noAction"/>
-                    <isy:buttonToolbar icon="fa-hand-o-right" value="Button 2"
-                                       action="noAction"/>
-                </isy:buttonRow>
-
-            </isy:panel>
-
-            <isy:panel id="dataTablePanel"
-                       panelModel="#{jsfSteuerelementeModel.panelModelDataTable}"
-                       collapse="true">
-                <f:facet name="panelHeader">Data Table</f:facet>
-                <f:facet name="panelBody">
-                    <p>Client-Modus</p>
-                    <isy:dataTable id="dataTableClientMode"
-                                   dataTableModel="#{jsfSteuerelementeModel.trefferlistenClientModel}"
-                                   dataTableController="#{jsfSteuerelementeController.jsfSteuerelementeTrefferlistenClientController}"
-                                   selectable="true" highlightDoubleclick="false"
-                                   action="trefferlisteDoppelklick">
-                        <f:facet name="tableHeader">
-                            <isy:dataTableHeader width="5%">
-                                <isy:dataTableRowAllSelection/>
-                            </isy:dataTableHeader>
-                            <isy:dataTableHeader name="#" width="10%"
-                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
-                            <isy:dataTableHeader name="Vorname" width="25%"
-                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>
-                            <isy:dataTableHeader name="Nachname" width="25%"
-                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>
-                            <isy:dataTableHeader name="Loginname" width="20%"
-                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
-                            <isy:dataTableHeader name="" width="15%"/>
-                        </f:facet>
-                        <f:facet name="tableToolbar">
-                            <isy:buttonRow id="dataTableToolbar">
-                                <isy:buttonToolbar id="suche" icon="search" value="Suche"
-                                                   action="sucheClient"/>
-                                <isy:buttonToolbar id="waehle" icon="checkmark"
-                                                   value="Wähle aus" action="noAction"/>
-                            </isy:buttonRow>
-                        </f:facet>
-                        <f:facet name="tablePagination">
-                            <isy:dataTablePaginator/>
-                        </f:facet>
-                        <f:facet name="tableFilter">
-                            <isy:dataTableFilter/>
-                            <!-- Platzhalter für checkbox Spalte -->
-                            <isy:dataTableFilter
-                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
-                            <isy:dataTableFilter
-                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>
-                            <isy:dataTableFilter
-                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>
-                            <isy:dataTableFilter
-                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
-                            <isy:dataTableFilterClearer/>
-                        </f:facet>
-                        <isy:dataTableRows
-                                rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/rowDefinition.xhtml"
-                                detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/detailDefinition.xhtml"/>
-                    </isy:dataTable>
-
-                    <p>
-                        Aktuell ausgewählt:
-                        <h:outputText
-                                value="#{jsfSteuerelementeModel.trefferlistenClientModel.getSelectedItems()}"/>
-                    </p>
-
-                    <p>Server-Modus</p>
-                    <isy:dataTable id="dataTableServerMode"
-                                   dataTableModel="#{jsfSteuerelementeModel.trefferlistenServerModel}"
-                                   dataTableController="#{jsfSteuerelementeController.jsfSteuerelementeTrefferlistenServerController}"
-                                   selectable="true" highlightDoubleclick="false"
-                                   action="trefferlisteDoppelklick">
-                        <f:facet name="tableHeader">
-                            <isy:dataTableHeader width="5%">
-                                <isy:dataTableRowAllSelection/>
-                            </isy:dataTableHeader>
-                            <isy:dataTableHeader name="#" width="10%"
-                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
-                            <isy:dataTableHeader name="Vorname" width="25%"
-                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>
-                            <isy:dataTableHeader name="Nachname" width="25%"
-                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>
-                            <isy:dataTableHeader name="Loginname" width="20%"
-                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
-                            <isy:dataTableHeader name="" width="15%"/>
-                        </f:facet>
-                        <f:facet name="tableToolbar">
-                            <isy:buttonRow>
-                                <isy:buttonToolbar id="suche" icon="search" value="Suche"
-                                                   action="sucheServer"/>
-                                <isy:buttonToolbar id="waehleaus" icon="checkmark"
-                                                   value="Wähle aus" action="noAction"/>
-                            </isy:buttonRow>
-                        </f:facet>
-                        <f:facet name="tablePagination">
-                            <isy:dataTablePaginator/>
-                        </f:facet>
-                        <f:facet name="tableFilter">
-                            <isy:dataTableFilter/>
-                            <!-- Platzhalter für checkbox Spalte -->
-                            <isy:dataTableFilter
-                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
-                            <isy:dataTableFilter
-                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>
-                            <isy:dataTableFilter
-                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>
-                            <isy:dataTableFilter
-                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
-                            <isy:dataTableFilterClearer/>
-                        </f:facet>
-                        <isy:dataTableRows
-                                rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/rowDefinition.xhtml"
-                                detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/detailDefinition.xhtml"/>
-                    </isy:dataTable>
-
-                    <p>
-                        Aktuell ausgewählt:
-                        <h:outputText
-                                value="#{jsfSteuerelementeModel.trefferlistenServerModel.getSelectedItems()}"/>
-                    </p>
-                </f:facet>
-            </isy:panel>
+<!--                    <p>-->
+<!--                        Aktuell ausgewählt:-->
+<!--                        <h:outputText-->
+<!--                                value="#{jsfSteuerelementeModel.trefferlistenServerModel.getSelectedItems()}"/>-->
+<!--                    </p>-->
+<!--                </f:facet>-->
+<!--            </isy:panel>-->
 
 
 

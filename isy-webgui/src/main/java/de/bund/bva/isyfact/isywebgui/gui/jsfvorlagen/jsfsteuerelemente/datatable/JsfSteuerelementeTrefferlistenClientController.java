@@ -1,4 +1,4 @@
-package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente;
+package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable;
 
 import java.util.ArrayList;
 
@@ -9,6 +9,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableModel.Da
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTablePaginationModel.PaginationType;
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableRequest;
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableResult;
+import org.springframework.stereotype.Component;
 
 /**
  * Controller für die Trefferliste.
@@ -17,6 +18,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableResult;
  * @version $Id: JsfSteuerelementeTrefferlistenClientController.java 166449 2016-06-06 12:15:53Z sdm_arichter
  *          $
  */
+@Component
 public class JsfSteuerelementeTrefferlistenClientController extends
     DataTableController<JsfSteuerelementeTreffer, JsfSteuerelementeTrefferlistenModel> {
 

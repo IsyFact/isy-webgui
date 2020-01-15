@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
+    parent="applikationseiteParentFlow">
+
+    <var name="dataTableBeispieleModel" class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.DataTableBeispieleModel" />
+    <on-start>
+        <evaluate expression="dataTableBeispieleController.initialisiereModel(dataTableBeispieleModel)" />
+    </on-start>
+
+    <view-state id="datatableBeispieleViewState" model="dataTableBeispieleModel">
+        <transition on="noAction" />
+        <transition on="trefferlisteDoppelklick" />
+        <transition on="sucheClient">
+            <evaluate expression="dataTableBeispieleController.fuehreSucheAusClient(dataTableBeispieleModel)"></evaluate>
+        </transition>
+        <transition on="sucheServer">
+            <evaluate expression="dataTableBeispieleController.fuehreSucheAusServer(dataTableBeispieleModel)"></evaluate>
+        </transition>
+
+        <transition on="trefferlisteDoppelklick" to="detailansichtTrefferlisteViewState" />
+    </view-state>
+
+    <view-state id="detailansichtTrefferlisteViewState" >
+
+    </view-state>
+
+</flow>

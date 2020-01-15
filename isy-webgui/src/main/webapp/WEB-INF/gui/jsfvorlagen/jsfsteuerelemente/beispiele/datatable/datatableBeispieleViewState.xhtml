@@ -1,0 +1,131 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+
+            <isy:panel id="dataTablePanel"
+                       panelModel="#{dataTableBeispieleModel.panelModelDataTable}">
+                <f:facet name="panelHeader">Data Table</f:facet>
+                <f:facet name="panelBody">
+                    <p>Client-Modus</p>
+                    <isy:dataTable id="dataTableClientMode"
+                                   dataTableModel="#{dataTableBeispieleModel.trefferlistenClientModel}"
+                                   dataTableController="#{jsfSteuerelementeTrefferlistenClientController}"
+                                   selectable="true" highlightDoubleclick="false"
+                                   action="trefferlisteDoppelklick">
+                        <f:facet name="tableHeader">
+                            <isy:dataTableHeader width="5%">
+                                <isy:dataTableRowAllSelection/>
+                            </isy:dataTableHeader>
+                            <isy:dataTableHeader name="#" width="10%"
+                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
+                            <isy:dataTableHeader name="Vorname" width="25%"
+                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>
+                            <isy:dataTableHeader name="Nachname" width="25%"
+                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>
+                            <isy:dataTableHeader name="Loginname" width="20%"
+                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
+                            <isy:dataTableHeader name="" width="15%"/>
+                        </f:facet>
+                        <f:facet name="tableToolbar">
+                            <isy:buttonRow id="dataTableToolbar">
+                                <isy:buttonToolbar id="suche" icon="search" value="Suche"
+                                                   action="sucheClient"/>
+                                <isy:buttonToolbar id="waehle" icon="checkmark"
+                                                   value="Wähle aus" action="noAction"/>
+                            </isy:buttonRow>
+                        </f:facet>
+                        <f:facet name="tablePagination">
+                            <isy:dataTablePaginator/>
+                        </f:facet>
+                        <f:facet name="tableFilter">
+                            <isy:dataTableFilter/>
+                            <!-- Platzhalter für checkbox Spalte -->
+                            <isy:dataTableFilter
+                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
+                            <isy:dataTableFilter
+                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>
+                            <isy:dataTableFilter
+                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>
+                            <isy:dataTableFilter
+                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
+                            <isy:dataTableFilterClearer/>
+                        </f:facet>
+                        <isy:dataTableRows
+                                rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/beispiele/datatable/rowDefinition.xhtml"
+                                detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/beispiele/datatable/detailDefinition.xhtml"/>
+                    </isy:dataTable>
+
+                    <p>
+                        Aktuell ausgewählt:
+                        <h:outputText
+                                value="#{dataTableBeispieleModel.trefferlistenClientModel.getSelectedItems()}"/>
+                    </p>
+
+                    <p>Server-Modus</p>
+                    <isy:dataTable id="dataTableServerMode"
+                                   dataTableModel="#{dataTableBeispieleModel.trefferlistenServerModel}"
+                                   dataTableController="#{jsfSteuerelementeTrefferlistenServerController}"
+                                   selectable="true" highlightDoubleclick="false"
+                                   action="trefferlisteDoppelklick">
+                        <f:facet name="tableHeader">
+                            <isy:dataTableHeader width="5%">
+                                <isy:dataTableRowAllSelection/>
+                            </isy:dataTableHeader>
+                            <isy:dataTableHeader name="#" width="10%"
+                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
+                            <isy:dataTableHeader name="Vorname" width="25%"
+                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>
+                            <isy:dataTableHeader name="Nachname" width="25%"
+                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>
+                            <isy:dataTableHeader name="Loginname" width="20%"
+                                                 sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
+                            <isy:dataTableHeader name="" width="15%"/>
+                        </f:facet>
+                        <f:facet name="tableToolbar">
+                            <isy:buttonRow>
+                                <isy:buttonToolbar id="suche" icon="search" value="Suche"
+                                                   action="sucheServer"/>
+                                <isy:buttonToolbar id="waehleaus" icon="checkmark"
+                                                   value="Wähle aus" action="noAction"/>
+                            </isy:buttonRow>
+                        </f:facet>
+                        <f:facet name="tablePagination">
+                            <isy:dataTablePaginator/>
+                        </f:facet>
+                        <f:facet name="tableFilter">
+                            <isy:dataTableFilter/>
+                            <!-- Platzhalter für checkbox Spalte -->
+                            <isy:dataTableFilter
+                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
+                            <isy:dataTableFilter
+                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>
+                            <isy:dataTableFilter
+                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>
+                            <isy:dataTableFilter
+                                    property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
+                            <isy:dataTableFilterClearer/>
+                        </f:facet>
+                        <isy:dataTableRows
+                                rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/beispiele/datatable/rowDefinition.xhtml"
+                                detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/beispiele/datatable/detailDefinition.xhtml"/>
+                    </isy:dataTable>
+
+                    <p>
+                        Aktuell ausgewählt:
+                        <h:outputText
+                                value="#{dataTableBeispieleModel.trefferlistenServerModel.getSelectedItems()}"/>
+                    </p>
+                </f:facet>
+            </isy:panel>
+
+        </div>
+    </ui:define>
+</ui:composition>

@@ -1,7 +1,7 @@
 package de.bund.bva.isyfact.isywebgui.gui.common.constant;
 
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.SortDirection;
-import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeSortierattribut;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeSortierattribut;
 
 /**
  * Eine Konstantenklasse, um JSF den Zugriff auf Enums zu ermöglichen.

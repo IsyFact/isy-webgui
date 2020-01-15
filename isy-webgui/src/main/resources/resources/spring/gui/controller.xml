@@ -25,11 +25,11 @@
         parent="abstractGuiController">
         <property name="jsfSteuerelementeTrefferlistenClientController">
             <bean
-                class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeTrefferlistenClientController"/>
+                class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTrefferlistenClientController"/>
         </property>
         <property name="jsfSteuerelementeTrefferlistenServerController">
             <bean
-                class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeTrefferlistenServerController"/>
+                class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTrefferlistenServerController"/>
         </property>
         <property name="globalFlowController" ref="globalFlowController"/>
         <property name="jsfSteuerelementeHelper" ref="jsfSteuerelementeHelper"/>
