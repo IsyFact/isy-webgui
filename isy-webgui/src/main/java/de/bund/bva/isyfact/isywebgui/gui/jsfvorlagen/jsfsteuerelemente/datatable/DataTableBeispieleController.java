@@ -3,7 +3,6 @@ package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatabl
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableInMemoryModel;
 import de.bund.bva.isyfact.isywebgui.common.stub.StubdatenGenerator;
-import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
@@ -62,6 +61,7 @@ public class DataTableBeispieleController extends AbstractGuiController<DataTabl
      * @param model das Model
      */
     public void fuehreSucheAusServer(DataTableBeispieleModel model) {
-        jsfSteuerelementeTrefferlistenServerController.updateDisplayItems(model.getTrefferlistenServerModel());
+        jsfSteuerelementeTrefferlistenServerController
+            .updateDisplayItems(model.getTrefferlistenServerModel());
     }
 }

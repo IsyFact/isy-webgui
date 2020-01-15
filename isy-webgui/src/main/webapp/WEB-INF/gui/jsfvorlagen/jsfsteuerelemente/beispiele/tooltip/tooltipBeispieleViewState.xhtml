@@ -1,0 +1,49 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+
+            <isy:panel id="tooltipPanel"
+                       panelModel="#{tooltipBeispieleModel.panelModelTooltip}">
+                <f:facet name="panelHeader">Tooltip</f:facet>
+                <f:facet name="panelBody">
+                    <p>
+                        Einbindung über
+                        <code>&lt;isy:tooltip&gt;</code>
+                    </p>
+                    <div class="row form-horizontal">
+                        <div class="col-lg-8 col-lg-offset-2">
+                            <p>
+                                <isy:tooltip text="Tooltip auf Icon" title="Überschrift">
+                                    <span class="icon icon-info"/>
+                                </isy:tooltip>
+                            </p>
+                            <p>
+                                <isy:tooltip text="Tooltip auf Icon">
+                                    <span class="icon icon-info"/>
+                                </isy:tooltip>
+                            </p>
+                            <p>
+                                <isy:tooltip text="Tooltip auf Text"
+                                             title="Überschrift">Lorem ipsum...</isy:tooltip>
+                            </p>
+
+                            <isy:tooltip text="Tooltip auf formInput">
+                                <isy:formInput reference="model.property"
+                                               label="Das ist eine formInput Box" value="Lorem ipsum..."/>
+                            </isy:tooltip>
+
+                        </div>
+                    </div>
+                </f:facet>
+            </isy:panel>
+        </div>
+    </ui:define>
+</ui:composition>

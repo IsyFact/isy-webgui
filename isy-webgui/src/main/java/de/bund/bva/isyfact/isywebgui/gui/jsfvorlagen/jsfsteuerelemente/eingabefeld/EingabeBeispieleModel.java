@@ -8,6 +8,12 @@ public class EingabeBeispieleModel extends AbstractMaskenModel {
     /** Panelmodel für Zustand des Panels. */
     private PanelModel panelModelFormInput = new PanelModel(true);
 
+    /** Panelmodel für Zustand des CurrencyPanels. */
+    private PanelModel panelModelCurrency = new PanelModel(true);
+
+    /** Panelmodel für Zustand des ZahlenPanels. */
+    private PanelModel panelModelNumeric = new PanelModel(true);
+
     /** Speicherung des Ergebnisses der Texteingabe. **/
     private String formInputTextButtonActionResult;
 
@@ -20,6 +26,22 @@ public class EingabeBeispieleModel extends AbstractMaskenModel {
 
     public void setPanelModelFormInput(PanelModel panelModelFormInput) {
         this.panelModelFormInput = panelModelFormInput;
+    }
+
+    public PanelModel getPanelModelCurrency() {
+        return panelModelCurrency;
+    }
+
+    public void setPanelModelCurrency(PanelModel panelModelCurrency) {
+        this.panelModelCurrency = panelModelCurrency;
+    }
+
+    public PanelModel getPanelModelNumeric() {
+        return panelModelNumeric;
+    }
+
+    public void setPanelModelNumeric(PanelModel panelModelNumeric) {
+        this.panelModelNumeric = panelModelNumeric;
     }
 
     public String getFormInputTextButtonActionResult() {
