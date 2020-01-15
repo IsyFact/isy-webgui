@@ -12,7 +12,6 @@ import de.bund.bva.isyfact.common.web.jsf.components.upload.DateitypEnum;
 import de.bund.bva.isyfact.common.web.jsf.components.upload.UploadHelper;
 import de.bund.bva.isyfact.common.web.validation.ValidationMessage;
 import de.bund.bva.isyfact.isywebgui.common.konstanten.FehlerSchluessel;
-import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeModel;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -71,7 +70,7 @@ public class UploadBeispieleController extends AbstractGuiController<UploadBeisp
      * @param model
      *            das zu speichernende Model
      */
-    public void uploadSpeichern(JsfSteuerelementeModel model) {
+    public void uploadSpeichern(UploadBeispieleModel model) {
 
         if (!validiereFormular(model)) {
             return;
@@ -114,7 +113,7 @@ public class UploadBeispieleController extends AbstractGuiController<UploadBeisp
      *            Das JsfSteuerelementeModel.
      * @return true, Wenn die Validierung der Upload-Anteile des Formulars erfolgreich war.
      */
-    protected boolean validiereFormular(final JsfSteuerelementeModel model) {
+    protected boolean validiereFormular(final UploadBeispieleModel model) {
 
         List<ValidationMessage> validationMessages = new ArrayList<ValidationMessage>();
 
