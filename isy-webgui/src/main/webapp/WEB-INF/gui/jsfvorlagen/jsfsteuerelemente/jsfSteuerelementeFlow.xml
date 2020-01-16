@@ -8,65 +8,11 @@
 
     <on-start>
         <evaluate expression="jsfSteuerelementeController.initialisiereModel(jsfSteuerelementeModel)" />
-        <evaluate expression="globalFlowModel.setMultipartForm(true)" />
     </on-start>
 
     <view-state id="jsfSteuerelementeViewState" model="jsfSteuerelementeModel">
 
-        <transition on="buttonAction">
-            <evaluate expression="jsfSteuerelementeController.buttonAction(jsfSteuerelementeModel)" />
-        </transition>
-
-        <transition on="blockButtonAction">
-            <evaluate expression="jsfSteuerelementeController.blockButtonAction(jsfSteuerelementeModel)" />
-        </transition>
-
-        <transition on="formInputButtonAction">
-            <evaluate expression="jsfSteuerelementeController.formInputButtonAction(jsfSteuerelementeModel)" />
-        </transition>
-
-        <transition on="textBoxButtonAction">
-            <evaluate expression="jsfSteuerelementeController.textBoxButtonAction(jsfSteuerelementeModel)" />
-        </transition>
-
-        <transition on="dropdownButtonAction">
-            <evaluate expression="jsfSteuerelementeController.dropdownButtonAction(jsfSteuerelementeModel)" />
-        </transition>
-
-        <transition on="radioButtonAction">
-            <evaluate expression="jsfSteuerelementeController.radioButtonAction(jsfSteuerelementeModel)" />
-        </transition>
-
-        <transition on="datumButtonAction">
-            <evaluate expression="jsfSteuerelementeController.datumButtonAction(jsfSteuerelementeModel)" />
-        </transition>
-        
-        <transition on="checkboxAction" />
-        
-        <transition on="noAction" />
-        
-        <transition on="trefferlisteDoppelklick" to="detailansichtTrefferlisteViewState" />
-        
-        <transition on="sucheClient">
-            <evaluate expression="jsfSteuerelementeController.fuehreSucheAusClient(jsfSteuerelementeModel)"></evaluate>
-        </transition>
-
-        <transition on="sucheServer">
-            <evaluate expression="jsfSteuerelementeController.fuehreSucheAusServer(jsfSteuerelementeModel)"></evaluate>
-        </transition>
-        
-        <transition on="actionInputAction">
-            <evaluate expression="jsfSteuerelementeController.actionInputAction(jsfSteuerelementeModel)" />
-        </transition>
-        
-        <transition on="uploadSpeichern">
-            <evaluate expression="jsfSteuerelementeController.uploadSpeichern(jsfSteuerelementeModel)" />
-        </transition>
-
     </view-state>
-    
-    <view-state id="detailansichtTrefferlisteViewState" >
-    
-    </view-state>
+
 
 </flow>

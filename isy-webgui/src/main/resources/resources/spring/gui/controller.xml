@@ -9,31 +9,31 @@
     <!-- Allgemeine Controller -->
     <import resource="classpath:resources/plis-web/spring/controller.xml"/>
 
-    <bean id="abstractBehoerdeListpickerController" abstract="true"
-        class="de.bund.bva.isyfact.common.web.jsf.components.listpicker.behoerde.AbstractBehoerdeListpickerController">
-        <property name="maxElemente" value="5"/>
-    </bean>
+<!--    <bean id="abstractBehoerdeListpickerController" abstract="true"-->
+<!--        class="de.bund.bva.isyfact.common.web.jsf.components.listpicker.behoerde.AbstractBehoerdeListpickerController">-->
+<!--        <property name="maxElemente" value="5"/>-->
+<!--    </bean>-->
 
-    <bean id="jsfSteuerelementeBehoerdeListpickerController"
-        class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeBehoerdeListpickerController"
-        parent="abstractBehoerdeListpickerController">
-    </bean>
+<!--    <bean id="jsfSteuerelementeBehoerdeListpickerController"-->
+<!--        class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeBehoerdeListpickerController"-->
+<!--        parent="abstractBehoerdeListpickerController">-->
+<!--    </bean>-->
 
     <!-- JSF-Vorlagen -->
-    <bean id="jsfSteuerelementeController"
-        class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeController"
-        parent="abstractGuiController">
-        <property name="jsfSteuerelementeTrefferlistenClientController">
-            <bean
-                class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTrefferlistenClientController"/>
-        </property>
-        <property name="jsfSteuerelementeTrefferlistenServerController">
-            <bean
-                class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTrefferlistenServerController"/>
-        </property>
-        <property name="globalFlowController" ref="globalFlowController"/>
-        <property name="jsfSteuerelementeHelper" ref="jsfSteuerelementeHelper"/>
-    </bean>
+<!--    <bean id="jsfSteuerelementeController"-->
+<!--        class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeController"-->
+<!--        parent="abstractGuiController">-->
+<!--        <property name="jsfSteuerelementeTrefferlistenClientController">-->
+<!--            <bean-->
+<!--                class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTrefferlistenClientController"/>-->
+<!--        </property>-->
+<!--        <property name="jsfSteuerelementeTrefferlistenServerController">-->
+<!--            <bean-->
+<!--                class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTrefferlistenServerController"/>-->
+<!--        </property>-->
+<!--        <property name="globalFlowController" ref="globalFlowController"/>-->
+<!--        <property name="jsfSteuerelementeHelper" ref="jsfSteuerelementeHelper"/>-->
+<!--    </bean>-->
 
     <bean id="vieraugenController" class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.vieraugen.VieraugenController"
         parent="abstractGuiController">
@@ -126,23 +126,23 @@
     <!-- Helper -->
     <bean id="enumConstants" class="de.bund.bva.isyfact.isywebgui.gui.common.constant.EnumConstants"/>
 
-    <bean id="jsfSteuerelementeHelper"
-        class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeHelper">
-        <property name="jsfSteuerelementeListpickerController">
-            <bean
-                class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeListpickerController">
-            </bean>
-        </property>
-        <property name="jsfSteuerelementeBehoerdeListpickerController" ref="jsfSteuerelementeBehoerdeListpickerController"/>
+<!--    <bean id="jsfSteuerelementeHelper"-->
+<!--        class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeHelper">-->
+<!--        <property name="jsfSteuerelementeListpickerController">-->
+<!--            <bean-->
+<!--                class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeListpickerController">-->
+<!--            </bean>-->
+<!--        </property>-->
+<!--        <property name="jsfSteuerelementeBehoerdeListpickerController" ref="jsfSteuerelementeBehoerdeListpickerController"/>-->
 
-        <property name="jsfSteuerelementeStaatsangListpickerController">
+<!--        <property name="jsfSteuerelementeStaatsangListpickerController">-->
 
-            <bean
-                    class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeStaatsangListpickerController">
-            </bean>
-        </property>
+<!--            <bean-->
+<!--                    class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeStaatsangListpickerController">-->
+<!--            </bean>-->
+<!--        </property>-->
 
-    </bean>
+<!--    </bean>-->
 
     <bean id="dropdownHelper" class="de.bund.bva.isyfact.isywebgui.gui.common.DropdownHelper"/>
 

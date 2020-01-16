@@ -2,194 +2,21 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <ui:composition xmlns="http://www.w3.org/1999/xhtml"
                 xmlns:ui="http://java.sun.com/jsf/facelets"
-                xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:sf="http://www.springframework.org/tags/faces"
                 xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
-                xmlns:debug="http://java.sun.com/jsf/composite/debug"
                 template="/WEB-INF/gui/common/layout/applikation.xhtml">
 
 
-
     <ui:define name="inhaltsbereich">
-        <debug:jsEnabledHint/>
 
         <div class="panel-group">
-
-
-
-
-
-            <!-- Panel zum Vorführen der Upload-Komponente. -->
-            <!-- Übernommen aus den Daisy-Demos. -->
-            <isy:panel id="uploadPanel"
-                       panelModel="#{jsfSteuerelementeModel.panelModelUpload}"
-                       collapse="true">
-                <f:facet name="panelHeader">GUI Komponente: Upload</f:facet>
+            <isy:panel id="jsfSteuerElementePanel">
+                <f:facet name="panelHeader">GUI Komponenten: JSF-Steuerelemente</f:facet>
                 <f:facet name="panelBody">
-                    <h3>Demo: Disabled</h3>
-                    <div class="row form-horizontal">
-                        <div class="col-lg-8">
-                            <div class="row">
-                                <isy:formUpload label="Disabled"
-                                                value="${jsfSteuerelementeModel.disabledUpload}"
-                                                reference="disabled" disabled="true"
-                                                tooltip="Feld ist deaktiviert"
-                                                placeholder="Feld deaktiviert"/>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>Demo: Text-Datei</h3>
-                    <div class="row form-horizontal">
-                        <div class="col-lg-8">
-                            <div class="row">
-                                <isy:formUpload label="Text" value="${jsfSteuerelementeModel.textUpload}"
-                                                reference="text"
-                                                required="true" accept=".csv,.txt,.text"
-                                                tooltip="Bitte wählen Sie eine Text-Datei aus. Diese darf nicht größer als 10Kb sein, siehe Kontroller"/>
-                            </div>
-                            <div class="row">
-                                <h:outputText value="#{jsfSteuerelementeModel.hochgeladenerText}"
-                                              escape="true"/>
-                            </div>
-                        </div>
-                    </div>
-                    <h3>Demo: Bild-Datei</h3>
-                    <div class="row form-horizontal">
-                        <div class="col-lg-8">
-                            <div class="row">
-                                <isy:formUpload label="Bild" value="${jsfSteuerelementeModel.bildUpload}"
-                                                reference="bild"
-                                                required="false"
-                                                placeholder="Wählen Sie eine Bild-Datei zum Hochladen aus"
-                                                accept="image/*"
-                                                tooltip="Bitte wählen Sie eine Bild-Datei aus. Diese darf nicht größer als 100Kb sein, siehe Kontroller"/>
-                            </div>
-                            <div class="row">
-                                <h:graphicImage
-                                        url="data:image/jpg;base64,#{jsfSteuerelementeController.getEncodedImage(jsfSteuerelementeModel.hochgeladenesBild)}"
-                                        rendered="#{not empty jsfSteuerelementeController.getEncodedImage(jsfSteuerelementeModel.hochgeladenesBild)}"/>
-                            </div>
-                            <isy:buttonRow alignRight="true">
-                                <isy:button value="Speichern" action="uploadSpeichern"/>
-                            </isy:buttonRow>
-                        </div>
-                    </div>
-                    <h3>Dokumentation</h3>
-                    <h4>Voraussetzungen an der Web-App</h4>
-                    <ul>
-                        <li>servlet-api 3.0.1: es gibt keine 3.0! und dabei muss man beachten dass überall
-                            <code>servlet-api
-                                2.5</code> exkludiert wird, weil sich der Name des Artefakts von
-                            <code>servlet-api</code> zu <code>javax.servlet-api</code>
-                            geändert hat
-                        </li>
-                        <li>JSF 2.2: außer den richtigen <code>jsf-api</code> und
-                            <code>jsf-impl</code>-Versionen in
-                            der <code>pom.xml</code>-Datei zu importieren, muss die
-                            <code>faces-config.xml</code> richtig
-                            für JSF2.2 deklariert werden
-                        </li>
-                        <li>multipart/form-data:
-                            <ul>
-                                <li>Es muss in der Tomcat Context-Konfiguration die Eigenschaft
-                                    <code>allowCasualMultipartParsing=true</code>
-                                    gesetzt werden, siehe <a
-                                            href="http://stackoverflow.com/questions/8047173/how-to-enable-multipart-form-data-in-tomcat-7-0-8-server/8050589#8050589">hier</a>
-                                </li>
-                                <li>In der <code>web.xml</code> muss der <code>FacesServlet</code> um einige
-                                    Parameter erweitert werden:
-                                    <pre>
-    &lt;servlet&gt;
-        &lt;servlet-name&gt;Faces Servlet&lt;/servlet-name&gt;
-        &lt;servlet-class&gt;javax.faces.webapp.FacesServlet&lt;/servlet-class&gt;
-        &lt;multipart-config&gt;
-            &lt;max-file-size&gt;52428800&lt;/max-file-size&gt;
-            &lt;file-size-threshold&gt;1048576&lt;/file-size-threshold&gt;
-        &lt;/multipart-config&gt;
-        &lt;load-on-startup&gt;1&lt;/load-on-startup&gt;
-    &lt;/servlet&gt;
-                    </pre>
-                                </li>
-                            </ul>
-                        </li>
-                        <li>
-                            Nur für diese Demo-Anwendung: Zur Anzeige der hochgeladenen Elemente musste die X-Frame-Options von DENY auf SAMEORIGIN gesetzt werden.
-                            Im <code>sec:http</code>-Tag der Spring-Security-Konfiguration Folgendes einfügen:
-                            <pre>
-                      &lt;sec:headers defaults-disabled=&quot;true&quot;&gt;
-          &lt;sec:frame-options policy=&quot;SAMEORIGIN&quot;/&gt;
-        &lt;/sec:headers&gt;
-              </pre>
-                        </li>
-                    </ul>
-                    <h4>Voraussetzungen am Flow:</h4>
-                    <pre>
-&lt;on-start&gt;
-  &lt;evaluate expression=&quot;xxxController.initialisiereModel(xxxModel)&quot;&gt;&lt;/evaluate&gt;
-  &lt;!-- Besonderheit bei Masken mit FileUpload --&gt;
-  &lt;evaluate expression=&quot;globalFlowModel.setMultipartForm(true)&quot;&gt;&lt;/evaluate&gt;
-&lt;/on-start&gt;
-        </pre>
-                    <h4>Zustände</h4>
-                    <ul>
-                        <li>Normal</li>
-                        <li>Hover</li>
-                        <li>Deaktiviert</li>
-                        <li>Focus</li>
-                        <li>Validierung</li>
-                    </ul>
-                    <h4>Ist dies das korrekte Bedienelement?</h4>
-                    <ul>
-                        <li>Dateiuploads werden benutzt, um lokale Dateien auf den Server hochzuladen. i.d.R. damit
-                            die Anwendung die Datei weiter verarbeiten oder wiederverwenden kann.
-                        </li>
-                    </ul>
-                    <h3>Richtlinien zur Anwendung</h3>
-                    <ul>
-                        <li>Um die Bedieneffizienz zu erhöhen, sollten Dateiuploads, deren Eingaben validieren, nach
-                            Möglichkeit verschiedene Eingabeformate unterstützen z.B. für Bilder nicht nur
-                            <code>.png</code>
-                            sondern auch <code>.jpg</code> oder <code>.gif</code>
-                        </li>
-                    </ul>
-                    <h4>Hinweise zur Implementierung</h4>
-                    Die Implementierung erfolgt über das Tag
-                    <code>&lt;isy:formUpload&gt;</code>. Siehe auch die <code>UploadHelper</code>-Klasse.
-
-                    <h4>Folgende Parameter sind zulässig:</h4>
-                    <dl>
-                        <dt>value *</dt>
-                        <dd>
-                            Eine Bean-Eigenschaft um die Daten hochzuladen. Muss vom Typ
-                            <code>javax.servlet.http.Part</code>
-                            sein. .
-                        </dd>
-                        <dt>accept</dt>
-                        <dd>
-                            Ob die auszuwählenden Dateien gefiltert werden sollen, z.B.
-                            <code>"image/*"</code>
-                            , siehe auch <a
-                                href="http://stackoverflow.com/questions/11832930/html-input-file-accept-attribute-file-type-csv#11834872">hier</a>.
-                        </dd>
-                        <dt>label *</dt>
-                        <dd>Angezeigter Label-Text</dd>
-                        <dt>required</dt>
-                        <dd>Ob eine Angabe erforderlich ist.</dd>
-                        <dt>placeholder</dt>
-                        <dd>Einen optionalen Hilfetext im Eingabefeld.</dd>
-                        <dt>tooltip</dt>
-                        <dd>Einen optionalen Tooltip für das Icon.</dd>
-                        <dt>disabled</dt>
-                        <dd>Ob der Dateiupload deaktiviert ist oder nicht.</dd>
-                        <dt>inputStyleClass</dt>
-                        <dd>Die zu ergänzenden Style-Klassen.</dd>
-                        <dt>labelStyleClass</dt>
-                        <dd>Die zu ergänzenden Style-Klassen für das Label.</dd>
-                    </dl>
+                    Die IsyFact bietet eine Reihe von JSF-Komponenten.
+                    Navigieren Sie links im Menü, um Beispiele für die Komponenten zu sehen.
                 </f:facet>
             </isy:panel>
-
         </div>
     </ui:define>
 
