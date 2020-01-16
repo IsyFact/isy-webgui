@@ -51,7 +51,7 @@ public class IsyWebguiApplication extends SpringBootServletInitializer {
     @ConditionalOnMissingBean
     @Bean
     public GlobalFlowController globalFlowController() {
-        return new GlobalFlowController();
+        return new GlobalFlowController(null, null, null, null, null);
     }
 
     @Profile("entwicklung")

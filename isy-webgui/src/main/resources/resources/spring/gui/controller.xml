@@ -1,21 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
 
     <!-- ========== -->
     <!-- Controller -->
     <!-- ========== -->
 
     <!-- Allgemeine Controller -->
-    <import resource="classpath:resources/plis-web/spring/controller.xml"/>
+    <context:annotation-config />
+    <!--    <import resource="classpath:resources/plis-web/spring/controller.xml"/>-->
+    <bean class="de.bund.bva.isyfact.common.web.spring.IsyWebConfiguration"/>
+
 
 <!--    <bean id="abstractBehoerdeListpickerController" abstract="true"-->
 <!--        class="de.bund.bva.isyfact.common.web.jsf.components.listpicker.behoerde.AbstractBehoerdeListpickerController">-->
 <!--        <property name="maxElemente" value="5"/>-->
 <!--    </bean>-->
 
+    <bean id="abstractGuiController" abstract="true" class="de.bund.bva.isyfact.common.web.global.AbstractGuiController" />
+
 <!--    <bean id="jsfSteuerelementeBehoerdeListpickerController"-->
-<!--        class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeBehoerdeListpickerController"-->
+<!--        class="de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeBehoerdeListpickerController"-->
 <!--        parent="abstractBehoerdeListpickerController">-->
 <!--    </bean>-->
 
