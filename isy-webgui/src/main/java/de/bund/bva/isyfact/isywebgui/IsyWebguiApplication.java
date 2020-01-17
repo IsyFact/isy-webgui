@@ -14,6 +14,7 @@ import de.bund.bva.isyfact.isywebgui.config.XMLConfig;
 import de.bund.bva.isyfact.isywebgui.gui.config.GuiConfig;
 import de.bund.bva.isyfact.sicherheit.Sicherheit;
 import de.bund.bva.isyfact.sicherheit.web.DelegatingAccessDecisionManager;
+
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -32,7 +33,7 @@ public class IsyWebguiApplication extends SpringBootServletInitializer {
     @Profile("entwicklung")
     @Bean
     public AufrufKontextVerwalter<AufrufKontext> aufrufKontextVerwalter(
-        AufrufKontextFactory<AufrufKontext> factory) {
+            AufrufKontextFactory<AufrufKontext> factory) {
         AufrufKontextVerwalterStub<AufrufKontext> verwalterStub = new AufrufKontextVerwalterStub<>();
         verwalterStub.setRollen("Testrolle");
         verwalterStub.setDurchfuehrendeBehoerde("123456");
