@@ -10,7 +10,7 @@
     <!-- Allgemeine Controller -->
     <context:annotation-config />
     <!--    <import resource="classpath:resources/plis-web/spring/controller.xml"/>-->
-    <bean class="de.bund.bva.isyfact.common.web.spring.IsyWebConfiguration"/>
+<!--    <bean class="de.bund.bva.isyfact.common.web.spring.IsyWebConfiguration"/>-->
 
 
 <!--    <bean id="abstractBehoerdeListpickerController" abstract="true"-->

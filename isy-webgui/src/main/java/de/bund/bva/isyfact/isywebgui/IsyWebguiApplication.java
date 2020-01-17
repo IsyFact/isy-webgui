@@ -7,6 +7,9 @@ import de.bund.bva.isyfact.aufrufkontext.AufrufKontextFactory;
 import de.bund.bva.isyfact.aufrufkontext.AufrufKontextVerwalter;
 import de.bund.bva.isyfact.aufrufkontext.stub.AufrufKontextVerwalterStub;
 import de.bund.bva.isyfact.common.web.global.GlobalFlowController;
+import de.bund.bva.isyfact.common.web.spring.ControllerConfiguration;
+import de.bund.bva.isyfact.common.web.spring.MvcConfiguration;
+import de.bund.bva.isyfact.common.web.spring.WebFlowConfiguration;
 import de.bund.bva.isyfact.isywebgui.config.XMLConfig;
 import de.bund.bva.isyfact.isywebgui.gui.config.GuiConfig;
 import de.bund.bva.isyfact.sicherheit.Sicherheit;
@@ -23,7 +26,7 @@ import org.springframework.security.access.AccessDecisionManager;
 
 @Configuration
 //@EnableAutoConfiguration
-@Import({ GuiConfig.class, XMLConfig.class })
+@Import({ GuiConfig.class, XMLConfig.class, WebFlowConfiguration.class, MvcConfiguration.class, ControllerConfiguration.class })
 public class IsyWebguiApplication extends SpringBootServletInitializer {
 
     @Profile("entwicklung")

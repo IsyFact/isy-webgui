@@ -7,7 +7,8 @@
     <!-- Webflow -->
     <!-- ========== -->
 
-    <bean id="flowConfiguration" class="de.bund.bva.isyfact.common.web.spring.WebFlowConfiguration"/>
+<!--    <bean id="flowConfiguration" class="de.bund.bva.isyfact.common.web.spring.WebFlowConfiguration"/>-->
+<!--    <bean id="mvcConfiguration" class="de.bund.bva.isyfact.common.web.spring.MvcConfiguration"/>-->
 <!--    <import resource="classpath:resources/plis-web/spring/webflow.xml"/>-->
 
 </beans>
