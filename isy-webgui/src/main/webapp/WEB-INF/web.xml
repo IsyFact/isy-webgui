@@ -36,10 +36,10 @@
         <param-value>202400</param-value>
     </context-param>
     <!-- Spring Root Application Context -->
-    <context-param>
-        <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:resources/spring/application-web.xml</param-value>
-    </context-param>
+<!--    <context-param>-->
+<!--        <param-name>contextConfigLocation</param-name>-->
+<!--        <param-value>classpath:resources/spring/application-web.xml</param-value>-->
+<!--    </context-param>-->
     <!-- Entfernt Kommentare -->
     <context-param>
         <param-name>javax.faces.FACELETS_SKIP_COMMENTS</param-name>

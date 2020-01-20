@@ -8,12 +8,12 @@
     <!-- Diese Konfiguration enthält allgemeine Beans, die in allen Spring-Kontexten benötigt werden. -->
 
     <!-- Aktiviere @Required Annotations. -->
-    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>
+<!--    <bean class="org.springframework.beans.factory.annotation.RequiredAnnotationBeanPostProcessor"/>-->
 
     <!-- Setzt die Default-Locale. -->
-    <bean class="de.bund.bva.isyfact.common.web.locale.SetDefaultLocaleFactoryBean">
-        <constructor-arg name="locale" value="de_DE"/>
-    </bean>
+<!--    <bean class="de.bund.bva.isyfact.common.web.locale.SetDefaultLocaleFactoryBean">-->
+<!--        <constructor-arg name="locale" value="de_DE"/>-->
+<!--    </bean>-->
 
     <!-- Diese Bean sorgt fuer die Platzhalter-Ersetzung in Spring-Konfigurationsdateien. Die Dependency auf den
         MessageSourceHolder sorgt dafür, dass der MessageSourceHolder vor dem PropertyPlaceHolderConfigurer initialisiert
@@ -27,17 +27,17 @@
     <!-- </bean> -->
 
     <!-- Diese Bean sorgt fuer die Message-ResourceBundle Bereitstellung, zugreifbar ueber Klasse SpringContextHolder. -->
-    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"
-        lazy-init="false">
-        <property name="basenames">
-            <list>
-                <value>resources/nachrichten/fehler</value>
-                <value>resources/nachrichten/maskentexte</value>
-                <value>resources/nachrichten/titles</value>
-            </list>
-        </property>
-    </bean>
+<!--    <bean id="messageSource" class="org.springframework.context.support.ResourceBundleMessageSource"-->
+<!--        lazy-init="false">-->
+<!--        <property name="basenames">-->
+<!--            <list>-->
+<!--                <value>resources/nachrichten/fehler</value>-->
+<!--                <value>resources/nachrichten/maskentexte</value>-->
+<!--                <value>resources/nachrichten/titles</value>-->
+<!--            </list>-->
+<!--        </property>-->
+<!--    </bean>-->
 
     <!--Speichert die Message-Source fuer statische Zugriffe auf Messages. -->
-    <bean id="messageSourceHolder" class="de.bund.bva.isyfact.util.spring.MessageSourceHolder"/>
+<!--    <bean id="messageSourceHolder" class="de.bund.bva.isyfact.util.spring.MessageSourceHolder"/>-->
 </beans>

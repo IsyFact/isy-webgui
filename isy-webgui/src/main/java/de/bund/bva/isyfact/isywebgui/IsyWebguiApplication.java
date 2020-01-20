@@ -1,20 +1,23 @@
 package de.bund.bva.isyfact.isywebgui;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 import de.bund.bva.isyfact.aufrufkontext.AufrufKontext;
 import de.bund.bva.isyfact.aufrufkontext.AufrufKontextFactory;
 import de.bund.bva.isyfact.aufrufkontext.AufrufKontextVerwalter;
 import de.bund.bva.isyfact.aufrufkontext.stub.AufrufKontextVerwalterStub;
+import de.bund.bva.isyfact.common.web.autoconfigure.ControllerAutoConfiguration;
+import de.bund.bva.isyfact.common.web.autoconfigure.MvcAutoConfiguration;
+import de.bund.bva.isyfact.common.web.autoconfigure.WebFlowAutoConfiguration;
 import de.bund.bva.isyfact.common.web.global.GlobalFlowController;
-import de.bund.bva.isyfact.common.web.spring.ControllerConfiguration;
-import de.bund.bva.isyfact.common.web.spring.MvcConfiguration;
-import de.bund.bva.isyfact.common.web.spring.WebFlowConfiguration;
+import de.bund.bva.isyfact.common.web.locale.SetDefaultLocaleFactoryBean;
 import de.bund.bva.isyfact.isywebgui.config.XMLConfig;
 import de.bund.bva.isyfact.isywebgui.gui.config.GuiConfig;
 import de.bund.bva.isyfact.sicherheit.Sicherheit;
 import de.bund.bva.isyfact.sicherheit.web.DelegatingAccessDecisionManager;
 
+import de.bund.bva.isyfact.util.spring.MessageSourceHolder;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
@@ -23,17 +26,53 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 import org.springframework.context.annotation.Profile;
+import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.security.access.AccessDecisionManager;
 
 @Configuration
 //@EnableAutoConfiguration
-@Import( {GuiConfig.class, XMLConfig.class, WebFlowConfiguration.class, MvcConfiguration.class, ControllerConfiguration.class})
+@Import({ GuiConfig.class, XMLConfig.class, WebFlowAutoConfiguration.class, MvcAutoConfiguration.class,
+    ControllerAutoConfiguration.class })
 public class IsyWebguiApplication extends SpringBootServletInitializer {
 
+    /**
+     * Default Locale der Anwendung.
+     * @return de_DE
+     */
+    @Bean
+    public SetDefaultLocaleFactoryBean setDefaultLocaleFactoryBean() {
+        return new SetDefaultLocaleFactoryBean(Locale.GERMANY);
+    }
+
+    /** Diese Bean sorgt fuer die Message-ResourceBundle Bereitstellung,
+     * zugreifbar ueber Klasse SpringContextHolder. **/
+    @Bean
+    public ResourceBundleMessageSource messageSource() {
+
+        ResourceBundleMessageSource source = new ResourceBundleMessageSource();
+        source.addBasenames("resources/nachrichten/fehler", "resources/nachrichten/maskentexte",
+            "resources/nachrichten/titles");
+
+        return source;
+    }
+
+    /**
+     * Speichert die Message-Source fuer statische Zugriffe auf Messages.
+     */
+    @Bean
+    MessageSourceHolder messageSourceHolder() {
+        return new MessageSourceHolder();
+    }
+
+    
+
+
+
+    // TODO alles nach hier entfernen
     @Profile("entwicklung")
     @Bean
     public AufrufKontextVerwalter<AufrufKontext> aufrufKontextVerwalter(
-            AufrufKontextFactory<AufrufKontext> factory) {
+        AufrufKontextFactory<AufrufKontext> factory) {
         AufrufKontextVerwalterStub<AufrufKontext> verwalterStub = new AufrufKontextVerwalterStub<>();
         verwalterStub.setRollen("Testrolle");
         verwalterStub.setDurchfuehrendeBehoerde("123456");
