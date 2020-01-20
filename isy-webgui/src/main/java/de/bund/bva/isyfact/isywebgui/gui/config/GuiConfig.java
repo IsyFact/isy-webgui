@@ -26,10 +26,7 @@ public class GuiConfig {
      */
     @Bean
     public JsfSteuerelementeBehoerdeListpickerController jsfSteuerelementeBehoerdeListpickerController() {
-        JsfSteuerelementeBehoerdeListpickerController behoerdeListpickerController =
-            new JsfSteuerelementeBehoerdeListpickerController();
-        behoerdeListpickerController.setMaxElemente(10);
-        return behoerdeListpickerController;
+        return new JsfSteuerelementeBehoerdeListpickerController(10);
     }
 
     /**

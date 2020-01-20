@@ -27,7 +27,7 @@ import org.springframework.security.access.AccessDecisionManager;
 
 @Configuration
 //@EnableAutoConfiguration
-@Import({ GuiConfig.class, XMLConfig.class, WebFlowConfiguration.class, MvcConfiguration.class, ControllerConfiguration.class })
+@Import( {GuiConfig.class, XMLConfig.class, WebFlowConfiguration.class, MvcConfiguration.class, ControllerConfiguration.class})
 public class IsyWebguiApplication extends SpringBootServletInitializer {
 
     @Profile("entwicklung")

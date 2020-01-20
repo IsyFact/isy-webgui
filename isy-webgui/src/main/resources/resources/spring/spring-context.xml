@@ -12,7 +12,7 @@
 
     <!-- Setzt die Default-Locale. -->
     <bean class="de.bund.bva.isyfact.common.web.locale.SetDefaultLocaleFactoryBean">
-        <property name="defaultLocale" value="de_DE"/>
+        <constructor-arg name="locale" value="de_DE"/>
     </bean>
 
     <!-- Diese Bean sorgt fuer die Platzhalter-Ersetzung in Spring-Konfigurationsdateien. Die Dependency auf den

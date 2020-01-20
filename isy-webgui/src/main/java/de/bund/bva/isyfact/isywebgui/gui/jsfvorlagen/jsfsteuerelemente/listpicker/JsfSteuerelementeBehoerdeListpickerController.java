@@ -12,6 +12,10 @@ import org.springframework.stereotype.Component;
  */
 public class JsfSteuerelementeBehoerdeListpickerController extends AbstractBehoerdeListpickerController {
 
+    public JsfSteuerelementeBehoerdeListpickerController(int maxElemente) {
+        super(maxElemente);
+    }
+
     @Override
     public List<BehoerdeListpickerItem> erzeugeBehoerdeListpickerItemListe() {
         List<BehoerdeListpickerItem> behoerdeListpickerItems = new ArrayList<>();
