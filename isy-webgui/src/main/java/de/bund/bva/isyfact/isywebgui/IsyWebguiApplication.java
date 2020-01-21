@@ -12,6 +12,7 @@ import de.bund.bva.isyfact.common.web.autoconfigure.MvcAutoConfiguration;
 import de.bund.bva.isyfact.common.web.autoconfigure.WebFlowAutoConfiguration;
 import de.bund.bva.isyfact.common.web.global.GlobalFlowController;
 import de.bund.bva.isyfact.common.web.locale.SetDefaultLocaleFactoryBean;
+import de.bund.bva.isyfact.isywebgui.config.SicherheitConfig;
 import de.bund.bva.isyfact.isywebgui.config.XMLConfig;
 import de.bund.bva.isyfact.isywebgui.gui.config.GuiConfig;
 import de.bund.bva.isyfact.sicherheit.Sicherheit;
@@ -19,6 +20,7 @@ import de.bund.bva.isyfact.sicherheit.web.DelegatingAccessDecisionManager;
 
 import de.bund.bva.isyfact.util.spring.MessageSourceHolder;
 import org.springframework.boot.CommandLineRunner;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnMissingBean;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.ApplicationContext;
@@ -30,9 +32,8 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 import org.springframework.security.access.AccessDecisionManager;
 
 @Configuration
-//@EnableAutoConfiguration
-@Import({ GuiConfig.class, XMLConfig.class, WebFlowAutoConfiguration.class, MvcAutoConfiguration.class,
-    ControllerAutoConfiguration.class })
+@EnableAutoConfiguration
+@Import({ GuiConfig.class, XMLConfig.class, SicherheitConfig.class })
 public class IsyWebguiApplication extends SpringBootServletInitializer {
 
     /**
@@ -64,11 +65,11 @@ public class IsyWebguiApplication extends SpringBootServletInitializer {
         return new MessageSourceHolder();
     }
 
-    
 
 
 
-    // TODO alles nach hier entfernen
+
+    // TODO alles nach hier entfernen?
     @Profile("entwicklung")
     @Bean
     public AufrufKontextVerwalter<AufrufKontext> aufrufKontextVerwalter(

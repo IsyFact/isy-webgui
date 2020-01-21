@@ -36,7 +36,7 @@
 	<logger name="de.bund.bva.isyfact" level="DEBUG" additivity="false">
 		<appender-ref ref="KONSOLE"/>
 	</logger>
-	<logger name="org.springframework" level="DEBUG" additivity="false">
+	<logger name="org.springframework" level="INFO" additivity="false">
 		<appender-ref ref="KONSOLE" />
 	</logger>
 	<logger name="org.hibernate" level="INFO" additivity="false">
