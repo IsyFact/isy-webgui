@@ -1,11 +1,13 @@
 package de.bund.bva.isyfact.isywebgui.gui.flows.errorhandling;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.global.MessageController;
 import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.FlowAwkWrapper;
 import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.impl.FachlicheAwkException;
+import org.springframework.stereotype.Controller;
 
 /**
  * Controller für Error-Handling.
@@ -13,6 +15,7 @@ import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.impl.FachlicheAwkExcep
  * @author Capgemini, Tobias Groeger
  * @version $Id: ErrorHandlingController.java 164792 2016-05-12 16:27:45Z sdm_arichter $
  */
+@Controller
 public class ErrorHandlingController extends AbstractGuiController<ErrorHandlingModel> {
 
     /**
@@ -24,6 +27,12 @@ public class ErrorHandlingController extends AbstractGuiController<ErrorHandling
      * Der MessageController.
      */
     private MessageController messageController;
+
+    @Autowired
+    public ErrorHandlingController(FlowAwkWrapper flowAwkWrapper, MessageController messageController) {
+        this.flowAwkWrapper = flowAwkWrapper;
+        this.messageController = messageController;
+    }
 
     /**
      * Aufruf des AWKs mit NPE.
@@ -62,22 +71,11 @@ public class ErrorHandlingController extends AbstractGuiController<ErrorHandling
         return ErrorHandlingModel.class;
     }
 
-    @Required
-    public void setFlowAwkWrapper(FlowAwkWrapper flowAwkWrapper) {
-        this.flowAwkWrapper = flowAwkWrapper;
-    }
-
-    @Required
-    public void setMessageController(MessageController messageController) {
-        this.messageController = messageController;
-    }
-
     /**
      * {@inheritDoc}
      */
     @Override
     public void initialisiereModel(ErrorHandlingModel model) {
-        // TODO Auto-generated method stub
 
     }
 

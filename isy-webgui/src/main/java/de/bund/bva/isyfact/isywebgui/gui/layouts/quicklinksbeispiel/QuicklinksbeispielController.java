@@ -1,10 +1,12 @@
 package de.bund.bva.isyfact.isywebgui.gui.layouts.quicklinksbeispiel;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.layout.QuicklinksController;
 import de.bund.bva.isyfact.common.web.layout.QuicklinksElementModel;
+import org.springframework.stereotype.Controller;
 
 /**
  * Controller für das Quicklinksbeispiel.
@@ -12,12 +14,18 @@ import de.bund.bva.isyfact.common.web.layout.QuicklinksElementModel;
  * @author Capgemini, Tobias Gröger
  * @version $Id: QuicklinksbeispielController.java 175067 2016-09-06 08:58:45Z sdm_ahoerning $
  */
+@Controller
 public class QuicklinksbeispielController extends AbstractGuiController<QuicklinksbeispielModel> {
 
     /**
      * Controller für Quicklinks.
      */
     private QuicklinksController quicklinksController;
+
+    @Autowired
+    public QuicklinksbeispielController(QuicklinksController quicklinksController) {
+        this.quicklinksController = quicklinksController;
+    }
 
     /** ID der Quicklink-Gruppe. */
     private static final String groupId = "Quicklinks";
@@ -58,8 +66,4 @@ public class QuicklinksbeispielController extends AbstractGuiController<Quicklin
         this.quicklinksController.entferneQuicklink(groupId, id);
     }
 
-    @Required
-    public void setQuicklinksController(QuicklinksController quicklinksController) {
-        this.quicklinksController = quicklinksController;
-    }
 }

@@ -2,6 +2,7 @@ package de.bund.bva.isyfact.isywebgui.gui.common.constant;
 
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.SortDirection;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeSortierattribut;
+import org.springframework.stereotype.Component;
 
 /**
  * Eine Konstantenklasse, um JSF den Zugriff auf Enums zu ermöglichen.
@@ -9,6 +10,7 @@ import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable
  * @author Capgemini, Andreas Hörning.
  * @version $Id: EnumConstants.java 130046 2015-02-10 10:43:52Z sdm_tgroeger $
  */
+@Component
 public class EnumConstants {
 
     /**

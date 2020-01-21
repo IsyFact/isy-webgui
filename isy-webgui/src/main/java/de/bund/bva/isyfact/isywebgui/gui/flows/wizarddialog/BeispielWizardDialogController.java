@@ -1,5 +1,6 @@
 package de.bund.bva.isyfact.isywebgui.gui.flows.wizarddialog;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
 import de.bund.bva.isyfact.common.web.global.GlobalFlowController;
@@ -7,6 +8,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.wizard.WizardDialogControll
 import de.bund.bva.isyfact.common.web.jsf.components.wizard.WizardDialogModel;
 import de.bund.bva.isyfact.common.web.jsf.components.wizard.WizardDialogPage;
 import de.bund.bva.isyfact.common.web.validation.ValidationMessage;
+import org.springframework.stereotype.Controller;
 
 /**
  * Ein Beispielkontroller.
@@ -14,6 +16,7 @@ import de.bund.bva.isyfact.common.web.validation.ValidationMessage;
  * @author Capgemini, Andreas Hoerning
  * @version $Id: BeispielWizardDialogController.java 135268 2015-04-27 12:19:05Z sdm_tgroeger $
  */
+@Controller
 public class BeispielWizardDialogController extends WizardDialogController {
 
     /** Eine ID der Wizardseite. */
@@ -42,6 +45,11 @@ public class BeispielWizardDialogController extends WizardDialogController {
 
     /** Der globale Flow Controller. */
     private GlobalFlowController globalFlowController;
+
+    @Autowired
+    public BeispielWizardDialogController(GlobalFlowController globalFlowController) {
+        this.globalFlowController = globalFlowController;
+    }
 
     /**
      * Initialisiert den Wizard.
@@ -148,10 +156,5 @@ public class BeispielWizardDialogController extends WizardDialogController {
 
         return false;
 
-    }
-
-    @Required
-    public void setGlobalFlowController(GlobalFlowController globalFlowController) {
-        this.globalFlowController = globalFlowController;
     }
 }

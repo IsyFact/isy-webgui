@@ -1,6 +1,7 @@
 package de.bund.bva.isyfact.isywebgui.gui.layouts.formulare;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
+import org.springframework.stereotype.Controller;
 
 /**
  * Controller für Formulare.
@@ -8,6 +9,7 @@ import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
  * @author Capgemini, Tobias Gräger
  * @version $Id: FormulareController.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
+@Controller
 public class FormulareController extends AbstractGuiController<FormulareModel> {
 
     @Override

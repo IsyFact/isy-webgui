@@ -1,10 +1,12 @@
 package de.bund.bva.isyfact.isywebgui.gui.flows.modalerdialog;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
+import org.springframework.stereotype.Controller;
 
 /**
  * Controller für den Bestätigungsdialog.
  */
+@Controller
 public class BestaetigungsdialogController extends AbstractGuiController<BestaetigungsdialogModel> {
 
     @Override

@@ -3,7 +3,4 @@
     xsi:schemaLocation="
        http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd ">
 
-    <import resource="gui/webflow.xml"/>
-    <import resource="gui/controller.xml"/>
-
 </beans>

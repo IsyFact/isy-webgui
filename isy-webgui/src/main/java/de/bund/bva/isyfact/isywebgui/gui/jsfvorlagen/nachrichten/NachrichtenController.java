@@ -1,9 +1,11 @@
 package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.nachrichten;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.global.MessageController;
+import org.springframework.stereotype.Controller;
 
 /**
  * Controller für Nachrichten.
@@ -11,12 +13,17 @@ import de.bund.bva.isyfact.common.web.global.MessageController;
  * @author Capgemini, Tobias Groeger
  * @version $Id: NachrichtenController.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
+@Controller
 public class NachrichtenController extends AbstractGuiController<NachrichtenModel> {
-
     /**
      * Der Message-Controller.
      */
     private MessageController messageController;
+
+    @Autowired
+    public NachrichtenController(MessageController messageController) {
+        this.messageController = messageController;
+    }
 
     @Override
     public void initialisiereModel(NachrichtenModel model) {
@@ -71,11 +78,6 @@ public class NachrichtenController extends AbstractGuiController<NachrichtenMode
             "Technischer Fehler");
         this.messageController.writeErrorMessage("2.Teil", "Technischer Fehler");
 
-    }
-
-    @Required
-    public void setMessageController(MessageController messageController) {
-        this.messageController = messageController;
     }
 
     /**

@@ -1,9 +1,11 @@
 package de.bund.bva.isyfact.isywebgui.gui.flows.modalerdialog;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.global.MessageController;
+import org.springframework.stereotype.Controller;
 
 /**
  * Controller für den Modalen Dialog.
@@ -11,12 +13,18 @@ import de.bund.bva.isyfact.common.web.global.MessageController;
  * @author Capgemini, Tobias Groeger
  * @version $Id: ModalerDialogController.java 134128 2015-04-08 13:53:41Z sdm_ahoerning $
  */
+@Controller
 public class ModalerDialogController extends AbstractGuiController<ModalerDialogModel> {
 
     /**
      * Der MessageController.
      */
     private MessageController messageController;
+
+    @Autowired
+    public ModalerDialogController(MessageController messageController) {
+        this.messageController = messageController;
+    }
 
     @Override
     public void initialisiereModel(ModalerDialogModel model) {
@@ -47,11 +55,6 @@ public class ModalerDialogController extends AbstractGuiController<ModalerDialog
     @Override
     protected Class<ModalerDialogModel> getMaskenModelKlasseZuController() {
         return ModalerDialogModel.class;
-    }
-
-    @Required
-    public void setMessageController(MessageController messageController) {
-        this.messageController = messageController;
     }
 
 }

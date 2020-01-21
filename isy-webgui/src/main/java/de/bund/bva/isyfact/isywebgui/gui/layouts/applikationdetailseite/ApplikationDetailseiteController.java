@@ -6,7 +6,9 @@ import de.bund.bva.isyfact.common.web.layout.BasisModel;
 import de.bund.bva.isyfact.common.web.layout.IconTyp;
 import de.bund.bva.isyfact.common.web.layout.InformationsbereichModel;
 import de.bund.bva.isyfact.common.web.layout.LocationBreadcrumbModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Controller;
 
 /**
  * Der Controller für die ApplikationDetailseite.
@@ -14,11 +16,17 @@ import org.springframework.beans.factory.annotation.Required;
  * @author Capgemini, Tobias Gröger
  * @version $Id: ApplikationDetailseiteController.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
+@Controller
 public class ApplikationDetailseiteController extends AbstractGuiController<ApplikationDetailseiteModel> {
     /**
      * Der Basis-Controller.
      */
     private BasisController basisController;
+
+    @Autowired
+    public ApplikationDetailseiteController(BasisController basisController) {
+        this.basisController = basisController;
+    }
 
     @Override
     public void initialisiereModel(ApplikationDetailseiteModel model) {
@@ -58,11 +66,6 @@ public class ApplikationDetailseiteController extends AbstractGuiController<Appl
     @Override
     protected Class<ApplikationDetailseiteModel> getMaskenModelKlasseZuController() {
         return ApplikationDetailseiteModel.class;
-    }
-
-    @Required
-    public void setBasisController(BasisController basisController) {
-        this.basisController = basisController;
     }
 
 }

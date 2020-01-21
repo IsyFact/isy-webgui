@@ -25,6 +25,11 @@ public class ListpickerProviderRequestHandler extends AbstractListpickerProvider
      */
     private JsfSteuerelementeListpickerController jsfSteuerelementeListpickerController;
 
+    public ListpickerProviderRequestHandler(
+        JsfSteuerelementeListpickerController jsfSteuerelementeListpickerController) {
+        this.jsfSteuerelementeListpickerController = jsfSteuerelementeListpickerController;
+    }
+
     @Override
     public List<ListpickerGuiItem> erzeugeGuiItems(String filterWert,
         Map<String, String> weitereFilterKriterien) {
@@ -66,11 +71,5 @@ public class ListpickerProviderRequestHandler extends AbstractListpickerProvider
     public String getMessageBegrenzung() {
         // Würde tendenziell aus der Konfiguration kommen. Hier für Demo-Zwecke fester Wert!
         return "Nach 5 Items kommt eine Info. Bitte weiter filtern...";
-    }
-
-    @Required
-    public void setJsfSteuerelementeListpickerController(
-        JsfSteuerelementeListpickerController jsfSteuerelementeListpickerController) {
-        this.jsfSteuerelementeListpickerController = jsfSteuerelementeListpickerController;
     }
 }

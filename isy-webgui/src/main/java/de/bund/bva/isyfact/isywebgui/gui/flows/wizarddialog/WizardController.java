@@ -1,10 +1,12 @@
 package de.bund.bva.isyfact.isywebgui.gui.flows.wizarddialog;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.global.MessageController;
 import de.bund.bva.isyfact.common.web.jsf.components.wizard.WizardDialogModel;
+import org.springframework.stereotype.Controller;
 
 /**
  * Controller für den Wizard Dialog.
@@ -12,12 +14,18 @@ import de.bund.bva.isyfact.common.web.jsf.components.wizard.WizardDialogModel;
  * @author Capgemini, Tobias Groeger
  * @version $Id: WizardController.java 134128 2015-04-08 13:53:41Z sdm_ahoerning $
  */
+@Controller
 public class WizardController extends AbstractGuiController<WizardModel> {
 
     /**
      * Der MessageController.
      */
     private MessageController messageController;
+
+    @Autowired
+    public WizardController(MessageController messageController) {
+        this.messageController = messageController;
+    }
 
     @Override
     public void initialisiereModel(WizardModel model) {
@@ -53,9 +61,5 @@ public class WizardController extends AbstractGuiController<WizardModel> {
         return WizardModel.class;
     }
 
-    @Required
-    public void setMessageController(MessageController messageController) {
-        this.messageController = messageController;
-    }
 
 }

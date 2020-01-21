@@ -3,11 +3,13 @@ package de.bund.bva.isyfact.isywebgui.gui.flows.validierung;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.global.GlobalFlowController;
 import de.bund.bva.isyfact.common.web.validation.ValidationMessage;
+import org.springframework.stereotype.Controller;
 
 /**
  * Controller für die Validierung.
@@ -15,11 +17,17 @@ import de.bund.bva.isyfact.common.web.validation.ValidationMessage;
  * @author Capgemini, Tobias Groeger
  * @version $Id: ValidierungController.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
+@Controller
 public class ValidierungController extends AbstractGuiController<ValidierungModel> {
     /**
      * Der GlobalFlowController.
      */
     private GlobalFlowController globalFlowController;
+
+    @Autowired
+    public ValidierungController(GlobalFlowController globalFlowController) {
+        this.globalFlowController = globalFlowController;
+    }
 
     @Override
     public void initialisiereModel(ValidierungModel model) {
@@ -56,10 +64,5 @@ public class ValidierungController extends AbstractGuiController<ValidierungMode
         validationMessages.add(new ValidationMessage("EEE", "person.geburtsstaat", "Geburtsstaat", "Falsch"));
 
         this.globalFlowController.getValidationController().processValidationMessages(validationMessages);
-    }
-
-    @Required
-    public void setGlobalFlowController(GlobalFlowController globalFlowController) {
-        this.globalFlowController = globalFlowController;
     }
 }
