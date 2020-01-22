@@ -129,15 +129,15 @@
 <!--            <file-size-threshold>1048576</file-size-threshold>-->
 <!--        </multipart-config>-->
 <!--    </servlet>-->
-<!--    <servlet>-->
-<!--        <servlet-name>Spring MVC Servlet</servlet-name>-->
-<!--        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>-->
-<!--        <init-param>-->
-<!--            <param-name>contextConfigLocation</param-name>-->
-<!--            <param-value>classpath:resources/spring/gui.xml</param-value>-->
-<!--        </init-param>-->
-<!--        <load-on-startup>1</load-on-startup>-->
-<!--    </servlet>-->
+    <servlet>
+        <servlet-name>Spring MVC Servlet</servlet-name>
+        <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>
+        <init-param>
+            <param-name>contextConfigLocation</param-name>
+            <param-value>classpath:resources/spring/gui.xml</param-value>
+        </init-param>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
 <!--    <servlet>-->
 <!--      <servlet-name>listpickerprovider</servlet-name>-->
 <!--      <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>-->
@@ -176,10 +176,10 @@
 <!--        <servlet-name>Faces Servlet</servlet-name>-->
 <!--        <url-pattern>*.faces</url-pattern>-->
 <!--    </servlet-mapping>-->
-<!--    <servlet-mapping>-->
-<!--        <servlet-name>Spring MVC Servlet</servlet-name>-->
-<!--        <url-pattern>/app/*</url-pattern>-->
-<!--    </servlet-mapping>-->
+    <servlet-mapping>
+        <servlet-name>Spring MVC Servlet</servlet-name>
+        <url-pattern>/app/*</url-pattern>
+    </servlet-mapping>
 <!--    <servlet-mapping>-->
 <!--        <servlet-name>listpickerprovider</servlet-name>-->
 <!--        <url-pattern>/app/listpicker/*</url-pattern>-->

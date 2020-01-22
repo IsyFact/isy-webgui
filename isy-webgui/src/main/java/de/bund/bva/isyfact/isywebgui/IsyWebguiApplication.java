@@ -1,5 +1,8 @@
 package de.bund.bva.isyfact.isywebgui;
 
+import de.bund.bva.isyfact.common.web.autoconfigure.ControllerAutoConfiguration;
+import de.bund.bva.isyfact.common.web.autoconfigure.MvcAutoConfiguration;
+import de.bund.bva.isyfact.common.web.autoconfigure.WebFlowAutoConfiguration;
 import de.bund.bva.isyfact.isywebgui.common.servlet.requesthandler.ListpickerProviderRequestHandler;
 import de.bund.bva.isyfact.isywebgui.config.ResourceConfig;
 import de.bund.bva.isyfact.isywebgui.config.SicherheitConfig;
@@ -13,9 +16,14 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Import;
 
 @Configuration
-@EnableAutoConfiguration
-@Import({ GuiConfig.class, SicherheitConfig.class, ResourceConfig.class, WebConfig.class})
+//@EnableAutoConfiguration
+@Import({ GuiConfig.class, SicherheitConfig.class, ResourceConfig.class, WebConfig.class
+, MvcAutoConfiguration.class, ControllerAutoConfiguration.class, WebFlowAutoConfiguration.class
+})
+
+
 public class IsyWebguiApplication extends SpringBootServletInitializer {
+
 
     @Bean
     ListpickerProviderRequestHandler listpickerProviderRequestHandler(

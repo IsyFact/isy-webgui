@@ -37,10 +37,10 @@ public class SicherheitConfig {
 
 
 //    //TODO entfernen wenn autoconfig an ist
-//    @Bean
-//    IsySicherheitConfigurationProperties sicherheitConfigurationProperties() {
-//        return new IsySicherheitConfigurationProperties();
-//    }
+    @Bean
+    IsySicherheitConfigurationProperties sicherheitConfigurationProperties() {
+        return new IsySicherheitConfigurationProperties();
+    }
 
     @Bean
     AccessManager accessManager() {
