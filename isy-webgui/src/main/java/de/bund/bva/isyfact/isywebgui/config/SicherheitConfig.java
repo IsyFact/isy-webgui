@@ -35,18 +35,22 @@ public class SicherheitConfig {
             accessManager, properties);
     }
 
-    @Bean
-    IsySicherheitConfigurationProperties sicherheitConfigurationProperties() {
-        return new IsySicherheitConfigurationProperties();
-    }
+
+//    //TODO entfernen wenn autoconfig an ist
+//    @Bean
+//    IsySicherheitConfigurationProperties sicherheitConfigurationProperties() {
+//        return new IsySicherheitConfigurationProperties();
+//    }
 
     @Bean
     AccessManager accessManager() {
         return new AccessManagerDummy();
     }
 
+
+    //statisch da von Springs BeanFactoryPostProcessor genutzt wird
     @Bean
-    CustomScopeConfigurer customScopeConfigurer() {
+    public static CustomScopeConfigurer customScopeConfigurer() {
         CustomScopeConfigurer customScopeConfigurer = new CustomScopeConfigurer();
         customScopeConfigurer.addScope("thread", new SimpleThreadScope());
         customScopeConfigurer.addScope("request", new RequestScope());
@@ -55,7 +59,7 @@ public class SicherheitConfig {
 
     @ConditionalOnMissingBean
     @Bean
-    AufrufKontextFactory<AufrufKontext> aufrufKontextFactory() {
+    public AufrufKontextFactory<AufrufKontext> aufrufKontextFactory() {
         AufrufKontextFactoryImpl<AufrufKontext> aufrufKontextFactory = new AufrufKontextFactoryImpl<>();
         aufrufKontextFactory.setAufrufKontextKlasse(AufrufKontextImpl.class);
         return aufrufKontextFactory;

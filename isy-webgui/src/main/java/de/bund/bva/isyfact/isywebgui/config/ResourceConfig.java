@@ -15,7 +15,7 @@ public class ResourceConfig {
 
 // Diese Bean enthält die Anwendungskonfiguration, die in der Laufzeit von Betrieb verändert werden können.
     @Bean
-    Konfiguration konfiguration() {
+    public Konfiguration konfiguration() {
         String[] propertyLocations = {
             "/resources/default.properties",
             "/resources/gui-anwendungsgruppen.properties",
@@ -27,9 +27,10 @@ public class ResourceConfig {
 
     /**
      * Default Locale der Anwendung.
+     * Statisch da sie von Spring's BeanFactoryPostProcessor genutzt wird
      */
     @Bean
-    public SetDefaultLocaleFactoryBean setDefaultLocaleFactoryBean() {
+    public static SetDefaultLocaleFactoryBean setDefaultLocaleFactoryBean() {
         return new SetDefaultLocaleFactoryBean(Locale.GERMANY);
     }
 
