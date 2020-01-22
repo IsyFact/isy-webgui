@@ -36,7 +36,7 @@ public class SicherheitConfig {
     }
 
 
-//    //TODO entfernen wenn autoconfig an ist
+  //TODO entfernen wenn autoconfig an ist
     @Bean
     IsySicherheitConfigurationProperties sicherheitConfigurationProperties() {
         return new IsySicherheitConfigurationProperties();

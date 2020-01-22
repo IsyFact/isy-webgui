@@ -9,7 +9,6 @@ import de.bund.bva.isyfact.isywebgui.config.SicherheitConfig;
 import de.bund.bva.isyfact.isywebgui.config.WebConfig;
 import de.bund.bva.isyfact.isywebgui.gui.config.GuiConfig;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeListpickerController;
-import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
