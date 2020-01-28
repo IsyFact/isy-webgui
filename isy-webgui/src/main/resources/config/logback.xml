@@ -30,10 +30,10 @@
 		<appender-ref ref="KONSOLE" />
 	</root>
 
-	<logger name="de.bund.bva.pliscommon" level="DEBUG" additivity="false">
+	<logger name="de.bund.bva.pliscommon" level="INFO" additivity="false">
 		<appender-ref ref="KONSOLE"/>
 	</logger>
-	<logger name="de.bund.bva.isyfact" level="DEBUG" additivity="false">
+	<logger name="de.bund.bva.isyfact" level="INFO" additivity="false">
 		<appender-ref ref="KONSOLE"/>
 	</logger>
 	<logger name="org.springframework" level="INFO" additivity="false">
