@@ -5,7 +5,6 @@ import java.util.Locale;
 import de.bund.bva.isyfact.common.web.locale.SetDefaultLocaleFactoryBean;
 import de.bund.bva.isyfact.konfiguration.common.Konfiguration;
 import de.bund.bva.isyfact.konfiguration.common.impl.ReloadablePropertyKonfiguration;
-import de.bund.bva.isyfact.util.spring.MessageSourceHolder;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
@@ -13,7 +12,10 @@ import org.springframework.context.support.ResourceBundleMessageSource;
 @Configuration
 public class ResourceConfig {
 
-// Diese Bean enthält die Anwendungskonfiguration, die in der Laufzeit von Betrieb verändert werden können.
+    /**
+     * Diese Bean enthält die Anwendungskonfigurationen,
+     * die in der Laufzeit vom Betrieb verändert werden können.
+     */
     @Bean
     public Konfiguration konfiguration() {
         String[] propertyLocations = {
@@ -27,7 +29,7 @@ public class ResourceConfig {
 
     /**
      * Default Locale der Anwendung.
-     * Statisch da sie von Spring's BeanFactoryPostProcessor genutzt wird
+     * Statisch da sie von Spring's BeanFactoryPostProcessor bei der Initialisierung genutzt wird
      */
     @Bean
     public static SetDefaultLocaleFactoryBean setDefaultLocaleFactoryBean() {
@@ -46,14 +48,6 @@ public class ResourceConfig {
             "resources/nachrichten/titles");
 
         return source;
-    }
-
-    /**
-     * Speichert die Message-Source fuer statische Zugriffe auf Messages.
-     */
-    @Bean
-    MessageSourceHolder messageSourceHolder() {
-        return new MessageSourceHolder();
     }
 
 }
