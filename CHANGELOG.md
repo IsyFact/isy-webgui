@@ -1,4 +1,4 @@
-# v5.1.0
+# v5.0.0
 - `IFE-98`: Umstellung auf IF 2.x und Aufteilung der JSF-Steuerelemente-Seite
 
 # v4.8.0
