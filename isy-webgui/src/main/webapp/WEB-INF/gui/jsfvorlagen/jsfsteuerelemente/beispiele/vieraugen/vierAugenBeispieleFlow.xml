@@ -10,5 +10,9 @@
 
     <view-state id="vierAugenBeispieleViewState" model="vierAugenBeispieleModel">
         <transition on="noAction" />
+        <transition on="actionInputAction">
+            <evaluate
+                    expression="vierAugenBeispieleController.actionInputAction(vierAugenBeispieleModel)"/>
+        </transition>
     </view-state>
 </flow>
