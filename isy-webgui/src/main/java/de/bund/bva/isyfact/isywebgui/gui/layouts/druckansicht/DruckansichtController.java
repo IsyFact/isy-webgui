@@ -28,8 +28,6 @@ public class DruckansichtController extends AbstractGuiController<DruckansichtMo
     public void initialisiereModel(DruckansichtModel model) {
 
         this.basisController.getMaskenModelZuController().getSeitentoolbarModel().setAnzeigen(true);
-        // TODO: Wie funktioniert das jetzt ?
-        // this.basisController.getMaskenModelZuController().getSeitentoolbarModel().setZeigeDruckButton(true);
     }
 
     /**

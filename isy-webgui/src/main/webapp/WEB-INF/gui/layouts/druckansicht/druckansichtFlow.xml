@@ -8,6 +8,7 @@
 
     <on-start>
         <evaluate expression="druckansichtController.initialisiereModel(druckansichtModel)" />
+        <evaluate expression="hilfeController.deaktiviereHilfe(hilfeModel)" />
     </on-start>
 
     <view-state id="druckansichtViewState" model="druckansichtModel">
