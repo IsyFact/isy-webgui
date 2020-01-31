@@ -13,8 +13,13 @@
         <!--<evaluate expression="hilfeController.deaktiviereHilfe(hilfeModel)" />-->
     </on-start>
 
-    <view-state id="applikationDetailseiteViewState" model="applikationDetailseiteModel">
 
+    <view-state id="applikationDetailseiteViewState" model="applikationDetailseiteModel">
+        <transition on="zurueck" to="applikationDetailseiteViewState"/>
+        <transition on="test" to="applikationDetailseiteViewState"/>
     </view-state>
+
+
+
 
 </flow>
