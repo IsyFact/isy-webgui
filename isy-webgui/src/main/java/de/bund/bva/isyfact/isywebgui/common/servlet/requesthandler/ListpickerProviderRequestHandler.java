@@ -5,11 +5,6 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
-import javax.jws.WebService;
-import javax.servlet.annotation.WebServlet;
-
-import org.springframework.beans.factory.annotation.Required;
-
 import de.bund.bva.isyfact.common.web.jsf.components.listpicker.ListpickerGuiItem;
 import de.bund.bva.isyfact.common.web.servlet.requesthandler.AbstractListpickerProviderRequestHandler;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeListpickerController;
@@ -18,7 +13,6 @@ import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicke
 /**
  * Konkrete Implementierung von {@link AbstractListpickerProviderRequestHandler} für Demo-Zwecke.
  */
-@WebServlet("/app/listpicker/*")
 public class ListpickerProviderRequestHandler extends AbstractListpickerProviderRequestHandler {
 
     /**
