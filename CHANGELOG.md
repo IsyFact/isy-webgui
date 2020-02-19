@@ -1,3 +1,6 @@
+# v4.9.0
+- `IFS-302`: Mime-Type woff2 ergänzt für ältere Tomcat-Versionen (<8.5.15)
+
 # v4.8.0
 - `IFE-16`: Unterstützung von IE8 eingestellt, row-df aus Templates entfernt
 - `IFE-35`: Es wurde ein Listpicker, der mithilfe eines Servlets filtert, zur Veranschaulichung/Verprobung eingebaut.

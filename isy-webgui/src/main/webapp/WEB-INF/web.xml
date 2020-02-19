@@ -167,6 +167,12 @@
         <url-pattern>/app/*</url-pattern>
     </filter-mapping>
 
+    <!-- Mime Mappings -->
+    <!-- Tomcat kleiner 8.5.15 kennt woff2 von font-awesome nicht -->
+    <mime-mapping>
+        <extension>woff2</extension>
+        <mime-type>font/woff2</mime-type>
+    </mime-mapping>
     <!-- SERVLET-MAPPINGS -->
     <servlet-mapping>
         <servlet-name>Faces Servlet</servlet-name>

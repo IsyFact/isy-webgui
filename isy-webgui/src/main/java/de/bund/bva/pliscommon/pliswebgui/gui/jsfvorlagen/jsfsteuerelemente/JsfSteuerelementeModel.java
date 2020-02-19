@@ -166,6 +166,11 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
     private String dropdownAuswahl;
 
     /**
+     * Auswahl des Dropdowns (readonly)
+     */
+    private String dropdownReadonlyAuswahl;
+
+    /**
      * Auswahl des Dropdowns.
      */
     private String dropdownAuswahlAjax;
@@ -260,6 +265,10 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
      * Listpickermodel für den Staatsangehörigkeits-Listpicker.
      */
     private JsfSteuerelementeStaatsangListpickerModel staatsangListpickerModel;
+    /**
+     * Auswahl des Staatsangehörigkeits-Listpickers.
+     */
+    private Listpickerangabe staatsangListpickerAngabe;
 
     /**
      * Listpickermodel für den Behörde-Listpicker.
@@ -298,9 +307,23 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
 
     private List<String> formSelectListInhalt;
 
+    private String formSelectOneListAuswahl;
+
+    private List<String> formSelectManyListAuswahl;
+
+    private List<String> formSelectManyListDisabled;
+
+    private String selectOneListAuswahl;
+
+    private List<String> selectManyListAuswahl;
+
+    private List<String> selectManyListAuswahlDisabled;
+
     private String actionInputResult;
 
     private List<String> browseAndCollectAuswahl;
+
+    private List<String> browseAndCollectAuswahlDisabled;
 
     /**
      * Elemente für Toggle-Filter.
@@ -371,16 +394,20 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
         this.blockButtonActionResult = blockButtonActionResult;
     }
 
-    public void dropDownAusgewaehlt(String auswahl) {
-        this.dropdownAuswahl = auswahl;
-    }
-
     public String getDropdownAuswahl() {
         return this.dropdownAuswahl;
     }
 
     public void setDropdownAuswahl(String dropdownAuswahl) {
         this.dropdownAuswahl = dropdownAuswahl;
+    }
+
+    public String getDropdownReadonlyAuswahl() {
+        return dropdownReadonlyAuswahl;
+    }
+
+    public void setDropdownReadonlyAuswahl(String dropdownReadonlyAuswahl) {
+        this.dropdownReadonlyAuswahl = dropdownReadonlyAuswahl;
     }
 
     public List<SelectItem> getDropdownAuswahlListe() {
@@ -540,6 +567,54 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
         return this.formSelectListInhalt;
     }
 
+    public String getFormSelectOneListAuswahl() {
+        return formSelectOneListAuswahl;
+    }
+
+    public void setFormSelectOneListAuswahl(String formSelectOneListAuswahl) {
+        this.formSelectOneListAuswahl = formSelectOneListAuswahl;
+    }
+
+    public List<String> getFormSelectManyListAuswahl() {
+        return formSelectManyListAuswahl;
+    }
+
+    public void setFormSelectManyListAuswahl(List<String> formSelectManyListAuswahl) {
+        this.formSelectManyListAuswahl = formSelectManyListAuswahl;
+    }
+
+    public List<String> getFormSelectManyListDisabled() {
+        return formSelectManyListDisabled;
+    }
+
+    public void setFormSelectManyListDisabled(List<String> formSelectManyListDisabled) {
+        this.formSelectManyListDisabled = formSelectManyListDisabled;
+    }
+
+    public String getSelectOneListAuswahl() {
+        return selectOneListAuswahl;
+    }
+
+    public void setSelectOneListAuswahl(String selectOneListAuswahl) {
+        this.selectOneListAuswahl = selectOneListAuswahl;
+    }
+
+    public List<String> getSelectManyListAuswahl() {
+        return selectManyListAuswahl;
+    }
+
+    public void setSelectManyListAuswahl(List<String> selectManyListAuswahl) {
+        this.selectManyListAuswahl = selectManyListAuswahl;
+    }
+
+    public List<String> getSelectManyListAuswahlDisabled() {
+        return selectManyListAuswahlDisabled;
+    }
+
+    public void setSelectManyListAuswahlDisabled(List<String> selectManyListAuswahlDisabled) {
+        this.selectManyListAuswahlDisabled = selectManyListAuswahlDisabled;
+    }
+
     public void setPanelModelFormInput(PanelModel panelModelFormInput) {
         this.panelModelFormInput = panelModelFormInput;
     }
@@ -600,20 +675,28 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
         this.actionInputResult = actionInputResult;
     }
 
-    public List<String> getBrowseAndCollectAuswahl() {
-        return this.browseAndCollectAuswahl;
-    }
-
     public PanelModel getPanelModelDatepicker() {
         return this.panelModelDatepicker;
     }
 
-    public void setBrowseAndCollectAuswahl(List<String> browseAndCollectAuswahl) {
+    public void setPanelModelDatepicker(PanelModel panelModelDatepicker) {
+        this.panelModelDatepicker = panelModelDatepicker;
+    }
+
+    public List<String> getBrowseAndCollectAuswahl() {
+        return this.browseAndCollectAuswahl;
+    }
+
+    public void setBrowseAndCollectAuswahl(List<String> browseAndCollectAuswahlDisabled) {
         this.browseAndCollectAuswahl = browseAndCollectAuswahl;
     }
 
-    public void setPanelModelDatepicker(PanelModel panelModelDatepicker) {
-        this.panelModelDatepicker = panelModelDatepicker;
+    public List<String> getBrowseAndCollectAuswahlDisabled() {
+        return this.browseAndCollectAuswahlDisabled;
+    }
+
+    public void setBrowseAndCollectAuswahlDisabled(List<String> browseAndCollectAuswahlDisabled) {
+        this.browseAndCollectAuswahlDisabled = browseAndCollectAuswahlDisabled;
     }
 
     public PanelModel getPanelModelCheckbox() {
@@ -807,6 +890,15 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
     public void setStaatsangListpickerModel(
         JsfSteuerelementeStaatsangListpickerModel staatsangListpickerModel) {
         this.staatsangListpickerModel = staatsangListpickerModel;
+    }
+
+    public Listpickerangabe getStaatsangListpickerAngabe() {
+        return staatsangListpickerAngabe;
+    }
+
+    public void setStaatsangListpickerAngabe(
+        Listpickerangabe staatsangListpickerAngabe) {
+        this.staatsangListpickerAngabe = staatsangListpickerAngabe;
     }
 
     public Listpickerangabe getBehoerdeListpickerAngabe() {
