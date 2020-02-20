@@ -1262,72 +1262,9 @@
                         </div>
                     </div>
 
-                    <!-- formDate -->
                     <p>
-                        FormDate
+                        Mehr Beispiele auf der <a href="vieraugenFlow">"Vier-Augen-Prinzip"</a>-Seite.
                     </p>
-                    <div class="form-horizontal">
-                        <div class="row">
-                            <isy:formDate label="Datum" labelStyleClass="col-lg-2"
-                                          inputStyleClass="col-lg-2"
-                                          value="#{jsfSteuerelementeModel.datum}"
-                                          placeholder="z.B 12.02.2001" reference="datumFourEyes"/>
-                        </div>
-                    </div>
-
-                    <!-- formTextarea -->
-                    <p>
-                        FormTextarea
-                    </p>
-                    <div class="form-horizontal">
-                        <div class="row">
-                            <isy:formTextarea label="Text"
-                                              value="#{jsfSteuerelementeModel.textBoxButtonActionResult}"
-                                              labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
-                                              reference="textFourEyes"
-                                              placeholder="Bitte geben Sie einen Text ein!"
-                                              maxlength="100" required="true"/>
-                        </div>
-                    </div>
-
-                    <!-- formCheckbox -->
-                    <p>
-                        <br/> <br/>
-                        FormCheckbox
-                    </p>
-                    <p>
-                        <isy:formCheckbox id="cbtest2FourEyes" reference="cbtest2FourEyes"
-                                          value="#{jsfSteuerelementeModel.checkboxBoolean1}"
-                                          label="Eine Auswahl" disabled="false" labelRight="Auswahl 1"
-                                          valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
-                        </isy:formCheckbox>
-                    </p>
-                    <p>
-                        <isy:formCheckbox id="cbtest3FourEyes" reference="cbtest3FourEyes"
-                                          value="#{jsfSteuerelementeModel.checkboxBoolean2}"
-                                          label="Eine deaktivierte Auswahl" disabled="true"
-                                          labelRight="Auswahl 2"
-                                          valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
-                        </isy:formCheckbox>
-                    </p>
-
-                    <!-- formSelectOneDropdown -->
-                    <div class="col-lg-12">
-                        FormSelectOneDropdown
-                        <br/> <br/>
-                    </div>
-                    <div class="col-lg-6">
-                        <isy:formSelectOneDropdown reference="formSelectOneDropdown"
-                                                   value="#{jsfSteuerelementeModel.dropdownAuswahl}"
-                                                   label="Auswahl"
-                                                   valueChangeListener="#{jsfSteuerelementeController.dropdownWertAusgewaehlt}"
-                                                   converter="#{typeConverter}" converterAttribute="int">
-                            <f:selectItems
-                                    value="#{jsfSteuerelementeModel.dropdownAuswahlListe}"/>
-                            <f:ajax event="change"
-                                    render="inhaltsbereichForm:dropdownPanel:dropdownAuswahlAjax"/>
-                        </isy:formSelectOneDropdown>
-                    </div>
 
                 </f:facet>
             </isy:panel>
