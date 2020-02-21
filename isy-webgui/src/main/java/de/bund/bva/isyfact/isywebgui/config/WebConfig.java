@@ -1,7 +1,7 @@
 package de.bund.bva.isyfact.isywebgui.config;
 
 import de.bund.bva.isyfact.common.web.servlet.filter.ApplicationInitialisierungFilter;
-import de.bund.bva.isyfact.isywebgui.common.servlet.requesthandler.ListpickerProviderRequestHandler;
+import de.bund.bva.isyfact.isywebgui.servlet.requesthandler.ListpickerProviderRequestHandler;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeListpickerController;
 import org.springframework.boot.web.servlet.FilterRegistrationBean;
 import org.springframework.boot.web.servlet.ServletRegistrationBean;
@@ -30,10 +30,11 @@ public class WebConfig {
         // Es ist ein fuehrendes "/" anzugeben.
         registrationBean.addInitParameter("urlApplicationInitialisierung",
             "/app/common/init/applicationInitialisierung.xhtml");
+
         return registrationBean;
     }
 
-    //Registriation des Servlet-Listpickers
+    // Registrierung des Servlet-Listpickers
     @Bean
     public ServletRegistrationBean<HttpRequestHandlerServlet> listPickerServletBean() {
         ServletRegistrationBean<HttpRequestHandlerServlet> bean = new ServletRegistrationBean<>(
@@ -41,6 +42,7 @@ public class WebConfig {
         );
         bean.setName("listpickerProviderRequestHandler");
         bean.setLoadOnStartup(1);
+
         return bean;
     }
 
