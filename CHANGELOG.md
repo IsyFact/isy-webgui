@@ -1,6 +1,8 @@
 # v4.9.0
+- `IFE-14`: Beispiel für mehrzeilige Popup-Texte erweitert
+- `IFE-25`: "HilfeController" integriert
 - `IFS-302`: Mime-Type woff2 ergänzt für ältere Tomcat-Versionen (<8.5.15)
-- `IFS-458`: Alle pom.xml Dateien mit tidy:pom fortmatiert und getestet.
+- `IFS-458`: Alle pom.xml Dateien mit tidy:pom formatiert und getestet.
 
 # v4.8.0
 - `IFE-16`: Unterstützung von IE8 eingestellt, row-df aus Templates entfernt
