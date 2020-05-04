@@ -10,6 +10,7 @@
     <on-start>
         <evaluate expression="applikationDetailseiteController.initialisiereModel(applikationDetailseiteModel)" />
         <evaluate expression="applikationDetailseiteController.initialisiereBreadcrumbModel(basisModel.locationBreadcrumbModel)" />
+        <!--<evaluate expression="hilfeController.deaktiviereHilfe(hilfeModel)" />-->
     </on-start>
 
     <view-state id="applikationDetailseiteViewState" model="applikationDetailseiteModel">
