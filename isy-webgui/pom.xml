@@ -18,7 +18,7 @@
             <dependency>
                 <groupId>de.bund.bva.isyfact</groupId>
                 <artifactId>isyfact-bom</artifactId>
-                <version>1.8.0</version>
+                <version>1.8.1-SNAPSHOT</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
@@ -42,9 +42,9 @@
             <artifactId>javax.servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
-        
+
         <!--  Eingebunden für formUpload.
-              Diese Dependency ist über die isy-web- und Tomahawk-Bibliothek nur mit Scope "runtime" eingebunden, 
+              Diese Dependency ist über die isy-web- und Tomahawk-Bibliothek nur mit Scope "runtime" eingebunden,
               sie wird hier aber direkt verwendet und daher bereits zur Compile-Zeit benötigt. -->
         <dependency>
           <groupId>commons-io</groupId>
