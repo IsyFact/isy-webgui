@@ -1,3 +1,7 @@
+# v4.9.1
+- `IFE-144`: Bereinigung von Convergence-Warnings
+  - hebt commons-io-Version an (1.3.2 -> 2.4)
+
 # v4.9.0
 - `IFE-14`: Beispiel für mehrzeilige Popup-Texte erweitert
 - `IFE-25`: "HilfeController" integriert
