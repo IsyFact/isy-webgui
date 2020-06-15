@@ -1,3 +1,6 @@
+# v5.1.0
+- `IFE-57`: Test Komponenten für die neue Readonly Felder hinzugefügt. 
+
 # v5.0.0
 - `IFE-98`: Umstellung auf IF 2.x und Aufteilung der JSF-Steuerelemente-Seite
 - `IFE-77`: Listpicker-Servlet korrigiert.
