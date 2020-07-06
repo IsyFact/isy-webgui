@@ -4,7 +4,6 @@
                 xmlns:ui="http://java.sun.com/jsf/facelets"
                 xmlns:h="http://java.sun.com/jsf/html"
                 xmlns:f="http://java.sun.com/jsf/core"
-                xmlns:sf="http://www.springframework.org/tags/faces"
                 xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
                 xmlns:debug="http://java.sun.com/jsf/composite/debug"
                 template="/WEB-INF/gui/common/layout/applikation.xhtml">
@@ -233,7 +232,7 @@
                         </div>
                         <div class="col-lg-6">
                             <isy:formSelectOneDropdown reference="formSelectOneDropdownReadOnly"
-                                                       value="#{jsfSteuerelementeModel.dropdownAuswahl}"
+                                                       value="#{jsfSteuerelementeModel.dropdownReadonlyAuswahl}"
                                                        label="Auswahl" readonly="true"
                                                        converter="#{typeConverter}" converterAttribute="int">
                                 <f:selectItems
@@ -462,7 +461,7 @@
                                                 label="Staatsangeh." labelStyleClass="col-lg-3"
                                                 inputStyleClass="col-lg-7"
                                                 listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeStaatsangListpickerController}"
-                                                value="#{jsfSteuerelementeModel.listpickerAuswahl}"
+                                                value="#{jsfSteuerelementeModel.staatsangListpickerAngabe}"
                                                 header="Schlüssel,Wert"
                                                 inputComplement="2"
                                                 minWidth="0"
@@ -524,7 +523,6 @@
 
 
                                 <isy:formBehoerdeListpicker reference="model.behoerdeListpicker"
-                                                            ajaxLoading="true"
                                                             ajaxForm="behoerdeListpickerAjaxForm"
                                                             listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeBehoerdeListpickerController}"
                                                             labelStyleClass="col-lg-3"
@@ -547,6 +545,7 @@
                         </div>
                     </div>
                 </div>
+
                 <div class="form-horizontal">
                     <div class="row">
                         <hr/>
@@ -567,8 +566,6 @@
                                                     servletUrl="/app/listpicker"/>
                                 <!-- Wichtig: servletUrl muss dem Pattern des zuständigen HttpRequestHandlerServlets
                                  in der web.xml entsprechen! -->
-
-
                                 <p></p>
                                 <p>
                                     Auswahl:
@@ -807,7 +804,8 @@
                             <isy:formSelectOneList
                                     inputStyleClass="bootstrap-selectlist col-lg-1"
                                     labelStyleClass="col-lg-2" reference="formSelectOneList"
-                                    value="2" size="3" label="Liste (Einfachauswahl)">
+                                    value="#{jsfSteuerelementeModel.formSelectOneListAuswahl}" size="3"
+                                    label="Liste (Einfachauswahl)">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                             </isy:formSelectOneList>
@@ -822,7 +820,8 @@
                             <isy:formSelectManyList
                                     inputStyleClass="bootstrap-selectlist col-lg-1"
                                     labelStyleClass="col-lg-2" reference="formSelectManyList"
-                                    value="1" size="4" label="Liste (Mehrfachauswahl)">
+                                    value="#{jsfSteuerelementeModel.formSelectManyListAuswahl}" size="4"
+                                    label="Liste (Mehrfachauswahl)">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                             </isy:formSelectManyList>
@@ -849,7 +848,8 @@
                             <isy:formSelectManyList
                                     inputStyleClass="bootstrap-selectlist col-lg-1"
                                     labelStyleClass="col-lg-2" reference="formSelectManyList2"
-                                    value="1" size="4" label="Liste (Mehrfachauswahl)"
+                                    value="#{jsfSteuerelementeModel.formSelectManyListDisabled}" size="4"
+                                    label="Liste (Mehrfachauswahl)"
                                     disabled="true">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
@@ -866,7 +866,8 @@
                         <div class="row">
                             <isy:selectOneList
                                     selectlistStyleClass="bootstrap-selectlist col-lg-1"
-                                    reference="selectOneList" value="2" size="3">
+                                    reference="selectOneList"
+                                    value="#{jsfSteuerelementeModel.selectOneListAuswahl}" size="3">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                             </isy:selectOneList>
@@ -880,7 +881,8 @@
                         <div class="row">
                             <isy:selectManyList
                                     selectlistStyleClass="bootstrap-selectlist col-lg-1"
-                                    reference="selectManyList" value="1" size="4">
+                                    reference="selectManyList"
+                                    value="#{jsfSteuerelementeModel.selectManyListAuswahl}" size="4">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                             </isy:selectManyList>
@@ -905,7 +907,8 @@
                         <div class="row">
                             <isy:selectManyList
                                     selectlistStyleClass="bootstrap-selectlist col-lg-1"
-                                    reference="selectManyList2" value="1" size="4"
+                                    reference="selectManyList2"
+                                    value="#{jsfSteuerelementeModel.selectManyListAuswahlDisabled}" size="4"
                                     disabled="true">
                                 <f:selectItems
                                         value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
@@ -1158,7 +1161,7 @@
                             <div class="col-lg-4">
                                 <div class="row">
                                     <isy:formBrowseAndCollect
-                                            value="${jsfSteuerelementeModel.browseAndCollectAuswahl}"
+                                            value="${jsfSteuerelementeModel.browseAndCollectAuswahlDisabled}"
                                             size="auto" labelStyleClass="col-lg-3"
                                             label="Browse and Collect" inputStyleClass="col-lg-9"
                                             reference="demoZwei" disabled="true">
@@ -1166,22 +1169,7 @@
                                                 value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
                                     </isy:formBrowseAndCollect>
                                 </div>
-                                <div class="row">
-                                    <div class="col-lg-4">
-                                        <isy:button action="formInputButtonAction"
-                                                    render="inhaltsbereichForm:browseAndCollectPanel:browseAndCollectAusgabe2"
-                                                    value="&Uuml;bernehmen"/>
-                                    </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-lg-6">
-                                        Auswahl:
-                                        <h:outputText id="browseAndCollectAusgabe2"
-                                                      value="#{jsfSteuerelementeModel.browseAndCollectAuswahl}"/>
-                                    </div>
-                                </div>
                             </div>
-
                         </div>
                     </div>
                 </f:facet>
@@ -1274,72 +1262,9 @@
                         </div>
                     </div>
 
-                    <!-- formDate -->
                     <p>
-                        FormDate
+                        Mehr Beispiele auf der <a href="vieraugenFlow">"Vier-Augen-Prinzip"</a>-Seite.
                     </p>
-                    <div class="form-horizontal">
-                        <div class="row">
-                            <isy:formDate label="Datum" labelStyleClass="col-lg-2"
-                                          inputStyleClass="col-lg-2"
-                                          value="#{jsfSteuerelementeModel.datum}"
-                                          placeholder="z.B 12.02.2001" reference="datumFourEyes"/>
-                        </div>
-                    </div>
-
-                    <!-- formTextarea -->
-                    <p>
-                        FormTextarea
-                    </p>
-                    <div class="form-horizontal">
-                        <div class="row">
-                            <isy:formTextarea label="Text"
-                                              value="#{jsfSteuerelementeModel.textBoxButtonActionResult}"
-                                              labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
-                                              reference="textFourEyes"
-                                              placeholder="Bitte geben Sie einen Text ein!"
-                                              maxlength="100" required="true"/>
-                        </div>
-                    </div>
-
-                    <!-- formCheckbox -->
-                    <p>
-                        <br/> <br/>
-                        FormCheckbox
-                    </p>
-                    <p>
-                        <isy:formCheckbox id="cbtest2FourEyes" reference="cbtest2FourEyes"
-                                          value="#{jsfSteuerelementeModel.checkboxBoolean1}"
-                                          label="Eine Auswahl" disabled="false" labelRight="Auswahl 1"
-                                          valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
-                        </isy:formCheckbox>
-                    </p>
-                    <p>
-                        <isy:formCheckbox id="cbtest3FourEyes" reference="cbtest3FourEyes"
-                                          value="#{jsfSteuerelementeModel.checkboxBoolean2}"
-                                          label="Eine deaktivierte Auswahl" disabled="true"
-                                          labelRight="Auswahl 2"
-                                          valueChangeListener="#{jsfSteuerelementeController.checkboxAusgewaehlt}">
-                        </isy:formCheckbox>
-                    </p>
-
-                    <!-- formSelectOneDropdown -->
-                    <div class="col-lg-12">
-                        FormSelectOneDropdown
-                        <br/> <br/>
-                    </div>
-                    <div class="col-lg-6">
-                        <isy:formSelectOneDropdown reference="formSelectOneDropdown"
-                                                   value="#{jsfSteuerelementeModel.dropdownAuswahl}"
-                                                   label="Auswahl"
-                                                   valueChangeListener="#{jsfSteuerelementeController.dropdownWertAusgewaehlt}"
-                                                   converter="#{typeConverter}" converterAttribute="int">
-                            <f:selectItems
-                                    value="#{jsfSteuerelementeModel.dropdownAuswahlListe}"/>
-                            <f:ajax event="change"
-                                    render="inhaltsbereichForm:dropdownPanel:dropdownAuswahlAjax"/>
-                        </isy:formSelectOneDropdown>
-                    </div>
 
                 </f:facet>
             </isy:panel>
