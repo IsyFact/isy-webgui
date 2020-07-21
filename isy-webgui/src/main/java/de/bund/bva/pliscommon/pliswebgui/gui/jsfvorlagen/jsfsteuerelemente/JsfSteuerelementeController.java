@@ -111,7 +111,8 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
         // Trefferliste
         JsfSteuerelementeTrefferlistenModel trefferlistenClientModel =
             new JsfSteuerelementeTrefferlistenModel();
-        trefferlistenClientModel.getDataModel().setDisplayItems(StubdatenGenerator.erzeugePersonalienTrefferliste());
+        trefferlistenClientModel.getDataModel()
+            .setDisplayItems(StubdatenGenerator.erzeugePersonalienTrefferliste());
         model.setTrefferlistenClientModel(trefferlistenClientModel);
 
         DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenServerModel =
@@ -194,26 +195,28 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
 
     /**
      * Führt eine Suche aus.
-     * @param model
-     *            das Model
+     *
+     * @param model das Model
      */
     public void fuehreSucheAusClient(JsfSteuerelementeModel model) {
-        this.jsfSteuerelementeTrefferlistenClientController.search(model.getTrefferlistenClientModel());
+        this.jsfSteuerelementeTrefferlistenClientController
+            .updateDisplayItems(model.getTrefferlistenClientModel());
     }
 
     /**
      * Führt eine Suche aus.
-     * @param model
-     *            das Model
+     *
+     * @param model das Model
      */
     public void fuehreSucheAusServer(JsfSteuerelementeModel model) {
-        this.jsfSteuerelementeTrefferlistenServerController.search(model.getTrefferlistenServerModel());
+        this.jsfSteuerelementeTrefferlistenServerController
+            .updateDisplayItems(model.getTrefferlistenServerModel());
     }
 
     /**
      * Führt eine Action auf dem Button aus.
-     * @param model
-     *            das Model
+     *
+     * @param model das Model
      */
     public void buttonAction(JsfSteuerelementeModel model) {
         model.setButtonActionResult(UUID.randomUUID().toString());
@@ -221,8 +224,8 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
 
     /**
      * Führt eine Action auf dem block-Button aus.
-     * @param model
-     *            das Model
+     *
+     * @param model das Model
      */
     public void blockButtonAction(JsfSteuerelementeModel model) {
         model.setBlockButtonActionResult(UUID.randomUUID().toString());
@@ -230,8 +233,8 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
 
     /**
      * Führt eine Action auf dem Button zum FormInput aus.
-     * @param model
-     *            das Model
+     *
+     * @param model das Model
      */
     public void formInputButtonAction(JsfSteuerelementeModel model) {
         // Nichts tun
@@ -239,8 +242,8 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
 
     /**
      * Führt eine Action auf dem Button zur TextBox aus.
-     * @param model
-     *            das Model
+     *
+     * @param model das Model
      */
     public void textBoxButtonAction(JsfSteuerelementeModel model) {
         // Nichts tun
@@ -248,8 +251,8 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
 
     /**
      * Führt eine Action auf dem Dropdown-Button aus.
-     * @param model
-     *            das Model
+     *
+     * @param model das Model
      */
     public void dropdownButtonAction(JsfSteuerelementeModel model) {
         // Nichts tun
@@ -257,8 +260,8 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
 
     /**
      * Führt eine Action auf dem Datum-Button aus.
-     * @param model
-     *            das Model
+     *
+     * @param model das Model
      */
     public void datumButtonAction(JsfSteuerelementeModel model) {
         // Nichts tun
@@ -266,8 +269,8 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
 
     /**
      * Führt eine Action auf dem Radion-Button aus.
-     * @param model
-     *            das Model
+     *
+     * @param model das Model
      */
     public void radioButtonAction(JsfSteuerelementeModel model) {
         // Nichts tun
@@ -324,8 +327,7 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
     /**
      * Gibt ein Bild als data-uri zurück.
      *
-     * @param bild
-     *            Das Bild als Byte-Array.
+     * @param bild Das Bild als Byte-Array.
      * @return the image
      */
     public String getEncodedImage(byte[] bild) {
@@ -339,8 +341,7 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
     /**
      * Speichert etwaige Uploaddaten im Model.
      *
-     * @param model
-     *            das zu speichernende Model
+     * @param model das zu speichernende Model
      */
     public void uploadSpeichern(JsfSteuerelementeModel model) {
 
@@ -381,8 +382,7 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
     /**
      * Validiert die Formulareingaben für den Upload.
      *
-     * @param model
-     *            Das JsfSteuerelementeModel.
+     * @param model Das JsfSteuerelementeModel.
      * @return true, Wenn die Validierung der Upload-Anteile des Formulars erfolgreich war.
      */
     protected boolean validiereFormular(final JsfSteuerelementeModel model) {

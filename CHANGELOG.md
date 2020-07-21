@@ -1,3 +1,6 @@
+# v4.9.1
+- `IFE-139`,`IFE-77`: Servlet-Listpicker wiederhergestellt. Kleinere Fehler in jsfSteuerelementeFlow behoben.
+
 # v4.9.0
 - `IFE-14`: Beispiel für mehrzeilige Popup-Texte erweitert
 - `IFE-25`: "HilfeController" integriert
