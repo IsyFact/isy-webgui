@@ -42,6 +42,7 @@ public class SicherheitConfig {
     public AufrufKontextFactory<AufrufKontext> aufrufKontextFactory() {
         AufrufKontextFactoryImpl<AufrufKontext> aufrufKontextFactory = new AufrufKontextFactoryImpl<>();
         aufrufKontextFactory.setAufrufKontextKlasse(AufrufKontextImpl.class);
+
         return aufrufKontextFactory;
     }
 
@@ -57,6 +58,7 @@ public class SicherheitConfig {
         verwalterStub.setDurchfuehrenderBenutzerInterneKennung("max-01");
         verwalterStub.setAufrufKontextFactory(factory);
         verwalterStub.setFesterAufrufKontext(true);
+
         return verwalterStub;
     }
 

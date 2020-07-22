@@ -24,6 +24,7 @@ public class ResourceConfig {
             "/resources/nachrichten/gui-linksnavigation.properties",
             "/resources/nachrichten/navigationmenu.properties",
             "/config/isy-webgui.properties"};
+
         return new ReloadablePropertyKonfiguration(propertyLocations);
     }
 
@@ -49,5 +50,4 @@ public class ResourceConfig {
 
         return source;
     }
-
 }

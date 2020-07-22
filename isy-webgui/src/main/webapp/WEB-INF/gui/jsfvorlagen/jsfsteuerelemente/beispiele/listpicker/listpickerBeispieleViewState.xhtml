@@ -40,6 +40,10 @@
                                                 listpickerController="#{jsfSteuerelementeListpickerController}"
                                                 value="#{listpickerBeispieleModel.listpickerAuswahl}"
                                                 header="Schlüssel,Wert"/>
+                            <p>
+                                Auswahl:
+                                <h:outputText value="#{listpickerBeispieleModel.listpickerAuswahl}"/>
+                            </p>
                         </div>
                         <div class="col-lg-6">
                             <!-- ******************************** -->
@@ -57,19 +61,14 @@
                                                 placeholder="000" inputmask="999"
                             />
 
+                            <p>
+                                Auswahl Staatsangehörigkeit:
+                                <h:outputText value="#{listpickerBeispieleModel.staatsangListpickerAuswahl}"/>
+                            </p>
+
                         </div>
                     </div>
                 </div>
-                <p></p>
-                <p>
-                    Auswahl:
-                    <h:outputText value="#{listpickerBeispieleModel.listpickerAuswahl}"/>
-                </p>
-
-                <p>
-                    Auswahl Staatsangehörigkeit:
-                    <h:outputText value="#{listpickerBeispieleModel.staatsangListpickerAuswahl}"/>
-                </p>
                 <p>
                     <isy:button action="noAction" value="Wähle aus"/>
                 </p>
