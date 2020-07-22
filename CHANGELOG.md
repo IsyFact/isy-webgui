@@ -1,4 +1,6 @@
 # v4.9.1
+- `IFE-144`: Bereinigung von Convergence-Warnings
+  - hebt commons-io-Version an (1.3.2 -> 2.4)
 - `IFE-139`,`IFE-77`: Servlet-Listpicker wiederhergestellt. Kleinere Fehler in jsfSteuerelementeFlow behoben.
 
 # v4.9.0
