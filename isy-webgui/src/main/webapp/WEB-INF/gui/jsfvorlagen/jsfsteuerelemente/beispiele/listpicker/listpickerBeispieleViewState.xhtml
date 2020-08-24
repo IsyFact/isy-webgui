@@ -1,0 +1,177 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="form">
+        <h:form id="listpickerAjaxForm">
+            <isy:formListpickerAjaxContent
+                    listpickerModel="#{listpickerBeispieleModel.ajaxListpickerModel}"/>
+        </h:form>
+
+        <!-- Form für AJAX-Inhalt des Behörde-Listpickers definieren. -->
+        <h:form id="behoerdeListpickerAjaxForm">
+            <isy:formListpickerAjaxContent
+                    listpickerModel="#{listpickerBeispieleModel.behoerdeListpickerModel}"/>
+        </h:form>
+
+    </ui:define>
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+            <isy:panel id="listpickerPanel"
+                       panelModel="#{listpickerBeispieleModel.panelModelListpicker}">
+                <f:facet name="panelHeader">Listpicker</f:facet>
+                <div class="form-horizontal">
+                    <div class="row">
+
+                        <div class="col-lg-5">
+
+                            <p>Ohne AJAX und ohne Auflösung des Schlüssels:</p>
+
+                            <isy:formListpicker reference="model.listpicker"
+                                                listpickerModel="#{listpickerBeispieleModel.listpickerModel}"
+                                                label="Schlüssel" labelStyleClass="col-lg-3"
+                                                inputStyleClass="col-lg-5"
+                                                listpickerController="#{jsfSteuerelementeListpickerController}"
+                                                value="#{listpickerBeispieleModel.listpickerAuswahl}"
+                                                header="Schlüssel,Wert"/>
+                            <p>
+                                Auswahl:
+                                <h:outputText value="#{listpickerBeispieleModel.listpickerAuswahl}"/>
+                            </p>
+                        </div>
+                        <div class="col-lg-6">
+                            <!-- ******************************** -->
+                            <p>Ohne AJAX - Staatsangehörigkeit mit Auflösung des Schlüssels:</p>
+                            <isy:formListpicker reference="suchattribut_staatsangehoerigkeit"
+                                                listpickerModel="#{listpickerBeispieleModel.staatsangListpickerModel}"
+                                                label="Staatsangeh." labelStyleClass="col-lg-3"
+                                                inputStyleClass="col-lg-7"
+                                                listpickerController="#{jsfSteuerelementeStaatsangListpickerController}"
+                                                value="#{listpickerBeispieleModel.staatsangListpickerAuswahl}"
+                                                header="Schlüssel,Wert"
+                                                inputComplement="2"
+                                                minWidth="0"
+                                                required="false"
+                                                placeholder="000" inputmask="999"
+                            />
+
+                            <p>
+                                Auswahl Staatsangehörigkeit:
+                                <h:outputText value="#{listpickerBeispieleModel.staatsangListpickerAuswahl}"/>
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <p>
+                    <isy:button action="noAction" value="Wähle aus"/>
+                </p>
+
+                <div class="form-horizontal">
+                    <div class="row">
+                        <hr/>
+                        <div class="col-lg-5">
+
+                            <div class="row">
+                                <!-- Der folgende Listpicker löst den Schlüssel auf, denn das inputComplement ist 2
+                                und es ist eine Inputmask definiert. -->
+                                <p>Mit AJAX und mit Auflösung des Schlüssels:</p>
+
+                                <isy:formListpicker reference="model.ajaxListpicker"
+                                                    ajaxLoading="true" ajaxForm="listpickerAjaxForm"
+                                                    listpickerController="#{jsfSteuerelementeListpickerController}"
+                                                    labelStyleClass="col-lg-3" inputStyleClass="col-lg-5"
+                                                    listpickerModel="#{listpickerBeispieleModel.ajaxListpickerModel}"
+                                                    label="Schlüssel"
+                                                    value="#{listpickerBeispieleModel.ajaxListpickerAuswahl}"
+                                                    header="Schlüssel,Name"
+                                                    inputComplement="2"
+                                                    inputmask="9[99]"/>
+
+
+                                <p></p>
+                                <p>
+                                    Auswahl:
+                                    <h:outputText
+                                            value="#{listpickerBeispieleModel.ajaxListpickerAuswahl}"/>
+                                </p>
+                                <p>
+                                    <isy:button action="noAction" value="Wähle aus"/>
+                                </p>
+                            </div>
+                        </div>
+
+
+                        <div class="col-lg-6">
+                            <div class="row">
+                                <!-- Der Behörden-Listpicker löst den Schlüssel immer auf, denn das inputComplement ist standardmäßig 2
+                                und es ist standardmäßig eine Inputmask definiert. -->
+                                <p>Mit Ajax Behörden Listpicker (Schlüssel wird standardmäßig aufgelöst):</p>
+
+
+                                <isy:formBehoerdeListpicker reference="model.behoerdeListpicker"
+                                                            ajaxForm="behoerdeListpickerAjaxForm"
+                                                            listpickerController="#{jsfSteuerelementeBehoerdeListpickerController}"
+                                                            labelStyleClass="col-lg-3"
+                                                            inputStyleClass="col-lg-7"
+                                                            listpickerModel="#{listpickerBeispieleModel.behoerdeListpickerModel}"
+                                                            label="Schlüssel"
+                                                            value="#{listpickerBeispieleModel.behoerdeListpickerAngabe}"/>
+                                <p></p>
+                                <p>
+                                    Auswahl:
+                                    <h:outputText
+                                            value="#{listpickerBeispieleModel.behoerdeListpickerAngabe}"/>
+                                </p>
+                                <p>
+                                    <isy:button action="noAction" value="Wähle aus"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="form-horizontal">
+                    <div class="row">
+                        <hr/>
+                        <div class="col-lg-5">
+
+                            <div class="row">
+                                <p>Über ein Servlet:</p>
+
+                                <isy:formListpicker reference="model.servletlistpicker"
+                                                    listpickerController="#{jsfSteuerelementeListpickerController}"
+                                                    labelStyleClass="col-lg-3" inputStyleClass="col-lg-5"
+                                                    listpickerModel="#{listpickerBeispieleModel.servletListpickerModel}"
+                                                    label="Schlüssel"
+                                                    value="#{listpickerBeispieleModel.servletListpickerAuswahl}"
+                                                    header="Schlüssel,Name"
+                                                    inputComplement="2"
+                                                    inputmask="9[99]"
+                                                    servletUrl="/app/listpicker"/>
+                                <!-- Wichtig: servletUrl muss dem Pattern des zuständigen HttpRequestHandlerServlets
+                                 in der web.xml entsprechen! -->
+
+
+                                <p></p>
+                                <p>
+                                    Auswahl:
+                                    <h:outputText
+                                            value="#{listpickerBeispieleModel.servletListpickerAuswahl}"/>
+                                </p>
+                                <p>
+                                    <isy:button action="noAction" value="Wähle aus"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </isy:panel>
+        </div>
+    </ui:define>
+</ui:composition>

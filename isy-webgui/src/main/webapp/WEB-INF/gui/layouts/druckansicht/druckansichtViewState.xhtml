@@ -5,7 +5,16 @@
     xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
     xmlns:debug="http://java.sun.com/jsf/composite/debug"
     template="/WEB-INF/gui/common/layout/applikation.xhtml">
-    
+
+    <ui:define name="seitentoolbarRechtsButtons">
+        <h:commandLink
+                action="drucken"
+                target="_blank"
+                styleClass="btn btn-icon-round btn-icon-round-large">
+            <span class="icon fa-print"/>
+        </h:commandLink>
+    </ui:define>
+
     <ui:define name="inhaltsbereich">
         <ui:include src="druckansichtInhaltsbereich.xhtml" />
     </ui:define>

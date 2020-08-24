@@ -6,6 +6,7 @@
     xmlns:debug="http://java.sun.com/jsf/composite/debug">
 
 
+
     <p>Mit der Druckansicht kann ein bestimmter ViewState (mit bestimmten anzuzeigenden
         Elementen) angegeben werden, der für die Druckansicht genutzt wird. Die Druckansicht wird
         wie folgt eingebaut:</p>
@@ -26,7 +27,16 @@
     <p>Im aktuellen ViewState wird durch eine Transition der ViewState definiert, der für die Druckansicht
         verwendet werden soll. In diesem ViewState muss bei Aufruf die Druckansicht aktiviert werden.</p>
 
-    <p>Bei Klick auf das Drucken-Symbol wird die Druckansicht aufgerufen.</p>
+    <p>Ein Druck-Button lässt sich dann folgendermaßen einbauen:</p>
+
+    <code>
+        &lt;h:commandLink<br/>
+                action="drucken"<br/>
+                target="_blank"<br/>
+                styleClass="btn btn-icon-round btn-icon-round-large"&gt;<br/>
+            &lt;span class="icon fa-print"/&gt;<br/>
+        &lt;/h:commandLink&gt;
+    </code>
 
     <p>Weiterhin können im ViewState die in der Druckansicht darzustellenden Metainformationen definiert
         werden. Es kann optional eine Warnmeldung definiert werden, die in den Metainformationen angezeigt

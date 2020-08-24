@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <flow xmlns="http://www.springframework.org/schema/webflow" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-    xmlns:ui="http://java.sun.com/jsf/facelets"
     xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
     parent="applikationseiteParentFlow">
 
-    <var name="errorHandlingModel" class="de.bund.bva.pliscommon.pliswebgui.gui.flows.errorhandling.ErrorHandlingModel" />
+    <var name="errorHandlingModel" class="de.bund.bva.isyfact.isywebgui.gui.flows.errorhandling.ErrorHandlingModel" />
 
     <on-start>
         <evaluate expression="errorHandlingController.initialisiereModel(errorHandlingModel)" />
@@ -26,10 +25,16 @@
             <evaluate expression="errorHandlingController.awkAufrufFachlich()"></evaluate>
         </transition>
 
+        <transition on="autorisierungFehlgeschlagen" to="autorisierungFehlgeschlagenViewState" />
+
     </view-state>
 
     <view-state id="jsfUngueltigViewState" model="errorHandlingModel" />
 
     <view-state id="jsfUngueltigRenderViewState" model="errorHandlingModel" />
+
+    <view-state id="autorisierungFehlgeschlagenViewState" model="errorHandlingModel">
+        <secured attributes="GUI.Geschuetzt"/>
+    </view-state>
 
 </flow>

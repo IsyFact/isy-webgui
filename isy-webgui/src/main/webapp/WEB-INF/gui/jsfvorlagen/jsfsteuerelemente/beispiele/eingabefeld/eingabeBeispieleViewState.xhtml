@@ -1,0 +1,237 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+            <isy:panel id="formInputPanel"
+                       panelModel="#{eingabeBeispieleModel.panelModelFormInput}">
+                <f:facet name="panelHeader">Eingabefeld</f:facet>
+                <f:facet name="panelBody">
+                    <p>
+                        Ein Eingabefeld. Einbindung über <code>&lt;isy:formInput&gt;</code>
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-lg-6">
+
+                                <isy:formInput id="formInput" type="text" label="Text: "
+                                               reference="formInputReferenz"
+                                               value="#{eingabeBeispieleModel.formInputTextButtonActionResult}"/>
+
+                                <isy:formInput id="formInputPassword" type="password"
+                                               label="Passwort: " reference="formInputPasswortReferenz"
+                                               value="#{eingabeBeispieleModel.formInputPasswortButtonActionResult}"/>
+
+
+                                <!-- Disabled -->
+                                <isy:formInput id="formInputDisabled" type="text"
+                                               label="Text (disabled): " reference="formInputDisabledReferenz"
+                                               value="Ein deaktiviertes Textfeld" disabled="true"/>
+
+                                <!-- Read-Only -->
+                                <isy:formInput id="formInputReadonly" type="text"
+                                               label="Text (readonly): " reference="formInputReadonlyReferenz"
+                                               value="Ein readonly Textfeld" readonly="true"/>
+
+                                <isy:formInput id="formInputSpecialChar" type="text"
+                                               label="Text Special Char: " reference="formInputSpecialChar"
+                                               value="Ein Special Char Textfeld" charpicker="true"/>
+
+                                <isy:button id="formInputButton" action="formInputButtonAction"
+                                            value="Button"/>
+                            </div>
+                        </div>
+                    </div>
+                    <p>
+                        Eingegebener Text:
+                        <h:outputText title="Eingegener Text"
+                                      value="#{eingabeBeispieleModel.formInputTextButtonActionResult}"/>
+                        <br/> Eingegebenes Passwort:
+                        <h:outputText title="Eingegebenes Passwort"
+                                      value="#{eingabeBeispieleModel.formInputPasswortButtonActionResult}"/>
+                    </p>
+                    <br/>
+                    <p>
+                        Ein normales HTML-Eingabefeld. Einbindung über
+                        <code>&lt;input&gt;</code>
+                    </p>
+                    <p>
+                        <input id="input1" type="text"/>
+                    </p>
+                    <br/>
+                    <p>Ein normales HTML-Eingabefeld (disabled).</p>
+                    <p>
+                        <input id="input2" type="text" disabled="disabled"/>
+                    </p>
+                </f:facet>
+            </isy:panel>
+
+            <!-- Demo formCurrencyInput -->
+            <isy:panel id="currencyPanel"
+                       panelModel="#{eingabeBeispieleModel.panelModelCurrency}"
+                       collapse="true">
+                <f:facet name="panelHeader">Eingabefeld für Geldbeträge</f:facet>
+                <f:facet name="panelBody">
+                    <p>
+                        Einbindung über <code>&lt;isy:formCurrencyInput&gt;</code>
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formCurrencyInput label="isy:formCurrencyInput"
+                                                   labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
+                                                   required="true" placeholder="24,00" value=""
+                                                   reference="formCurrencyInput">
+                            </isy:formCurrencyInput>
+
+                            <!-- Disabled -->
+                            <isy:formCurrencyInput label="isy:formCurrencyInput (disabled)"
+                                                   labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
+                                                   required="true" placeholder="24,00" value=""
+                                                   reference="formCurrencyInput2" disabled="true">
+                            </isy:formCurrencyInput>
+
+                            <!-- Read-Only -->
+                            <isy:formCurrencyInput label="isy:formCurrencyInput (readonly)"
+                                                   labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
+                                                   required="true" placeholder="24,00" value="24,00"
+                                                   reference="formCurrencyInput3" readonly="true">
+                            </isy:formCurrencyInput>
+
+                            <!-- Text rechts ausgerichtet. -->
+                            <isy:formCurrencyInput
+                                    label="isy:formCurrencyInput (Textausrichtung rechts)"
+                                    labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
+                                    required="true" placeholder="24,00" value=""
+                                    reference="formCurrencyInput4" alignright="true">
+                            </isy:formCurrencyInput>
+
+                            <!-- Vier Nachkommastellen. -->
+                            <isy:formCurrencyInput
+                                    label="isy:formCurrencyInput (Vier Nachkommastellen)"
+                                    labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
+                                    placeholder="24,00" value="" reference="formCurrencyInput5"
+                                    decimalplaces="4">
+                            </isy:formCurrencyInput>
+                        </div>
+                    </div>
+
+                </f:facet>
+            </isy:panel>
+
+            <!-- Zahleneingabe -->
+            <isy:panel id="numericPanel"
+                       panelModel="#{eingabeBeispieleModel.panelModelNumeric}"
+                       collapse="true">
+                <f:facet name="panelHeader">Eingabefeld für numerische Zahlen</f:facet>
+                <f:facet name="panelBody">
+                    <p>
+                        Einbindung über
+                        <code>&lt;isy:formNumericInput&gt;</code> (Ganz- und Fließkommazahlen)
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+
+                            <isy:formNumericInput label="Style (editable)"
+                                                  labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
+                                                  required="true" placeholder="24,01" value=""
+                                                  reference="formNumericInput">
+                            </isy:formNumericInput>
+
+                        </div>
+                    </div>
+
+                    <!-- Disabled -->
+                    <div class="form-horizontal">
+                        <div class="row">
+
+                            <isy:formNumericInput label="Style (disabled)"
+                                                  labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
+                                                  required="true" placeholder="24,20" value=""
+                                                  reference="formNumericInput2" disabled="true">
+                            </isy:formNumericInput>
+
+                        </div>
+                    </div>
+
+                    <!-- Read-Only -->
+                    <div class="form-horizontal">
+                        <div class="row">
+
+                            <isy:formNumericInput label="Style (readonly)"
+                                                  labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
+                                                  required="true" placeholder="24,39" value="24,00"
+                                                  reference="formNumericInput3" readonly="true">
+                            </isy:formNumericInput>
+
+                        </div>
+                    </div>
+
+                    <p><br/>Zahlenwerte rechts ausgerichtet</p>
+                    <!-- Zahlenwerte rechts ausgerichtet. -->
+                    <div class="form-horizontal">
+                        <div class="row">
+
+                            <isy:formNumericInput
+                                    label="keine Nachkommastelle, ohne Tausenderpunkt"
+                                    labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
+                                    required="true" placeholder="1234" value=""
+                                    reference="formNumericInput4" alignright="true">
+                            </isy:formNumericInput>
+
+                        </div>
+                    </div>
+
+                    <!-- Ohne Nachkommastellen mit Tausenderpunkt. -->
+                    <div class="form-horizontal">
+                        <div class="row">
+
+                            <isy:formNumericInput
+                                    label="ohne Nachkommastelle, mit Tausenderpunkt"
+                                    labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
+                                    placeholder="1.664.678" value="" reference="formNumericInput6"
+                                    decimalplaces="0" tausenderpunkt="true" alignright="true">
+                            </isy:formNumericInput>
+
+                        </div>
+                    </div>
+
+                    <!-- Eine Nachkommastellen. -->
+                    <div class="form-horizontal">
+                        <div class="row">
+
+                            <isy:formNumericInput
+                                    label="eine Nachkommastellen, mit Tausenderpunkt"
+                                    labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
+                                    placeholder="8.768,5" value="" reference="formNumericInput5"
+                                    decimalplaces="1" tausenderpunkt="true" alignright="true">
+                            </isy:formNumericInput>
+
+                        </div>
+                    </div>
+
+                    <!-- Drei Nachkommastellen. -->
+                    <div class="form-horizontal">
+                        <div class="row">
+
+                            <isy:formNumericInput
+                                    label="drei Nachkommastellen, ohne Tausenderpunkt"
+                                    labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
+                                    placeholder="18768,537" value="" reference="formNumericInput6"
+                                    decimalplaces="3" tausenderpunkt="false" alignright="true">
+                            </isy:formNumericInput>
+
+                        </div>
+                    </div>
+
+                </f:facet>
+            </isy:panel>
+
+        </div>
+    </ui:define>
+</ui:composition>

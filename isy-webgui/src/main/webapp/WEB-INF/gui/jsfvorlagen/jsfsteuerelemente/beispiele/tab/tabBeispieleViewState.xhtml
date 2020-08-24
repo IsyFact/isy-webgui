@@ -1,0 +1,39 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+            <isy:panel id="tabPanel"
+                       panelModel="#{tabBeispieleModel.panelModelTab}">
+                <f:facet name="panelHeader">Tabs</f:facet>
+                <f:facet name="panelBody">
+                    <isy:tabGroup tabGroupId="testTab" globalTabContentRefs="V P S"
+                                  defaultTab="V"
+                                  tabGroupModel="#{tabBeispieleModel.auskunftTabModel}"
+                                  scrollTabUpwards="true">
+                        <f:facet name="tabHeader">
+                            <isy:tabHeader value="Vollauskunft" name="V" skipAction="true"/>
+                            <isy:tabHeader value="Personalien" name="P" skipAction="true"/>
+                            <isy:tabHeader value="Sachverhalte" name="S" skipAction="true"/>
+                        </f:facet>
+                        <isy:tabContent name="V" preload="true">
+                            Dies ist die Vollauskunft
+                        </isy:tabContent>
+                        <isy:tabContent name="P" preload="true">
+                            Dies sind Personalien
+                        </isy:tabContent>
+                        <isy:tabContent name="S" preload="true">
+                            Dies sind die Sachverhalte
+                        </isy:tabContent>
+                    </isy:tabGroup>
+                </f:facet>
+            </isy:panel>
+        </div>
+    </ui:define>
+</ui:composition>

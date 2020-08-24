@@ -1,0 +1,43 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+            <isy:panel id="toggleFilterPanel"
+                       panelModel="#{togglefilterBeispieleModel.panelModelToggleFilter}">
+                <f:facet name="panelHeader">Toggle Filter</f:facet>
+                <f:facet name="panelBody">
+                    <p>
+                        Einbindung über
+                        <code>&lt;isy:toggleFilter&gt;</code>
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="form-group">
+                                <isy:toggleFilter
+                                        value="${togglefilterBeispieleModel.toggleFilterAuswahl}"
+                                        label="Label" action="noAction">
+                                    <f:selectItems
+                                            value="#{togglefilterBeispieleModel.toggleFilterListe}" var="item"
+                                            itemLabel="#{item.label}" itemValue="#{item.value}"/>
+                                </isy:toggleFilter>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="form-group">Auswahl:
+                                #{togglefilterBeispieleModel.toggleFilterAuswahl} -
+                                #{togglefilterBeispieleModel.toggleFilterListe.get(togglefilterBeispieleModel.toggleFilterAuswahl).label}
+                            </div>
+                        </div>
+                    </div>
+                </f:facet>
+            </isy:panel>
+        </div>
+    </ui:define>
+</ui:composition>

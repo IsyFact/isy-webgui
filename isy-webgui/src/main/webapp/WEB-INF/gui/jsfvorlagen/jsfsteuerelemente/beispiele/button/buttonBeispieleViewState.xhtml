@@ -1,0 +1,58 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+            <isy:panel id="buttonPanel">
+                <f:facet name="panelHeader">Button</f:facet>
+                <f:facet name="panelBody">
+                    <p>
+                        Ein Button. Einbindung über <code>&lt;isy:button&gt;</code>
+                    </p>
+                    <p>
+                        <isy:button id="buttonTest" action="buttonAction" value="Button"/>
+                        <br/> ButtonActionResult:
+                        <h:outputText value="#{buttonBeispieleModel.buttonActionResult}"/>
+                    </p>
+                    <hr/>
+                    <p>
+                        Ein Button, bei dem die Oberfläche während der Ajax-Aktion blockiert ist. Einbindung über
+                        <code>&lt;isy:button&gt;</code> mit dem Attribute <code>block="true"</code>
+                    </p>
+                    <p>
+                        <isy:button id="buttonBlockTest" action="blockButtonAction"
+                                    value="Button (Block)"
+                                    block="true"/>
+                        <br/> ButtonActionResult:
+                        <h:outputText value="#{buttonBeispieleModel.blockButtonActionResult}"/>
+                    </p>
+                    <hr/>
+                    <p>
+                        Ein Default-Button ist der Button der beim drücken von <i>Enter</i>
+                        im Formular betätigt wird. Einbindung über
+                        <code>&lt;isy:button defaultAction="true"&gt;</code>
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formInput reference="formular1" labelStyleClass="col-lg-1"
+                                           inputStyleClass="col-lg-2" value="" label="Feld 1"
+                                           required="true"/>
+                        </div>
+                        <isy:buttonRow>
+                            <isy:button id="buttonTest2" action="noAction" value="Button"
+                                        defaultAction="false"/>
+                            <isy:button id="buttonTest3" action="noAction"
+                                        value="Button (default)" defaultAction="true"/>
+                        </isy:buttonRow>
+                    </div>
+                </f:facet>
+            </isy:panel>
+        </div>
+    </ui:define>
+</ui:composition>

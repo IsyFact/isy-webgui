@@ -1,0 +1,86 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+            <isy:panel id="actionInputPanel"
+                       panelModel="#{aktionseingabeBeispieleModel.panelModelActionInput}">
+                <f:facet name="panelHeader">Aktionseingabefeld</f:facet>
+                <f:facet name="panelBody">
+                    <p>
+                        Aktionseingabefeld. Einbindung über
+                        <code>&lt;isy:actionInput&gt;</code>
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <isy:actionInput reference="testActionInput"
+                                                 value="#{aktionseingabeBeispieleModel.actionInputResult}"
+                                                 action="actionInputAction" icon="search" tooltip="tooltip"
+                                                 placeholder="placeholder" maxlength="20"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Disabled -->
+                    <p>Aktionseingabefeld (disabled):</p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <isy:actionInput reference="testActionInput2"
+                                                 value="#{aktionseingabeBeispieleModel.actionInputResultDisabled}"
+                                                 action="actionInputAction" icon="search" tooltip="tooltip"
+                                                 placeholder="placeholder" maxlength="20" disabled="true" />
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr/>
+
+                    <!-- Die form* Varianten -->
+                    <p>Form-Aktionseingabefeld.
+                        Einbindung über
+                        <code>&lt;isy:actionInput&gt;</code>
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <isy:formActionInput reference="testFormActionInput"
+                                                     label="Ein Label"
+                                                     labelStyleClass="col-lg-4"
+                                                     inputStyleClass="col-lg-8"
+                                                     value="#{aktionseingabeBeispieleModel.formActionInputResult}"
+                                                     action="formActionInputAction" icon="search"
+                                                     tooltip="tooltip"
+                                                     placeholder="placeholder" maxlength="20"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Disabled -->
+                    <p>Form-Aktionseingabefeld (disabled).</p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-lg-4">
+                                <isy:formActionInput reference="testFormActionInput2"
+                                                     label="Ein Label" labelStyleClass="col-lg-4"
+                                                     inputStyleClass="col-lg-8"
+                                                     value="#{aktionseingabeBeispieleModel.formActionInputResultDisabled}"
+                                                     action="formActionInputAction" icon="search"
+                                                     tooltip="tooltip"
+                                                     placeholder="placeholder" maxlength="20"
+                                                     disabled="true"/>
+                            </div>
+                        </div>
+                    </div>
+                </f:facet>
+            </isy:panel>
+        </div>
+    </ui:define>
+</ui:composition>

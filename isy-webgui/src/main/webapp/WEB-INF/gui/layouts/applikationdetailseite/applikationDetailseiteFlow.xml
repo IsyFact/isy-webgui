@@ -5,15 +5,21 @@
     parent="detailseiteParentFlow">
 
     <var name="applikationDetailseiteModel"
-        class="de.bund.bva.pliscommon.pliswebgui.gui.layouts.applikationdetailseite.ApplikationDetailseiteModel" />
+        class="de.bund.bva.isyfact.isywebgui.gui.layouts.applikationdetailseite.ApplikationDetailseiteModel" />
 
     <on-start>
         <evaluate expression="applikationDetailseiteController.initialisiereModel(applikationDetailseiteModel)" />
         <evaluate expression="applikationDetailseiteController.initialisiereBreadcrumbModel(basisModel.locationBreadcrumbModel)" />
+        <!--<evaluate expression="hilfeController.deaktiviereHilfe(hilfeModel)" />-->
     </on-start>
 
-    <view-state id="applikationDetailseiteViewState" model="applikationDetailseiteModel">
 
+    <view-state id="applikationDetailseiteViewState" model="applikationDetailseiteModel">
+        <transition on="zurueck" to="applikationDetailseiteViewState"/>
+        <transition on="test" to="applikationDetailseiteViewState"/>
     </view-state>
+
+
+
 
 </flow>

@@ -4,7 +4,7 @@
     xsi:schemaLocation="http://www.springframework.org/schema/webflow http://www.springframework.org/schema/webflow/spring-webflow-2.0.xsd"
     parent="applikationseiteParentFlow">
 
-    <var name="titlesModel" class="de.bund.bva.pliscommon.pliswebgui.gui.layouts.titles.TitlesModel" />
+    <var name="titlesModel" class="de.bund.bva.isyfact.isywebgui.gui.layouts.titles.TitlesModel" />
 
     <on-start>
         <evaluate expression="titlesController.initialisiereModel(titlesModel)" />

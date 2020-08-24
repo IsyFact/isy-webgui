@@ -1,0 +1,142 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+
+            <isy:panel id="listPanel"
+                       panelModel="#{listeBeispieleModel.panelModelList}">
+                <f:facet name="panelHeader">Listen</f:facet>
+                <f:facet name="panelBody">
+                    <p>
+                        Liste für Einfachauswahl. Einbindung über
+                        <code>&lt;isy:formSelectOneList&gt;</code>
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formSelectOneList
+                                    inputStyleClass="bootstrap-selectlist col-lg-2"
+                                    labelStyleClass="col-lg-2" reference="formSelectOneList"
+                                    value="#{listeBeispieleModel.listAuswahlSelectOne1}" size="4"
+                                    label="Liste (Einfachauswahl)">
+                                <f:selectItems
+                                        value="#{listeBeispieleModel.formSelectListInhalt}"/>
+                            </isy:formSelectOneList>
+                        </div>
+                    </div>
+                    <p>
+                        Liste für Mehrfachauswahl. Einbindung über
+                        <code>&lt;isy:formSelectManyList&gt;</code>
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formSelectManyList
+                                    inputStyleClass="bootstrap-selectlist col-lg-2"
+                                    labelStyleClass="col-lg-2" reference="formSelectManyList"
+                                    value="#{listeBeispieleModel.listAuswahlSelectMany1}" size="4"
+                                    label="Liste (Mehrfachauswahl)">
+                                <f:selectItems
+                                        value="#{listeBeispieleModel.formSelectListInhalt}"/>
+                            </isy:formSelectManyList>
+                        </div>
+                    </div>
+
+                    <!-- Jeweils Disabled -->
+                    <p>Liste für Einfachauswahl (disabled)</p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formSelectOneList
+                                    inputStyleClass="bootstrap-selectlist col-lg-2"
+                                    labelStyleClass="col-lg-2" reference="formSelectOneList2"
+                                    value="#{listeBeispieleModel.listAuswahlSelectOne2}" size="4"
+                                    label="Liste (Einfachauswahl)"
+                                    disabled="true">
+                                <f:selectItems
+                                        value="#{listeBeispieleModel.formSelectListInhalt}"/>
+                            </isy:formSelectOneList>
+                        </div>
+                    </div>
+                    <p>Liste für Mehrfachauswahl (disabled)</p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formSelectManyList
+                                    inputStyleClass="bootstrap-selectlist col-lg-2"
+                                    labelStyleClass="col-lg-2" reference="formSelectManyList2"
+                                    value="#{listeBeispieleModel.listAuswahlSelectMany2}" size="4"
+                                    label="Liste (Mehrfachauswahl)"
+                                    disabled="true">
+                                <f:selectItems
+                                        value="#{listeBeispieleModel.formSelectListInhalt}"/>
+                            </isy:formSelectManyList>
+                        </div>
+                    </div>
+
+                    <!-- Die Listen ohne form* -->
+                    <p>
+                        Liste für Einfachauswahl. Einbindung über
+                        <code>&lt;isy:selectOneList&gt;</code>
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:selectOneList
+                                    selectlistStyleClass="bootstrap-selectlist col-lg-1"
+                                    reference="selectOneList3"
+                                    value="#{listeBeispieleModel.listAuswahlSelectOne3}" size="4">
+                                <f:selectItems
+                                        value="#{listeBeispieleModel.formSelectListInhalt}"/>
+                            </isy:selectOneList>
+                        </div>
+                    </div>
+                    <p>
+                        Liste für Mehrfachauswahl. Einbindung über
+                        <code>&lt;isy:selectManyList&gt;</code>
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:selectManyList
+                                    selectlistStyleClass="bootstrap-selectlist col-lg-1"
+                                    reference="selectManyList"
+                                    value="#{listeBeispieleModel.listAuswahlSelectMany3}" size="4">
+                                <f:selectItems
+                                        value="#{listeBeispieleModel.formSelectListInhalt}"/>
+                            </isy:selectManyList>
+                        </div>
+                    </div>
+
+                    <!-- Jeweils Disabled -->
+                    <p>Liste für Einfachauswahl (disabled)</p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:selectOneList
+                                    selectlistStyleClass="bootstrap-selectlist col-lg-1"
+                                    reference="selectOneList4"
+                                    value="#{listeBeispieleModel.listAuswahlSelectOne4}" size="4"
+                                    disabled="true">
+                                <f:selectItems
+                                        value="#{listeBeispieleModel.formSelectListInhalt}"/>
+                            </isy:selectOneList>
+                        </div>
+                    </div>
+                    <p>Liste für Mehrfachauswahl (disabled)</p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:selectManyList
+                                    selectlistStyleClass="bootstrap-selectlist col-lg-1"
+                                    reference="selectManyList2"
+                                    value="#{listeBeispieleModel.listAuswahlSelectMany4}" size="4"
+                                    disabled="true">
+                                <f:selectItems
+                                        value="#{listeBeispieleModel.formSelectListInhalt}"/>
+                            </isy:selectManyList>
+                        </div>
+                    </div>
+                </f:facet>
+            </isy:panel>
+        </div>
+    </ui:define>
+</ui:composition>

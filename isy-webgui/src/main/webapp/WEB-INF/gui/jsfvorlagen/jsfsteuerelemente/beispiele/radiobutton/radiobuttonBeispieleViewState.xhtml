@@ -1,0 +1,53 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+            <isy:panel id="radioButtonPanel"
+                       panelModel="#{radiobuttonBeispieleModel.panelModelRadioButton}">
+                <f:facet name="panelHeader">Radio Button</f:facet>
+                <f:facet name="panelBody">
+                    <p>
+                        <code>&lt;isy:selectOneRadio&gt;</code>
+                    </p>
+
+                    <isy:selectOneRadio id="stest"
+                                        value="#{radiobuttonBeispieleModel.radioButtonAuswahl}"
+                                        selectItems="#{radiobuttonBeispieleModel.radioButtonListe}"/>
+                    <p>
+                        <code>&lt;isy:formSelectOneRadio&gt;</code>
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <div class="col-lg-6">
+                                <isy:formSelectOneRadio label="Label"
+                                                        reference="testFormSelectOneRadio"
+                                                        value="#{radiobuttonBeispieleModel.radioButtonAuswahl2}"
+                                                        selectItems="#{radiobuttonBeispieleModel.radioButtonListe}"/>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p>
+                        <isy:button action="radioButtonAction" value="Select"/>
+                    </p>
+                    <p>
+                        Auswahl selectOneRadio:
+                        <h:outputText value="#{radiobuttonBeispieleModel.radioButtonAuswahl}"/>
+                    </p>
+
+                    <p>
+                        Auswahl Form-selectOneRadio:
+                        <h:outputText value="#{radiobuttonBeispieleModel.radioButtonAuswahl2}"/>
+                    </p>
+                </f:facet>
+            </isy:panel>
+        </div>
+    </ui:define>
+</ui:composition>

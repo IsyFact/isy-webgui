@@ -1,0 +1,76 @@
+<!DOCTYPE composition PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
+                template="/WEB-INF/gui/common/layout/applikation.xhtml">
+
+    <ui:define name="inhaltsbereich">
+        <div class="panel-group">
+
+            <!-- Panel zum Vorführen der Komponenten, die das Four-Eyes-Icon verwenden. -->
+            <isy:panel id="fourEyesIconPanel"
+                       panelModel="#{vierAugenBeispieleModel.panelModelFourEyesIconPanel}">
+                <f:facet name="panelHeader">Four Eyes Icon</f:facet>
+                <f:facet name="panelBody">
+
+                    <!-- formInput -->
+                    <p>
+                        FormInput
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formInputWithFourEyes
+                                    id="formInputFourEyes" type="text" label="Text: "
+                                    labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+                                    reference="formInputReferenz"
+                                    value="#{vierAugenBeispieleModel.formInputTextButtonActionResult}"
+                                    fourEyesMode="locked" fourEyesLastValue="Letzer Wert"/>
+                        </div>
+                    </div>
+
+                    <!-- formActionInput -->
+                    <p>
+                        FormActionInput
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formActionInputWithFourEyes
+                                    reference="testFormActionInputFourEyes"
+                                    label="Ein Label"
+                                    labelStyleClass="col-lg-2"
+                                    inputStyleClass="col-lg-2"
+                                    value="#{vierAugenBeispieleModel.actionInputResult}"
+                                    action="actionInputAction" icon="search" tooltip="tooltip"
+                                    placeholder="placeholder" maxlength="20"
+                                    fourEyesMode="locked" fourEyesLastValue="Letzer Wert"/>
+                        </div>
+                    </div>
+
+                    <!-- formCurrencyInput -->
+                    <p>
+                        FormCurrencyInput
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formCurrencyInputWithFourEyes
+                                    label="isy:formCurrencyInput"
+                                    labelStyleClass="col-lg-2" inputStyleClass="col-lg-2"
+                                    required="true" placeholder="24,00" value=""
+                                    reference="formCurrencyInputFourEyes" fourEyesMode="locked"
+                                    fourEyesLastValue="5,00">
+                            </isy:formCurrencyInputWithFourEyes>
+                        </div>
+                    </div>
+
+                    <p>
+                    Mehr Beispiele auf der <a href="vieraugenFlow">"Vier-Augen-Prinzip"</a>-Seite.
+                    </p>
+
+                </f:facet>
+            </isy:panel>
+        </div>
+    </ui:define>
+</ui:composition>
