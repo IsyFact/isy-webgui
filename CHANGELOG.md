@@ -1,6 +1,9 @@
+# v5.1.0
+- `IFS-465`: Profile zum Bauen mit Java 11 erstellt
+
 # v5.0.0
 - `IFE-98`: Umstellung auf IF 2.x und Aufteilung der JSF-Steuerelemente-Seite
-- `IFS-465`: Profile zum Bauen mit Java 11 erstellt
+- `IFE-77`: Listpicker-Servlet korrigiert.
 
 # v4.8.0
 - `IFE-16`: Unterstützung von IE8 eingestellt, row-df aus Templates entfernt

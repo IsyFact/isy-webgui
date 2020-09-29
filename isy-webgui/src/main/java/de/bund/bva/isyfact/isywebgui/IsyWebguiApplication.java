@@ -1,6 +1,6 @@
 package de.bund.bva.isyfact.isywebgui;
 
-import de.bund.bva.isyfact.isywebgui.common.servlet.requesthandler.ListpickerProviderRequestHandler;
+import de.bund.bva.isyfact.isywebgui.servlet.requesthandler.ListpickerProviderRequestHandler;
 import de.bund.bva.isyfact.isywebgui.config.ResourceConfig;
 import de.bund.bva.isyfact.isywebgui.config.SicherheitConfig;
 import de.bund.bva.isyfact.isywebgui.config.WebConfig;
@@ -19,12 +19,5 @@ import org.springframework.context.annotation.Import;
 @Import({ GuiConfig.class, SicherheitConfig.class, ResourceConfig.class, WebConfig.class, })
 
 public class IsyWebguiApplication extends SpringBootServletInitializer {
-
-    //Servlet für den ListpickerProvider
-    @Bean
-    ListpickerProviderRequestHandler listpickerProviderRequestHandler(
-        JsfSteuerelementeListpickerController jsfSteuerelementeListpickerController) {
-        return new ListpickerProviderRequestHandler(jsfSteuerelementeListpickerController);
-    }
 
 }

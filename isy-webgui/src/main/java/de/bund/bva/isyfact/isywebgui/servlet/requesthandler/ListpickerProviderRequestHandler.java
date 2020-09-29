@@ -1,14 +1,9 @@
-package de.bund.bva.isyfact.isywebgui.common.servlet.requesthandler;
+package de.bund.bva.isyfact.isywebgui.servlet.requesthandler;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
-
-import javax.jws.WebService;
-import javax.servlet.annotation.WebServlet;
-
-import org.springframework.beans.factory.annotation.Required;
 
 import de.bund.bva.isyfact.common.web.jsf.components.listpicker.ListpickerGuiItem;
 import de.bund.bva.isyfact.common.web.servlet.requesthandler.AbstractListpickerProviderRequestHandler;
@@ -18,7 +13,6 @@ import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicke
 /**
  * Konkrete Implementierung von {@link AbstractListpickerProviderRequestHandler} für Demo-Zwecke.
  */
-@WebServlet("/app/listpicker/*")
 public class ListpickerProviderRequestHandler extends AbstractListpickerProviderRequestHandler {
 
     /**
@@ -43,7 +37,7 @@ public class ListpickerProviderRequestHandler extends AbstractListpickerProvider
             this.jsfSteuerelementeListpickerController.erzeugeListpickerItemListe();
 
         // Hier passiert das eigentliche Filtern. Wir filtern z.B. anhand des Schlüssels, aber es kann
-        // natürlich auch anhand anderer/weiterer Attribute gefilter werden.
+        // natürlich auch anhand anderer/weiterer Attribute gefiltert werden.
         List<JsfSteuerelementeListpickerItem> listpickerItemsGefiltert = listpickerItems.stream()
             .filter(item -> item.getSchluessel().contains(filterWert)).collect(Collectors.toList());
 
@@ -74,6 +68,6 @@ public class ListpickerProviderRequestHandler extends AbstractListpickerProvider
     @Override
     public String getMessageBegrenzung() {
         // Würde tendenziell aus der Konfiguration kommen. Hier für Demo-Zwecke fester Wert!
-        return "Nach 5 Items kommt eine Info. Bitte weiter filtern...";
+        return "Bitte weiter filtern...";
     }
 }
