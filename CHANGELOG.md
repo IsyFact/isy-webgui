@@ -3,6 +3,7 @@
 - `IFE-848`: DIN SPEC: Neuer CharPicker wird unter JSF-Steuerelemente dargestellt
 - `IFE-57`: Test Komponenten für die neue Readonly Felder hinzugefügt. 
 - `IFS-411`: Javadoc Kommentare angepasst, damit nur die Firma angezeigt wird
+- `IFS-686`: Property-Dateien auf Unicode Escapes umgestellt
 - `IFS-465`: Profile zum Bauen mit Java 11 erstellt
 
 # v5.0.0
