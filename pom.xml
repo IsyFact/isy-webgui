@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>isy-webgui-parent</artifactId>
-    <version>4.9.2</version>
+    <version>4.9.3-SNAPSHOT</version>
     <packaging>pom</packaging>
 
     <name>IsyFact WebGUI Parent</name>
