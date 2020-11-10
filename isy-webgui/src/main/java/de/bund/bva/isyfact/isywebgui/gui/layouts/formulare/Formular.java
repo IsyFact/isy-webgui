@@ -5,7 +5,7 @@ import java.io.Serializable;
 /**
  * Ein Formular.
  *
- * @author Capgemini, Tobias Gr÷ger
+ * @author Capgemini
  * @version $Id: Formular.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 public class Formular implements Serializable {

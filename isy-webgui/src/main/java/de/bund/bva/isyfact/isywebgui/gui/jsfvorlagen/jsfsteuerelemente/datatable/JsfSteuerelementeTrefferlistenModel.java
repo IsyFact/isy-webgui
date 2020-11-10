@@ -6,7 +6,7 @@ import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable
 /**
  * Model für die Trefferliste.
  *
- * @author Capgemini, Tobias Groeger
+ * @author Capgemini
  * @version $Id: JsfSteuerelementeTrefferlistenModel.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 public class JsfSteuerelementeTrefferlistenModel extends DataTableModel<JsfSteuerelementeTreffer> {

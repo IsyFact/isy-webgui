@@ -11,7 +11,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
 /**
- * @author Andreas Schubert, msg
+ * @author msg
  */
 @Controller
 public class VieraugenController extends AbstractGuiController<VieraugenModel> {

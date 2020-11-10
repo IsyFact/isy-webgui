@@ -26,7 +26,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.datatable.SortDirection;
 /**
  * Controller für die Trefferliste.
  *
- * @author Capgemini, Tobias Groeger
+ * @author Capgemini
  * @version $Id: JsfSteuerelementeTrefferlistenController.java 165302 2016-05-20 11:50:30Z sdm_arichter $
  */
 public class JsfSteuerelementeTrefferlistenServerController2 extends

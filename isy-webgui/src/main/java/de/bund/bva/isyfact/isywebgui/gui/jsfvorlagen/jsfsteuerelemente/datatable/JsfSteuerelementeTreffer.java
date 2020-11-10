@@ -5,7 +5,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableItem;
 /**
  * Repräsentiert ein Trefferobjekt.
  *
- * @author Capgemini, Andreas Hörning.
+ * @author Capgemini
  * @version $Id: JsfSteuerelementeTreffer.java 165302 2016-05-20 11:50:30Z sdm_arichter $
  */
 public class JsfSteuerelementeTreffer implements DataTableItem {

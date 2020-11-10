@@ -7,7 +7,7 @@ import org.springframework.stereotype.Component;
 /**
  * Eine Konstantenklasse, um JSF den Zugriff auf Enums zu ermöglichen.
  *
- * @author Capgemini, Andreas Hörning.
+ * @author Capgemini
  * @version $Id: EnumConstants.java 130046 2015-02-10 10:43:52Z sdm_tgroeger $
  */
 @Component

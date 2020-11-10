@@ -5,7 +5,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.listpicker.ListpickerItem;
 /**
  * Item des Listpickers.
  *
- * @author Capgemini, Tobias Gröger
+ * @author Capgemini
  * @version $Id: JsfSteuerelementeListpickerItem.java 164631 2016-05-11 12:16:09Z sdm_arichter $
  */
 public class JsfSteuerelementeListpickerItem implements ListpickerItem {

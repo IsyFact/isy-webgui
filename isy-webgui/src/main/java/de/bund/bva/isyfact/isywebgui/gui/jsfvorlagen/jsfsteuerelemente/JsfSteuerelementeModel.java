@@ -5,7 +5,7 @@ import de.bund.bva.isyfact.common.web.global.AbstractMaskenModel;
 /**
  * Model für JSF-Steuerelemente.
  *
- * @author Capgemini, Tobias Gröger
+ * @author Capgemini
  * @version $Id: JsfSteuerelementeModel.java 166449 2016-06-06 12:15:53Z sdm_arichter $
  */
 public class JsfSteuerelementeModel extends AbstractMaskenModel {

@@ -3,7 +3,7 @@ package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.vieraugen;
 import de.bund.bva.isyfact.common.web.global.AbstractMaskenModel;
 
 /**
- * @author Andreas Schubert, msg
+ * @author msg
  *
  */
 public class VieraugenModel extends AbstractMaskenModel {

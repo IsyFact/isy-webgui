@@ -8,7 +8,7 @@ import org.springframework.stereotype.Controller;
 /**
  * Der Controller für die Druckansicht.
  *
- * @author Capgemini, Tobias Gröger
+ * @author Capgemini
  * @version $Id: DruckansichtController.java 164631 2016-05-11 12:16:09Z sdm_arichter $
  */
 @Controller

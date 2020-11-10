@@ -7,7 +7,7 @@ import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.FlowAwkWrapper;
 /**
  * AWK-Wrapper für den Flow.
  *
- * @author Capgemini, Tobias Groeger
+ * @author Capgemini
  * @version $Id: FlowAwkWrapperImpl.java 130125 2015-02-11 10:46:07Z sdm_tgroeger $
  */
 public class FlowAwkWrapperImpl implements FlowAwkWrapper {

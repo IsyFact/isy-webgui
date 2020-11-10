@@ -5,7 +5,7 @@ import de.bund.bva.isyfact.common.web.global.AbstractMaskenModel;
 /**
  * Modell für Nachrichten.
  *
- * @author Capgemini, Tobias Groeger
+ * @author Capgemini
  * @version $Id: NachrichtenModel.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 public class NachrichtenModel extends AbstractMaskenModel {
