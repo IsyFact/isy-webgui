@@ -10,6 +10,26 @@
         <ui:include src="druckansichtInhaltsbereich.xhtml" />
     </ui:define>
 
+    <ui:define name="seitentoolbarLinksButtons">
+        <h:commandLink
+                action="drucken"
+                target="_blank"
+                styleClass="btn btn-icon-round btn-icon-round-large"
+                title="Drucken">
+            <span class="icon fa-print"/>
+        </h:commandLink>
+        <!-- example for buttonInjectPost -->
+        <isy:buttonInjectPost postButton="counterButton" continueAfterPost="true">
+            <h:commandLink
+                    action="drucken"
+                    target="_blank"
+                    styleClass="btn btn-icon-round btn-icon-round-large"
+                    title="Drucken gewrappt in buttonInjectPost">
+                <span class="icon fa-info"/>
+            </h:commandLink>
+        </isy:buttonInjectPost>
+    </ui:define>
+
     <ui:define name="printMetaInformation">
         <isy:printMetaInformation>
             <f:attribute name="warning"
