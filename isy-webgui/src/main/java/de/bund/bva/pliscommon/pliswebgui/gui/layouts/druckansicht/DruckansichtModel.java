@@ -11,6 +11,9 @@ public class DruckansichtModel extends AbstractMaskenModel {
      */
     private static final long serialVersionUID = 1L;
 
+    /**
+     * Counter for how often the post-action has been executed.
+     */
     private int postCounter;
 
     public int getPostCounter() {
