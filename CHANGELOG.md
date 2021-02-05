@@ -1,4 +1,5 @@
 # v5.1.0
+- `IFE-57`: Test Komponenten für die neue Readonly Felder hinzugefügt. 
 - `IFS-465`: Profile zum Bauen mit Java 11 erstellt
 
 # v5.0.0
