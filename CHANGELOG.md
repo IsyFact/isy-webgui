@@ -1,3 +1,6 @@
+# v4.9.2
+- `IFE-188`: isy-web: Dropdown klappt nach oben auf und Breite stimmt nicht mit anderen Feldern überein
+
 # v4.9.1
 - `IFE-144`: Bereinigung von Convergence-Warnings
   - hebt commons-io-Version an (1.3.2 -> 2.4)
