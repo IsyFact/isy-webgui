@@ -104,9 +104,30 @@
                                                label="Text (readonly): " reference="formInputReadonlyReferenz"
                                                value="Ein readonly Textfeld" readonly="true"/>
 
-                                <isy:formInput id="formInputSpecialChar" type="text"
-                                               label="Text Special Char: " reference="formInputSpecialChar"
-                                               value="Ein Special Char Textfeld" charpicker="true"/>
+                                <isy:formInput id="formInputSpecialCharDinSpec" type="text"
+                                               label="DIN SPEC 91379 Charpicker (alle Zeichen erlaub): "
+                                               reference="formInputSpecialChar" value="Ein Special Char Textfeld"
+                                               charpicker="dinSpec"/>
+
+                                <isy:formInput id="formInputSpecialCharDinSpecA" type="text"
+                                               label="DIN SPEC 91379 Charpicker (Datentyp A): "
+                                               reference="formInputSpecialChar" value="Ein Special Char Textfeld"
+                                               charpicker="dinSpec" datentyp="DATENTYP_A"/>
+
+                                <isy:formInput id="formInputSpecialCharDinSpecB" type="text"
+                                               label="DIN SPEC 91379 Charpicker (Datentyp B): "
+                                               reference="formInputSpecialChar" value="Ein Special Char Textfeld"
+                                               charpicker="dinSpec" datentyp="DATENTYP_B"/>
+
+                                <isy:formInput id="formInputSpecialCharDinSpecC" type="text"
+                                               label="DIN SPEC 91379 Charpicker (Datentyp C): "
+                                               reference="formInputSpecialChar" value="Ein Special Char Textfeld"
+                                               charpicker="dinSpec" datentyp="DATENTYP_C"/>
+
+                                <isy:formInput id="formInputSpecialCharDinSpecD" type="text"
+                                               label="DIN SPEC 91379 Charpicker (Datentyp D): "
+                                               reference="formInputSpecialChar" value="Ein Special Char Textfeld"
+                                               charpicker="dinSpec" datentyp="DATENTYP_D"/>
 
                                 <isy:button id="formInputButton" action="formInputButtonAction"
                                             value="Button"/>
