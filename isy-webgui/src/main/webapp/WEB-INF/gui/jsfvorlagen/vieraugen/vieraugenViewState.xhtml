@@ -45,8 +45,16 @@
                     <div class="col-lg-12">
                         <div class="row">
                             <isy:formActionInput reference="formActionInput"
-                                                 label="formActionInput mit Icon" maxlength="50" value="12"
-                                                 readonly="false" icon="star" action="none" iconColor="grey"
+                                                 label="formActionInput mit Icon (readonly)" maxlength="50" value="12"
+                                                 readonly="true" icon="star" action="none" iconColor="grey"
+                                                 tooltip="Tooltip 1"/>
+                            <isy:formActionInput reference="formActionInput"
+                                                 label="formActionInput mit Icon (disabled)" maxlength="50" value="12"
+                                                 disabled="true" icon="star" action="none" iconColor="grey"
+                                                 tooltip="Tooltip 1"/>
+                            <isy:formActionInput reference="formActionInput"
+                                                 label="formActionInput mit Icon(button-only)" maxlength="50" value="12"
+                                                 mode="button-only" icon="star" action="none" iconColor="grey"
                                                  tooltip="Tooltip 1"/>
                             <isy:formActionInputWithFourEyes icon="star" reference="formActionInput"
                                                              label="formActionInput mit fourEyesMode=unlocked"
@@ -90,6 +98,30 @@
                                     label="formActionInput - Suchfeld mit fourEyesMode=locked Fehler"
                                     value="" icon="search" reference="fehler" tooltip="Tooltip 1"
                                     mode="button-only" readonly="false"
+                                    action="formActionInput_Suchfeld" fourEyesMode="locked"
+                                    fourEyesLastValue="letzter Wert"/>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <h2>isy:actionInputWithFourEyes</h2>
+                    </div>
+                    <div class="col-lg-12">
+                        <div class="row">
+                            <isy:actionInputWithFourEyes
+                                    value="readonly" icon="search" reference="fehler" tooltip="Tooltip 1"
+                                    mode="button-only" readonly="true"
+                                    action="formActionInput_Suchfeld" fourEyesMode="locked"
+                                    fourEyesLastValue="letzter Wert"/>
+
+                            <isy:actionInputWithFourEyes
+                                    value="disabled" icon="search" reference="fehler" tooltip="Tooltip 1"
+                                    disabled="true"
+                                    action="formActionInput_Suchfeld" fourEyesMode="locked"
+                                    fourEyesLastValue="letzter Wert"/>
+
+                            <isy:actionInputWithFourEyes
+                                    value="enabled" icon="search" reference="fehler" tooltip="Tooltip 1"
                                     action="formActionInput_Suchfeld" fourEyesMode="locked"
                                     fourEyesLastValue="letzter Wert"/>
                         </div>
