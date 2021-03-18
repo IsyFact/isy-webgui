@@ -1,4 +1,5 @@
 # v4.10.0
+- `IFE-848`: DIN SPEC: Neuer CharPicker wird unter JSF-Steuerelemente dargestellt
 
 # v4.9.2
 - `IFE-188`: isy-web: Dropdown klappt nach oben auf und Breite stimmt nicht mit anderen Feldern überein
