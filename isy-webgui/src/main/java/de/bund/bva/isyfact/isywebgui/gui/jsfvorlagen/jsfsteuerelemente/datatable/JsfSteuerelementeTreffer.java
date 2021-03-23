@@ -3,44 +3,41 @@ package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatabl
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableItem;
 
 /**
- * Repräsentiert ein Trefferobjekt.
- *
- * @author Capgemini, Andreas Hörning.
- * @version $Id: JsfSteuerelementeTreffer.java 165302 2016-05-20 11:50:30Z sdm_arichter $
+ * Represents a result object.
  */
 public class JsfSteuerelementeTreffer implements DataTableItem {
     /**
-     * Die Serial-Version UID.
+     * Serial version ID.
      */
     private static final long serialVersionUID = 1L;
 
     /**
-     * Die Nummer.
+     * Number.
      */
     private String nummer;
 
     /**
-     * Der Vorname.
+     * First name
      */
     private String vorname;
 
     /**
-     * Der Nachname.
+     * Last name
      */
     private String nachname;
 
     /**
-     * Der Login.
+     * Login.
      */
     private String login;
 
     /**
-     * Das Geschlecht.
+     * Gender.
      */
     private String geschlecht;
 
     /**
-     * Die Staatsangehoerigkeit.
+     * Nationality.
      */
     private String staatsangehoerigkeit;
 
