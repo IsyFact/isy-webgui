@@ -4,6 +4,8 @@ import de.bund.bva.isyfact.util.exception.MessageSourceFehlertextProvider;
 import de.bund.bva.isyfact.isywebgui.common.konstanten.FehlerSchluessel;
 import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.FlowAwkWrapper;
 
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
+
 /**
  * AWK-Wrapper für den Flow.
  *
@@ -13,6 +15,7 @@ import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.FlowAwkWrapper;
 public class FlowAwkWrapperImpl implements FlowAwkWrapper {
 
     @SuppressWarnings("null")
+    @SuppressFBWarnings(value = "NP_ALWAYS_NULL")
     @Override
     public void rufeAwkAuf() {
 

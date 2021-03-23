@@ -95,7 +95,7 @@ public class JsfSteuerelementeTreffer implements DataTableItem {
 
     @Override
     public long getIdentifierForItem() {
-        return Long.valueOf(this.nummer);
+        return Long.parseLong(this.nummer);
     }
 
 }
