@@ -10,6 +10,9 @@
 .arrow-down.arrow-large {
   border-top: 10px solid #004179;
 }
+.btn.active {
+  background-color: #ccd9e4;
+}
 .btn-toggle.active {
   background-color: #ccd9e4;
 }
