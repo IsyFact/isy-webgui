@@ -28,6 +28,12 @@
         <dependency>
             <groupId>de.bund.bva.isyfact</groupId>
             <artifactId>isy-web</artifactId>
+            <exclusions><!-- Used to avoid a Maven Dependency Conversion Error. -->
+                <exclusion>
+                    <groupId>commons-io</groupId>
+                    <artifactId>commons-io</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
 
         <dependency>
