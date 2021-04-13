@@ -13,6 +13,9 @@
     <view-state id="druckansichtViewState" model="druckansichtModel">
         <transition on="drucken" to="printViewState">
         </transition>
+        <transition on="incrementCounterAction">
+            <evaluate expression="druckansichtController.incrementCounter(druckansichtModel)" />
+        </transition>
     </view-state>
 
     <view-state id="printViewState" model="druckansichtModel">

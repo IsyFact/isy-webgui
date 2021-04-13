@@ -5,7 +5,6 @@
     xmlns:isy="http://java.sun.com/jsf/composite/isyfact"
     xmlns:debug="http://java.sun.com/jsf/composite/debug">
 
-
     <p>Mit der Druckansicht kann ein bestimmter ViewState (mit bestimmten anzuzeigenden
         Elementen) angegeben werden, der für die Druckansicht genutzt wird. Die Druckansicht wird
         wie folgt eingebaut:</p>
@@ -32,17 +31,31 @@
         werden. Es kann optional eine Warnmeldung definiert werden, die in den Metainformationen angezeigt
         wird, wenn die browserseitige Druckansicht einer Seite geöffnet wird. Im Folgenden ein Beispiel:</p>
 
-    <code>&lt;ui:define name="printMetaInformation"&gt;<br/>
-            &lt;isy:printMetaInformation&gt;<br/>
-                &lt;f:attribute name="warning"<br/>
-                    value="Warnung: Sie wollen die Seite drucken, obwohl sie nicht die Druckansicht<br/>
-                    aufgerufen haben. Es könnten Elemente auf der Seite fehlen."&gt;<br/>
-                &lt;/f:attribute&gt;<br/>
-                &lt;h:outputText value="&#35; &#123;session.lastAccessedTime&#125;"&gt;<br/>
-                    &lt;f:convertDateTime pattern="dd.MM.yyyy HH:mm" type="date" /&gt;<br/>
-                &lt;/h:outputText&gt;<br/>
-            &lt;/isy:printMetaInformation&gt;<br/>
-        &lt;/ui:define&gt;<br/>
+    <p>
+        <code>&lt;ui:define name="printMetaInformation"&gt;<br/>
+                &lt;isy:printMetaInformation&gt;<br/>
+                    &lt;f:attribute name="warning"<br/>
+                        value="Warnung: Sie wollen die Seite drucken, obwohl sie nicht die Druckansicht<br/>
+                        aufgerufen haben. Es könnten Elemente auf der Seite fehlen."&gt;<br/>
+                    &lt;/f:attribute&gt;<br/>
+                    &lt;h:outputText value="&#35; &#123;session.lastAccessedTime&#125;"&gt;<br/>
+                        &lt;f:convertDateTime pattern="dd.MM.yyyy HH:mm" type="date" /&gt;<br/>
+                    &lt;/h:outputText&gt;<br/>
+                &lt;/isy:printMetaInformation&gt;<br/>
+            &lt;/ui:define&gt;<br/>
 
-    </code>
+        </code>
+    </p>
+
+    <p>
+        <isy:button id="counterButton"
+                    value="Post-Button" action="incrementCounterAction"
+                    ajax="true"/>
+        <br/>
+
+        Mittels <code>&lt;isy:buttonInjectPost&gt;</code> kann eine Button-Action von außerhalb eines Formulars genutzt werden. <br/>
+        Hiermit können beispielsweise vor dem Drucken Formulardaten an den Server übertragen werden. <br/>
+        Post-Counter:
+        <h:outputText value="#{druckansichtModel.postCounter}"/> <br/>
+    </p>
 </ui:composition>
