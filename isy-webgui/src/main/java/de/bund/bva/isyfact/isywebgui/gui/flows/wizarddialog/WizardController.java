@@ -11,7 +11,7 @@ import org.springframework.stereotype.Controller;
 /**
  * Controller für den Wizard Dialog.
  *
- * @author Capgemini, Tobias Groeger
+ * @author Capgemini
  * @version $Id: WizardController.java 134128 2015-04-08 13:53:41Z sdm_ahoerning $
  */
 @Controller

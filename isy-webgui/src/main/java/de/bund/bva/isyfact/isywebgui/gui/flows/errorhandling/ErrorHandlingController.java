@@ -12,7 +12,7 @@ import org.springframework.stereotype.Controller;
 /**
  * Controller für Error-Handling.
  *
- * @author Capgemini, Tobias Groeger
+ * @author Capgemini
  * @version $Id: ErrorHandlingController.java 164792 2016-05-12 16:27:45Z sdm_arichter $
  */
 @Controller

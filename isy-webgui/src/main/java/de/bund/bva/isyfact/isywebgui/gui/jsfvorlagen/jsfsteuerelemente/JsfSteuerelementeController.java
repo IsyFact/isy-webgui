@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 /**
  * Controller für die JSF-Steuerelemente.
  *
- * @author Capgemini, Tobias Gröger
+ * @author Capgemini
  * @version $Id: JsfSteuerelementeController.java 166449 2016-06-06 12:15:53Z sdm_arichter $
  */
 @Controller

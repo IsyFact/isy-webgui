@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 /**
  * Controller für Titles.
  *
- * @author Capgemini, Tobias Gröger
+ * @author Capgemini
  * @version $Id: TitlesController.java 130047 2015-02-10 10:52:10Z sdm_tgroeger $
  */
 @Controller

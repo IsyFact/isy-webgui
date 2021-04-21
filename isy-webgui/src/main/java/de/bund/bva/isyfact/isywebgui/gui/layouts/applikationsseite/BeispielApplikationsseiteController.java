@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 /**
  * Der Controller für die Maske.
  * 
- * @author Capgemini, Andreas Hörning
+ * @author Capgemini
  * @version $Id: BeispielApplikationsseiteController.java 123825 2014-10-13 10:05:32Z sdm_ahoerning $
  */
 @Controller

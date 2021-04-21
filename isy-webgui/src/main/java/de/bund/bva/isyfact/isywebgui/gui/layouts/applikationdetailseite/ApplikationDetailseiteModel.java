@@ -6,7 +6,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.panel.PanelModel;
 /**
  * Model für ApplikationDetailseite.
  *
- * @author Capgemini, Tobias Groeger
+ * @author Capgemini
  * @version $Id: ApplikationDetailseiteModel.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 public class ApplikationDetailseiteModel extends AbstractMaskenModel {

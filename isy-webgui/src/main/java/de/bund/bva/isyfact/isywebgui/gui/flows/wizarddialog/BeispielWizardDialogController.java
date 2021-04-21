@@ -13,7 +13,7 @@ import org.springframework.stereotype.Controller;
 /**
  * Ein Beispielkontroller.
  *
- * @author Capgemini, Andreas Hoerning
+ * @author Capgemini
  * @version $Id: BeispielWizardDialogController.java 135268 2015-04-27 12:19:05Z sdm_tgroeger $
  */
 @Controller

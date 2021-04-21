@@ -13,7 +13,7 @@ import org.springframework.stereotype.Controller;
 
 /**
  * Controller für den Listpicker.
- * @author Capgemini, Tobias Gröger
+ * @author Capgemini
  * @version $Id: JsfSteuerelementeListpickerController.java 130068 2015-02-10 14:09:46Z sdm_tgroeger $
  */
 @Controller

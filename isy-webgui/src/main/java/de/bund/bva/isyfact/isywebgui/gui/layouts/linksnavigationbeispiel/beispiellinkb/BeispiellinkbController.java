@@ -6,7 +6,7 @@ import org.springframework.stereotype.Controller;
 /**
  * Der Controller für den Beispiellink B.
  *
- * @author Capgemini, Tobias Gröger
+ * @author Capgemini
  * @version $Id: BeispiellinkbController.java 130047 2015-02-10 10:52:10Z sdm_tgroeger $
  */
 @Controller

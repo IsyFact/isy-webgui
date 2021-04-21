@@ -13,7 +13,7 @@ import org.springframework.stereotype.Controller;
 /**
  * Der Controller für die ApplikationDetailseite.
  *
- * @author Capgemini, Tobias Gröger
+ * @author Capgemini
  * @version $Id: ApplikationDetailseiteController.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 @Controller

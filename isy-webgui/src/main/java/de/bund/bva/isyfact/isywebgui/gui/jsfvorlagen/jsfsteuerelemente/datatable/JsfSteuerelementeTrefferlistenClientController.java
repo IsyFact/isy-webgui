@@ -14,7 +14,7 @@ import org.springframework.stereotype.Component;
 /**
  * Controller für die Trefferliste.
  *
- * @author Capgemini, Tobias Groeger
+ * @author Capgemini
  * @version $Id: JsfSteuerelementeTrefferlistenClientController.java 166449 2016-06-06 12:15:53Z sdm_arichter
  *          $
  */

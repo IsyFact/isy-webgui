@@ -9,7 +9,7 @@ import org.springframework.beans.factory.annotation.Required;
 /**
  * Helper für JSF-Steuerelemente.
  *
- * @author Capgemini, Tobias Gröger
+ * @author Capgemini
  * @version $Id: JsfSteuerelementeHelper.java 130046 2015-02-10 10:43:52Z sdm_tgroeger $
  */
 public class JsfSteuerelementeHelper {

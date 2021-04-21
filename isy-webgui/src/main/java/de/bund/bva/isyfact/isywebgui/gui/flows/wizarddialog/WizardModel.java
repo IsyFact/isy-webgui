@@ -6,7 +6,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.wizard.WizardDialogModel;
 /**
  * Model für den Modalen Dialog.
  *
- * @author Capgemini, Tobias Groeger
+ * @author Capgemini
  * @version $Id: WizardModel.java 134241 2015-04-09 14:37:26Z sdm_ahoerning $
  */
 public class WizardModel extends AbstractMaskenModel {

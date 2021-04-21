@@ -5,7 +5,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.listpicker.ListpickerItem;
 /**
  * Schlüssel für einen Staat.
  *
- * @author Capgemini, Tobias Groeger
+ * @author Capgemini
  * @version $Id: StaatSchluessel.java 164631 2016-05-11 12:16:09Z sdm_arichter $
  */
 public class StaatSchluessel implements ListpickerItem {

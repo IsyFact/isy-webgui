@@ -6,7 +6,7 @@ import java.util.stream.Stream;
 /**
  * Die Anrede einer Person.
  *
- * @author Mathias Hamann, msg
+ * @author msg
  */
 @SuppressWarnings("javadoc")
 public enum AnredeEnum {

@@ -13,7 +13,7 @@ import org.springframework.stereotype.Controller;
 /**
  * Controller für die Sicherheit.
  *
- * @author Capgemini, Tobias Groeger
+ * @author Capgemini
  * @version $Id: SicherheitController.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 @Controller
