@@ -1,0 +1,24 @@
+include:
+  - project: 'IsyFact/isy-gitlabci-templates'
+    file: '/maven/.gitlab-ci-maven.yml'
+
+build:
+  extends: .maven-build
+
+test:
+  extends: .maven-test
+
+package:
+  extends: .maven-package
+
+#deploy-snapshot:
+#  extends: .maven-deploy-snapshot
+#
+#deploy:
+#  extends: .maven-deploy
+
+stages:
+  - build
+  - test
+  - package
+#  - deploy
