@@ -8,14 +8,14 @@
                 xmlns:debug="http://java.sun.com/jsf/composite/debug"
                 template="/WEB-INF/gui/common/layout/applikation.xhtml">
 
-    <!-- Form für AJAX-Seiteninhalt definieren -->
+    <!-- define form for ajax listpicker content. -->
     <ui:define name="form">
         <h:form id="listpickerAjaxForm">
             <isy:formListpickerAjaxContent
                     listpickerModel="#{jsfSteuerelementeModel.ajaxListpickerModel}"/>
         </h:form>
 
-        <!-- Form für AJAX-Inhalt des Behörde-Listpickers definieren. -->
+        <!-- define form for ajax content of the "behoerdeListpicker". -->
         <h:form id="behoerdeListpickerAjaxForm">
             <isy:formListpickerAjaxContent
                     listpickerModel="#{jsfSteuerelementeModel.behoerdeListpickerModel}"/>
@@ -104,9 +104,35 @@
                                                label="Text (readonly): " reference="formInputReadonlyReferenz"
                                                value="Ein readonly Textfeld" readonly="true"/>
 
+                                <isy:formInput id="formInputSpecialCharDinSpec" type="text"
+                                               label="DIN SPEC 91379 Charpicker (alle Zeichen erlaub): "
+                                               reference="formInputSpecialChar" value="Ein Special Char Textfeld"
+                                               charpicker="dinSpec"/>
+
+                                <isy:formInput id="formInputSpecialCharDinSpecA" type="text"
+                                               label="DIN SPEC 91379 Charpicker (Datentyp A): "
+                                               reference="formInputSpecialChar" value="Ein Special Char Textfeld"
+                                               charpicker="dinSpec" datentyp="DATENTYP_A"/>
+
+                                <isy:formInput id="formInputSpecialCharDinSpecB" type="text"
+                                               label="DIN SPEC 91379 Charpicker (Datentyp B): "
+                                               reference="formInputSpecialChar" value="Ein Special Char Textfeld"
+                                               charpicker="dinSpec" datentyp="DATENTYP_B"/>
+
+                                <isy:formInput id="formInputSpecialCharDinSpecC" type="text"
+                                               label="DIN SPEC 91379 Charpicker (Datentyp C): "
+                                               reference="formInputSpecialChar" value="Ein Special Char Textfeld"
+                                               charpicker="dinSpec" datentyp="DATENTYP_C"/>
+
+                                <isy:formInput id="formInputSpecialCharDinSpecD" type="text"
+                                               label="DIN SPEC 91379 Charpicker (Datentyp D): "
+                                               reference="formInputSpecialChar" value="Ein Special Char Textfeld"
+                                               charpicker="dinSpec" datentyp="DATENTYP_D"/>
+
                                 <isy:formInput id="formInputSpecialChar" type="text"
-                                               label="Text Special Char: " reference="formInputSpecialChar"
-                                               value="Ein Special Char Textfeld" charpicker="true"/>
+                                               label="SpecialCharpicker (veraltet): "
+                                               reference="formInputSpecialChar" value="Ein Special Char Textfeld"
+                                               charpicker="special"/>
 
                                 <isy:button id="formInputButton" action="formInputButtonAction"
                                             value="Button"/>
@@ -389,7 +415,7 @@
                     </div>
                 </div>
 
-                <!-- Readonly-Variante. Das Datum ist einfach hardcoded, damit man das Markieren überprüfen kann. -->
+                <!-- readonly-variant. Date is hardcoded so selecting the can be checked. -->
                 <div class="form-horizontal">
                     <div class="row">
                         <isy:formDate label="Datum readonly" labelStyleClass="col-lg-1"
@@ -487,8 +513,8 @@
                         <div class="col-lg-5">
 
                             <div class="row">
-                                <!-- Der folgende Listpicker löst den Schlüssel auf, denn das inputComplement ist 2
-                                und es ist eine Inputmask definiert. -->
+                                <!-- The following listpicker resolves the key, because the inputComplement is 2
+                                and an inputmask is defined. -->
                                 <p>Mit AJAX und mit Auflösung des Schlüssels:</p>
 
                                 <isy:formListpicker reference="model.ajaxListpicker"
@@ -564,8 +590,8 @@
                                                     inputComplement="2"
                                                     inputmask="9[99]"
                                                     servletUrl="/app/listpicker"/>
-                                <!-- Wichtig: servletUrl muss dem Pattern des zuständigen HttpRequestHandlerServlets
-                                 in der web.xml entsprechen! -->
+                                <!-- Important: servletUrl must match the pattern of the
+                                responsible HttpRequestHandlerServlets in the web.xml! -->
                                 <p></p>
                                 <p>
                                     Auswahl:
@@ -641,7 +667,7 @@
                         </f:facet>
                         <f:facet name="tableFilter">
                             <isy:dataTableFilter/>
-                            <!-- Platzhalter für checkbox Spalte -->
+                            <!-- Placeholder for checkbox column -->
                             <isy:dataTableFilter
                                     property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
                             <isy:dataTableFilter
@@ -696,7 +722,7 @@
                         </f:facet>
                         <f:facet name="tableFilter">
                             <isy:dataTableFilter/>
-                            <!-- Platzhalter für checkbox Spalte -->
+                            <!-- Placeholder for checkbox column -->
                             <isy:dataTableFilter
                                     property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
                             <isy:dataTableFilter
@@ -755,7 +781,7 @@
                         </div>
                     </div>
 
-                    <!-- Die form* Varianten -->
+                    <!-- form* variants -->
                     <p>Form-Aktionseingabefeld.</p>
                     <div class="form-horizontal">
                         <div class="row">
@@ -828,7 +854,7 @@
                         </div>
                     </div>
 
-                    <!-- Jeweils Disabled -->
+                    <!-- Disabled -->
                     <p>Liste für Einfachauswahl (disabled)</p>
                     <div class="form-horizontal">
                         <div class="row">
@@ -857,7 +883,7 @@
                         </div>
                     </div>
 
-                    <!-- Die Listen ohne form* -->
+                    <!-- Lists without form* -->
                     <p>
                         Liste für Einfachauswahl. Einbindung über
                         <code>&lt;isy:selectOneList&gt;</code>
@@ -889,7 +915,7 @@
                         </div>
                     </div>
 
-                    <!-- Jeweils Disabled -->
+                    <!-- Disabled -->
                     <p>Liste für Einfachauswahl (disabled)</p>
                     <div class="form-horizontal">
                         <div class="row">
@@ -985,7 +1011,7 @@
                                                    reference="formCurrencyInput3" readonly="true">
                             </isy:formCurrencyInput>
 
-                            <!-- Text rechts ausgerichtet. -->
+                            <!-- Text aligned to the right. -->
                             <isy:formCurrencyInput
                                     label="isy:formCurrencyInput (Textausrichtung rechts)"
                                     labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
@@ -993,7 +1019,7 @@
                                     reference="formCurrencyInput4" alignright="true">
                             </isy:formCurrencyInput>
 
-                            <!-- Vier Nachkommastellen. -->
+                            <!-- Four decimal places. -->
                             <isy:formCurrencyInput
                                     label="isy:formCurrencyInput (Vier Nachkommastellen)"
                                     labelStyleClass="col-lg-4" inputStyleClass="col-lg-2"
@@ -1054,7 +1080,7 @@
                     </div>
 
                     <p><br/>Zahlenwerte rechts ausgerichtet</p>
-                    <!-- Zahlenwerte rechts ausgerichtet. -->
+                    <!-- Numbers aligned to the right. -->
                     <div class="form-horizontal">
                         <div class="row">
 
@@ -1068,7 +1094,7 @@
                         </div>
                     </div>
 
-                    <!-- Ohne Nachkommastellen mit Tausenderpunkt. -->
+                    <!-- Without decimal places with thousands separator. -->
                     <div class="form-horizontal">
                         <div class="row">
 
@@ -1082,7 +1108,7 @@
                         </div>
                     </div>
 
-                    <!-- Eine Nachkommastellen. -->
+                    <!-- One decimal place. -->
                     <div class="form-horizontal">
                         <div class="row">
 
@@ -1096,7 +1122,7 @@
                         </div>
                     </div>
 
-                    <!-- Drei Nachkommastellen. -->
+                    <!-- Three decimal places. -->
                     <div class="form-horizontal">
                         <div class="row">
 
@@ -1206,7 +1232,7 @@
                 </f:facet>
             </isy:panel>
 
-            <!-- Panel zum Vorführen der Komponenten, die das Four-Eyes-Icon verwenden. -->
+            <!-- Panel with examples for four eye icon components. -->
             <isy:panel id="fourEyesIconPanel"
                        panelModel="#{jsfSteuerelementeModel.panelModelFourEyesIconPanel}"
                        collapse="true">
@@ -1269,8 +1295,8 @@
                 </f:facet>
             </isy:panel>
 
-            <!-- Panel zum Vorführen der Upload-Komponente. -->
-            <!-- Übernommen aus den Daisy-Demos. -->
+            <!-- Panel with upload component examples. -->
+            <!-- Taken from the Daisy demo. -->
             <isy:panel id="uploadPanel"
                        panelModel="#{jsfSteuerelementeModel.panelModelUpload}"
                        collapse="true">

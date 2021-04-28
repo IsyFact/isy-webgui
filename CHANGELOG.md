@@ -1,3 +1,7 @@
+
+# v4.10.0
+- `IFE-848`: DIN SPEC: Neuer CharPicker wird unter JSF-Steuerelemente dargestellt
+
 # v4.9.3
 - `IFE-271`: Beispiel für ButtonInjectPost in die Druckvorschau-Seite eingefügt
 - `IFS-650`: isyfact-standards Version auf 1.8.3 gesetzt.
