@@ -1,4 +1,6 @@
 # v5.1.0
+- `IFS-932`: `IFE-848` auf IFS 2.2 portiert
+- `IFE-848`: DIN SPEC: Neuer CharPicker wird unter JSF-Steuerelemente dargestellt
 - `IFE-57`: Test Komponenten für die neue Readonly Felder hinzugefügt. 
 - `IFS-411`: Javadoc Kommentare angepasst, damit nur die Firma angezeigt wird
 - `IFS-465`: Profile zum Bauen mit Java 11 erstellt
