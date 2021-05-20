@@ -4,6 +4,7 @@
 - `IFE-57`: Test Komponenten für die neue Readonly Felder hinzugefügt. 
 - `IFS-411`: Javadoc Kommentare angepasst, damit nur die Firma angezeigt wird
 - `IFS-465`: Profile zum Bauen mit Java 11 erstellt
+- `IFS-1005`: DIN SPEC Zeichen zum Testen hinzugefügt
 
 # v5.0.0
 - `IFE-98`: Umstellung auf IF 2.x und Aufteilung der JSF-Steuerelemente-Seite
