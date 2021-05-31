@@ -19,8 +19,7 @@ public class FlowAwkWrapperImpl implements FlowAwkWrapper {
         // Hier könnte ein AWK-Aufruf Stattfinden
 
         // Erzeuge Runtime-Excption;
-        String test = null;
-        test.equals("123");
+        throw new NullPointerException("Test NPE");
     }
 
     @Override
