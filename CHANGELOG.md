@@ -1,3 +1,6 @@
+# v4.11.0
+- `IFS-1005`: DIN SPEC Zeichen zum Testen hinzugefügt
+
 # v4.10.0
 - `IFE-848`: DIN SPEC: Neuer CharPicker wird unter JSF-Steuerelemente dargestellt
 - `IFS-650`: isyfact-standards Version auf 1.9.0 gesetzt.
