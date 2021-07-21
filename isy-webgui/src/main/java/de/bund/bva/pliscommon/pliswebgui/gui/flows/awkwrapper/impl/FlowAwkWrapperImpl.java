@@ -3,6 +3,7 @@ package de.bund.bva.pliscommon.pliswebgui.gui.flows.awkwrapper.impl;
 import de.bund.bva.pliscommon.pliswebgui.common.konstanten.FehlerSchluessel;
 import de.bund.bva.pliscommon.pliswebgui.gui.flows.awkwrapper.FlowAwkWrapper;
 import de.bund.bva.pliscommon.util.exception.MessageSourceFehlertextProvider;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 /**
  * AWK-Wrapper für den Flow.
@@ -14,6 +15,10 @@ public class FlowAwkWrapperImpl implements FlowAwkWrapper {
 
     @SuppressWarnings("null")
     @Override
+    @SuppressFBWarnings(
+            value = "NP_ALWAYS_NULL",
+            justification = "Solved with IFE-394"
+    )
     public void rufeAwkAuf() {
 
         // Hier könnte ein AWK-Aufruf Stattfinden

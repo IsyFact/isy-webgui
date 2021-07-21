@@ -11,6 +11,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.listpicker.Listpickerangabe
 import de.bund.bva.isyfact.common.web.jsf.components.listpicker.behoerde.BehoerdeListpickerModel;
 import de.bund.bva.isyfact.common.web.jsf.components.panel.PanelModel;
 import de.bund.bva.isyfact.common.web.jsf.components.tab.TabGroupModel;
+import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 /**
  * Model für JSF-Steuerelemente.
@@ -687,6 +688,10 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
         return this.browseAndCollectAuswahl;
     }
 
+    @SuppressFBWarnings(
+            value = "SA_FIELD_SELF_ASSIGNMENT",
+            justification = "Solved with IFE-394"
+    )
     public void setBrowseAndCollectAuswahl(List<String> browseAndCollectAuswahl) {
         this.browseAndCollectAuswahl = browseAndCollectAuswahl;
     }
