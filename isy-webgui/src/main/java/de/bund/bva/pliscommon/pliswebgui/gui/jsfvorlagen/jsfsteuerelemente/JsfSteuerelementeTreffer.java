@@ -1,7 +1,6 @@
 package de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.jsfsteuerelemente;
 
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableItem;
-import edu.umd.cs.findbugs.annotations.SuppressFBWarnings;
 
 /**
  * Repräsentiert ein Trefferobjekt.
@@ -95,12 +94,8 @@ public class JsfSteuerelementeTreffer implements DataTableItem {
     }
 
     @Override
-    @SuppressFBWarnings(
-            value = "DM_BOXED_PRIMITIVE_FOR_PARSING",
-            justification = "Solved with IFE-394"
-    )
     public long getIdentifierForItem() {
-        return Long.valueOf(this.nummer);
+        return Long.parseLong(this.nummer);
     }
 
 }
