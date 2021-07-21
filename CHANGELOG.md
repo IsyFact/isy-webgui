@@ -1,3 +1,6 @@
+# v5.2.0
+- `IFS-1005`: DIN SPEC Zeichen zum Testen hinzugefügt
+
 # v5.1.0
 - `IFS-932`: `IFE-848` auf IFS 2.2 portiert
 - `IFE-848`: DIN SPEC: Neuer CharPicker wird unter JSF-Steuerelemente dargestellt
