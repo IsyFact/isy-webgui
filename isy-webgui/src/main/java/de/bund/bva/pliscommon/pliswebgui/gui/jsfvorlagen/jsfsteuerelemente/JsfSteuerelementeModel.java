@@ -687,7 +687,7 @@ public class JsfSteuerelementeModel extends AbstractMaskenModel {
         return this.browseAndCollectAuswahl;
     }
 
-    public void setBrowseAndCollectAuswahl(List<String> browseAndCollectAuswahlDisabled) {
+    public void setBrowseAndCollectAuswahl(List<String> browseAndCollectAuswahl) {
         this.browseAndCollectAuswahl = browseAndCollectAuswahl;
     }
 
