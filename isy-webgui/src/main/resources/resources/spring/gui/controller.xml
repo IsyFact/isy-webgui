@@ -53,6 +53,7 @@
     <bean id="wizardDialogController" class="de.bund.bva.pliscommon.pliswebgui.gui.flows.wizarddialog.WizardController"
         parent="abstractGuiController">
         <property name="messageController" ref="messageController"/>
+        <property name="jsfSteuerelementeHelper" ref="jsfSteuerelementeHelper"/>
     </bean>
 
     <bean id="beispielWizardDialogController" class="de.bund.bva.pliscommon.pliswebgui.gui.flows.wizarddialog.BeispielWizardDialogController">
