@@ -1,3 +1,9 @@
+# v5.3.0
+- `IFS-970`:
+    - Update auf Version IF 2.4
+    - Update Isy-Web auf Version 5.3.0
+- `IFS-1024`: Update Isy-Style auf Version 5.4.0
+
 # v5.2.0
 - `IFS-1005`: DIN SPEC Zeichen zum Testen hinzugefügt
 
