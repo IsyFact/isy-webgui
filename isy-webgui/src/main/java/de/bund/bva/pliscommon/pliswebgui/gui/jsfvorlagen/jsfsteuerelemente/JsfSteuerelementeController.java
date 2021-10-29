@@ -78,6 +78,8 @@ public class JsfSteuerelementeController extends AbstractGuiController<JsfSteuer
         }
         model.setDropdownAuswahlListe(selectItems);
 
+        model.setDropdownReadonlyAuswahl("Item 3");
+
         // Radio Button
         selectItems = new ArrayList<>();
         for (int i = 0; i <= 4; i++) {
