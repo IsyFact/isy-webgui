@@ -24,6 +24,8 @@ public class DropdownBeispieleController extends AbstractGuiController<DropdownB
             selectItems.add(new SelectItem(String.valueOf(i), "Item " + i));
         }
         model.setDropdownAuswahlListe(selectItems);
+
+        model.setReadonlyDropdownAuswahl("Item 3");
     }
 
     public void dropdownWertAusgewaehlt(ValueChangeEvent event) throws AbortProcessingException {
