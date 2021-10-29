@@ -1,3 +1,6 @@
+# v4.12.0
+- `IFE-177`: UI um `ReadonlyDropdownAuswahl` erweitert
+
 # v4.11.0
 - `IFS-1005`: DIN SPEC Zeichen zum Testen hinzugefügt
 - `IFS-1116`: isyfact-standards Version auf 1.10.0 gesetzt.
