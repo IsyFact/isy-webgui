@@ -1,5 +1,6 @@
 # v4.12.0
 - `IFE-177`: UI um `ReadonlyDropdownAuswahl` erweitert
+- `IFS-686`: Property-Dateien auf Unicode Escapes umgestellt
 
 # v4.11.0
 - `IFS-1005`: DIN SPEC Zeichen zum Testen hinzugefügt
