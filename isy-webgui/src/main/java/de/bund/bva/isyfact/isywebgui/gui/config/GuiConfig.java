@@ -4,7 +4,11 @@ import de.bund.bva.isyfact.common.web.exception.common.AusnahmeIdMapper;
 import de.bund.bva.isyfact.common.web.exception.common.impl.AusnahmeIdMapperImpl;
 import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.FlowAwkWrapper;
 import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.impl.FlowAwkWrapperImpl;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeHelper;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeBehoerdeListpickerController;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeListpickerController;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeStaatsangListpickerController;
+
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
@@ -27,6 +31,15 @@ public class GuiConfig {
     @Bean
     public JsfSteuerelementeBehoerdeListpickerController jsfSteuerelementeBehoerdeListpickerController() {
         return new JsfSteuerelementeBehoerdeListpickerController(10);
+    }
+
+    @Bean
+    public JsfSteuerelementeHelper jsfSteuerelementeHelper(JsfSteuerelementeListpickerController jsfSteuerelementeListpickerController,
+                                                           JsfSteuerelementeBehoerdeListpickerController jsfSteuerelementeBehoerdeListpickerController,
+                                                           JsfSteuerelementeStaatsangListpickerController jsfSteuerelementeStaatsangListpickerController) {
+        return new JsfSteuerelementeHelper(jsfSteuerelementeListpickerController,
+                jsfSteuerelementeBehoerdeListpickerController,
+                jsfSteuerelementeStaatsangListpickerController);
     }
 
     /**

@@ -1,5 +1,10 @@
 package de.bund.bva.isyfact.isywebgui.gui.flows.wizarddialog;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.faces.model.SelectItem;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
 
@@ -54,7 +59,7 @@ public class BeispielWizardDialogController extends WizardDialogController {
     /**
      * Initialisiert den Wizard.
      * @param model
-     *            Das Model.
+     *        Das Model.
      */
     public void initializeWizard(WizardModel model) {
 
@@ -75,24 +80,30 @@ public class BeispielWizardDialogController extends WizardDialogController {
             // Standardverhalten festlegen
             super.initializeDefaultPages(model.getWizardDialogModel());
 
+            List<SelectItem> selectItems = new ArrayList<>();
+            for (int i = 0; i <= 10; i++) {
+                selectItems.add(new SelectItem(String.valueOf(i), "Item " + i));
+            }
+            model.setDropdownAuswahlListe(selectItems);
+
             model.setInitialisiert(true);
         } else if (model.getWizardDialogModel().getNextActiveWizardDialogPageId() != null) {
 
             // Aktive Seite setzen
-            model.getWizardDialogModel().setActiveWizardDialogPageId(
-                model.getWizardDialogModel().getNextActiveWizardDialogPageId());
+            model.getWizardDialogModel()
+                .setActiveWizardDialogPageId(model.getWizardDialogModel().getNextActiveWizardDialogPageId());
 
             // Bei Bedarf Validierungsfehler schreiben
             WizardDialogPage page = model.getWizardDialogModel().getActiveWizardDialogPage();
             if (page.getWizardDialogPageId().equals(ID_PAGE_1)) {
                 if (!((WizardPage1) page).isPageSuccessful()) {
-                    this.globalFlowController.getValidationController().processValidationMessages(
-                        ((WizardPage1) page).getValidierungsfehler());
+                    this.globalFlowController.getValidationController()
+                        .processValidationMessages(((WizardPage1) page).getValidierungsfehler());
                 }
             } else if (page.getWizardDialogPageId().equals(ID_PAGE_3)) {
                 if (!((WizardPage3) page).isPageSuccessful()) {
-                    this.globalFlowController.getValidationController().processValidationMessages(
-                        ((WizardPage3) page).getValidierungsfehler());
+                    this.globalFlowController.getValidationController()
+                        .processValidationMessages(((WizardPage3) page).getValidierungsfehler());
                 }
             }
 
@@ -127,15 +138,13 @@ public class BeispielWizardDialogController extends WizardDialogController {
         page.setPageSuccessful(false);
         model.setActiveWizardDialogPageId(page.getWizardDialogPageId());
         WizardPage1 wp1 = (WizardPage1) page;
+        wp1.getValidierungsfehler().add(new ValidationMessage("ABC", "person.nachname", "Nachname",
+            "Das Feld enthält ungültige Zeichen."));
         wp1.getValidierungsfehler()
-            .add(
-                new ValidationMessage("ABC", "person.nachname", "Nachname",
-                    "Das Feld enthält ungültige Zeichen."));
-        wp1.getValidierungsfehler().add(
-            new ValidationMessage("ABC", null, null, "Das Feld enthält ungültige Zeichen."));
+            .add(new ValidationMessage("ABC", null, null, "Das Feld enthält ungültige Zeichen."));
 
-        this.globalFlowController.getValidationController().processValidationMessages(
-            wp1.getValidierungsfehler());
+        this.globalFlowController.getValidationController()
+            .processValidationMessages(wp1.getValidierungsfehler());
 
         page = model.getWizardDialogPage(ID_PAGE_2);
         page.setPageDone(true);
@@ -145,8 +154,8 @@ public class BeispielWizardDialogController extends WizardDialogController {
         page.setPageDone(true);
         page.setPageSuccessful(false);
         WizardPage3 wp3 = (WizardPage3) page;
-        wp3.getValidierungsfehler().add(
-            new ValidationMessage("ABC", null, null, "Das Feld enthält ungültige Zeichen."));
+        wp3.getValidierungsfehler()
+            .add(new ValidationMessage("ABC", null, null, "Das Feld enthält ungültige Zeichen."));
 
         page = model.getWizardDialogPage(ID_PAGE_4);
         page.setPageDone(true);

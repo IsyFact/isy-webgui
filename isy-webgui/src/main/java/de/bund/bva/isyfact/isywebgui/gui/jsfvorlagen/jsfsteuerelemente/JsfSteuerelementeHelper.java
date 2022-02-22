@@ -4,7 +4,11 @@ import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeBehoerdeListpickerController;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeListpickerController;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeStaatsangListpickerController;
+
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Required;
+import org.springframework.context.annotation.Bean;
+import org.springframework.stereotype.Component;
 
 /**
  * Helper für JSF-Steuerelemente.
@@ -17,13 +21,13 @@ public class JsfSteuerelementeHelper {
     /**
      * Listpicker-Controller.
      */
-    private JsfSteuerelementeListpickerController jsfSteuerelementeListpickerController;
+    private final JsfSteuerelementeListpickerController jsfSteuerelementeListpickerController;
 
 
     /**
      * Behoerde-Listpicker-Controller.
      */
-    private JsfSteuerelementeBehoerdeListpickerController jsfSteuerelementeBehoerdeListpickerController;
+    private final JsfSteuerelementeBehoerdeListpickerController jsfSteuerelementeBehoerdeListpickerController;
 
     /**
      * Staatsangehörigkeit Listpicker-Controller.
@@ -36,25 +40,21 @@ public class JsfSteuerelementeHelper {
      */
     private JsfSteuerelementeTrefferlistenClientController jsfSteuerelementeTrefferlistenClientController;
 
+    public JsfSteuerelementeHelper(JsfSteuerelementeListpickerController jsfSteuerelementeListpickerController,
+                                   JsfSteuerelementeBehoerdeListpickerController jsfSteuerelementeBehoerdeListpickerController,
+                                   JsfSteuerelementeStaatsangListpickerController jsfSteuerelementeStaatsangListpickerController) {
+        this.jsfSteuerelementeListpickerController = jsfSteuerelementeListpickerController;
+        this.jsfSteuerelementeBehoerdeListpickerController = jsfSteuerelementeBehoerdeListpickerController;
+        this.jsfSteuerelementeStaatsangListpickerController = jsfSteuerelementeStaatsangListpickerController;
+    }
+
 
     public JsfSteuerelementeListpickerController getJsfSteuerelementeListpickerController() {
         return this.jsfSteuerelementeListpickerController;
     }
 
-    @Required
-    public void setJsfSteuerelementeListpickerController(
-        JsfSteuerelementeListpickerController jsfSteuerelementeListpickerController) {
-        this.jsfSteuerelementeListpickerController = jsfSteuerelementeListpickerController;
-    }
-
     public JsfSteuerelementeBehoerdeListpickerController getJsfSteuerelementeBehoerdeListpickerController() {
         return this.jsfSteuerelementeBehoerdeListpickerController;
-    }
-
-    @Required
-    public void setJsfSteuerelementeBehoerdeListpickerController(
-        JsfSteuerelementeBehoerdeListpickerController jsfSteuerelementeBehoerdeListpickerController) {
-        this.jsfSteuerelementeBehoerdeListpickerController = jsfSteuerelementeBehoerdeListpickerController;
     }
 
     public JsfSteuerelementeStaatsangListpickerController getJsfSteuerelementeStaatsangListpickerController() {
