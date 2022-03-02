@@ -12,20 +12,20 @@ import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicke
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
-
 /**
- * Konfiguration für die GUI.
+ * Configuration for the GUI.
  */
 @Configuration
 @ComponentScan(basePackages = { "de.bund.bva.isyfact.isywebgui.gui" })
 public class GuiConfig {
 
-    /** Fallback-Ausnahme-ID, falls keine andere zugeordnet werden konnte. **/
+    /** Fallback exception ID if no other could be assigned. **/
     private static final String FALLBACK_AUSNAHME_ID = "WEBGI99999";
 
     /**
-     * Controller für den BehoerdenListepicker.
-     * Explizit angegeben, da die Property MaxElemente gesetzt werden muss
+     * Controller for the BehoerdenListpicker.
+     * Explicitly specified, since the property MaxElements must be set.
+     *
      * @return JsfSteuerelementeBehoerdeListpickerController
      */
     @Bean
@@ -33,6 +33,14 @@ public class GuiConfig {
         return new JsfSteuerelementeBehoerdeListpickerController(10);
     }
 
+    /**
+     * Helper for JSF controls.
+     *
+     * @param jsfSteuerelementeListpickerController Controller for the listpicker.
+     * @param jsfSteuerelementeBehoerdeListpickerController Controller for the BehoerdenListpicker.
+     * @param jsfSteuerelementeStaatsangListpickerController Controller for the StaatsangListpicker.
+     * @return JsfSteuerelementeHelper
+     */
     @Bean
     public JsfSteuerelementeHelper jsfSteuerelementeHelper(JsfSteuerelementeListpickerController jsfSteuerelementeListpickerController,
                                                            JsfSteuerelementeBehoerdeListpickerController jsfSteuerelementeBehoerdeListpickerController,
@@ -43,8 +51,9 @@ public class GuiConfig {
     }
 
     /**
-     * Ausnahme ID - Mapper.
-     * Dieser Mapper wird auch automatisch für das IsyWeb Exception Handling verwendet
+     * Exception ID - Mapper.
+     * This mapper is also automatically used for IsyWeb exception handling.
+     *
      * @return AusnahmeIdMapper
      **/
     @Bean

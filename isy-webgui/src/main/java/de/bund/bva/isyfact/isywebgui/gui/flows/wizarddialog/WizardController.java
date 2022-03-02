@@ -4,6 +4,7 @@ import javax.faces.event.AbortProcessingException;
 import javax.faces.event.ValueChangeEvent;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.global.MessageController;
@@ -11,10 +12,10 @@ import de.bund.bva.isyfact.common.web.jsf.components.wizard.WizardDialogModel;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeHelper;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeStaatsangListpickerModel;
 
-import org.springframework.stereotype.Controller;
+
 
 /**
- * Controller für den Wizard Dialog.
+ * Controller for the Wizard dialogue.
  *
  * @author Capgemini
  * @version $Id: WizardController.java 134128 2015-04-08 13:53:41Z sdm_ahoerning $
@@ -23,10 +24,13 @@ import org.springframework.stereotype.Controller;
 public class WizardController extends AbstractGuiController<WizardModel> {
 
     /**
-     * Der MessageController.
+     * The MessageController.
      */
     private MessageController messageController;
 
+    /**
+     * The JsfSteuerelementeHelper.
+     */
     private JsfSteuerelementeHelper jsfSteuerelementeHelper;
 
     @Autowired
@@ -50,23 +54,29 @@ public class WizardController extends AbstractGuiController<WizardModel> {
     }
 
     /**
-     * Aufruf von Speichern.
+     * Call save.
      * @param model
-     *        das Model des Modalen Dialogs
+     *      the model of the modal dialogue
      */
     public void speichern(WizardModel model) {
         this.messageController.writeInfoMessage("Erfolgreich gespeichert");
     }
 
     /**
-     * Aufruf von Abbrechen.
+     * Call Cancel.
      * @param model
-     *        das Model des Modalen Dialogs
+     *      the model of the modal dialogue
      */
     public void abbrechen(WizardModel model) {
         this.messageController.writeWarnMessage("Abbruch!", "Fehler");
     }
 
+    /**
+     * Sets the chosen dropdown value for the model.
+     *
+     * @param event The ValueChangeEvent.
+     * @throws AbortProcessingException Exception
+     */
     public void dropdownWertAusgewaehlt(ValueChangeEvent event) throws AbortProcessingException {
         getMaskenModelZuController().setDropdownAuswahl(String.valueOf(event.getNewValue()));
     }

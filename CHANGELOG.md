@@ -1,5 +1,6 @@
 # 5.4.0
 - `IFE-484`: Update isyfact-bom auf 2.4.1 
+- `IFE-421`: Korrektur der Anzeige des Dropdown Listpickers im Wizard
 
 # v5.3.0
 - `IFS-686`: Property-Dateien auf Unicode Escapes umgestellt
