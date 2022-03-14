@@ -28,6 +28,7 @@
                                     placeholder="01.12.1999" value="02.01.1949" />
                             </div>
                         </div>
+
                         <div class="form-group ">
                             <label class="col-lg-6 control-label" for="exampleInput5">Geburtsort</label>
 
@@ -44,6 +45,20 @@
                                     placeholder="Detuschland" value="Deutschland" />
                             </div>
                         </div>
+                        <isy:formCheckbox
+                                id="modalCheckbox" reference="modalCheckbox"
+                                label="TestCheckbox" labelRight=""
+                                value="true"
+                                disabled="false">
+                        </isy:formCheckbox>
+
+                        <isy:formCheckbox
+                                id="modalCheckboxWithLabelRight" reference="modalCheckboxWithLabelRight"
+                                label="TestCheckbox with label" labelRight="I am a right label"
+                                value="true"
+                                disabled="false">
+                        </isy:formCheckbox>
+
                     </div>
                     <div class="col-lg-4">
                         <div class="form-group">
