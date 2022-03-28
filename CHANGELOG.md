@@ -1,3 +1,6 @@
+# v5.4.0
+- `IFE-424`: Verwendung des Nutzerbereichs von isy-web
+
 # v5.3.0
 - `IFS-686`: Property-Dateien auf Unicode Escapes umgestellt
 - `IFS-970`:
