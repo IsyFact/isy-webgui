@@ -107,14 +107,14 @@
 					</div>
 				</div>
 				
-				 <isy:formSelectOneDropdown reference="formSelectOneDropdown"
-                                                       value="#{wm.dropdownAuswahl}"
-                                                       label="Auswahl"
-                                                       valueChangeListener="#{wm.dropdownWertAusgewaehlt}"
-                                                       converter="#{typeConverter}" converterAttribute="int">
-                                <f:selectItems
-                                        value="#{wm.dropdownAuswahlListe}"/>
-                            </isy:formSelectOneDropdown>
+				<isy:formSelectOneDropdown reference="formSelectOneDropdown"
+                    value="#{wm.dropdownAuswahl}"
+                    label="Auswahl"
+                    valueChangeListener="#{wizardDialogController.dropdownWertAusgewaehlt}"
+                    converter="#{typeConverter}" converterAttribute="int">
+
+                	<f:selectItems value="#{wm.dropdownAuswahlListe}"/>
+                </isy:formSelectOneDropdown>
 			</div>
 		</div>
 	</div>
