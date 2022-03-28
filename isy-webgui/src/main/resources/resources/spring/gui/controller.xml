@@ -3,10 +3,10 @@
     xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd">
 
     <!-- ========== -->
-    <!-- Controller -->
+    <!-- controller -->
     <!-- ========== -->
 
-    <!-- Allgemeine Controller -->
+    <!-- import default controller -->
     <import resource="classpath:resources/plis-web/spring/controller.xml"/>
 
     <bean id="abstractBehoerdeListpickerController" abstract="true"
@@ -19,7 +19,7 @@
         parent="abstractBehoerdeListpickerController">
     </bean>
 
-    <!-- JSF-Vorlagen -->
+    <!-- JSF templates -->
     <bean id="jsfSteuerelementeController"
         class="de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeController"
         parent="abstractGuiController">
@@ -44,7 +44,7 @@
         <property name="messageController" ref="messageController"/>
     </bean>
 
-    <!-- Flows -->
+    <!-- flows -->
     <bean id="modalerDialogController" class="de.bund.bva.pliscommon.pliswebgui.gui.flows.modalerdialog.ModalerDialogController"
         parent="abstractGuiController">
         <property name="messageController" ref="messageController"/>
@@ -82,7 +82,7 @@
     <bean id="bestaetigungsdialogController" parent="abstractGuiController"
         class="de.bund.bva.pliscommon.pliswebgui.gui.flows.modalerdialog.BestaetigungsdialogController"/>
 
-    <!-- Layouts -->
+    <!-- layouts -->
     <bean id="beispiellinkaController"
         class="de.bund.bva.pliscommon.pliswebgui.gui.layouts.linksnavigationbeispiel.beispiellinka.BeispiellinkaController"
         parent="abstractGuiController">
@@ -124,7 +124,7 @@
 
     <bean id="formulareController" class="de.bund.bva.pliscommon.pliswebgui.gui.layouts.formulare.FormulareController"/>
 
-    <!-- Helper -->
+    <!-- helper -->
     <bean id="enumConstants" class="de.bund.bva.pliscommon.pliswebgui.gui.common.constant.EnumConstants"/>
 
     <bean id="jsfSteuerelementeHelper"

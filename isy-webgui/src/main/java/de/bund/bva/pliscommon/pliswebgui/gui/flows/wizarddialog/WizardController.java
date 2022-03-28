@@ -12,18 +12,21 @@ import de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSt
 import de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeStaatsangListpickerModel;
 
 /**
- * Controller für den Wizard Dialog.
+ * Controller for the Wizard dialogue.
  *
- * @author Capgemini, Tobias Groeger
+ * @author Capgemini
  * @version $Id: WizardController.java 134128 2015-04-08 13:53:41Z sdm_ahoerning $
  */
 public class WizardController extends AbstractGuiController<WizardModel> {
 
     /**
-     * Der MessageController.
+     * The MessageController.
      */
     private MessageController messageController;
 
+    /**
+     * The JsfSteuerelementeHelper.
+     */
     private JsfSteuerelementeHelper jsfSteuerelementeHelper;
 
     @Override
@@ -40,18 +43,18 @@ public class WizardController extends AbstractGuiController<WizardModel> {
     }
 
     /**
-     * Aufruf von Speichern.
+     * Call save.
      * @param model
-     *        das Model des Modalen Dialogs
+     *      the model of the modal dialogue
      */
     public void speichern(WizardModel model) {
         this.messageController.writeInfoMessage("Erfolgreich gespeichert");
     }
 
     /**
-     * Aufruf von Abbrechen.
+     * Call Cancel.
      * @param model
-     *        das Model des Modalen Dialogs
+     *      the model of the modal dialogue
      */
     public void abbrechen(WizardModel model) {
         this.messageController.writeWarnMessage("Abbruch!", "Fehler");

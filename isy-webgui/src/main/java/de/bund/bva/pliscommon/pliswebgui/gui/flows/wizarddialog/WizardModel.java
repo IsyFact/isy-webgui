@@ -10,7 +10,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.wizard.WizardDialogModel;
 import de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeStaatsangListpickerModel;
 
 /**
- * Model für den Modalen Dialog.
+ * Model for modal dialogue.
  *
  * @author Capgemini, Tobias Groeger
  * @version $Id: WizardModel.java 134241 2015-04-09 14:37:26Z sdm_ahoerning $
@@ -18,37 +18,37 @@ import de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSt
 public class WizardModel extends AbstractMaskenModel {
 
     /**
-     * Die Serial-Version UID.
+     * The serial version UID.
      */
     private static final long serialVersionUID = 1L;
 
     /**
-     * Ob die Wizardinitialisierung bereits durchgeführt wurde.
+     * Whether the wizard initialisation has already been carried out.
      */
     private boolean initialisiert;
 
     /**
-     * Das Model für den Wizard.
+     * The model for the wizard.
      */
     private WizardDialogModel wizardDialogModel;
 
     /**
-     * Auswahl des Dropdowns.
+     * Selection of the dropdown.
      */
     private String dropdownAuswahl;
 
     /**
-     * Liste an Dropdown-Auswahlen.
+     * List of drop-down selections.
      */
     private List<SelectItem> dropdownAuswahlListe;
 
     /**
-     * Listpickermodel für den Staatsangehörigkeits-Listpicker.
+     * Listpicker model for the Staatsangehörigkeits-Listpicker.
      */
     private JsfSteuerelementeStaatsangListpickerModel staatsangListpickerModel;
 
     /**
-     * Auswahl des Staatsangehörigkeits-Listpickers.
+     * Selection of the nationality listpicker.
      */
     private Listpickerangabe staatsangListpickerAngabe;
 

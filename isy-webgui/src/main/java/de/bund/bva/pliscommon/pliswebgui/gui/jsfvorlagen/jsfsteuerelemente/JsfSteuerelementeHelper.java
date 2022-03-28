@@ -3,32 +3,32 @@ package de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.jsfsteuerelemente;
 import org.springframework.beans.factory.annotation.Required;
 
 /**
- * Helper für JSF-Steuerelemente.
+ * Helper for JSF controls.
  *
- * @author Capgemini, Tobias Gröger
+ * @author Capgemini
  * @version $Id: JsfSteuerelementeHelper.java 130046 2015-02-10 10:43:52Z sdm_tgroeger $
  */
 public class JsfSteuerelementeHelper {
 
     /**
-     * Listpicker-Controller.
+     * listpicker controller.
      */
     private JsfSteuerelementeListpickerController jsfSteuerelementeListpickerController;
 
 
     /**
-     * Behoerde-Listpicker-Controller.
+     * Behoerde listpicker controller.
      */
     private JsfSteuerelementeBehoerdeListpickerController jsfSteuerelementeBehoerdeListpickerController;
 
     /**
-     * Staatsangehörigkeit Listpicker-Controller.
+     * Staatsangehörigkeit listpicker controller.
      */
     private JsfSteuerelementeStaatsangListpickerController jsfSteuerelementeStaatsangListpickerController;
 
 
     /**
-     * Staatsangehörigkeit Listpicker-Controller.
+     * Staatsangehörigkeit listpicker controller.
      */
     private JsfSteuerelementeTrefferlistenClientController jsfSteuerelementeTrefferlistenClientController;
 
