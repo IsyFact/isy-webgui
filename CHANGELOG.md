@@ -1,4 +1,5 @@
 # v4.12.0
+- `IFE-424` Verwendung des Nutzerbereichs von isy-web
 - `IFE-177`: UI um `ReadonlyDropdownAuswahl` erweitert
 - `IFS-686`: Property-Dateien auf Unicode Escapes umgestellt
 
