@@ -1,5 +1,6 @@
 # v5.2.0
 - `IFS-1005`: DIN SPEC Zeichen zum Testen hinzugefügt
+- `IFS-1398`: Update auf IsyFact Standards 2.3.2 (CVE-2022-22965)
 
 # v5.1.0
 - `IFS-932`: `IFE-848` auf IFS 2.2 portiert
