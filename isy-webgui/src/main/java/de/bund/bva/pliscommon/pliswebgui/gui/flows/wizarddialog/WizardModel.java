@@ -1,10 +1,16 @@
 package de.bund.bva.pliscommon.pliswebgui.gui.flows.wizarddialog;
 
+import java.util.List;
+
+import javax.faces.model.SelectItem;
+
 import de.bund.bva.isyfact.common.web.global.AbstractMaskenModel;
+import de.bund.bva.isyfact.common.web.jsf.components.listpicker.Listpickerangabe;
 import de.bund.bva.isyfact.common.web.jsf.components.wizard.WizardDialogModel;
+import de.bund.bva.pliscommon.pliswebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeStaatsangListpickerModel;
 
 /**
- * Model für den Modalen Dialog.
+ * Model for modal dialogue.
  *
  * @author Capgemini, Tobias Groeger
  * @version $Id: WizardModel.java 134241 2015-04-09 14:37:26Z sdm_ahoerning $
@@ -12,19 +18,39 @@ import de.bund.bva.isyfact.common.web.jsf.components.wizard.WizardDialogModel;
 public class WizardModel extends AbstractMaskenModel {
 
     /**
-     * Die Serial-Version UID.
+     * The serial version UID.
      */
     private static final long serialVersionUID = 1L;
 
     /**
-     * Ob die Wizardinitialisierung bereits durchgeführt wurde.
+     * Whether the wizard initialisation has already been carried out.
      */
     private boolean initialisiert;
 
     /**
-     * Das Model für den Wizard.
+     * The model for the wizard.
      */
     private WizardDialogModel wizardDialogModel;
+
+    /**
+     * Selection of the dropdown.
+     */
+    private String dropdownAuswahl;
+
+    /**
+     * List of drop-down selections.
+     */
+    private List<SelectItem> dropdownAuswahlListe;
+
+    /**
+     * Listpicker model for the Staatsangehörigkeits-Listpicker.
+     */
+    private JsfSteuerelementeStaatsangListpickerModel staatsangListpickerModel;
+
+    /**
+     * Selection of the nationality listpicker.
+     */
+    private Listpickerangabe staatsangListpickerAngabe;
 
     public WizardDialogModel getWizardDialogModel() {
         return this.wizardDialogModel;
@@ -40,6 +66,39 @@ public class WizardModel extends AbstractMaskenModel {
 
     public void setInitialisiert(boolean initialisiert) {
         this.initialisiert = initialisiert;
+    }
+
+    public String getDropdownAuswahl() {
+        return this.dropdownAuswahl;
+    }
+
+    public void setDropdownAuswahl(String dropdownAuswahl) {
+        this.dropdownAuswahl = dropdownAuswahl;
+    }
+
+    public List<SelectItem> getDropdownAuswahlListe() {
+        return this.dropdownAuswahlListe;
+    }
+
+    public void setDropdownAuswahlListe(List<SelectItem> dropdownAuswahlListe) {
+        this.dropdownAuswahlListe = dropdownAuswahlListe;
+    }
+
+    public JsfSteuerelementeStaatsangListpickerModel getStaatsangListpickerModel() {
+        return this.staatsangListpickerModel;
+    }
+
+    public void setStaatsangListpickerModel(
+        JsfSteuerelementeStaatsangListpickerModel staatsangListpickerModel) {
+        this.staatsangListpickerModel = staatsangListpickerModel;
+    }
+
+    public Listpickerangabe getStaatsangListpickerAngabe() {
+        return this.staatsangListpickerAngabe;
+    }
+
+    public void setStaatsangListpickerAngabe(Listpickerangabe staatsangListpickerAngabe) {
+        this.staatsangListpickerAngabe = staatsangListpickerAngabe;
     }
 
 }

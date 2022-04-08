@@ -68,14 +68,18 @@
 							placeholder="-" />
 					</div>
 				</div>
-				<div class="form-group">
-					<label class="col-lg-6 control-label" for="exampleInput14">Künstlername</label>
-
-					<div class="col-lg-6">
-						<input type="text" class="form-control" id="exampleInput14"
-							placeholder="-" />
-					</div>
-				</div>
+ <isy:formListpicker reference="suchattribut_staatsangehoerigkeit"
+                                                listpickerModel="#{wm.staatsangListpickerModel}"
+                                                label="Staatsangeh." labelStyleClass="col-lg-6"
+                                                inputStyleClass="col-lg-6"
+                                                listpickerController="#{jsfSteuerelementeHelper.jsfSteuerelementeStaatsangListpickerController}"
+                                                value="#{wm.staatsangListpickerAngabe}"
+                                                header="Schlüssel,Wert"
+                                                inputComplement="2"
+                                                minWidth="0"
+                                                required="false"
+                                                placeholder="000" inputmask="999"
+                            />
 			</div>
 			<div class="col-lg-4">
 				<div class="form-group">
@@ -102,14 +106,15 @@
 							placeholder="Placeholder" />
 					</div>
 				</div>
-				<div class="form-group">
-					<label class="col-lg-6 control-label" for="exampleInput19">Label</label>
+				
+				<isy:formSelectOneDropdown reference="formSelectOneDropdown"
+                    value="#{wm.dropdownAuswahl}"
+                    label="Auswahl"
+                    valueChangeListener="#{wizardDialogController.dropdownWertAusgewaehlt}"
+                    converter="#{typeConverter}" converterAttribute="int">
 
-					<div class="col-lg-6">
-						<input type="email" class="form-control" id="exampleInput19"
-							placeholder="Placeholder" />
-					</div>
-				</div>
+                	<f:selectItems value="#{wm.dropdownAuswahlListe}"/>
+                </isy:formSelectOneDropdown>
 			</div>
 		</div>
 	</div>
