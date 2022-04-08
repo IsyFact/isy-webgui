@@ -1,15 +1,21 @@
 package de.bund.bva.isyfact.isywebgui.gui.flows.wizarddialog;
 
+import javax.faces.event.AbortProcessingException;
+import javax.faces.event.ValueChangeEvent;
+
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Controller;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.global.MessageController;
 import de.bund.bva.isyfact.common.web.jsf.components.wizard.WizardDialogModel;
-import org.springframework.stereotype.Controller;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.JsfSteuerelementeHelper;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeStaatsangListpickerModel;
+
+
 
 /**
- * Controller für den Wizard Dialog.
+ * Controller for the Wizard dialogue.
  *
  * @author Capgemini
  * @version $Id: WizardController.java 134128 2015-04-08 13:53:41Z sdm_ahoerning $
@@ -18,39 +24,61 @@ import org.springframework.stereotype.Controller;
 public class WizardController extends AbstractGuiController<WizardModel> {
 
     /**
-     * Der MessageController.
+     * The MessageController.
      */
     private MessageController messageController;
 
+    /**
+     * The JsfSteuerelementeHelper.
+     */
+    private JsfSteuerelementeHelper jsfSteuerelementeHelper;
+
     @Autowired
-    public WizardController(MessageController messageController) {
+    public WizardController(MessageController messageController, JsfSteuerelementeHelper jsfSteuerelementeHelper) {
+
         this.messageController = messageController;
+        this.jsfSteuerelementeHelper = jsfSteuerelementeHelper;
     }
 
     @Override
     public void initialisiereModel(WizardModel model) {
 
+        JsfSteuerelementeStaatsangListpickerModel staatsangListpickerModel =
+            new JsfSteuerelementeStaatsangListpickerModel();
+        staatsangListpickerModel.setItems(this.jsfSteuerelementeHelper
+            .getJsfSteuerelementeStaatsangListpickerController().erzeugeListpickerItemListe());
+        model.setStaatsangListpickerModel(staatsangListpickerModel);
         // Wizard Model
         model.setWizardDialogModel(new WizardDialogModel());
 
     }
 
     /**
-     * Aufruf von Speichern.
+     * Call save.
      * @param model
-     *            das Model des Modalen Dialogs
+     *      the model of the modal dialogue
      */
     public void speichern(WizardModel model) {
         this.messageController.writeInfoMessage("Erfolgreich gespeichert");
     }
 
     /**
-     * Aufruf von Abbrechen.
+     * Call Cancel.
      * @param model
-     *            das Model des Modalen Dialogs
+     *      the model of the modal dialogue
      */
     public void abbrechen(WizardModel model) {
         this.messageController.writeWarnMessage("Abbruch!", "Fehler");
+    }
+
+    /**
+     * Sets the chosen dropdown value for the model.
+     *
+     * @param event The ValueChangeEvent.
+     * @throws AbortProcessingException Exception
+     */
+    public void dropdownWertAusgewaehlt(ValueChangeEvent event) throws AbortProcessingException {
+        getMaskenModelZuController().setDropdownAuswahl(String.valueOf(event.getNewValue()));
     }
 
     /**
