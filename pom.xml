@@ -9,7 +9,7 @@
     </parent>
 
     <artifactId>isy-webgui-parent</artifactId>
-    <version>5.4.0-SNAPSHOT</version>
+    <version>${revision}</version>
     <packaging>pom</packaging>
 
     <name>IsyFact WebGUI Parent</name>
@@ -17,6 +17,10 @@
     <modules>
         <module>isy-webgui</module>
     </modules>
+
+    <properties>
+        <revision>0.0.0-SNAPSHOT</revision>
+    </properties>
 
     <build>
         <plugins>
@@ -43,6 +47,10 @@
             <plugin>
                 <groupId>com.github.spotbugs</groupId>
                 <artifactId>spotbugs-maven-plugin</artifactId>
+            </plugin>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>flatten-maven-plugin</artifactId>
             </plugin>
         </plugins>
     </build>
