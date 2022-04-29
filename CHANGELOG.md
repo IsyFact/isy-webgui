@@ -1,5 +1,11 @@
 # v5.4.0
 - `IFE-424`: Verwendung des Nutzerbereichs von isy-web
+- `IFE-484`: Update isyfact-bom auf 2.4.1 
+- `IFE-421`: Korrektur der Anzeige des Dropdown Listpickers im Wizard
+- `IFS-1344`: Umstellung auf CI-Friendly builds
+ 
+# v5.3.1
+- `IFS-1397`: Anhebung auf Isyfact-erweiterungen 2.4.1 mit Spring Boot 2.5.12 (Fix CVE-2022-22965)
 
 # v5.3.0
 - `IFS-686`: Property-Dateien auf Unicode Escapes umgestellt
