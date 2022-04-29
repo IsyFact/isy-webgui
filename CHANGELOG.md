@@ -1,4 +1,5 @@
-# 5.4.0
+# v5.4.0
+- `IFE-424`: Verwendung des Nutzerbereichs von isy-web
 - `IFE-484`: Update isyfact-bom auf 2.4.1 
 - `IFE-421`: Korrektur der Anzeige des Dropdown Listpickers im Wizard
 - `IFS-1344`: Umstellung auf CI-Friendly builds
