@@ -1,4 +1,5 @@
 # v4.12.0
+- `IFS-728`: Checkboxen in modalen Dialog eingefügt
 - `IFE-424` Verwendung des Nutzerbereichs von isy-web
 - `IFE-177`: UI um `ReadonlyDropdownAuswahl` erweitert
 - `IFS-686`: Property-Dateien auf Unicode Escapes umgestellt
