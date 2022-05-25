@@ -10,5 +10,8 @@
 
     <view-state id="togglefilterBeispieleViewState" model="togglefilterBeispieleModel">
         <transition on="noAction" />
+        <transition on="filterTableData">
+            <evaluate expression="togglefilterBeispieleController.filterTableData(togglefilterBeispieleModel)"></evaluate>
+        </transition>
     </view-state>
 </flow>

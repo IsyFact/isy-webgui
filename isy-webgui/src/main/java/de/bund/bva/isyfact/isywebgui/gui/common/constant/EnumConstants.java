@@ -2,6 +2,7 @@ package de.bund.bva.isyfact.isywebgui.gui.common.constant;
 
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.SortDirection;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeSortierattribut;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.togglefilter.ToggleFilterTableDataSortAttribut;
 import org.springframework.stereotype.Component;
 
 /**
@@ -12,6 +13,56 @@ import org.springframework.stereotype.Component;
  */
 @Component
 public class EnumConstants {
+
+    public ToggleFilterTableDataSortAttribut getTOGGLEFILTERTABLEDATASORTATTRIBUT_ID() {
+        return TOGGLEFILTERTABLEDATASORTATTRIBUT_ID;
+    }
+
+    public ToggleFilterTableDataSortAttribut getTOGGLEFILTERTABLEDATASORTATTRIBUT_NAME() {
+        return TOGGLEFILTERTABLEDATASORTATTRIBUT_NAME;
+    }
+
+    public ToggleFilterTableDataSortAttribut getTOGGLEFILTERTABLEDATASORTATTRIBUT_INDUSTRY() {
+        return TOGGLEFILTERTABLEDATASORTATTRIBUT_INDUSTRY;
+    }
+
+    public ToggleFilterTableDataSortAttribut getTOGGLEFILTERTABLEDATASORTATTRIBUT_COUNTRY_CODE() {
+        return TOGGLEFILTERTABLEDATASORTATTRIBUT_COUNTRY_CODE;
+    }
+
+    public ToggleFilterTableDataSortAttribut getTOGGLEFILTERTABLEDATASORTATTRIBUT_MAIN_LOCATION() {
+        return TOGGLEFILTERTABLEDATASORTATTRIBUT_MAIN_LOCATION;
+    }
+
+    /**
+     * Ein Sortierattribut.
+     */
+    private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_ID =
+            ToggleFilterTableDataSortAttribut.ID;
+
+    /**
+     * Ein Sortierattribut.
+     */
+    private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_NAME =
+            ToggleFilterTableDataSortAttribut.NAME;
+
+    /**
+     * Ein Sortierattribut.
+     */
+    private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_INDUSTRY =
+            ToggleFilterTableDataSortAttribut.INDUSTRY;
+
+    /**
+     * Ein Sortierattribut.
+     */
+    private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_COUNTRY_CODE =
+            ToggleFilterTableDataSortAttribut.COUNTRY_CODE;
+
+    /**
+     * Ein Sortierattribut.
+     */
+    private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_MAIN_LOCATION =
+            ToggleFilterTableDataSortAttribut.MAIN_LOCATION;
 
     /**
      * Ein Sortierattribut.
