@@ -6,6 +6,9 @@ import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableModel;
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTablePaginationModel;
 import org.springframework.stereotype.Controller;
 
+/**
+ * Server-sided Controller
+ */
 @Controller
 public class ToggleFilterTableDataListenServerController extends
         DataTableInMemoryController<ToggleFilterTableData, DataTableInMemoryModel<ToggleFilterTableData>> {

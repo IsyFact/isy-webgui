@@ -6,40 +6,40 @@ import de.bund.bva.isyfact.common.web.sorting.InMemoryPropertySortAttribute;
 public enum ToggleFilterTableDataSortAttribut implements SortAttribute, InMemoryPropertySortAttribute {
 
     /**
-     * Ein Sortierattribut.
+     * A sort attribut
      */
     ID("number"),
 
     /**
-     * Ein Sortierattribut.
+     * A sort attribut
      */
     NAME("name"),
 
     /**
-     * Ein Sortierattribut.
+     * A sort attribut
      */
     INDUSTRY("industry"),
 
     /**
-     * Ein Sortierattribut.
+     * A sort attribut
      */
     COUNTRY_CODE("countryCode"),
 
     /**
-     * Ein Sortierattribut.
+     * A sort attribut
      */
     MAIN_LOCATION("mainLocation");
 
     /**
-     * Der Propertyname des Sortierattributs.
+     * property name of a sort attribut
      */
     private String sortProperty;
 
     /**
-     * Konstruktor.
+     * Constructor.
      *
      * @param sortProperty
-     *            Der Propertyname des Sortierattributs.
+     *                 property name of a sort attribut
      */
     private ToggleFilterTableDataSortAttribut(String sortProperty) {
         this.sortProperty = sortProperty;

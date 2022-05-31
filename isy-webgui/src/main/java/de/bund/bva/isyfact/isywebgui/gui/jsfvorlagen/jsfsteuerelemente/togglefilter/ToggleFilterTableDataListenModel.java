@@ -4,8 +4,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableModel;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTreffer;
 
     /**
-     * Model für die Trefferliste.
-     *
+     * Toggle filter table data model
      */
     public class ToggleFilterTableDataListenModel extends DataTableModel<ToggleFilterTableData> {
 

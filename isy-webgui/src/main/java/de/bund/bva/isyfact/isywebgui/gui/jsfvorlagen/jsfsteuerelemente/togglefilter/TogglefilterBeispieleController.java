@@ -14,9 +14,9 @@ import org.springframework.stereotype.Controller;
 @Controller
 public class TogglefilterBeispieleController extends AbstractGuiController<TogglefilterBeispieleModel> {
 
-    /** Controller für die Trefferliste Client. **/
+    /** Client-sided controller. **/
     private ToggleFilterTableDataListenClientController toggleFilterTableDataListenClientController;
-    /** Controller für die Trefferliste Server. **/
+    /** Server-sided Controller. **/
     private ToggleFilterTableDataListenServerController toggleFilterTableDataListenServerController;
 
     @Autowired
@@ -38,24 +38,24 @@ public class TogglefilterBeispieleController extends AbstractGuiController<Toggl
         model.setToggleFilterListe(initToggleFilterList());
         model.setToggleFilterAuswahl("0");
 
-        // Trefferliste ClientModel
-        ToggleFilterTableDataListenModel trefferlistenClientModel =
+        // TableData ClientModel
+        ToggleFilterTableDataListenModel toggleFilterTableDataListenModel =
                 new ToggleFilterTableDataListenModel();
-        trefferlistenClientModel.getDataModel()
+        toggleFilterTableDataListenModel.getDataModel()
                 .setDisplayItems(StubdatenGenerator.createDummyToggleFilterTableData());
-        model.setTrefferlistenClientModel(trefferlistenClientModel);
+        model.setTrefferlistenClientModel(toggleFilterTableDataListenModel);
 
-        // Trefferliste ServerModel
-        DataTableInMemoryModel<ToggleFilterTableData> trefferlistenServerModel =
+        // TableData ServerModel
+        DataTableInMemoryModel<ToggleFilterTableData> dataTableInMemoryModelOfToggleFilterTableData =
                 new DataTableInMemoryModel<>();
-        trefferlistenServerModel.getDataModel().setAllItems(StubdatenGenerator.createDummyToggleFilterTableData());
-        model.setTrefferlistenServerModel(trefferlistenServerModel);
+        dataTableInMemoryModelOfToggleFilterTableData.getDataModel().setAllItems(StubdatenGenerator.createDummyToggleFilterTableData());
+        model.setTrefferlistenServerModel(dataTableInMemoryModelOfToggleFilterTableData);
 
     }
 
     private ArrayList<SelectItem> initToggleFilterList() {
         ArrayList<SelectItem> toggleFilterList = new ArrayList<>();
-        SelectItem defaultNoFilter = new SelectItem(String.valueOf(0), "/");
+        SelectItem defaultNoFilter = new SelectItem(String.valueOf(0), "Alle");
         toggleFilterList.add(defaultNoFilter);
         SelectItem filter1 = new SelectItem(String.valueOf(1), "DE");
         toggleFilterList.add(filter1);
@@ -70,9 +70,9 @@ public class TogglefilterBeispieleController extends AbstractGuiController<Toggl
     }
 
     /**
-     * Filtert die Tabelle.
+     * Function to filter the given table data with specific parameters given by the toggle filter
      *
-     * @param model das Model
+     * @param model the model
      */
     public void filterTableData(TogglefilterBeispieleModel model) {
         switch(model.getToggleFilterAuswahl()){

@@ -8,17 +8,17 @@ import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.togglefilter.ToggleFilterTableData;
 
 /**
- * Datengenerator zur Erstellung von Stub/Mock-Daten. Nur zu Test- und Entwicklungszwecken verwenden!
+ * A data generator class for creating stub/mock data. Only for test and development usage!
  */
 public class StubdatenGenerator {
 
-    /** Zufallswert. */
+    /** Random value. */
     private static final Random RANDOM = new Random();
 
     /**
-     * Erzeuge eine Suchergebnisliste mit PersonDataTableItem__.
+     * Creates a dummy data list of PersonDataTable.
      *
-     * @return die erzeugte Trefferliste.
+     * @return created dummy data list
      */
     public static List<JsfSteuerelementeTreffer> erzeugePersonalienTrefferliste() {
         List<JsfSteuerelementeTreffer> personalienTreffer = new ArrayList<JsfSteuerelementeTreffer>();
@@ -63,9 +63,9 @@ public class StubdatenGenerator {
     }
 
     /**
-     * Erzeuge eine Suchergebnisliste mit ToggleFilterTableDataItem__.
+     * Creates a dummy data list of ToggleFilterTableData
      *
-     * @return die erzeugte Trefferliste.
+     * @return created dummy data list
      */
     public static List<ToggleFilterTableData> createDummyToggleFilterTableData() {
         List<ToggleFilterTableData> tableDataList = new ArrayList<ToggleFilterTableData>();

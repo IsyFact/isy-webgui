@@ -9,16 +9,16 @@ import de.bund.bva.isyfact.common.web.jsf.components.panel.PanelModel;
 
 public class TogglefilterBeispieleModel extends AbstractMaskenModel {
 
-    /** Panelmodel für Zustand des Panels. */
+    /** Panelmodel for panel status. */
     private PanelModel panelModelToggleFilter = new PanelModel(true);
 
     /**
-     * Model für Trefferliste (Client-Modus).
+     * Client-sided data model.
      */
     private ToggleFilterTableDataListenModel trefferlistenClientModel;
 
     /**
-     * Model für Trefferliste (Server-Modus).
+     * Server-sided data model.
      */
     private DataTableInMemoryModel<ToggleFilterTableData> trefferlistenServerModel;
 
@@ -40,11 +40,11 @@ public class TogglefilterBeispieleModel extends AbstractMaskenModel {
     }
 
     /**
-     * Elemente für Toggle-Filter.
+     * List of toggle filter options
      */
     private List<SelectItem> toggleFilterListe;
 
-    /** Aktuell aktive Auswahl. **/
+    /** Active toggle filter option **/
     private String toggleFilterAuswahl;
 
     public PanelModel getPanelModelToggleFilter() {

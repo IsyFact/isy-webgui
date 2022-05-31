@@ -19,17 +19,17 @@ public class ToggleFilterTableData implements DataTableItem {
     private String name;
 
     /**
-     * Branche.
+     * Industry.
      */
     private String industry;
 
     /**
-     * Länder Code.
+     * Country Code
      */
     private String countryCode;
 
     /**
-     * Hauptstandort.
+     * Main Location.
      */
     private String mainLocation;
 

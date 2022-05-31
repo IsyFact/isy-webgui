@@ -6,7 +6,7 @@ import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.togglefil
 import org.springframework.stereotype.Component;
 
 /**
- * Eine Konstantenklasse, um JSF den Zugriff auf Enums zu ermöglichen.
+ * A class of constants to support JSF using enums.
  *
  * @author Capgemini
  * @version $Id: EnumConstants.java 130046 2015-02-10 10:43:52Z sdm_tgroeger $
@@ -35,66 +35,66 @@ public class EnumConstants {
     }
 
     /**
-     * Ein Sortierattribut.
+     * As sort attribut
      */
     private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_ID =
             ToggleFilterTableDataSortAttribut.ID;
 
     /**
-     * Ein Sortierattribut.
+     * As sort attribut
      */
     private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_NAME =
             ToggleFilterTableDataSortAttribut.NAME;
 
     /**
-     * Ein Sortierattribut.
+     * As sort attribut
      */
     private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_INDUSTRY =
             ToggleFilterTableDataSortAttribut.INDUSTRY;
 
     /**
-     * Ein Sortierattribut.
+     * As sort attribut
      */
     private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_COUNTRY_CODE =
             ToggleFilterTableDataSortAttribut.COUNTRY_CODE;
 
     /**
-     * Ein Sortierattribut.
+     * As sort attribut
      */
     private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_MAIN_LOCATION =
             ToggleFilterTableDataSortAttribut.MAIN_LOCATION;
 
     /**
-     * Ein Sortierattribut.
+     * As sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME =
         JsfSteuerelementeSortierattribut.VORNAME;
 
     /**
-     * Ein Sortierattribut.
+     * As sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME =
         JsfSteuerelementeSortierattribut.NACHNAME;
 
     /**
-     * Ein Sortierattribut.
+     * As sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN =
         JsfSteuerelementeSortierattribut.LOGIN;
 
     /**
-     * Ein Sortierattribut.
+     * As sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_ID =
         JsfSteuerelementeSortierattribut.ID;
 
     /**
-     * Ein Sortierattribut.
+     * As sort attribut
      */
     private SortDirection SORTDIRECTION_ASCENDING = SortDirection.ASCENDING;
 
     /**
-     * Ein Sortierattribut.
+     * As sort attribut
      */
     private SortDirection SORTDIRECTION_DESCENDING = SortDirection.DESCENDING;
 

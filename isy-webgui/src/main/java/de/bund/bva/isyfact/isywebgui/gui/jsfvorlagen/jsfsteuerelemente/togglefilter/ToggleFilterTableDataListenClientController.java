@@ -7,8 +7,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTablePaginati
 import org.springframework.stereotype.Component;
 
 /**
- * Controller für die Trefferliste.
- *
+ * Client-sided Controller
  */
 @Component
 public class ToggleFilterTableDataListenClientController extends
@@ -30,7 +29,7 @@ public class ToggleFilterTableDataListenClientController extends
      * {@inheritDoc}
      */
     public void updateDisplayItems(ToggleFilterTableDataListenModel model) {
-        // tu nichts, da clientseitig
+        // do nothing cause client-sided
     }
 
 }
