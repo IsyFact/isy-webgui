@@ -37,13 +37,12 @@
                                                      sortProperty="#{enumConstants.TOGGLEFILTERTABLEDATASORTATTRIBUT_COUNTRY_CODE.sortProperty}"/>
                                 <isy:dataTableHeader name="Hauptstandort" width="20%"
                                                      sortProperty="#{enumConstants.TOGGLEFILTERTABLEDATASORTATTRIBUT_MAIN_LOCATION.sortProperty}"/>
-                                <isy:dataTableHeader name="" width="15%"/>
                             </f:facet>
                             <f:facet name="tableToolbar">
                                 <isy:buttonRow id="dataTableToolbar">
                                     <isy:toggleFilter
                                             value="${togglefilterBeispieleModel.toggleFilterAuswahl}"
-                                            label="Quick Filter" action="filterTableData">
+                                            label="Filter" action="filterTableData">
                                         <f:selectItems
                                                 value="#{togglefilterBeispieleModel.toggleFilterListe}" var="item"
                                                 itemLabel="#{item.label}" itemValue="#{item.value}"/>
@@ -54,8 +53,7 @@
                                 <isy:dataTablePaginator/>
                             </f:facet>
                             <isy:dataTableRows
-                                    rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/beispiele/togglefilter/rowDefinition.xhtml"
-                                    detailDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/beispiele/togglefilter/detailDefinition.xhtml"/>
+                                    rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/beispiele/togglefilter/rowDefinition.xhtml"/>
                         </isy:dataTable>
 
 
