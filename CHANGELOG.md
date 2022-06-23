@@ -1,5 +1,6 @@
 # v5.4.0
 - `IFE-136`: Mehr Funktionalität für die Toggle Filter Demo
+- `IFS-728`: Checkboxen in modalen Dialog eingefügt
 - `IFE-424`: Verwendung des Nutzerbereichs von isy-web
 - `IFE-484`: Update isyfact-bom auf 2.4.1 
 - `IFE-421`: Korrektur der Anzeige des Dropdown Listpickers im Wizard
