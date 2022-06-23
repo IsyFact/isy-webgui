@@ -838,6 +838,24 @@
                         </div>
                     </div>
                     <p>
+                        Liste für Einfachauswahl (inkl. Checkboxen). Einbindung über
+                        <code>&lt;isy:formSelectOneList&gt;</code>
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formSelectOneList
+                                    inputStyleClass="bootstrap-selectlist col-lg-2"
+                                    labelStyleClass="col-lg-2" reference="formSelectOneList"
+                                    value="#{listeBeispieleModel.listAuswahlSelectOne1}" size="4"
+                                    label="Liste (Einfachauswahl)"
+                                    checkboxed="true"
+                            >
+                                <f:selectItems
+                                        value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
+                            </isy:formSelectOneList>
+                        </div>
+                    </div>
+                    <p>
                         Liste für Mehrfachauswahl. Einbindung über
                         <code>&lt;isy:formSelectManyList&gt;</code>
                     </p>
@@ -853,7 +871,24 @@
                             </isy:formSelectManyList>
                         </div>
                     </div>
-
+                    <p>
+                        Liste für Mehrfachauswahl (inkl. Checkboxen). Einbindung über
+                        <code>&lt;isy:formSelectManyList&gt;</code>
+                    </p>
+                    <div class="form-horizontal">
+                        <div class="row">
+                            <isy:formSelectManyList
+                                    inputStyleClass="bootstrap-selectlist col-lg-2"
+                                    labelStyleClass="col-lg-2" reference="formSelectManyList"
+                                    value="#{listeBeispieleModel.listAuswahlSelectMany1}" size="4"
+                                    label="Liste (Mehrfachauswahl)"
+                                    checkboxed="true"
+                            >
+                                <f:selectItems
+                                        value="#{jsfSteuerelementeModel.formSelectListInhalt}"/>
+                            </isy:formSelectManyList>
+                        </div>
+                    </div>
                     <!-- Disabled -->
                     <p>Liste für Einfachauswahl (disabled)</p>
                     <div class="form-horizontal">
