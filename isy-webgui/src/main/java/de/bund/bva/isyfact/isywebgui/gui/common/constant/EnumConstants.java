@@ -35,66 +35,66 @@ public class EnumConstants {
     }
 
     /**
-     * As sort attribut
+     * A sort attribut
      */
     private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_ID =
             ToggleFilterTableDataSortAttribut.ID;
 
     /**
-     * As sort attribut
+     * A sort attribut
      */
     private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_NAME =
             ToggleFilterTableDataSortAttribut.NAME;
 
     /**
-     * As sort attribut
+     * A sort attribut
      */
     private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_INDUSTRY =
             ToggleFilterTableDataSortAttribut.INDUSTRY;
 
     /**
-     * As sort attribut
+     * A sort attribut
      */
     private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_COUNTRY_CODE =
             ToggleFilterTableDataSortAttribut.COUNTRY_CODE;
 
     /**
-     * As sort attribut
+     * A sort attribut
      */
     private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_MAIN_LOCATION =
             ToggleFilterTableDataSortAttribut.MAIN_LOCATION;
 
     /**
-     * As sort attribut
+     * A sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME =
         JsfSteuerelementeSortierattribut.VORNAME;
 
     /**
-     * As sort attribut
+     * A sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME =
         JsfSteuerelementeSortierattribut.NACHNAME;
 
     /**
-     * As sort attribut
+     * A sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN =
         JsfSteuerelementeSortierattribut.LOGIN;
 
     /**
-     * As sort attribut
+     * A sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_ID =
         JsfSteuerelementeSortierattribut.ID;
 
     /**
-     * As sort attribut
+     * A sort attribut
      */
     private SortDirection SORTDIRECTION_ASCENDING = SortDirection.ASCENDING;
 
     /**
-     * As sort attribut
+     * A sort attribut
      */
     private SortDirection SORTDIRECTION_DESCENDING = SortDirection.DESCENDING;
 
