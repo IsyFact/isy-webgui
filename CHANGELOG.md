@@ -1,5 +1,8 @@
+# v5.3.2
+- `IFS-1529`: Anhebung auf Isyfact-Standards 2.4.2
+
 # v5.3.1
-- `IFS-1397`: Anhebung auf Isyfact-erweiterungen 2.4.1 mit Spring Boot 2.5.12 (Fix CVE-2022-22965)
+- `IFS-1397`: Anhebung auf Isyfact-Standards 2.4.1 mit Spring Boot 2.5.12 (Fix CVE-2022-22965)
 
 # v5.3.0
 - `IFS-686`: Property-Dateien auf Unicode Escapes umgestellt
