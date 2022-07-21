@@ -2,6 +2,7 @@
 
 ## v5.3.2
 
+- `IFS-1529`: Anhebung auf Isyfact-Standards 2.4.2
 - `IFE-310`: Beispiele mit aktiven Checkboxen in `formSelectOneList` und `formSelectManyList` hinzugefügt
 - `IFS-728`: Checkboxen in modalen Dialog eingefügt
 
