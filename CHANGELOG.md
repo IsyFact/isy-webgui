@@ -5,7 +5,8 @@
 - `IFE-484`: Update isyfact-bom auf 2.4.1 
 - `IFE-421`: Korrektur der Anzeige des Dropdown Listpickers im Wizard
 - `IFS-1344`: Umstellung auf CI-Friendly builds
- 
+- `IFS-1552`: Einheitliche Verwendung von Maven-Properties für Versionsnummern
+
 # v5.3.1
 - `IFS-1397`: Anhebung auf Isyfact-erweiterungen 2.4.1 mit Spring Boot 2.5.12 (Fix CVE-2022-22965)
 
