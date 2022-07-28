@@ -2,10 +2,11 @@ package de.bund.bva.isyfact.isywebgui.gui.common.constant;
 
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.SortDirection;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeSortierattribut;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.togglefilter.ToggleFilterTableDataSortAttribut;
 import org.springframework.stereotype.Component;
 
 /**
- * Eine Konstantenklasse, um JSF den Zugriff auf Enums zu ermöglichen.
+ * A class of constants to support JSF using enums.
  *
  * @author Capgemini
  * @version $Id: EnumConstants.java 130046 2015-02-10 10:43:52Z sdm_tgroeger $
@@ -13,37 +14,87 @@ import org.springframework.stereotype.Component;
 @Component
 public class EnumConstants {
 
+    public ToggleFilterTableDataSortAttribut getTOGGLEFILTERTABLEDATASORTATTRIBUT_ID() {
+        return TOGGLEFILTERTABLEDATASORTATTRIBUT_ID;
+    }
+
+    public ToggleFilterTableDataSortAttribut getTOGGLEFILTERTABLEDATASORTATTRIBUT_NAME() {
+        return TOGGLEFILTERTABLEDATASORTATTRIBUT_NAME;
+    }
+
+    public ToggleFilterTableDataSortAttribut getTOGGLEFILTERTABLEDATASORTATTRIBUT_INDUSTRY() {
+        return TOGGLEFILTERTABLEDATASORTATTRIBUT_INDUSTRY;
+    }
+
+    public ToggleFilterTableDataSortAttribut getTOGGLEFILTERTABLEDATASORTATTRIBUT_COUNTRY_CODE() {
+        return TOGGLEFILTERTABLEDATASORTATTRIBUT_COUNTRY_CODE;
+    }
+
+    public ToggleFilterTableDataSortAttribut getTOGGLEFILTERTABLEDATASORTATTRIBUT_MAIN_LOCATION() {
+        return TOGGLEFILTERTABLEDATASORTATTRIBUT_MAIN_LOCATION;
+    }
+
     /**
-     * Ein Sortierattribut.
+     * A sort attribut
+     */
+    private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_ID =
+            ToggleFilterTableDataSortAttribut.ID;
+
+    /**
+     * A sort attribut
+     */
+    private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_NAME =
+            ToggleFilterTableDataSortAttribut.NAME;
+
+    /**
+     * A sort attribut
+     */
+    private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_INDUSTRY =
+            ToggleFilterTableDataSortAttribut.INDUSTRY;
+
+    /**
+     * A sort attribut
+     */
+    private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_COUNTRY_CODE =
+            ToggleFilterTableDataSortAttribut.COUNTRY_CODE;
+
+    /**
+     * A sort attribut
+     */
+    private ToggleFilterTableDataSortAttribut TOGGLEFILTERTABLEDATASORTATTRIBUT_MAIN_LOCATION =
+            ToggleFilterTableDataSortAttribut.MAIN_LOCATION;
+
+    /**
+     * A sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME =
         JsfSteuerelementeSortierattribut.VORNAME;
 
     /**
-     * Ein Sortierattribut.
+     * A sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME =
         JsfSteuerelementeSortierattribut.NACHNAME;
 
     /**
-     * Ein Sortierattribut.
+     * A sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN =
         JsfSteuerelementeSortierattribut.LOGIN;
 
     /**
-     * Ein Sortierattribut.
+     * A sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_ID =
         JsfSteuerelementeSortierattribut.ID;
 
     /**
-     * Ein Sortierattribut.
+     * A sort attribut
      */
     private SortDirection SORTDIRECTION_ASCENDING = SortDirection.ASCENDING;
 
     /**
-     * Ein Sortierattribut.
+     * A sort attribut
      */
     private SortDirection SORTDIRECTION_DESCENDING = SortDirection.DESCENDING;
 

@@ -18,17 +18,45 @@
                         <code>&lt;isy:toggleFilter&gt;</code>
                     </p>
                     <div class="form-horizontal">
-                        <div class="row">
-                            <div class="form-group">
-                                <isy:toggleFilter
-                                        value="${togglefilterBeispieleModel.toggleFilterAuswahl}"
-                                        label="Label" action="noAction">
-                                    <f:selectItems
-                                            value="#{togglefilterBeispieleModel.toggleFilterListe}" var="item"
-                                            itemLabel="#{item.label}" itemValue="#{item.value}"/>
-                                </isy:toggleFilter>
-                            </div>
-                        </div>
+                        <isy:dataTable id="dataTableClientMode"
+                                       dataTableModel="#{togglefilterBeispieleModel.trefferlistenClientModel}"
+                                       dataTableController="#{toggleFilterTableDataListenClientController}"
+                                       selectable="true" highlightDoubleclick="false"
+                                       action="trefferlisteDoppelklick">
+                            <f:facet name="tableHeader">
+                                <isy:dataTableHeader width="5%">
+                                    <isy:dataTableRowAllSelection/>
+                                </isy:dataTableHeader>
+                                <isy:dataTableHeader name="#" width="10%"
+                                                     sortProperty="#{enumConstants.TOGGLEFILTERTABLEDATASORTATTRIBUT_ID.sortProperty}"/>
+                                <isy:dataTableHeader name="Name" width="25%"
+                                                     sortProperty="#{enumConstants.TOGGLEFILTERTABLEDATASORTATTRIBUT_NAME.sortProperty}"/>
+                                <isy:dataTableHeader name="Branche" width="25%"
+                                                     sortProperty="#{enumConstants.TOGGLEFILTERTABLEDATASORTATTRIBUT_INDUSTRY.sortProperty}"/>
+                                <isy:dataTableHeader name="Länder Code" width="20%"
+                                                     sortProperty="#{enumConstants.TOGGLEFILTERTABLEDATASORTATTRIBUT_COUNTRY_CODE.sortProperty}"/>
+                                <isy:dataTableHeader name="Hauptstandort" width="20%"
+                                                     sortProperty="#{enumConstants.TOGGLEFILTERTABLEDATASORTATTRIBUT_MAIN_LOCATION.sortProperty}"/>
+                            </f:facet>
+                            <f:facet name="tableToolbar">
+                                <isy:buttonRow id="dataTableToolbar">
+                                    <isy:toggleFilter
+                                            value="${togglefilterBeispieleModel.toggleFilterAuswahl}"
+                                            label="Filter" action="filterTableData">
+                                        <f:selectItems
+                                                value="#{togglefilterBeispieleModel.toggleFilterListe}" var="item"
+                                                itemLabel="#{item.label}" itemValue="#{item.value}"/>
+                                    </isy:toggleFilter>
+                                </isy:buttonRow>
+                            </f:facet>
+                            <f:facet name="tablePagination">
+                                <isy:dataTablePaginator/>
+                            </f:facet>
+                            <isy:dataTableRows
+                                    rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/beispiele/togglefilter/rowDefinition.xhtml"/>
+                        </isy:dataTable>
+
+
                         <div class="row">
                             <div class="form-group">Auswahl:
                                 #{togglefilterBeispieleModel.toggleFilterAuswahl} -

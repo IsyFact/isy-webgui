@@ -5,19 +5,20 @@ import java.util.Random;
 import java.util.List;
 
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTreffer;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.togglefilter.ToggleFilterTableData;
 
 /**
- * Datengenerator zur Erstellung von Stub/Mock-Daten. Nur zu Test- und Entwicklungszwecken verwenden!
+ * A data generator class for creating stub/mock data. Only for test and development usage!
  */
 public class StubdatenGenerator {
 
-    /** Zufallswert. */
+    /** Random value. */
     private static final Random RANDOM = new Random();
 
     /**
-     * Erzeuge eine Suchergebnisliste mit PersonDataTableItem__.
+     * Creates a dummy data list of PersonDataTable.
      *
-     * @return die erzeugte Trefferliste.
+     * @return created dummy data list
      */
     public static List<JsfSteuerelementeTreffer> erzeugePersonalienTrefferliste() {
         List<JsfSteuerelementeTreffer> personalienTreffer = new ArrayList<JsfSteuerelementeTreffer>();
@@ -59,6 +60,57 @@ public class StubdatenGenerator {
         personalienTreffer.add(personDataTableItem4);
 
         return personalienTreffer;
+    }
+
+    /**
+     * Creates a dummy data list of ToggleFilterTableData
+     *
+     * @return created dummy data list
+     */
+    public static List<ToggleFilterTableData> createDummyToggleFilterTableData() {
+        List<ToggleFilterTableData> tableDataList = new ArrayList<ToggleFilterTableData>();
+
+        ToggleFilterTableData tableData1 = new ToggleFilterTableData();
+        tableData1.setNumber("001");
+        tableData1.setName("Bäckerei Mustermann");
+        tableData1.setIndustry("Essen & Trinken");
+        tableData1.setCountryCode("DE");
+        tableData1.setMainLocation("Hamburg");
+        tableDataList.add(tableData1);
+
+        ToggleFilterTableData tableData2 = new ToggleFilterTableData();
+        tableData2.setNumber("002");
+        tableData2.setName("Kunstmuseum De L'art");
+        tableData2.setIndustry("Unterhaltung");
+        tableData2.setCountryCode("DE");
+        tableData2.setMainLocation("Berlin");
+        tableDataList.add(tableData2);
+
+        ToggleFilterTableData tableData3 = new ToggleFilterTableData();
+        tableData3.setNumber("003");
+        tableData3.setName("Santé");
+        tableData3.setIndustry("Medizin");
+        tableData3.setCountryCode("FR");
+        tableData3.setMainLocation("Lyon");
+        tableDataList.add(tableData3);
+
+        ToggleFilterTableData tableData4 = new ToggleFilterTableData();
+        tableData4.setNumber("004");
+        tableData4.setName("Bon divertissement");
+        tableData4.setIndustry("Unterhaltung");
+        tableData4.setCountryCode("FR");
+        tableData4.setMainLocation("Paris");
+        tableDataList.add(tableData4);
+
+        ToggleFilterTableData tableData5 = new ToggleFilterTableData();
+        tableData5.setNumber("005");
+        tableData5.setName("Buen pan");
+        tableData5.setIndustry("Essen & Trinken");
+        tableData5.setCountryCode("SP");
+        tableData5.setMainLocation("Madrid");
+        tableDataList.add(tableData5);
+
+        return tableDataList;
     }
 }
 
