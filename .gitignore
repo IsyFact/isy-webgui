@@ -21,3 +21,6 @@ hs_err_pid*
 # Ignore Maven-specific files
 target/
 build/
+
+# Ignore Meta CI friendly builds
+.flattened-pom.xml
