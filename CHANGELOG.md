@@ -1,5 +1,10 @@
 # Changelog
 
+## v5.3.3
+
+- `IFS-1701`: Anhebung auf Isyfact-Standards 2.4.3
+  - Buttons setzen ihren Farbstatus nach Ende des Klicks zurück
+
 ## v5.3.2
 
 - `IFS-1529`: Anhebung auf Isyfact-Standards 2.4.2
