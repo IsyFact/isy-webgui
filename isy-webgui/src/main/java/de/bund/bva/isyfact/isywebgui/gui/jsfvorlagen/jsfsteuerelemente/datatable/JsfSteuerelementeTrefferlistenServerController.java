@@ -1,6 +1,9 @@
 package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable;
 
 import java.util.List;
+import java.util.Optional;
+
+import org.springframework.stereotype.Controller;
 
 import com.google.common.collect.Lists;
 
@@ -8,21 +11,14 @@ import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableInMemory
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableInMemoryModel;
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableModel.DatatableOperationMode;
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTablePaginationModel.PaginationType;
-import org.springframework.stereotype.Controller;
 
 /**
  * Controller für die Trefferliste.
- *
- * @author Capgemini
- * @version $Id: JsfSteuerelementeTrefferlistenController.java 165302 2016-05-20 11:50:30Z sdm_arichter $
  */
 @Controller
 public class JsfSteuerelementeTrefferlistenServerController extends
     DataTableInMemoryController<JsfSteuerelementeTreffer, DataTableInMemoryModel<JsfSteuerelementeTreffer>> {
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public void initialisiereModel(DataTableInMemoryModel<JsfSteuerelementeTreffer> model) {
         model.getPaginationModel().setType(PaginationType.SIMPLE);
@@ -30,9 +26,6 @@ public class JsfSteuerelementeTrefferlistenServerController extends
         model.setMode(DatatableOperationMode.SERVER);
     }
 
-    /**
-     * {@inheritDoc}
-     */
     @Override
     public List<JsfSteuerelementeTreffer> getAllItems(DataTableInMemoryModel<JsfSteuerelementeTreffer> model) {
         JsfSteuerelementeTreffer treffer1 = new JsfSteuerelementeTreffer();
@@ -72,6 +65,35 @@ public class JsfSteuerelementeTrefferlistenServerController extends
         treffer6.setVorname("Daisy");
 
         return Lists.newArrayList(treffer1, treffer2, treffer3, treffer4, treffer5, treffer6);
+    }
+
+    public Optional<JsfSteuerelementeTreffer> getSingleDetailViewItem(DataTableInMemoryModel<JsfSteuerelementeTreffer> model) {
+        final Optional<JsfSteuerelementeTreffer> result;
+
+        final Optional<JsfSteuerelementeTreffer> optionalDetailViewItem = model
+                .getDetailViewModel()
+                .getDetailViewItems()
+                .stream()
+                .map(id -> getItemById(model, id))
+                .findFirst();
+
+        if (optionalDetailViewItem.isPresent()) {
+            result = optionalDetailViewItem;
+        } else {
+            result = showFirstItemDetails(model);
+        }
+
+        return result;
+    }
+
+    public Optional<JsfSteuerelementeTreffer> showFirstItemDetails(DataTableInMemoryModel<JsfSteuerelementeTreffer> model) {
+        // DataTableInMemoryModel.getAllitems() can return null :(
+        final Optional<JsfSteuerelementeTreffer> result = Optional.ofNullable(model.getAllitems())
+                .flatMap(items -> items.stream().findFirst());
+
+        result.ifPresent(item -> showDetails(model, item.getIdentifierForItem(), true));
+
+        return result;
     }
 
 }

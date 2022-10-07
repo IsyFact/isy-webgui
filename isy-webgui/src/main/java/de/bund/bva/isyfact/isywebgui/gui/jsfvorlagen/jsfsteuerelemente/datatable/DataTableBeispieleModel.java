@@ -19,6 +19,12 @@ public class DataTableBeispieleModel extends AbstractMaskenModel {
      */
     private DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenServerModel;
 
+
+    /**
+     * Model for the master-detail-view table.
+     */
+    private DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenMasterDetailModel;
+
     public PanelModel getPanelModelDataTable() {
         return panelModelDataTable;
     }
@@ -40,7 +46,15 @@ public class DataTableBeispieleModel extends AbstractMaskenModel {
     }
 
     public void setTrefferlistenServerModel(
-        DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenServerModel) {
+            DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenServerModel) {
         this.trefferlistenServerModel = trefferlistenServerModel;
+    }
+
+    public DataTableInMemoryModel<JsfSteuerelementeTreffer> getTrefferlistenMasterDetailModel() {
+        return trefferlistenMasterDetailModel;
+    }
+
+    public void setTrefferlistenMasterDetailModel(DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenMasterDetailModel) {
+        this.trefferlistenMasterDetailModel = trefferlistenMasterDetailModel;
     }
 }

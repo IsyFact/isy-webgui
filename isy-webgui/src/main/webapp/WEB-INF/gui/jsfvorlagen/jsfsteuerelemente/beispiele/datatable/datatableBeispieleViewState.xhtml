@@ -14,7 +14,7 @@
                        panelModel="#{dataTableBeispieleModel.panelModelDataTable}">
                 <f:facet name="panelHeader">Data Table</f:facet>
                 <f:facet name="panelBody">
-                    <p>Client-Modus</p>
+                    <h3>Client-Modus</h3>
                     <isy:dataTable id="dataTableClientMode"
                                    dataTableModel="#{dataTableBeispieleModel.trefferlistenClientModel}"
                                    dataTableController="#{jsfSteuerelementeTrefferlistenClientController}"
@@ -69,7 +69,7 @@
                                 value="#{dataTableBeispieleModel.trefferlistenClientModel.getSelectedItems()}"/>
                     </p>
 
-                    <p>Server-Modus</p>
+                    <h3>Server-Modus</h3>
                     <isy:dataTable id="dataTableServerMode"
                                    dataTableModel="#{dataTableBeispieleModel.trefferlistenServerModel}"
                                    dataTableController="#{jsfSteuerelementeTrefferlistenServerController}"
@@ -123,6 +123,119 @@
                         <h:outputText
                                 value="#{dataTableBeispieleModel.trefferlistenServerModel.getSelectedItems()}"/>
                     </p>
+
+                    <h3>Master-Detail Ansicht</h3>
+
+                    <p>
+                        Aktuell ausgewählt:
+                        <h:outputText
+                                value="#{dataTableBeispieleModel.trefferlistenMasterDetailModel.getSelectedItems()}"/>
+                    </p>
+
+                    <div class="form-group master-detail">
+                        <isy:dataTable id="dataTableMasterDetail"
+                                       dataTableModel="#{dataTableBeispieleModel.trefferlistenMasterDetailModel}"
+                                       dataTableController="#{jsfSteuerelementeTrefferlistenServerController}"
+                                       selectable="true"
+                                       highlightDoubleclick="false"
+                                       action="trefferlisteDoppelklick"
+                                       detailMode="single"
+                                       styleClass="master-detail-master">
+                            <f:facet name="tableHeader">
+                                <isy:dataTableHeader width="5%">
+                                    <isy:dataTableRowAllSelection/>
+                                </isy:dataTableHeader>
+                                <isy:dataTableHeader name="#" width="10%"
+                                                     sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
+                                <isy:dataTableHeader name="Vorname" width="25%"
+                                                     sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>
+                                <isy:dataTableHeader name="Nachname" width="25%"
+                                                     sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>
+                                <isy:dataTableHeader name="Loginname" width="20%"
+                                                     sortProperty="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
+                                <isy:dataTableHeader name="" width="15%"/>
+                            </f:facet>
+                            <f:facet name="tableToolbar">
+                                <isy:buttonRow>
+                                    <isy:buttonToolbar id="suche" icon="search" value="Suche"
+                                                       action="sucheMasterDetail"/>
+                                    <isy:buttonToolbar id="waehleaus" icon="checkmark" value="Wähle aus"
+                                                       action="noAction"/>
+                                </isy:buttonRow>
+                            </f:facet>
+                            <f:facet name="tablePagination">
+                                <isy:dataTablePaginator/>
+                            </f:facet>
+                            <f:facet name="tableFilter">
+                                <isy:dataTableFilter/>
+                                <isy:dataTableFilter
+                                        property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_ID.sortProperty}"/>
+                                <isy:dataTableFilter
+                                        property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME.sortProperty}"/>
+                                <isy:dataTableFilter
+                                        property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME.sortProperty}"/>
+                                <isy:dataTableFilter
+                                        property="#{enumConstants.JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN.sortProperty}"/>
+                                <isy:dataTableFilterClearer/>
+                            </f:facet>
+                            <isy:dataTableRows
+                                    rowDefinition="/WEB-INF/gui/jsfvorlagen/jsfsteuerelemente/beispiele/datatable/masterDetailRowDefinition.xhtml"/>
+                        </isy:dataTable>
+
+                        <div class="master-detail-detail">
+                            <div class="panel-group">
+                                <div class="panel panel-default">
+                                    <div class="panel-heading">
+                                        <div class="panel-title clearfix">
+                                            <a data-toggle="collapse" href="#collapseOne">
+                                                <span class="icon"/> Details
+                                            </a>
+
+                                            <div class="btn-toolbar">
+                                                <div class="btn-group"></div>
+                                            </div>
+                                            <div class="panel-groupline-container">
+                                                <span class="panel-groupline"/>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div id="collapseOne" class="panel-collapse collapse in">
+                                        <div class="panel-body">
+                                            <ui:param name="optionalDetailViewItem"
+                                                      value="#{jsfSteuerelementeTrefferlistenServerController.getSingleDetailViewItem(dataTableBeispieleModel.trefferlistenMasterDetailModel)}"/>
+                                            <ui:fragment rendered="#{optionalDetailViewItem.isPresent()}">
+                                                <ui:param name="detailViewItem"
+                                                          value="#{optionalDetailViewItem.get()}"/>
+                                                <div class="row">
+                                                    <div class="col col-lg-4">
+                                                        <span class="col-lg-3 control-label">Vorname</span>
+                                                        <span class="col-lg-9">#{detailViewItem.vorname}</span>
+                                                    </div>
+                                                    <div class="col col-lg-4 col-center">
+                                                        <span class="col-lg-3 control-label">Nachname</span>
+                                                        <span class="col-lg-9">#{detailViewItem.nachname}</span>
+                                                    </div>
+                                                    <div class="col col-lg-4 col-last">
+                                                        <span class="col-lg-3 control-label">Username</span>
+                                                        <span class="col-lg-9">#{detailViewItem.login}</span>
+                                                    </div>
+                                                    <div class="col col-lg-4">
+                                                        <span class="col-lg-3 control-label">ISO-Staat</span>
+                                                        <span class="col-lg-9">#{detailViewItem.staatsangehoerigkeit}</span>
+                                                    </div>
+                                                    <div class="col col-lg-4 col-center">
+                                                        <span class="col-lg-3 control-label">Geschlecht</span>
+                                                        <span class="col-lg-9">#{detailViewItem.geschlecht}</span>
+                                                    </div>
+                                                </div>
+                                            </ui:fragment>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
                 </f:facet>
             </isy:panel>
 

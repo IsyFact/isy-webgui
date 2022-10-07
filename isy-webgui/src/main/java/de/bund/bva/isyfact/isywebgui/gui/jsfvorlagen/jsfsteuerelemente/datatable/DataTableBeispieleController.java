@@ -1,24 +1,27 @@
 package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable;
 
+import org.springframework.stereotype.Controller;
+
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableInMemoryModel;
 import de.bund.bva.isyfact.isywebgui.common.stub.StubdatenGenerator;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
 
 @Controller
 public class DataTableBeispieleController extends AbstractGuiController<DataTableBeispieleModel> {
 
-    /** Controller für die Trefferliste Client. **/
-    private JsfSteuerelementeTrefferlistenClientController jsfSteuerelementeTrefferlistenClientController;
+    /**
+     * Controller für die Trefferliste Client.
+     */
+    private final JsfSteuerelementeTrefferlistenClientController jsfSteuerelementeTrefferlistenClientController;
 
-    /** Controller für die Trefferliste Server. **/
-    private JsfSteuerelementeTrefferlistenServerController jsfSteuerelementeTrefferlistenServerController;
+    /**
+     * Controller für die Trefferliste Server.
+     */
+    private final JsfSteuerelementeTrefferlistenServerController jsfSteuerelementeTrefferlistenServerController;
 
-    @Autowired
     public DataTableBeispieleController(
-        JsfSteuerelementeTrefferlistenClientController jsfSteuerelementeTrefferlistenClientController,
-        JsfSteuerelementeTrefferlistenServerController jsfSteuerelementeTrefferlistenServerController) {
+            JsfSteuerelementeTrefferlistenClientController jsfSteuerelementeTrefferlistenClientController,
+            JsfSteuerelementeTrefferlistenServerController jsfSteuerelementeTrefferlistenServerController) {
         this.jsfSteuerelementeTrefferlistenClientController = jsfSteuerelementeTrefferlistenClientController;
         this.jsfSteuerelementeTrefferlistenServerController = jsfSteuerelementeTrefferlistenServerController;
     }
@@ -31,18 +34,17 @@ public class DataTableBeispieleController extends AbstractGuiController<DataTabl
     @Override
     public void initialisiereModel(DataTableBeispieleModel model) {
         // Trefferliste ClientModel
-        JsfSteuerelementeTrefferlistenModel trefferlistenClientModel =
-            new JsfSteuerelementeTrefferlistenModel();
-        trefferlistenClientModel.getDataModel()
-            .setDisplayItems(StubdatenGenerator.erzeugePersonalienTrefferliste());
+        JsfSteuerelementeTrefferlistenModel trefferlistenClientModel = new JsfSteuerelementeTrefferlistenModel();
+        trefferlistenClientModel.getDataModel().setDisplayItems(StubdatenGenerator.erzeugePersonalienTrefferliste());
         model.setTrefferlistenClientModel(trefferlistenClientModel);
 
         // Trefferliste ServerModel
-        DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenServerModel =
-            new DataTableInMemoryModel<>();
+        DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenServerModel = new DataTableInMemoryModel<>();
         model.setTrefferlistenServerModel(trefferlistenServerModel);
-    }
 
+        // Trefferliste Master-Detail view
+        model.setTrefferlistenMasterDetailModel(new DataTableInMemoryModel<>());
+    }
 
 
     /**
@@ -51,8 +53,7 @@ public class DataTableBeispieleController extends AbstractGuiController<DataTabl
      * @param model das Model
      */
     public void fuehreSucheAusClient(DataTableBeispieleModel model) {
-        jsfSteuerelementeTrefferlistenClientController
-            .updateDisplayItems(model.getTrefferlistenClientModel());
+        jsfSteuerelementeTrefferlistenClientController.updateDisplayItems(model.getTrefferlistenClientModel());
     }
 
     /**
@@ -61,7 +62,17 @@ public class DataTableBeispieleController extends AbstractGuiController<DataTabl
      * @param model das Model
      */
     public void fuehreSucheAusServer(DataTableBeispieleModel model) {
-        jsfSteuerelementeTrefferlistenServerController
-            .updateDisplayItems(model.getTrefferlistenServerModel());
+        jsfSteuerelementeTrefferlistenServerController.updateDisplayItems(model.getTrefferlistenServerModel());
+    }
+
+    /**
+     * Perform search for the master-detail-view table.
+     *
+     * @param model the table model
+     */
+    public void fuehreSucheAusMasterDetail(DataTableBeispieleModel model) {
+        final DataTableInMemoryModel<JsfSteuerelementeTreffer> tableModel = model.getTrefferlistenMasterDetailModel();
+        jsfSteuerelementeTrefferlistenServerController.updateDisplayItems(tableModel);
+        jsfSteuerelementeTrefferlistenServerController.showFirstItemDetails(tableModel);
     }
 }
