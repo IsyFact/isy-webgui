@@ -1,3 +1,8 @@
+# v6.0.0
+- `IFS-1616`: Update isy-webgui auf IF3
+  - Update isy-web auf Version 6.0.0
+  - Update isyfact-bom auf 3.0.0
+
 # v5.4.0
 - `IFE-310`: Beispiele mit aktiven Checkboxen in `formSelectOneList` und `formSelectManyList` hinzugefügt
 - `IFS-728`: Checkboxen in modalen Dialog eingefügt
