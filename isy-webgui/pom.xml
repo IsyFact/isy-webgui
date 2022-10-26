@@ -42,11 +42,6 @@
             </exclusions>
         </dependency>
 
-        <dependency>
-            <groupId>de.bund.bva.isyfact</groupId>
-            <artifactId>isy-style</artifactId>
-        </dependency>
-
         <!-- Eingebunden für formUpload. Diese Dependency ist bereits in der isy-web als provided eingebunden,
             was sich aber nicht transitiv auf die rf-webgui auswirkt-->
         <dependency>
