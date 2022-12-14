@@ -6,16 +6,16 @@ import de.bund.bva.isyfact.common.web.jsf.components.panel.PanelModel;
 
 public class DataTableBeispieleModel extends AbstractMaskenModel {
 
-    /** Panelmodel für Zustand des Panels. */
+    /** Panelmodel for panel state */
     private PanelModel panelModelDataTable = new PanelModel(true);
 
     /**
-     * Model für Trefferliste (Client-Modus).
+     * Model for Trefferliste (client mode).
      */
     private JsfSteuerelementeTrefferlistenModel trefferlistenClientModel;
 
     /**
-     * Model für Trefferliste (Server-Modus).
+     * Model for Trefferliste (server mode).
      */
     private DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenServerModel;
 

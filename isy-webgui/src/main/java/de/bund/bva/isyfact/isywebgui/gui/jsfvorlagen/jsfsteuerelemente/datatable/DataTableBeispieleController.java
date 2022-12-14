@@ -10,12 +10,12 @@ import de.bund.bva.isyfact.isywebgui.common.stub.StubdatenGenerator;
 public class DataTableBeispieleController extends AbstractGuiController<DataTableBeispieleModel> {
 
     /**
-     * Controller für die Trefferliste Client.
+     * Controller for the Trefferliste Client.
      */
     private final JsfSteuerelementeTrefferlistenClientController jsfSteuerelementeTrefferlistenClientController;
 
     /**
-     * Controller für die Trefferliste Server.
+     * Controller for the Trefferliste Server.
      */
     private final JsfSteuerelementeTrefferlistenServerController jsfSteuerelementeTrefferlistenServerController;
 
@@ -48,18 +48,18 @@ public class DataTableBeispieleController extends AbstractGuiController<DataTabl
 
 
     /**
-     * Führt eine Suche aus.
+     * Performs a search
      *
-     * @param model das Model
+     * @param model the Model
      */
     public void fuehreSucheAusClient(DataTableBeispieleModel model) {
         jsfSteuerelementeTrefferlistenClientController.updateDisplayItems(model.getTrefferlistenClientModel());
     }
 
     /**
-     * Führt eine Suche aus.
+     * Performs a search
      *
-     * @param model das Model
+     * @param model the Model
      */
     public void fuehreSucheAusServer(DataTableBeispieleModel model) {
         jsfSteuerelementeTrefferlistenServerController.updateDisplayItems(model.getTrefferlistenServerModel());

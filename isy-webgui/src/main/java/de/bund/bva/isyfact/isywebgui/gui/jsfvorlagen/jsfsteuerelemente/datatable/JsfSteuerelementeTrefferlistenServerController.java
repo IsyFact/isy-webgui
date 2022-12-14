@@ -13,7 +13,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableModel.Da
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTablePaginationModel.PaginationType;
 
 /**
- * Controller für die Trefferliste.
+ * Controller for the Trefferliste.
  */
 @Controller
 public class JsfSteuerelementeTrefferlistenServerController extends
@@ -87,7 +87,7 @@ public class JsfSteuerelementeTrefferlistenServerController extends
     }
 
     public Optional<JsfSteuerelementeTreffer> showFirstItemDetails(DataTableInMemoryModel<JsfSteuerelementeTreffer> model) {
-        // DataTableInMemoryModel.getAllitems() can return null :(
+        // Boilerplate code because DataTableInMemoryModel.getAllitems() can return null
         final Optional<JsfSteuerelementeTreffer> result = Optional.ofNullable(model.getAllitems())
                 .flatMap(items -> items.stream().findFirst());
 
