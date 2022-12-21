@@ -6,18 +6,24 @@ import de.bund.bva.isyfact.common.web.jsf.components.panel.PanelModel;
 
 public class DataTableBeispieleModel extends AbstractMaskenModel {
 
-    /** Panelmodel für Zustand des Panels. */
+    /** Panelmodel for panel state */
     private PanelModel panelModelDataTable = new PanelModel(true);
 
     /**
-     * Model für Trefferliste (Client-Modus).
+     * Model for Trefferliste (client mode).
      */
     private JsfSteuerelementeTrefferlistenModel trefferlistenClientModel;
 
     /**
-     * Model für Trefferliste (Server-Modus).
+     * Model for Trefferliste (server mode).
      */
     private DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenServerModel;
+
+
+    /**
+     * Model for the master-detail-view table.
+     */
+    private DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenMasterDetailModel;
 
     public PanelModel getPanelModelDataTable() {
         return panelModelDataTable;
@@ -40,7 +46,15 @@ public class DataTableBeispieleModel extends AbstractMaskenModel {
     }
 
     public void setTrefferlistenServerModel(
-        DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenServerModel) {
+            DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenServerModel) {
         this.trefferlistenServerModel = trefferlistenServerModel;
+    }
+
+    public DataTableInMemoryModel<JsfSteuerelementeTreffer> getTrefferlistenMasterDetailModel() {
+        return trefferlistenMasterDetailModel;
+    }
+
+    public void setTrefferlistenMasterDetailModel(DataTableInMemoryModel<JsfSteuerelementeTreffer> trefferlistenMasterDetailModel) {
+        this.trefferlistenMasterDetailModel = trefferlistenMasterDetailModel;
     }
 }

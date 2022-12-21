@@ -9,16 +9,19 @@
     </on-start>
 
     <view-state id="datatableBeispieleViewState" model="dataTableBeispieleModel">
-        <transition on="noAction" />
-        <transition on="trefferlisteDoppelklick" />
+        <transition on="noAction"/>
+        <transition on="trefferlisteDoppelklick"/>
         <transition on="sucheClient">
-            <evaluate expression="dataTableBeispieleController.fuehreSucheAusClient(dataTableBeispieleModel)"></evaluate>
+            <evaluate expression="dataTableBeispieleController.fuehreSucheAusClient(dataTableBeispieleModel)"/>
         </transition>
         <transition on="sucheServer">
-            <evaluate expression="dataTableBeispieleController.fuehreSucheAusServer(dataTableBeispieleModel)"></evaluate>
+            <evaluate expression="dataTableBeispieleController.fuehreSucheAusServer(dataTableBeispieleModel)"/>
+        </transition>
+        <transition on="sucheMasterDetail">
+            <evaluate expression="dataTableBeispieleController.fuehreSucheAusMasterDetail(dataTableBeispieleModel)"/>
         </transition>
 
-        <transition on="trefferlisteDoppelklick" to="detailansichtTrefferlisteViewState" />
+        <transition on="trefferlisteDoppelklick" to="detailansichtTrefferlisteViewState"/>
     </view-state>
 
     <view-state id="detailansichtTrefferlisteViewState" >

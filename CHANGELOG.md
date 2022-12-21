@@ -1,4 +1,5 @@
 # v6.0.0
+- `IFS-1156`: Test Data Table für farbliche Hervorhebung der in Detail-Ansicht gezeigten Zeile
 - `IFS-1616`: Update isy-webgui auf IF3
   - Update isy-web auf Version 6.0.0
   - Update isyfact-bom auf 3.0.0
