@@ -1,3 +1,5 @@
+# v4.13.0
+
 # v4.12.0
 - `IFE-310`: Beispiele mit aktiven Checkboxen in `formSelectOneList` und `formSelectManyList` hinzugefügt
 - `IFS-728`: Checkboxen in modalen Dialog eingefügt
