@@ -10,6 +10,7 @@ include:
 
 variables:
   NEXT_VERSION: 6.0.0
+  REPOSITORY_IFS_DOCKER: ifs-docker-release-lokal.artifactory.zssi.ivbb.bund.de
 
 default:
   tags:
