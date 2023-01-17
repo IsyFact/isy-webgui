@@ -12,6 +12,9 @@ variables:
   NEXT_VERSION: 6.0.0
 
 default:
+  tags:
+    - docker
+    - zssi
   image: $REPOSITORY_IFS_DOCKER/isy-build-maven:3-openjdk17-alpine
 
 next-version:
