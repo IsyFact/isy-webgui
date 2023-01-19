@@ -1,44 +1,16 @@
 include:
   - project: 'IsyFact/isy-gitlabci-templates'
-    file: '/maven/.gitlab-ci-maven-build.yml'
-  - project: 'IsyFact/isy-gitlabci-templates'
-    file: '/maven/.gitlab-ci-maven-test.yml'
-  - project: 'IsyFact/isy-gitlabci-templates'
-    file: '/maven/.gitlab-ci-maven-package.yml'
-  - project: 'IsyFact/isy-gitlabci-templates'
-    file: 'Jobs/Next-Version.gitlab-ci.yml'
-
+    file: 'Maven.gitlab-ci.yml'
+ 
 variables:
   NEXT_VERSION: 6.0.0
 
 default:
-  tags:
-    - docker
-    - zssi
   image: $REPOSITORY_IFS_DOCKER/isy-build-maven:3-openjdk17-alpine
 
 next-version:
-  extends: .next-version
   before_script:
     - git config --global --add safe.directory /builds/IsyFact/isy-webgui
-
-build:
-  extends: .maven-build
-
-test:
-  extends: .maven-test
-  needs:
-    - next-version
-    - build
-
-package:
-  extends: .maven-package
-
-#deploy:
-#  extends: .maven-deploy
-
-stages:
-  - build
-  - test
-  - package
-#  - deploy
+ 
+deploy:
+  when: manual
