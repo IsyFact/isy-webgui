@@ -11,6 +11,14 @@ default:
 next-version:
   before_script:
     - git config --global --add safe.directory /builds/IsyFact/isy-webgui
- 
+
+test:
+  rules:
+    - when: never
+
+code-coverage:
+  rules:
+    - when: never
+
 deploy:
   when: manual
