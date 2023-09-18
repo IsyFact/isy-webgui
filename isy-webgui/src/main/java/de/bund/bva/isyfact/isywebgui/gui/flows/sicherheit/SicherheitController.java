@@ -1,9 +1,9 @@
 package de.bund.bva.isyfact.isywebgui.gui.flows.sicherheit;
 
-import com.google.common.base.Joiner;
-
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
+import com.google.common.base.Joiner;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.security.core.Berechtigungsmanager;

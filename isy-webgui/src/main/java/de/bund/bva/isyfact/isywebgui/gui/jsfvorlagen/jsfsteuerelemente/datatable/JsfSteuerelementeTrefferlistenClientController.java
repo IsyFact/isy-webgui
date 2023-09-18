@@ -2,6 +2,8 @@ package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatabl
 
 import java.util.ArrayList;
 
+import org.springframework.stereotype.Component;
+
 import com.google.common.collect.Lists;
 
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableController;
@@ -9,18 +11,17 @@ import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableModel.Da
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTablePaginationModel.PaginationType;
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableRequest;
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableResult;
-import org.springframework.stereotype.Component;
 
 /**
  * Controller für die Trefferliste.
  *
  * @author Capgemini
  * @version $Id: JsfSteuerelementeTrefferlistenClientController.java 166449 2016-06-06 12:15:53Z sdm_arichter
- *          $
+ * $
  */
 @Component
 public class JsfSteuerelementeTrefferlistenClientController extends
-    DataTableController<JsfSteuerelementeTreffer, JsfSteuerelementeTrefferlistenModel> {
+        DataTableController<JsfSteuerelementeTreffer, JsfSteuerelementeTrefferlistenModel> {
 
     /**
      * {@inheritDoc}
@@ -48,7 +49,7 @@ public class JsfSteuerelementeTrefferlistenClientController extends
      */
     @Override
     protected DataTableResult<JsfSteuerelementeTreffer> readItems(JsfSteuerelementeTrefferlistenModel model,
-        DataTableRequest request) {
+                                                                  DataTableRequest request) {
         JsfSteuerelementeTreffer treffer1 = new JsfSteuerelementeTreffer();
         treffer1.setNummer("1");
         treffer1.setLogin("peter");
@@ -87,7 +88,7 @@ public class JsfSteuerelementeTrefferlistenClientController extends
 
         DataTableResult<JsfSteuerelementeTreffer> result = new DataTableResult<>();
         ArrayList<JsfSteuerelementeTreffer> treffer =
-            Lists.newArrayList(treffer1, treffer2, treffer3, treffer4, treffer5, treffer6);
+                Lists.newArrayList(treffer1, treffer2, treffer3, treffer4, treffer5, treffer6);
         result.setItems(treffer);
         result.setItemCount(treffer.size());
         return result;

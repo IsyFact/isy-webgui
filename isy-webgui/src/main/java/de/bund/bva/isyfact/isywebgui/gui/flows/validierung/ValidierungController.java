@@ -4,12 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Controller;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.global.GlobalFlowController;
 import de.bund.bva.isyfact.common.web.validation.ValidationMessage;
-import org.springframework.stereotype.Controller;
 
 /**
  * Controller für die Validierung.

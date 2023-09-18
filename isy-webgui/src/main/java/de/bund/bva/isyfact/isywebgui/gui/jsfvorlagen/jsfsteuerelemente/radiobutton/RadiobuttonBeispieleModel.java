@@ -1,6 +1,7 @@
 package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.radiobutton;
 
 import java.util.List;
+
 import javax.faces.model.SelectItem;
 
 import de.bund.bva.isyfact.common.web.global.AbstractMaskenModel;
@@ -8,7 +9,9 @@ import de.bund.bva.isyfact.common.web.jsf.components.panel.PanelModel;
 
 public class RadiobuttonBeispieleModel extends AbstractMaskenModel {
 
-    /** Panelmodel für Zustand des Panels. */
+    /**
+     * Panelmodel für Zustand des Panels.
+     */
     private PanelModel panelModelRadioButton = new PanelModel(true);
 
     /**

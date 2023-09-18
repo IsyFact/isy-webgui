@@ -2,14 +2,17 @@ package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.checkbox
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.faces.event.AbortProcessingException;
 import javax.faces.event.AjaxBehaviorEvent;
 import javax.faces.event.ValueChangeEvent;
 import javax.faces.model.SelectItem;
 
-import com.google.common.collect.Lists;
-import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import org.springframework.stereotype.Controller;
+
+import com.google.common.collect.Lists;
+
+import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 
 @Controller
 public class CheckboxBeispieleController extends AbstractGuiController<CheckboxBeispieleModel> {
@@ -38,12 +41,12 @@ public class CheckboxBeispieleController extends AbstractGuiController<CheckboxB
 
     public void checkboxAusgewaehlt(ValueChangeEvent event) throws AbortProcessingException {
         getMaskenModelZuController()
-            .setCheckboxBooleanNeuerWert(event.getComponent().getClientId() + ": " + event.getNewValue());
+                .setCheckboxBooleanNeuerWert(event.getComponent().getClientId() + ": " + event.getNewValue());
     }
 
     public void checkboxBooleanGeklickt(AjaxBehaviorEvent event) {
         getMaskenModelZuController().setCheckboxBooleanGeklicktAnzahl(
-            getMaskenModelZuController().getCheckboxBooleanGeklicktAnzahl() + 1);
+                getMaskenModelZuController().getCheckboxBooleanGeklicktAnzahl() + 1);
     }
 
 }

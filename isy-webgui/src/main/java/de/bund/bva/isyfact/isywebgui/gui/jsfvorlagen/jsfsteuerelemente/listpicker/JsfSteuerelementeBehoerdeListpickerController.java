@@ -5,7 +5,6 @@ import java.util.List;
 
 import de.bund.bva.isyfact.common.web.jsf.components.listpicker.behoerde.AbstractBehoerdeListpickerController;
 import de.bund.bva.isyfact.common.web.jsf.components.listpicker.behoerde.BehoerdeListpickerItem;
-import org.springframework.stereotype.Component;
 
 /**
  *
@@ -24,7 +23,7 @@ public class JsfSteuerelementeBehoerdeListpickerController extends AbstractBehoe
         behoerdeListpickerItems.add(new BehoerdeListpickerItem("000002", "Testbehörde 2 HWE"));
         behoerdeListpickerItems.add(new BehoerdeListpickerItem("000003", "Testbehörde 3 GfeS"));
         behoerdeListpickerItems
-            .add(new BehoerdeListpickerItem("000004", "Testbehörde 4 AB C sd sehrlangerEintragInEinemWort"));
+                .add(new BehoerdeListpickerItem("000004", "Testbehörde 4 AB C sd sehrlangerEintragInEinemWort"));
         behoerdeListpickerItems.add(new BehoerdeListpickerItem("000005", "Testbehörde 5 XYZ"));
         behoerdeListpickerItems.add(new BehoerdeListpickerItem("000006", "Testbehörde 6 4711"));
         behoerdeListpickerItems.add(new BehoerdeListpickerItem("000007", "Testbehörde 7 test"));

@@ -1,9 +1,10 @@
 package de.bund.bva.isyfact.isywebgui.gui.common.constant;
 
+import org.springframework.stereotype.Component;
+
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.SortDirection;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeSortierattribut;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.togglefilter.ToggleFilterTableDataSortAttribut;
-import org.springframework.stereotype.Component;
 
 /**
  * A class of constants to support JSF using enums.
@@ -68,25 +69,25 @@ public class EnumConstants {
      * A sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_VORNAME =
-        JsfSteuerelementeSortierattribut.VORNAME;
+            JsfSteuerelementeSortierattribut.VORNAME;
 
     /**
      * A sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_NACHNAME =
-        JsfSteuerelementeSortierattribut.NACHNAME;
+            JsfSteuerelementeSortierattribut.NACHNAME;
 
     /**
      * A sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_LOGIN =
-        JsfSteuerelementeSortierattribut.LOGIN;
+            JsfSteuerelementeSortierattribut.LOGIN;
 
     /**
      * A sort attribut
      */
     private JsfSteuerelementeSortierattribut JSFSTEUERELEMENTESORTIERATTRIBUT_ID =
-        JsfSteuerelementeSortierattribut.ID;
+            JsfSteuerelementeSortierattribut.ID;
 
     /**
      * A sort attribut

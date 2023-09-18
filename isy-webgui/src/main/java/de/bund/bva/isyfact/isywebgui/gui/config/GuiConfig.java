@@ -1,5 +1,9 @@
 package de.bund.bva.isyfact.isywebgui.gui.config;
 
+import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
+
 import de.bund.bva.isyfact.common.web.exception.common.AusnahmeIdMapper;
 import de.bund.bva.isyfact.common.web.exception.common.impl.AusnahmeIdMapperImpl;
 import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.FlowAwkWrapper;
@@ -9,17 +13,16 @@ import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicke
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeListpickerController;
 import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker.JsfSteuerelementeStaatsangListpickerController;
 
-import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
-import org.springframework.context.annotation.Configuration;
 /**
  * Configuration for the GUI.
  */
 @Configuration
-@ComponentScan(basePackages = { "de.bund.bva.isyfact.isywebgui.gui" })
+@ComponentScan(basePackages = {"de.bund.bva.isyfact.isywebgui.gui"})
 public class GuiConfig {
 
-    /** Fallback exception ID if no other could be assigned. **/
+    /**
+     * Fallback exception ID if no other could be assigned.
+     **/
     private static final String FALLBACK_AUSNAHME_ID = "WEBGI99999";
 
     /**
@@ -36,8 +39,8 @@ public class GuiConfig {
     /**
      * Helper for JSF controls.
      *
-     * @param jsfSteuerelementeListpickerController Controller for the listpicker.
-     * @param jsfSteuerelementeBehoerdeListpickerController Controller for the BehoerdenListpicker.
+     * @param jsfSteuerelementeListpickerController          Controller for the listpicker.
+     * @param jsfSteuerelementeBehoerdeListpickerController  Controller for the BehoerdenListpicker.
      * @param jsfSteuerelementeStaatsangListpickerController Controller for the StaatsangListpicker.
      * @return JsfSteuerelementeHelper
      */
@@ -63,6 +66,7 @@ public class GuiConfig {
 
     /**
      * FlowAwkWrapper.
+     *
      * @return FlowAwkWrapper
      */
     @Bean

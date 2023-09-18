@@ -2,12 +2,12 @@ package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.vierauge
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.faces.model.SelectItem;
 
-import com.google.common.base.Strings;
-import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
-import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.aktionseingabe.AktionseingabeBeispieleModel;
 import org.springframework.stereotype.Controller;
+
+import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 
 @Controller
 public class VierAugenBeispieleController extends AbstractGuiController<VierAugenBeispieleModel> {

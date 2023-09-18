@@ -2,10 +2,12 @@ package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.radiobut
 
 import java.util.ArrayList;
 import java.util.List;
+
 import javax.faces.model.SelectItem;
 
-import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import org.springframework.stereotype.Controller;
+
+import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 
 @Controller
 public class RadiobuttonBeispieleController extends AbstractGuiController<RadiobuttonBeispieleModel> {

@@ -4,21 +4,22 @@ import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.beans.factory.InitializingBean;
+import org.springframework.stereotype.Controller;
 
 import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 
 import de.bund.bva.isyfact.common.web.jsf.components.listpicker.ListpickerController;
-import org.springframework.stereotype.Controller;
 
 /**
  * Controller für den Listpicker.
+ *
  * @author Capgemini
  * @version $Id: JsfSteuerelementeListpickerController.java 130068 2015-02-10 14:09:46Z sdm_tgroeger $
  */
 @Controller
 public class JsfSteuerelementeListpickerController extends
-    ListpickerController<JsfSteuerelementeListpickerModel> implements InitializingBean {
+        ListpickerController<JsfSteuerelementeListpickerModel> implements InitializingBean {
 
     /**
      * {@inheritDoc}
@@ -47,8 +48,8 @@ public class JsfSteuerelementeListpickerController extends
             if (Strings.isNullOrEmpty(model.getFilter())) {
                 gefilterteBehoerdeListpickerItems.add(filterbaresItem);
             } else if (filterbaresItem.getSchluessel().toLowerCase()
-                .contains(model.getFilter().toLowerCase())
-                || filterbaresItem.getWert().startsWith(model.getFilter())) {
+                    .contains(model.getFilter().toLowerCase())
+                    || filterbaresItem.getWert().startsWith(model.getFilter())) {
                 gefilterteBehoerdeListpickerItems.add(filterbaresItem);
             }
         }
@@ -61,6 +62,7 @@ public class JsfSteuerelementeListpickerController extends
 
     /**
      * Erzeugt eine Liste an ListpickerItems.
+     *
      * @return Die Liste.
      */
     public List<JsfSteuerelementeListpickerItem> erzeugeListpickerItemListe() {
@@ -68,32 +70,31 @@ public class JsfSteuerelementeListpickerController extends
         List<JsfSteuerelementeListpickerItem> jsfSteuerelementeListpickerItems = new ArrayList<>();
 
         jsfSteuerelementeListpickerItems
-            .add(new JsfSteuerelementeListpickerItem("001", "Testeintrag 1 AB C"));
+                .add(new JsfSteuerelementeListpickerItem("001", "Testeintrag 1 AB C"));
         jsfSteuerelementeListpickerItems.add(new JsfSteuerelementeListpickerItem("002", "Testeintrag 2 HWE"));
         jsfSteuerelementeListpickerItems
-            .add(new JsfSteuerelementeListpickerItem("003", "Testeintrag 3 GfeS"));
+                .add(new JsfSteuerelementeListpickerItem("003", "Testeintrag 3 GfeS"));
         jsfSteuerelementeListpickerItems.add(new JsfSteuerelementeListpickerItem("004",
-            "Testeintrag 4 AB C sd sehrlangerEintragInEinemWort"));
+                "Testeintrag 4 AB C sd sehrlangerEintragInEinemWort"));
         jsfSteuerelementeListpickerItems
-            .add(new JsfSteuerelementeListpickerItem("005", "Testeintrag 5 XYZ'"));
+                .add(new JsfSteuerelementeListpickerItem("005", "Testeintrag 5 XYZ'"));
         jsfSteuerelementeListpickerItems
-            .add(new JsfSteuerelementeListpickerItem("006", "Testeintrag 6 4711'"));
+                .add(new JsfSteuerelementeListpickerItem("006", "Testeintrag 6 4711'"));
         jsfSteuerelementeListpickerItems
-            .add(new JsfSteuerelementeListpickerItem("007", "Testeintrag 7 test'"));
+                .add(new JsfSteuerelementeListpickerItem("007", "Testeintrag 7 test'"));
         jsfSteuerelementeListpickerItems
-            .add(new JsfSteuerelementeListpickerItem("008", "Testeintrag 8 aaa'"));
+                .add(new JsfSteuerelementeListpickerItem("008", "Testeintrag 8 aaa'"));
         jsfSteuerelementeListpickerItems.add(new JsfSteuerelementeListpickerItem("009",
-            "Testeintrag 9 1234567890'"));
+                "Testeintrag 9 1234567890'"));
         jsfSteuerelementeListpickerItems
-            .add(new JsfSteuerelementeListpickerItem("010", "Testeintrag 10 abc'"));
+                .add(new JsfSteuerelementeListpickerItem("010", "Testeintrag 10 abc'"));
         return jsfSteuerelementeListpickerItems;
     }
 
     /**
      * Begrenzt die Items für den AJAX Listpicker.
      *
-     * @param jsfSteuerelementeListpickerModel
-     *            Das Listpicker Model.
+     * @param jsfSteuerelementeListpickerModel Das Listpicker Model.
      */
     public void begrenzeItems(JsfSteuerelementeListpickerModel jsfSteuerelementeListpickerModel) {
         // Schneide Liste bei Bedarf ab
@@ -101,7 +102,7 @@ public class JsfSteuerelementeListpickerController extends
         if (jsfSteuerelementeListpickerModel.getItems().size() > 5) {
             // Begrenze
             jsfSteuerelementeListpickerModel.setItems(Lists.newArrayList(jsfSteuerelementeListpickerModel
-                .getItems().subList(0, 5).iterator()));
+                    .getItems().subList(0, 5).iterator()));
         }
     }
 }
