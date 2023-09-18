@@ -1,43 +1,38 @@
 package de.bund.bva.isyfact.isywebgui.gui.flows.sicherheit;
 
-import de.bund.bva.isyfact.aufrufkontext.AufrufKontext;
-import de.bund.bva.isyfact.aufrufkontext.AufrufKontextVerwalter;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
-
 import com.google.common.base.Joiner;
 
-import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 
+import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
+import de.bund.bva.isyfact.security.core.Berechtigungsmanager;
+
 /**
- * Controller für die Sicherheit.
+ * Controller for security.
  *
  * @author Capgemini
  * @version $Id: SicherheitController.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 @Controller
 public class SicherheitController extends AbstractGuiController<SicherheitModel> {
+
     /**
-     * Der AufrufKontextVerwalter.
+     * Berechtigungsmanager bean.
      */
-    private AufrufKontextVerwalter<AufrufKontext> aufrufKontextVerwalter;
+    private final Berechtigungsmanager berechtigungsmanager;
 
     @Autowired
-    public SicherheitController(AufrufKontextVerwalter<AufrufKontext> aufrufKontextVerwalter) {
-        this.aufrufKontextVerwalter = aufrufKontextVerwalter;
+    public SicherheitController(Berechtigungsmanager berechtigungsmanager) {
+        this.berechtigungsmanager = berechtigungsmanager;
     }
 
     @Override
     public void initialisiereModel(SicherheitModel model) {
-
-        model.setBenutzername(this.aufrufKontextVerwalter.getAufrufKontext()
-            .getDurchfuehrenderSachbearbeiterName());
-        model.setKennung(this.aufrufKontextVerwalter.getAufrufKontext()
-            .getDurchfuehrenderBenutzerInterneKennung());
-        model.setLogin(this.aufrufKontextVerwalter.getAufrufKontext().getDurchfuehrenderBenutzerKennung());
-        model.setRollen(Joiner.on(", ").join(this.aufrufKontextVerwalter.getAufrufKontext().getRolle()));
-
+        model.setBenutzername((String) berechtigungsmanager.getTokenAttribute("name"));
+        model.setKennung((String) berechtigungsmanager.getTokenAttribute("internekennung"));
+        model.setLogin((String) berechtigungsmanager.getTokenAttribute("preferred_username"));
+        model.setRollen(Joiner.on(", ").join(berechtigungsmanager.getRollen()));
     }
 
     /**
