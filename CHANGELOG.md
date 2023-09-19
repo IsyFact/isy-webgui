@@ -3,6 +3,9 @@
 - `IFS-1616`: Update isy-webgui auf IF3
   - Update isy-web auf Version 6.0.0
   - Update isyfact-bom auf 3.0.0
+- `ISY-344`: Umstellung von isy-sicherheit auf isy-security
+  #### _Breaking Change:_
+  * isy-sicherheit wird nicht mehr unterstützt.
 
 # v5.4.0
 - `IFE-310`: Beispiele mit aktiven Checkboxen in `formSelectOneList` und `formSelectManyList` hinzugefügt
