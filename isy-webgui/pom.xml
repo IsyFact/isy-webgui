@@ -5,7 +5,7 @@
     <parent>
         <groupId>de.bund.bva.isyfact</groupId>
         <artifactId>isy-webgui-parent</artifactId>
-        <version>5.3.3</version>
+        <version>5.4.0</version>
     </parent>
 
     <artifactId>isy-webgui</artifactId>
@@ -13,12 +13,16 @@
 
     <name>IsyFact Web-GUI Demo</name>
 
+    <properties>
+        <isyfact-bom.version>2.5.0</isyfact-bom.version>
+    </properties>
+
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>de.bund.bva.isyfact</groupId>
                 <artifactId>isyfact-bom</artifactId>
-                <version>2.4.3</version>
+                <version>${isyfact-bom.version}</version>
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>

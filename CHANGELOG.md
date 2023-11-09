@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.4.0
+
+- `ISY-381`: Update auf IF-Standards 2.5.0
+
 ## v5.3.3
 
 - `IFS-1845`: Anhebung auf Isyfact-Standards 2.4.3
