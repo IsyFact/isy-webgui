@@ -1,8 +1,10 @@
 package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.aktionseingabe;
 
-import com.google.common.base.Strings;
-import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import org.springframework.stereotype.Controller;
+
+import com.google.common.base.Strings;
+
+import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 
 @Controller
 public class AktionseingabeBeispieleController extends AbstractGuiController<AktionseingabeBeispieleModel> {

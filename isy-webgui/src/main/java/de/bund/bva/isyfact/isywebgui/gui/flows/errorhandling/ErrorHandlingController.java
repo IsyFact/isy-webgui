@@ -1,13 +1,12 @@
 package de.bund.bva.isyfact.isywebgui.gui.flows.errorhandling;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Controller;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.global.MessageController;
 import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.FlowAwkWrapper;
 import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.impl.FachlicheAwkException;
-import org.springframework.stereotype.Controller;
 
 /**
  * Controller für Error-Handling.

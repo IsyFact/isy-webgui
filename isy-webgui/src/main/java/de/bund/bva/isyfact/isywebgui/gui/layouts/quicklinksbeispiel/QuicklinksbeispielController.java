@@ -1,12 +1,11 @@
 package de.bund.bva.isyfact.isywebgui.gui.layouts.quicklinksbeispiel;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Controller;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.layout.QuicklinksController;
 import de.bund.bva.isyfact.common.web.layout.QuicklinksElementModel;
-import org.springframework.stereotype.Controller;
 
 /**
  * Controller für das Quicklinksbeispiel.

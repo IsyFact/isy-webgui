@@ -1,6 +1,7 @@
 package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.togglefilter;
 
 import java.util.List;
+
 import javax.faces.model.SelectItem;
 
 import de.bund.bva.isyfact.common.web.global.AbstractMaskenModel;
@@ -9,7 +10,9 @@ import de.bund.bva.isyfact.common.web.jsf.components.panel.PanelModel;
 
 public class TogglefilterBeispieleModel extends AbstractMaskenModel {
 
-    /** Panelmodel for panel status. */
+    /**
+     * Panelmodel for panel status.
+     */
     private PanelModel panelModelToggleFilter = new PanelModel(true);
 
     /**
@@ -44,7 +47,9 @@ public class TogglefilterBeispieleModel extends AbstractMaskenModel {
      */
     private List<SelectItem> toggleFilterListe;
 
-    /** Active toggle filter option **/
+    /**
+     * Active toggle filter option
+     **/
     private String toggleFilterAuswahl;
 
     public PanelModel getPanelModelToggleFilter() {

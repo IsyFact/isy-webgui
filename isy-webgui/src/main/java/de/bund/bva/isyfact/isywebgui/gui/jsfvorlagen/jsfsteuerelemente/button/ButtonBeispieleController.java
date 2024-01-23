@@ -1,7 +1,8 @@
 package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.button;
 
-import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import org.springframework.stereotype.Controller;
+
+import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 
 @Controller
 public class ButtonBeispieleController extends AbstractGuiController<ButtonBeispieleModel> {
@@ -17,8 +18,8 @@ public class ButtonBeispieleController extends AbstractGuiController<ButtonBeisp
 
     /**
      * Führt eine Action auf dem Button aus.
-     * @param model
-     *            das Model
+     *
+     * @param model das Model
      */
     public void buttonAction(ButtonBeispieleModel model) {
         model.setButtonActionResult("Aktion auf Button ausgeführt");
@@ -26,8 +27,8 @@ public class ButtonBeispieleController extends AbstractGuiController<ButtonBeisp
 
     /**
      * Führt eine Action auf dem block-Button aus.
-     * @param model
-     *            das Model
+     *
+     * @param model das Model
      */
     public void blockButtonAction(ButtonBeispieleModel model) {
         model.setBlockButtonActionResult("Aktion auf BlockButton ausgeführt");

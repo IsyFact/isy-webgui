@@ -1,27 +1,34 @@
 package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicker;
 
-import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
-import de.bund.bva.isyfact.common.web.jsf.components.listpicker.behoerde.BehoerdeListpickerModel;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
+import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
+import de.bund.bva.isyfact.common.web.jsf.components.listpicker.behoerde.BehoerdeListpickerModel;
 
 @Controller
 public class ListpickerBeispieleController extends AbstractGuiController<ListpickerBeispieleModel> {
 
-    /** Controller für den Listpicker. **/
+    /**
+     * Controller für den Listpicker.
+     **/
     private JsfSteuerelementeListpickerController jsfSteuerelementeListpickerController;
 
-    /** Controller für den Staatsangehörigkeit-Listpicker. **/
+    /**
+     * Controller für den Staatsangehörigkeit-Listpicker.
+     **/
     private JsfSteuerelementeStaatsangListpickerController jsfSteuerelementeStaatsangListpickerController;
 
-    /** Controller für den Behördenlistpicker. **/
+    /**
+     * Controller für den Behördenlistpicker.
+     **/
     private JsfSteuerelementeBehoerdeListpickerController jsfSteuerelementeBehoerdeListpickerController;
 
     @Autowired
     public ListpickerBeispieleController(
-        JsfSteuerelementeListpickerController jsfSteuerelementeListpickerController,
-        JsfSteuerelementeStaatsangListpickerController jsfSteuerelementeStaatsangListpickerController,
-        JsfSteuerelementeBehoerdeListpickerController jsfSteuerelementeBehoerdeListpickerController) {
+            JsfSteuerelementeListpickerController jsfSteuerelementeListpickerController,
+            JsfSteuerelementeStaatsangListpickerController jsfSteuerelementeStaatsangListpickerController,
+            JsfSteuerelementeBehoerdeListpickerController jsfSteuerelementeBehoerdeListpickerController) {
         this.jsfSteuerelementeListpickerController = jsfSteuerelementeListpickerController;
         this.jsfSteuerelementeStaatsangListpickerController = jsfSteuerelementeStaatsangListpickerController;
         this.jsfSteuerelementeBehoerdeListpickerController = jsfSteuerelementeBehoerdeListpickerController;
@@ -42,9 +49,9 @@ public class ListpickerBeispieleController extends AbstractGuiController<Listpic
 
         // Staatsangehoerigkeit-Listpicker ohne AJAX
         JsfSteuerelementeStaatsangListpickerModel staatsangListpickerModel =
-            new JsfSteuerelementeStaatsangListpickerModel();
+                new JsfSteuerelementeStaatsangListpickerModel();
         staatsangListpickerModel
-            .setItems(jsfSteuerelementeStaatsangListpickerController.erzeugeListpickerItemListe());
+                .setItems(jsfSteuerelementeStaatsangListpickerController.erzeugeListpickerItemListe());
         model.setStaatsangListpickerModel(staatsangListpickerModel);
 
         // Listpicker mit AJAX
@@ -56,7 +63,7 @@ public class ListpickerBeispieleController extends AbstractGuiController<Listpic
         // Behörde Listpicker (mit AJAX)
         BehoerdeListpickerModel behoerdeListpickerModel = new BehoerdeListpickerModel();
         behoerdeListpickerModel
-            .setItems(jsfSteuerelementeBehoerdeListpickerController.erzeugeBehoerdeListpickerItemListe());
+                .setItems(jsfSteuerelementeBehoerdeListpickerController.erzeugeBehoerdeListpickerItemListe());
         model.setBehoerdeListpickerModel(behoerdeListpickerModel);
 
         // Servlet Listpicker

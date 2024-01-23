@@ -1,6 +1,7 @@
 package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.dropdown;
 
 import java.util.List;
+
 import javax.faces.model.SelectItem;
 
 import de.bund.bva.isyfact.common.web.global.AbstractMaskenModel;
@@ -8,22 +9,34 @@ import de.bund.bva.isyfact.common.web.jsf.components.panel.PanelModel;
 
 public class DropdownBeispieleModel extends AbstractMaskenModel {
 
-    /** Panelmodel für Zustand des Panels. */
+    /**
+     * Panelmodel für Zustand des Panels.
+     */
     private PanelModel panelModelDropdown = new PanelModel(true);
 
-    /** Liste an Dropdown-Auswahlen. */
+    /**
+     * Liste an Dropdown-Auswahlen.
+     */
     private List<SelectItem> dropdownAuswahlListe;
 
-    /** Auswahl des Dropdowns nach Absenden des Forms. */
+    /**
+     * Auswahl des Dropdowns nach Absenden des Forms.
+     */
     private String dropdownAuswahl;
 
-    /** Aktuell ausgewählter Wert. */
+    /**
+     * Aktuell ausgewählter Wert.
+     */
     private String dropdownAuswahlAjax;
 
-    /** Auswahl des disabled Dropdowns. */
+    /**
+     * Auswahl des disabled Dropdowns.
+     */
     private String disabledDropdownAuswahl;
 
-    /** Auswahl des readonly Dropdowns. */
+    /**
+     * Auswahl des readonly Dropdowns.
+     */
     private String readonlyDropdownAuswahl;
 
     public PanelModel getPanelModelDropdown() {

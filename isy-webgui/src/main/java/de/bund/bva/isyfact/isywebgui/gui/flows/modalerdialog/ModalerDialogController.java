@@ -1,11 +1,10 @@
 package de.bund.bva.isyfact.isywebgui.gui.flows.modalerdialog;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Controller;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.global.MessageController;
-import org.springframework.stereotype.Controller;
 
 /**
  * Controller für den Modalen Dialog.

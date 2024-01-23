@@ -1,11 +1,10 @@
 package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.nachrichten;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
+import org.springframework.stereotype.Controller;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.global.MessageController;
-import org.springframework.stereotype.Controller;
 
 /**
  * Controller für Nachrichten.
@@ -32,8 +31,8 @@ public class NachrichtenController extends AbstractGuiController<NachrichtenMode
 
     /**
      * Zeigt einzeilige Nachrichten an.
-     * @param model
-     *            das NachrichtenModel
+     *
+     * @param model das NachrichtenModel
      */
     public void zeigeEinzeiligeNachrichten(NachrichtenModel model) {
 
@@ -45,18 +44,18 @@ public class NachrichtenController extends AbstractGuiController<NachrichtenMode
 
         // WARN
         this.messageController.writeWarnMessage("Dies ist eine einzeilige Warnnachricht.",
-            "Unzulässige Eingaben");
+                "Unzulässige Eingaben");
 
         // ERROR
         this.messageController.writeErrorMessage("Dies ist eine einzeilige Fehlernachricht.",
-            "Technischer Fehler");
+                "Technischer Fehler");
 
     }
 
     /**
      * Zeigt zweizeilige Nachrichten an.
-     * @param model
-     *            das NachrichtenModel
+     *
+     * @param model das NachrichtenModel
      */
     public void zeigeZweizeiligeNachrichten(NachrichtenModel model) {
 
@@ -70,12 +69,12 @@ public class NachrichtenController extends AbstractGuiController<NachrichtenMode
 
         // WARN
         this.messageController.writeWarnMessage("Dies ist eine einzeilige Warnnachricht.",
-            "Unzulässige Eingaben");
+                "Unzulässige Eingaben");
         this.messageController.writeWarnMessage("2.Teil", "Unzulässige Eingaben");
 
         // ERROR
         this.messageController.writeErrorMessage("Dies ist eine einzeilige Fehlernachricht.",
-            "Technischer Fehler");
+                "Technischer Fehler");
         this.messageController.writeErrorMessage("2.Teil", "Technischer Fehler");
 
     }

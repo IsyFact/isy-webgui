@@ -4,7 +4,6 @@ import de.bund.bva.isyfact.common.web.jsf.components.tab.TabGroupModel;
 
 /**
  * Model für das Tab-Demobeispiel (Vollauskunft, Personalien, Sachverhalte)
- *
  */
 public class JsfSteuerelementeAuskunftTabModel extends TabGroupModel {
 

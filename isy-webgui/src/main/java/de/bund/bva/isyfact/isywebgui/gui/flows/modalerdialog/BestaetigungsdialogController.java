@@ -1,7 +1,8 @@
 package de.bund.bva.isyfact.isywebgui.gui.flows.modalerdialog;
 
-import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import org.springframework.stereotype.Controller;
+
+import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 
 /**
  * Controller für den Bestätigungsdialog.

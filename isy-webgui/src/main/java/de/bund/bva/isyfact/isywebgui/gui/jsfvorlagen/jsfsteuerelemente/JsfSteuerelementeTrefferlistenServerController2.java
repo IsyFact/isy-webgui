@@ -7,11 +7,9 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 
-import com.google.common.base.Strings;
-import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTreffer;
-import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTrefferlistenModel;
 import org.apache.commons.beanutils.PropertyUtils;
 
+import com.google.common.base.Strings;
 import com.google.common.collect.Lists;
 
 import de.bund.bva.isyfact.common.web.comparator.NullSafeBeanComparator;
@@ -22,6 +20,8 @@ import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTablePaginati
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableRequest;
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableResult;
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.SortDirection;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTreffer;
+import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTrefferlistenModel;
 
 /**
  * Controller für die Trefferliste.
@@ -30,7 +30,7 @@ import de.bund.bva.isyfact.common.web.jsf.components.datatable.SortDirection;
  * @version $Id: JsfSteuerelementeTrefferlistenController.java 165302 2016-05-20 11:50:30Z sdm_arichter $
  */
 public class JsfSteuerelementeTrefferlistenServerController2 extends
-    DataTableController<JsfSteuerelementeTreffer, JsfSteuerelementeTrefferlistenModel> {
+        DataTableController<JsfSteuerelementeTreffer, JsfSteuerelementeTrefferlistenModel> {
 
     /**
      * {@inheritDoc}
@@ -59,13 +59,13 @@ public class JsfSteuerelementeTrefferlistenServerController2 extends
     public void filtere(JsfSteuerelementeTrefferlistenModel model) {
         Map<String, String> filters = model.getFilterModel().getFilters();
         List<JsfSteuerelementeTreffer> result =
-            new ArrayList<JsfSteuerelementeTreffer>(model.getDataModel().getDisplayItems());
+                new ArrayList<JsfSteuerelementeTreffer>(model.getDataModel().getDisplayItems());
         if ((filters == null) || filters.isEmpty()) {
             // nichts zu filtern
             return;
         }
 
-        for (Iterator<JsfSteuerelementeTreffer> it = result.iterator(); it.hasNext();) {
+        for (Iterator<JsfSteuerelementeTreffer> it = result.iterator(); it.hasNext(); ) {
             JsfSteuerelementeTreffer item = it.next();
             for (Map.Entry<String, String> filter : filters.entrySet()) {
                 if (Strings.isNullOrEmpty(filter.getKey()) || Strings.isNullOrEmpty(filter.getValue())) {
@@ -76,11 +76,11 @@ public class JsfSteuerelementeTrefferlistenServerController2 extends
                     value = PropertyUtils.getProperty(item, filter.getKey());
                 } catch (Exception e) {
                     IsyFactTechnicalRuntimeException exception =
-                        new IsyFactTechnicalRuntimeException("DEV01", e);
+                            new IsyFactTechnicalRuntimeException("DEV01", e);
                     throw exception;
                 }
                 if ((value == null)
-                    || !value.toString().toLowerCase().contains(filter.getValue().toLowerCase())) {
+                        || !value.toString().toLowerCase().contains(filter.getValue().toLowerCase())) {
                     // remove not matching item
                     it.remove();
                     break;
@@ -111,7 +111,7 @@ public class JsfSteuerelementeTrefferlistenServerController2 extends
      */
     @Override
     protected DataTableResult<JsfSteuerelementeTreffer> readItems(JsfSteuerelementeTrefferlistenModel model,
-        DataTableRequest request) {
+                                                                  DataTableRequest request) {
         JsfSteuerelementeTreffer treffer1 = new JsfSteuerelementeTreffer();
         treffer1.setNummer("1");
         treffer1.setLogin("peter");
@@ -150,7 +150,7 @@ public class JsfSteuerelementeTrefferlistenServerController2 extends
 
         DataTableResult result = new DataTableResult();
         ArrayList<JsfSteuerelementeTreffer> treffer =
-            Lists.newArrayList(treffer1, treffer2, treffer3, treffer4, treffer5, treffer6);
+                Lists.newArrayList(treffer1, treffer2, treffer3, treffer4, treffer5, treffer6);
         result.setItems(treffer);
         result.setItemCount(treffer.size());
         return result;

@@ -3,20 +3,27 @@ package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.togglefi
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
 import javax.faces.model.SelectItem;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 
 import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableInMemoryModel;
 import de.bund.bva.isyfact.isywebgui.common.stub.StubdatenGenerator;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Controller;
+
 
 @Controller
 public class TogglefilterBeispieleController extends AbstractGuiController<TogglefilterBeispieleModel> {
 
-    /** Client-sided controller. **/
+    /**
+     * Client-sided controller.
+     **/
     private ToggleFilterTableDataListenClientController toggleFilterTableDataListenClientController;
-    /** Server-sided Controller. **/
+    /**
+     * Server-sided Controller.
+     **/
     private ToggleFilterTableDataListenServerController toggleFilterTableDataListenServerController;
 
     @Autowired
@@ -75,7 +82,7 @@ public class TogglefilterBeispieleController extends AbstractGuiController<Toggl
      * @param model the model
      */
     public void filterTableData(TogglefilterBeispieleModel model) {
-        switch(model.getToggleFilterAuswahl()){
+        switch (model.getToggleFilterAuswahl()) {
             case "1":
                 model.getTrefferlistenClientModel().getDataModel().setDisplayItems(filterTableDataListForCountryDE(model));
                 break;
@@ -97,20 +104,20 @@ public class TogglefilterBeispieleController extends AbstractGuiController<Toggl
                 .updateDisplayItems(model.getTrefferlistenClientModel());
     }
 
-    private List<ToggleFilterTableData> filterTableDataListForCountryDE(TogglefilterBeispieleModel model){
-        return  model.getTrefferlistenServerModel().getAllitems().stream().filter(x -> x.getCountryCode().equals("DE")).collect(Collectors.toList());
+    private List<ToggleFilterTableData> filterTableDataListForCountryDE(TogglefilterBeispieleModel model) {
+        return model.getTrefferlistenServerModel().getAllitems().stream().filter(x -> x.getCountryCode().equals("DE")).collect(Collectors.toList());
     }
 
-    private List<ToggleFilterTableData> filterTableDataListForCountryFR(TogglefilterBeispieleModel model){
-        return  model.getTrefferlistenServerModel().getAllitems().stream().filter(x -> x.getCountryCode().equals("FR")).collect(Collectors.toList());
+    private List<ToggleFilterTableData> filterTableDataListForCountryFR(TogglefilterBeispieleModel model) {
+        return model.getTrefferlistenServerModel().getAllitems().stream().filter(x -> x.getCountryCode().equals("FR")).collect(Collectors.toList());
     }
 
-    private List<ToggleFilterTableData> filterTableDataListForIndustryUnterhaltung(TogglefilterBeispieleModel model){
-        return  model.getTrefferlistenServerModel().getAllitems().stream().filter(x -> x.getIndustry().equals("Unterhaltung")).collect(Collectors.toList());
+    private List<ToggleFilterTableData> filterTableDataListForIndustryUnterhaltung(TogglefilterBeispieleModel model) {
+        return model.getTrefferlistenServerModel().getAllitems().stream().filter(x -> x.getIndustry().equals("Unterhaltung")).collect(Collectors.toList());
     }
 
-    private List<ToggleFilterTableData> filterTableDataListForIndustryEssenTrinken(TogglefilterBeispieleModel model){
-        return  model.getTrefferlistenServerModel().getAllitems().stream().filter(x -> x.getIndustry().equals("Essen & Trinken")).collect(Collectors.toList());
+    private List<ToggleFilterTableData> filterTableDataListForIndustryEssenTrinken(TogglefilterBeispieleModel model) {
+        return model.getTrefferlistenServerModel().getAllitems().stream().filter(x -> x.getIndustry().equals("Essen & Trinken")).collect(Collectors.toList());
     }
 
 }

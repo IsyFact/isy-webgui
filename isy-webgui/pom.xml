@@ -34,7 +34,14 @@
         <dependency>
             <groupId>de.bund.bva.isyfact</groupId>
             <artifactId>isy-web</artifactId>
-            <exclusions><!-- Used to avoid a Maven Dependency Conversion Error. -->
+            <exclusions>
+                <!-- The autoconfiguration of isy-task would require a MeterRegistry bean to be defined -->
+                <exclusion>
+                    <groupId>de.bund.bva.isyfact</groupId>
+                    <artifactId>isy-task</artifactId>
+                </exclusion>
+
+                <!-- Used to avoid a Maven Dependency Conversion Error. -->
                 <exclusion>
                     <groupId>commons-io</groupId>
                     <artifactId>commons-io</artifactId>

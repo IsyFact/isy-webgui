@@ -2,12 +2,13 @@ package de.bund.bva.isyfact.isywebgui.config;
 
 import java.util.Locale;
 
-import de.bund.bva.isyfact.common.web.locale.SetDefaultLocaleFactoryBean;
-import de.bund.bva.isyfact.konfiguration.common.Konfiguration;
-import de.bund.bva.isyfact.konfiguration.common.impl.ReloadablePropertyKonfiguration;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.support.ResourceBundleMessageSource;
+
+import de.bund.bva.isyfact.common.web.locale.SetDefaultLocaleFactoryBean;
+import de.bund.bva.isyfact.konfiguration.common.Konfiguration;
+import de.bund.bva.isyfact.konfiguration.common.impl.ReloadablePropertyKonfiguration;
 
 @Configuration
 public class ResourceConfig {
@@ -19,11 +20,11 @@ public class ResourceConfig {
     @Bean
     public Konfiguration konfiguration() {
         String[] propertyLocations = {
-            "/resources/default.properties",
-            "/resources/gui-anwendungsgruppen.properties",
-            "/resources/nachrichten/gui-linksnavigation.properties",
-            "/resources/nachrichten/navigationmenu.properties",
-            "/config/isy-webgui.properties"};
+                "/resources/default.properties",
+                "/resources/gui-anwendungsgruppen.properties",
+                "/resources/nachrichten/gui-linksnavigation.properties",
+                "/resources/nachrichten/navigationmenu.properties",
+                "/config/isy-webgui.properties"};
 
         return new ReloadablePropertyKonfiguration(propertyLocations);
     }
@@ -46,7 +47,7 @@ public class ResourceConfig {
 
         ResourceBundleMessageSource source = new ResourceBundleMessageSource();
         source.addBasenames("resources/nachrichten/fehler", "resources/nachrichten/maskentexte",
-            "resources/nachrichten/titles");
+                "resources/nachrichten/titles");
 
         return source;
     }

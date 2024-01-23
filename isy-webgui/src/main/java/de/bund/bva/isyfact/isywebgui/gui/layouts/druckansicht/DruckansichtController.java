@@ -1,9 +1,10 @@
 package de.bund.bva.isyfact.isywebgui.gui.layouts.druckansicht;
 
-import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
-import de.bund.bva.isyfact.common.web.layout.BasisController;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+
+import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
+import de.bund.bva.isyfact.common.web.layout.BasisController;
 
 /**
  * Der Controller für die Druckansicht.

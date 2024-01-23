@@ -1,7 +1,6 @@
 package de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.togglefilter;
 
 import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableModel;
-import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.datatable.JsfSteuerelementeTreffer;
 
     /**
      * Toggle filter table data model
