@@ -17,8 +17,6 @@ import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicke
 /**
  * Controller for the Wizard dialogue.
  *
- * @author Capgemini
- * @version $Id: WizardController.java 134128 2015-04-08 13:53:41Z sdm_ahoerning $
  */
 @Controller
 public class WizardController extends AbstractGuiController<WizardModel> {

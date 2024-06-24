@@ -7,8 +7,6 @@ import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 /**
  * Der Controller für den Beispiellink B.
  *
- * @author Capgemini
- * @version $Id: BeispiellinkbController.java 130047 2015-02-10 10:52:10Z sdm_tgroeger $
  */
 @Controller
 public class BeispiellinkbController extends AbstractGuiController<BeispiellinkbModel> {

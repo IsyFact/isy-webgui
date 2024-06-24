@@ -5,8 +5,6 @@ import de.bund.bva.isyfact.common.web.global.AbstractMaskenModel;
 /**
  * Model für die Sicherheit.
  *
- * @author Capgemini
- * @version $Id: SicherheitModel.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 public class SicherheitModel extends AbstractMaskenModel {
 

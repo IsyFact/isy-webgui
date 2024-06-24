@@ -12,8 +12,6 @@ import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicke
 /**
  * Model for modal dialogue.
  *
- * @author Capgemini
- * @version $Id: WizardModel.java 134241 2015-04-09 14:37:26Z sdm_ahoerning $
  */
 public class WizardModel extends AbstractMaskenModel {
 

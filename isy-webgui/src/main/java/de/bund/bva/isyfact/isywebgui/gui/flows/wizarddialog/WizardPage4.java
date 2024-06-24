@@ -4,8 +4,6 @@ import de.bund.bva.isyfact.common.web.jsf.components.wizard.WizardDialogPage;
 
 /**
  * Eine Beispielseite.
- * @author Capgemini
- * @version $Id: WizardPage4.java 135254 2015-04-27 10:42:55Z sdm_tgroeger $
  */
 public class WizardPage4 extends WizardDialogPage {
 

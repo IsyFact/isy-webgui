@@ -9,8 +9,6 @@ import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.listpicke
 /**
  * Helper for JSF controls.
  *
- * @author Capgemini
- * @version $Id: JsfSteuerelementeHelper.java 130046 2015-02-10 10:43:52Z sdm_tgroeger $
  */
 public class JsfSteuerelementeHelper {
 

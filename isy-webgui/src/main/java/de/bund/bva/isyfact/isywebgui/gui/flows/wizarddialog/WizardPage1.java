@@ -8,8 +8,6 @@ import de.bund.bva.isyfact.common.web.validation.ValidationMessage;
 
 /**
  * Eine Beispielseite.
- * @author Capgemini
- * @version $Id: WizardPage1.java 135254 2015-04-27 10:42:55Z sdm_tgroeger $
  */
 public class WizardPage1 extends WizardDialogPage {
 

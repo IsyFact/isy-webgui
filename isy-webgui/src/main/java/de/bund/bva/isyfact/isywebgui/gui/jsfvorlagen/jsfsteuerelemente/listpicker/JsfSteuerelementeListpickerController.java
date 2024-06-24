@@ -14,8 +14,6 @@ import de.bund.bva.isyfact.common.web.jsf.components.listpicker.ListpickerContro
 /**
  * Controller für den Listpicker.
  *
- * @author Capgemini
- * @version $Id: JsfSteuerelementeListpickerController.java 130068 2015-02-10 14:09:46Z sdm_tgroeger $
  */
 @Controller
 public class JsfSteuerelementeListpickerController extends

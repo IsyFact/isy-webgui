@@ -11,9 +11,6 @@ import de.bund.bva.isyfact.common.web.global.GlobalFlowController;
 import de.bund.bva.isyfact.common.web.validation.ValidationMessage;
 import de.bund.bva.isyfact.util.spring.MessageSourceHolder;
 
-/**
- * @author msg
- */
 @Controller
 public class VieraugenController extends AbstractGuiController<VieraugenModel> {
 

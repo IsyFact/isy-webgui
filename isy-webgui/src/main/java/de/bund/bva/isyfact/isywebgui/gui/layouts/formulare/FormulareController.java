@@ -7,8 +7,6 @@ import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 /**
  * Controller für Formulare.
  *
- * @author Capgemini
- * @version $Id: FormulareController.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 @Controller
 public class FormulareController extends AbstractGuiController<FormulareModel> {

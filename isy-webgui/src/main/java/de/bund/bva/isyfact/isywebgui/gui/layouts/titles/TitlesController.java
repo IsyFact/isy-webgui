@@ -7,8 +7,6 @@ import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 /**
  * Controller für Titles.
  *
- * @author Capgemini
- * @version $Id: TitlesController.java 130047 2015-02-10 10:52:10Z sdm_tgroeger $
  */
 @Controller
 public class TitlesController extends AbstractGuiController<TitlesModel> {

@@ -9,8 +9,6 @@ import de.bund.bva.isyfact.common.web.jsf.components.listpicker.ListpickerModel;
 /**
  * Model für den StaatListpicker.
  *
- * @author Capgemini
- * @version $Id: StaatListpickerModel.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 public class StaatListpickerModel extends ListpickerModel<StaatSchluessel> {
 

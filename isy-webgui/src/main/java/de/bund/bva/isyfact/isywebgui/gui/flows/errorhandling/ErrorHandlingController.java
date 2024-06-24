@@ -11,8 +11,6 @@ import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.impl.FachlicheAwkExcep
 /**
  * Controller für Error-Handling.
  *
- * @author Capgemini
- * @version $Id: ErrorHandlingController.java 164792 2016-05-12 16:27:45Z sdm_arichter $
  */
 @Controller
 public class ErrorHandlingController extends AbstractGuiController<ErrorHandlingModel> {

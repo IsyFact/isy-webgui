@@ -10,8 +10,6 @@ import de.bund.bva.isyfact.common.web.layout.QuicklinksElementModel;
 /**
  * Controller für das Quicklinksbeispiel.
  *
- * @author Capgemini
- * @version $Id: QuicklinksbeispielController.java 175067 2016-09-06 08:58:45Z sdm_ahoerning $
  */
 @Controller
 public class QuicklinksbeispielController extends AbstractGuiController<QuicklinksbeispielModel> {

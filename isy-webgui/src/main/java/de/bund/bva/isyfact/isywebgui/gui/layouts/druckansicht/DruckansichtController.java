@@ -9,8 +9,6 @@ import de.bund.bva.isyfact.common.web.layout.BasisController;
 /**
  * Der Controller für die Druckansicht.
  *
- * @author Capgemini
- * @version $Id: DruckansichtController.java 164631 2016-05-11 12:16:09Z sdm_arichter $
  */
 @Controller
 public class DruckansichtController extends AbstractGuiController<DruckansichtModel> {

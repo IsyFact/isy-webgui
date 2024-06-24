@@ -9,8 +9,6 @@ import de.bund.bva.isyfact.isywebgui.gui.jsfvorlagen.jsfsteuerelemente.togglefil
 /**
  * A class of constants to support JSF using enums.
  *
- * @author Capgemini
- * @version $Id: EnumConstants.java 130046 2015-02-10 10:43:52Z sdm_tgroeger $
  */
 @Component
 public class EnumConstants {

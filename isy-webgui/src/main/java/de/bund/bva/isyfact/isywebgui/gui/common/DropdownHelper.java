@@ -16,7 +16,6 @@ import de.bund.bva.isyfact.isywebgui.datentypen.AnredeEnum;
  * Diese Klasse dient als Helper-Klasse zum füllen der Dropdown-Felder mit Daten aus Enums oder
  * konfigurierbaren Enums.
  *
- * @author msg
  *
  */
 @Component
