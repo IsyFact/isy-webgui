@@ -5,8 +5,6 @@ import java.io.Serializable;
 /**
  * Eine Testdatenklasse für das Validierungsbeispiel.
  *
- * @author Capgemini
- * @version $Id: Person.java 166449 2016-06-06 12:15:53Z sdm_arichter $
  */
 public class Person implements Serializable {
     /**

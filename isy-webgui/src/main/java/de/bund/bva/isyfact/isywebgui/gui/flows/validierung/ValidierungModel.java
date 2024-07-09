@@ -6,8 +6,6 @@ import de.bund.bva.isyfact.common.web.jsf.components.listpicker.ListpickerModel;
 /**
  * Model für die Validierung.
  *
- * @author Capgemini
- * @version $Id: ValidierungModel.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 public class ValidierungModel extends AbstractMaskenModel {
     /**

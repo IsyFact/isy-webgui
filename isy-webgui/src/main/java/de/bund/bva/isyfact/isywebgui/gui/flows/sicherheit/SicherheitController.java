@@ -11,8 +11,6 @@ import de.bund.bva.isyfact.security.core.Berechtigungsmanager;
 /**
  * Controller for security.
  *
- * @author Capgemini
- * @version $Id: SicherheitController.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 @Controller
 public class SicherheitController extends AbstractGuiController<SicherheitModel> {

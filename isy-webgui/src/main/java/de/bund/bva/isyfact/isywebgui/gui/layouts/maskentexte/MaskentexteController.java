@@ -7,8 +7,6 @@ import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 /**
  * Das Model für die Maskentexte.
  *
- * @author Capgemini
- * @version $Id: MaskentexteController.java 130047 2015-02-10 10:52:10Z sdm_tgroeger $
  */
 @Controller
 public class MaskentexteController extends AbstractGuiController<MaskentexteModel> {

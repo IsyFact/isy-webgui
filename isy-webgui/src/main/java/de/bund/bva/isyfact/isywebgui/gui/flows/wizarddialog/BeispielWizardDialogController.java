@@ -18,8 +18,6 @@ import de.bund.bva.isyfact.common.web.validation.ValidationMessage;
 /**
  * An example controller.
  *
- * @author Capgemini
- * @version $Id: BeispielWizardDialogController.java 135268 2015-04-27 12:19:05Z sdm_tgroeger $
  */
 @Controller
 public class BeispielWizardDialogController extends WizardDialogController {

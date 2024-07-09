@@ -13,8 +13,6 @@ import de.bund.bva.isyfact.common.web.validation.ValidationMessage;
 /**
  * Controller für die Validierung.
  *
- * @author Capgemini
- * @version $Id: ValidierungController.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 @Controller
 public class ValidierungController extends AbstractGuiController<ValidierungModel> {

@@ -7,8 +7,6 @@ import de.bund.bva.isyfact.common.web.global.AbstractGuiController;
 /**
  * Der Controller für die Maske.
  *
- * @author Capgemini
- * @version $Id: BeispielApplikationsseiteController.java 123825 2014-10-13 10:05:32Z sdm_ahoerning $
  */
 @Controller
 public class BeispielApplikationsseiteController extends AbstractGuiController<BeispielApplikationsseiteModel> {

@@ -9,8 +9,6 @@ import de.bund.bva.isyfact.common.web.global.MessageController;
 /**
  * Controller für den Modalen Dialog.
  *
- * @author Capgemini
- * @version $Id: ModalerDialogController.java 134128 2015-04-08 13:53:41Z sdm_ahoerning $
  */
 @Controller
 public class ModalerDialogController extends AbstractGuiController<ModalerDialogModel> {

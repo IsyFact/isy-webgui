@@ -5,8 +5,6 @@ import de.bund.bva.isyfact.common.web.jsf.components.datatable.DataTableModel;
 /**
  * Model für die Trefferliste.
  *
- * @author Capgemini
- * @version $Id: JsfSteuerelementeTrefferlistenModel.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 public class JsfSteuerelementeTrefferlistenModel extends DataTableModel<JsfSteuerelementeTreffer> {
 

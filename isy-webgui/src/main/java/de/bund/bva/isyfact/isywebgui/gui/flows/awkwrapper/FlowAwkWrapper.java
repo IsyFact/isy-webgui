@@ -5,8 +5,6 @@ import de.bund.bva.isyfact.isywebgui.gui.flows.awkwrapper.impl.FachlicheAwkExcep
 /**
  * Der Flow-AWK-Wrapper.
  *
- * @author Capgemini
- * @version $Id: FlowAwkWrapper.java 130125 2015-02-11 10:46:07Z sdm_tgroeger $
  */
 public interface FlowAwkWrapper {
 

@@ -6,8 +6,6 @@ import de.bund.bva.isyfact.common.web.sorting.InMemoryPropertySortAttribute;
 /**
  * Das Sortierattribut.
  *
- * @author Capgemini
- * @version $Id: JsfSteuerelementeSortierattribut.java 165302 2016-05-20 11:50:30Z sdm_arichter $
  */
 public enum JsfSteuerelementeSortierattribut implements SortAttribute, InMemoryPropertySortAttribute {
 

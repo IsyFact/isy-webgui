@@ -9,8 +9,6 @@ import de.bund.bva.isyfact.common.web.global.MessageController;
 /**
  * Controller für Nachrichten.
  *
- * @author Capgemini
- * @version $Id: NachrichtenController.java 130053 2015-02-10 12:46:06Z sdm_tgroeger $
  */
 @Controller
 public class NachrichtenController extends AbstractGuiController<NachrichtenModel> {
