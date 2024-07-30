@@ -1,5 +1,9 @@
 # Changelog
 
+## v5.4.1
+
+- `IFS-3958`: Update auf IF-Erweiterungen 2.5.3
+
 ## v5.4.0
 
 - `ISY-381`: Update auf IF-Standards 2.5.0
