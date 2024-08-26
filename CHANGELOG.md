@@ -1,3 +1,5 @@
+# v6.2.0
+
 # v6.1.0
 - `IFS-3938`: IsyFact Versionsanhebung auf 3.1.0
 
