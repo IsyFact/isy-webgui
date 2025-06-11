@@ -1,3 +1,6 @@
+# v6.0.2
+- `IFS-4716`: IsyFact Versionsanhebung auf 3.0.2
+
 # v6.0.1
 - `IFS-4716`: IsyFact Versionsanhebung auf 3.0.1
  
