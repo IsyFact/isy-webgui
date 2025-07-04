@@ -1,3 +1,9 @@
+# v6.0.2
+- `IFS-4716`: IsyFact Versionsanhebung auf 3.0.2
+
+# v6.0.1
+- `IFS-4716`: IsyFact Versionsanhebung auf 3.0.1
+ 
 # v6.0.0
 - `IFS-1156`: Test Data Table für farbliche Hervorhebung der in Detail-Ansicht gezeigten Zeile
 - `IFS-1616`: Update isy-webgui auf IF3
